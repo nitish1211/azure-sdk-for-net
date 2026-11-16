@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.DesktopVirtualization
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="VirtualWorkspaceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public VirtualWorkspaceData(AzureLocation location) : base(location)
+        public VirtualWorkspaceData()
         {
         }
 
@@ -51,6 +50,13 @@ namespace Azure.ResourceManager.DesktopVirtualization
             Plan = plan;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="VirtualWorkspaceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public VirtualWorkspaceData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Detailed properties for Workspace. </summary>

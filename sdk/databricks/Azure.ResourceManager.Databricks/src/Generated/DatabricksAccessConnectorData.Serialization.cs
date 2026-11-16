@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Databricks
     /// <summary> Information about Azure Databricks Access Connector. </summary>
     public partial class DatabricksAccessConnectorData : TrackedResourceData, IJsonModel<DatabricksAccessConnectorData>
     {
-        /// <summary> Initializes a new instance of <see cref="DatabricksAccessConnectorData"/> for deserialization. </summary>
-        internal DatabricksAccessConnectorData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

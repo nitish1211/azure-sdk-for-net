@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DevTestLabs
     /// <summary> A virtual network. </summary>
     public partial class DevTestLabVirtualNetworkData : TrackedResourceData, IJsonModel<DevTestLabVirtualNetworkData>
     {
-        /// <summary> Initializes a new instance of <see cref="DevTestLabVirtualNetworkData"/> for deserialization. </summary>
-        internal DevTestLabVirtualNetworkData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

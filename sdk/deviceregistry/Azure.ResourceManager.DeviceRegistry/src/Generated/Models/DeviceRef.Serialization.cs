@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
     /// <summary> Defines which device and endpoint to use for this asset. </summary>
     public partial class DeviceRef : IJsonModel<DeviceRef>
     {
-        /// <summary> Initializes a new instance of <see cref="DeviceRef"/> for deserialization. </summary>
-        internal DeviceRef()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DeviceRef PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

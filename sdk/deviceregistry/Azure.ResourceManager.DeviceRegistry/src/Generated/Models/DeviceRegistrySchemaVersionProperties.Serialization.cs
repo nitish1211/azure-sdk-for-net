@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
     /// <summary> Defines the schema version properties. </summary>
     public partial class DeviceRegistrySchemaVersionProperties : IJsonModel<DeviceRegistrySchemaVersionProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="DeviceRegistrySchemaVersionProperties"/> for deserialization. </summary>
-        internal DeviceRegistrySchemaVersionProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DeviceRegistrySchemaVersionProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

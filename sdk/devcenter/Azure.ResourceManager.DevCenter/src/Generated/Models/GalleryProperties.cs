@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.DevCenter;
 
 namespace Azure.ResourceManager.DevCenter.Models
 {
@@ -19,13 +18,8 @@ namespace Azure.ResourceManager.DevCenter.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="GalleryProperties"/>. </summary>
-        /// <param name="galleryResourceId"> The resource ID of the backing Azure Compute Gallery. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="galleryResourceId"/> is null. </exception>
-        public GalleryProperties(ResourceIdentifier galleryResourceId)
+        public GalleryProperties()
         {
-            Argument.AssertNotNull(galleryResourceId, nameof(galleryResourceId));
-
-            GalleryResourceId = galleryResourceId;
         }
 
         /// <summary> Initializes a new instance of <see cref="GalleryProperties"/>. </summary>

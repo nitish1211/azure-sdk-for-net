@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Datadog
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DatadogMonitorData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DatadogMonitorData(AzureLocation location) : base(location)
+        public DatadogMonitorData()
         {
         }
 
@@ -42,6 +41,13 @@ namespace Azure.ResourceManager.Datadog
             Sku = sku;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DatadogMonitorData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public DatadogMonitorData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties specific to the monitor resource. </summary>

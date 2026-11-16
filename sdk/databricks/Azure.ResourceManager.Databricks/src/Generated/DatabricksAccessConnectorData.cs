@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Databricks
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DatabricksAccessConnectorData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DatabricksAccessConnectorData(AzureLocation location) : base(location)
+        public DatabricksAccessConnectorData()
         {
         }
 

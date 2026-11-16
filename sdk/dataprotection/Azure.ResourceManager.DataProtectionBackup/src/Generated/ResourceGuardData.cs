@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.DataProtectionBackup
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ResourceGuardData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ResourceGuardData(AzureLocation location) : base(location)
+        public ResourceGuardData()
         {
         }
 
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.DataProtectionBackup
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ResourceGuardData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ResourceGuardData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> ResourceGuardResource properties. </summary>

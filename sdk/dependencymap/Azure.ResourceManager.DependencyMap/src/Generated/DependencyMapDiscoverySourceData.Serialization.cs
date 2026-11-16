@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DependencyMap
     /// <summary> A Discovery Source resource. </summary>
     public partial class DependencyMapDiscoverySourceData : TrackedResourceData, IJsonModel<DependencyMapDiscoverySourceData>
     {
-        /// <summary> Initializes a new instance of <see cref="DependencyMapDiscoverySourceData"/> for deserialization. </summary>
-        internal DependencyMapDiscoverySourceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -21,10 +21,9 @@ namespace Azure.ResourceManager.DataProtectionBackup
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DataProtectionBackupVaultData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> BackupVaultResource properties. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
-        public DataProtectionBackupVaultData(AzureLocation location, DataProtectionBackupVaultProperties properties) : base(location)
+        public DataProtectionBackupVaultData(DataProtectionBackupVaultProperties properties)
         {
             Argument.AssertNotNull(properties, nameof(properties));
 
@@ -48,6 +47,14 @@ namespace Azure.ResourceManager.DataProtectionBackup
             Identity = identity;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DataProtectionBackupVaultData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="properties"> BackupVaultResource properties. </param>
+        public DataProtectionBackupVaultData(AzureLocation location, DataProtectionBackupVaultProperties properties) : this(properties)
+        {
+            Location = location;
         }
 
         /// <summary> BackupVaultResource properties. </summary>

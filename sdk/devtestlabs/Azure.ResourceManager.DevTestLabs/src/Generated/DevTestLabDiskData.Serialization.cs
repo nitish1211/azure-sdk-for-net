@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DevTestLabs
     /// <summary> A Disk. </summary>
     public partial class DevTestLabDiskData : TrackedResourceData, IJsonModel<DevTestLabDiskData>
     {
-        /// <summary> Initializes a new instance of <see cref="DevTestLabDiskData"/> for deserialization. </summary>
-        internal DevTestLabDiskData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

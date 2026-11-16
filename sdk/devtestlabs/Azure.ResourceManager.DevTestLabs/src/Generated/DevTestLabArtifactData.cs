@@ -20,9 +20,8 @@ namespace Azure.ResourceManager.DevTestLabs
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DevTestLabArtifactData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> The properties of the resource. </param>
-        internal DevTestLabArtifactData(AzureLocation location, ArtifactProperties properties) : base(location)
+        internal DevTestLabArtifactData(ArtifactProperties properties)
         {
             Properties = properties;
         }

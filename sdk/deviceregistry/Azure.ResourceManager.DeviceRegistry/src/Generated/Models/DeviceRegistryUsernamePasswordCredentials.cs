@@ -18,16 +18,8 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DeviceRegistryUsernamePasswordCredentials"/>. </summary>
-        /// <param name="usernameSecretName"> The name of the secret containing the username. </param>
-        /// <param name="passwordSecretName"> The name of the secret containing the password. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="usernameSecretName"/> or <paramref name="passwordSecretName"/> is null. </exception>
-        public DeviceRegistryUsernamePasswordCredentials(string usernameSecretName, string passwordSecretName)
+        public DeviceRegistryUsernamePasswordCredentials()
         {
-            Argument.AssertNotNull(usernameSecretName, nameof(usernameSecretName));
-            Argument.AssertNotNull(passwordSecretName, nameof(passwordSecretName));
-
-            UsernameSecretName = usernameSecretName;
-            PasswordSecretName = passwordSecretName;
         }
 
         /// <summary> Initializes a new instance of <see cref="DeviceRegistryUsernamePasswordCredentials"/>. </summary>
@@ -39,6 +31,19 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
             UsernameSecretName = usernameSecretName;
             PasswordSecretName = passwordSecretName;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DeviceRegistryUsernamePasswordCredentials"/>. </summary>
+        /// <param name="usernameSecretName"> The name of the secret containing the username. </param>
+        /// <param name="passwordSecretName"> The name of the secret containing the password. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="usernameSecretName"/> or <paramref name="passwordSecretName"/> is null. </exception>
+        public DeviceRegistryUsernamePasswordCredentials(string usernameSecretName, string passwordSecretName) : this()
+        {
+            Argument.AssertNotNull(usernameSecretName, nameof(usernameSecretName));
+            Argument.AssertNotNull(passwordSecretName, nameof(passwordSecretName));
+
+            UsernameSecretName = usernameSecretName;
+            PasswordSecretName = passwordSecretName;
         }
 
         /// <summary> The name of the secret containing the username. </summary>

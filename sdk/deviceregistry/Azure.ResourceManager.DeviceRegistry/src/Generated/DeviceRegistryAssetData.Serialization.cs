@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DeviceRegistry
     /// <summary> Asset definition. </summary>
     public partial class DeviceRegistryAssetData : TrackedResourceData, IJsonModel<DeviceRegistryAssetData>
     {
-        /// <summary> Initializes a new instance of <see cref="DeviceRegistryAssetData"/> for deserialization. </summary>
-        internal DeviceRegistryAssetData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

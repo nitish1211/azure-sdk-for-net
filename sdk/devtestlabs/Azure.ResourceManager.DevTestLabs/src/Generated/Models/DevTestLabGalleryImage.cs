@@ -19,8 +19,7 @@ namespace Azure.ResourceManager.DevTestLabs.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DevTestLabGalleryImage"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DevTestLabGalleryImage(AzureLocation location) : base(location)
+        public DevTestLabGalleryImage()
         {
 
         }
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.DevTestLabs.Models
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DevTestLabGalleryImage"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public DevTestLabGalleryImage(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The properties of the gallery image. </summary>

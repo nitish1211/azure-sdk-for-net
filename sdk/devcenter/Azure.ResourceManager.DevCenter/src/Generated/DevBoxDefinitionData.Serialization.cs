@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DevCenter
     /// <summary> Represents a definition for a Developer Machine. </summary>
     public partial class DevBoxDefinitionData : TrackedResourceData, IJsonModel<DevBoxDefinitionData>
     {
-        /// <summary> Initializes a new instance of <see cref="DevBoxDefinitionData"/> for deserialization. </summary>
-        internal DevBoxDefinitionData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

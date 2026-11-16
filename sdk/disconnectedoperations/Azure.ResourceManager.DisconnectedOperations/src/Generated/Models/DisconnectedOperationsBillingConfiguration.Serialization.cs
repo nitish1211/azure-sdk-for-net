@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.DisconnectedOperations.Models
     /// <summary> The billing configuration. </summary>
     public partial class DisconnectedOperationsBillingConfiguration : IJsonModel<DisconnectedOperationsBillingConfiguration>
     {
-        /// <summary> Initializes a new instance of <see cref="DisconnectedOperationsBillingConfiguration"/> for deserialization. </summary>
-        internal DisconnectedOperationsBillingConfiguration()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DisconnectedOperationsBillingConfiguration PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

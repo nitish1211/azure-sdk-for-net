@@ -20,14 +20,8 @@ namespace Azure.ResourceManager.DeviceRegistry
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DeviceRegistryAssetData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        /// <param name="extendedLocation"> The extended location. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
-        public DeviceRegistryAssetData(AzureLocation location, DeviceRegistryExtendedLocation extendedLocation) : base(location)
+        public DeviceRegistryAssetData()
         {
-            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
-
-            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> Initializes a new instance of <see cref="DeviceRegistryAssetData"/>. </summary>
@@ -45,6 +39,18 @@ namespace Azure.ResourceManager.DeviceRegistry
             Properties = properties;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DeviceRegistryAssetData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="extendedLocation"> The extended location. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
+        public DeviceRegistryAssetData(AzureLocation location, DeviceRegistryExtendedLocation extendedLocation) : this()
+        {
+            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
+
+            Location = location;
+            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

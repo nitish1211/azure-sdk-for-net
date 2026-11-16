@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.DesktopVirtualization
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AppAttachPackageData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> Detailed properties for App Attach Package. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
-        public AppAttachPackageData(AzureLocation location, AppAttachPackageProperties properties) : base(location)
+        public AppAttachPackageData(AppAttachPackageProperties properties)
         {
             Argument.AssertNotNull(properties, nameof(properties));
 
@@ -43,6 +42,14 @@ namespace Azure.ResourceManager.DesktopVirtualization
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="AppAttachPackageData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="properties"> Detailed properties for App Attach Package. </param>
+        public AppAttachPackageData(AzureLocation location, AppAttachPackageProperties properties) : this(properties)
+        {
+            Location = location;
         }
 
         /// <summary> Detailed properties for App Attach Package. </summary>

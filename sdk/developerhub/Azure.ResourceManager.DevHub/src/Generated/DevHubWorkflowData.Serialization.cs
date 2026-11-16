@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DevHub
     /// <summary> Workflow. </summary>
     public partial class DevHubWorkflowData : TrackedResourceData, IJsonModel<DevHubWorkflowData>
     {
-        /// <summary> Initializes a new instance of <see cref="DevHubWorkflowData"/> for deserialization. </summary>
-        internal DevHubWorkflowData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.DeviceRegistry
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CredentialData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public CredentialData(AzureLocation location) : base(location)
+        public CredentialData()
         {
         }
 

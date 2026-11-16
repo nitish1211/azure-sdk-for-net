@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
     /// <summary> Property bag contains the device's outbound endpoints. </summary>
     public partial class OutboundEndpoints : IJsonModel<OutboundEndpoints>
     {
-        /// <summary> Initializes a new instance of <see cref="OutboundEndpoints"/> for deserialization. </summary>
-        internal OutboundEndpoints()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual OutboundEndpoints PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

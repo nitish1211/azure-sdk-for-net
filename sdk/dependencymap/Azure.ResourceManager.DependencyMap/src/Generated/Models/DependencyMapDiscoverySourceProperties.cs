@@ -22,11 +22,9 @@ namespace Azure.ResourceManager.DependencyMap.Models
 
         /// <summary> Initializes a new instance of <see cref="DependencyMapDiscoverySourceProperties"/>. </summary>
         /// <param name="sourceType"> Source type of Discovery Source resource. </param>
-        /// <param name="sourceId"> Source ArmId of Discovery Source resource. </param>
-        private protected DependencyMapDiscoverySourceProperties(SourceType sourceType, ResourceIdentifier sourceId)
+        private protected DependencyMapDiscoverySourceProperties(SourceType sourceType)
         {
             SourceType = sourceType;
-            SourceId = sourceId;
         }
 
         /// <summary> Initializes a new instance of <see cref="DependencyMapDiscoverySourceProperties"/>. </summary>

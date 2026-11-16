@@ -21,11 +21,10 @@ namespace Azure.ResourceManager.DesktopVirtualization
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HostPoolData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="hostPoolType"> HostPool type for desktop. </param>
         /// <param name="loadBalancerType"> The type of the load balancer. </param>
         /// <param name="preferredAppGroupType"> The type of preferred application group type, default to Desktop Application Group. </param>
-        public HostPoolData(AzureLocation location, HostPoolType hostPoolType, HostPoolLoadBalancerType loadBalancerType, PreferredAppGroupType preferredAppGroupType) : base(location)
+        public HostPoolData(HostPoolType hostPoolType, HostPoolLoadBalancerType loadBalancerType, PreferredAppGroupType preferredAppGroupType)
         {
 
             Properties = new HostPoolProperties(hostPoolType, loadBalancerType, preferredAppGroupType);
@@ -56,6 +55,16 @@ namespace Azure.ResourceManager.DesktopVirtualization
             Plan = plan;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="HostPoolData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="hostPoolType"> HostPool type for desktop. </param>
+        /// <param name="loadBalancerType"> The type of the load balancer. </param>
+        /// <param name="preferredAppGroupType"> The type of preferred application group type, default to Desktop Application Group. </param>
+        public HostPoolData(AzureLocation location, HostPoolType hostPoolType, HostPoolLoadBalancerType loadBalancerType, PreferredAppGroupType preferredAppGroupType) : this(hostPoolType, loadBalancerType, preferredAppGroupType)
+        {
+            Location = location;
         }
 
         /// <summary> Detailed properties for HostPool. </summary>

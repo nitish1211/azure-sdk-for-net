@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.DeviceRegistry;
 
 namespace Azure.ResourceManager.DeviceRegistry.Models
 {
@@ -18,16 +17,8 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DeviceRegistrySchemaRegistryProperties"/>. </summary>
-        /// <param name="namespace"> Schema registry namespace. Uniquely identifies a schema registry within a tenant. </param>
-        /// <param name="storageAccountContainerUri"> The Storage Account's Container URL where schemas will be stored. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="namespace"/> or <paramref name="storageAccountContainerUri"/> is null. </exception>
-        public DeviceRegistrySchemaRegistryProperties(string @namespace, Uri storageAccountContainerUri)
+        public DeviceRegistrySchemaRegistryProperties()
         {
-            Argument.AssertNotNull(@namespace, nameof(@namespace));
-            Argument.AssertNotNull(storageAccountContainerUri, nameof(storageAccountContainerUri));
-
-            Namespace = @namespace;
-            StorageAccountContainerUri = storageAccountContainerUri;
         }
 
         /// <summary> Initializes a new instance of <see cref="DeviceRegistrySchemaRegistryProperties"/>. </summary>

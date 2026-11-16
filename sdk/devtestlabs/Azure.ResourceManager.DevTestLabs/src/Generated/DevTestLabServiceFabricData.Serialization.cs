@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DevTestLabs
     /// <summary> A Service Fabric. </summary>
     public partial class DevTestLabServiceFabricData : TrackedResourceData, IJsonModel<DevTestLabServiceFabricData>
     {
-        /// <summary> Initializes a new instance of <see cref="DevTestLabServiceFabricData"/> for deserialization. </summary>
-        internal DevTestLabServiceFabricData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

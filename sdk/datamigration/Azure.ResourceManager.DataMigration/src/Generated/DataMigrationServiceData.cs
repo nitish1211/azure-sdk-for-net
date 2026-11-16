@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.DataMigration
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DataMigrationServiceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DataMigrationServiceData(AzureLocation location) : base(location)
+        public DataMigrationServiceData()
         {
         }
 
@@ -45,6 +44,13 @@ namespace Azure.ResourceManager.DataMigration
             Kind = kind;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DataMigrationServiceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public DataMigrationServiceData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Custom service properties. </summary>

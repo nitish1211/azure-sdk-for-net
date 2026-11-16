@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DevTestLabs
     /// <summary> A user profile. </summary>
     public partial class DevTestLabUserData : TrackedResourceData, IJsonModel<DevTestLabUserData>
     {
-        /// <summary> Initializes a new instance of <see cref="DevTestLabUserData"/> for deserialization. </summary>
-        internal DevTestLabUserData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

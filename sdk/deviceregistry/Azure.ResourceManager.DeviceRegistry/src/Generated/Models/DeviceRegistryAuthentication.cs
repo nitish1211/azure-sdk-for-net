@@ -17,10 +17,8 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DeviceRegistryAuthentication"/>. </summary>
-        /// <param name="method"> Defines the method to authenticate the user of the client at the server. </param>
-        public DeviceRegistryAuthentication(AuthenticationMethod @method)
+        public DeviceRegistryAuthentication()
         {
-            Method = @method;
         }
 
         /// <summary> Initializes a new instance of <see cref="DeviceRegistryAuthentication"/>. </summary>
@@ -34,6 +32,13 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
             UsernamePasswordCredentials = usernamePasswordCredentials;
             X509Credentials = x509Credentials;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DeviceRegistryAuthentication"/>. </summary>
+        /// <param name="method"> Defines the method to authenticate the user of the client at the server. </param>
+        public DeviceRegistryAuthentication(AuthenticationMethod @method) : this()
+        {
+            Method = @method;
         }
 
         /// <summary> Defines the method to authenticate the user of the client at the server. </summary>
@@ -54,7 +59,11 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
             }
             set
             {
-                X509Credentials = new DeviceRegistryX509Credentials(value);
+                if (X509Credentials is null)
+                {
+                    X509Credentials = new DeviceRegistryX509Credentials();
+                }
+                X509Credentials.CertificateSecretName = value;
             }
         }
     }

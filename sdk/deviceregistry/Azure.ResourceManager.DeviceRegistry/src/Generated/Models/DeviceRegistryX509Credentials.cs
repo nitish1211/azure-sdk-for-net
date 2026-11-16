@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.DeviceRegistry;
 
 namespace Azure.ResourceManager.DeviceRegistry.Models
 {
@@ -18,13 +17,8 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DeviceRegistryX509Credentials"/>. </summary>
-        /// <param name="certificateSecretName"> The name of the secret containing the certificate and private key (e.g. stored as .der/.pem or .der/.pfx). </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="certificateSecretName"/> is null. </exception>
-        public DeviceRegistryX509Credentials(string certificateSecretName)
+        public DeviceRegistryX509Credentials()
         {
-            Argument.AssertNotNull(certificateSecretName, nameof(certificateSecretName));
-
-            CertificateSecretName = certificateSecretName;
         }
 
         /// <summary> Initializes a new instance of <see cref="DeviceRegistryX509Credentials"/>. </summary>

@@ -18,15 +18,8 @@ namespace Azure.ResourceManager.DisconnectedOperations.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DisconnectedOperationsBillingConfiguration"/>. </summary>
-        /// <param name="autoRenew"> The auto renew setting. </param>
-        /// <param name="current"> The current billing configuration. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="current"/> is null. </exception>
-        public DisconnectedOperationsBillingConfiguration(DisconnectedOperationsAutoRenew autoRenew, DisconnectedOperationsBillingPeriod current)
+        public DisconnectedOperationsBillingConfiguration()
         {
-            Argument.AssertNotNull(current, nameof(current));
-
-            AutoRenew = autoRenew;
-            Current = current;
         }
 
         /// <summary> Initializes a new instance of <see cref="DisconnectedOperationsBillingConfiguration"/>. </summary>
@@ -42,6 +35,18 @@ namespace Azure.ResourceManager.DisconnectedOperations.Models
             Current = current;
             Upcoming = upcoming;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DisconnectedOperationsBillingConfiguration"/>. </summary>
+        /// <param name="autoRenew"> The auto renew setting. </param>
+        /// <param name="current"> The current billing configuration. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="current"/> is null. </exception>
+        public DisconnectedOperationsBillingConfiguration(DisconnectedOperationsAutoRenew autoRenew, DisconnectedOperationsBillingPeriod current) : this()
+        {
+            Argument.AssertNotNull(current, nameof(current));
+
+            AutoRenew = autoRenew;
+            Current = current;
         }
 
         /// <summary> The auto renew setting. </summary>

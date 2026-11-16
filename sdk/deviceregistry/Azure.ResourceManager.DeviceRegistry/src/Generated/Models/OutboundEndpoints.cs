@@ -18,13 +18,9 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="OutboundEndpoints"/>. </summary>
-        /// <param name="assigned"> Endpoints the device can connect to. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="assigned"/> is null. </exception>
-        public OutboundEndpoints(IDictionary<string, DeviceMessagingEndpoint> assigned)
+        public OutboundEndpoints()
         {
-            Argument.AssertNotNull(assigned, nameof(assigned));
-
-            Assigned = assigned;
+            Assigned = new ChangeTrackingDictionary<string, DeviceMessagingEndpoint>();
             Unassigned = new ChangeTrackingDictionary<string, DeviceMessagingEndpoint>();
         }
 

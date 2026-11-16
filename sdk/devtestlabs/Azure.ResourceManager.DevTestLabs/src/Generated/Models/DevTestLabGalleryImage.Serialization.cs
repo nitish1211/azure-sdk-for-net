@@ -19,11 +19,6 @@ namespace Azure.ResourceManager.DevTestLabs.Models
     /// <summary> A gallery image. </summary>
     public partial class DevTestLabGalleryImage : TrackedResourceData, IJsonModel<DevTestLabGalleryImage>
     {
-        /// <summary> Initializes a new instance of <see cref="DevTestLabGalleryImage"/> for deserialization. </summary>
-        internal DevTestLabGalleryImage()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

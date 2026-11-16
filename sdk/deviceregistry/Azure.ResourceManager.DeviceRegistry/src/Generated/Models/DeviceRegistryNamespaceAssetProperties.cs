@@ -19,13 +19,8 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DeviceRegistryNamespaceAssetProperties"/>. </summary>
-        /// <param name="deviceRef"> Reference to the device that provides data for this asset. Must provide device name &amp; endpoint on the device to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="deviceRef"/> is null. </exception>
-        public DeviceRegistryNamespaceAssetProperties(DeviceRef deviceRef)
+        public DeviceRegistryNamespaceAssetProperties()
         {
-            Argument.AssertNotNull(deviceRef, nameof(deviceRef));
-
-            DeviceRef = deviceRef;
             AssetTypeRefs = new ChangeTrackingList<string>();
             Attributes = new ChangeTrackingDictionary<string, BinaryData>();
             DiscoveredAssetRefs = new ChangeTrackingList<string>();

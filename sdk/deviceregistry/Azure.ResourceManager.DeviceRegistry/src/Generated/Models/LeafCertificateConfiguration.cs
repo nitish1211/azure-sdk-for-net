@@ -17,10 +17,8 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="LeafCertificateConfiguration"/>. </summary>
-        /// <param name="validityPeriodInDays"> The validity period in days. </param>
-        public LeafCertificateConfiguration(int validityPeriodInDays)
+        public LeafCertificateConfiguration()
         {
-            ValidityPeriodInDays = validityPeriodInDays;
         }
 
         /// <summary> Initializes a new instance of <see cref="LeafCertificateConfiguration"/>. </summary>

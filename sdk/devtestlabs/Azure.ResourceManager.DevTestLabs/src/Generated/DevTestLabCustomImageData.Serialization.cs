@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DevTestLabs
     /// <summary> A custom image. </summary>
     public partial class DevTestLabCustomImageData : TrackedResourceData, IJsonModel<DevTestLabCustomImageData>
     {
-        /// <summary> Initializes a new instance of <see cref="DevTestLabCustomImageData"/> for deserialization. </summary>
-        internal DevTestLabCustomImageData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

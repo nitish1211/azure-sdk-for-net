@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.DeviceRegistry;
 
 namespace Azure.ResourceManager.DeviceRegistry.Models
 {
@@ -18,13 +17,8 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DeviceRegistrySchemaVersionProperties"/>. </summary>
-        /// <param name="schemaContent"> Schema content. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="schemaContent"/> is null. </exception>
-        public DeviceRegistrySchemaVersionProperties(string schemaContent)
+        public DeviceRegistrySchemaVersionProperties()
         {
-            Argument.AssertNotNull(schemaContent, nameof(schemaContent));
-
-            SchemaContent = schemaContent;
         }
 
         /// <summary> Initializes a new instance of <see cref="DeviceRegistrySchemaVersionProperties"/>. </summary>

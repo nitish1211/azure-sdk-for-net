@@ -15,10 +15,8 @@ namespace Azure.ResourceManager.DevCenter.Models
     internal partial class NetworkProperties : NetworkConnectionUpdateProperties
     {
         /// <summary> Initializes a new instance of <see cref="NetworkProperties"/>. </summary>
-        /// <param name="domainJoinType"> AAD Join type. </param>
-        public NetworkProperties(DomainJoinType domainJoinType)
+        public NetworkProperties()
         {
-            DomainJoinType = domainJoinType;
         }
 
         /// <summary> Initializes a new instance of <see cref="NetworkProperties"/>. </summary>

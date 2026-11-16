@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
     /// <summary> Defines the asset properties. </summary>
     public partial class DeviceRegistryNamespaceAssetProperties : IJsonModel<DeviceRegistryNamespaceAssetProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="DeviceRegistryNamespaceAssetProperties"/> for deserialization. </summary>
-        internal DeviceRegistryNamespaceAssetProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DeviceRegistryNamespaceAssetProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

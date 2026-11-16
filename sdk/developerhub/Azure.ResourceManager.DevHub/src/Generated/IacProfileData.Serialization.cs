@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DevHub
     /// <summary> IacProfile. </summary>
     public partial class IacProfileData : TrackedResourceData, IJsonModel<IacProfileData>
     {
-        /// <summary> Initializes a new instance of <see cref="IacProfileData"/> for deserialization. </summary>
-        internal IacProfileData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

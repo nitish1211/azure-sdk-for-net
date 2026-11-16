@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DevCenter
     /// <summary> Network related settings. </summary>
     public partial class DevCenterNetworkConnectionData : TrackedResourceData, IJsonModel<DevCenterNetworkConnectionData>
     {
-        /// <summary> Initializes a new instance of <see cref="DevCenterNetworkConnectionData"/> for deserialization. </summary>
-        internal DevCenterNetworkConnectionData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

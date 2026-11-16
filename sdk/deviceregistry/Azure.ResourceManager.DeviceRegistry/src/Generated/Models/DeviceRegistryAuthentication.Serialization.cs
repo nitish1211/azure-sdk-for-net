@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
     /// <summary> Definition of the client authentication mechanism to the server. </summary>
     public partial class DeviceRegistryAuthentication : IJsonModel<DeviceRegistryAuthentication>
     {
-        /// <summary> Initializes a new instance of <see cref="DeviceRegistryAuthentication"/> for deserialization. </summary>
-        internal DeviceRegistryAuthentication()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DeviceRegistryAuthentication PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
     /// <summary> The leaf certificate configuration. </summary>
     internal partial class LeafCertificateConfiguration : IJsonModel<LeafCertificateConfiguration>
     {
-        /// <summary> Initializes a new instance of <see cref="LeafCertificateConfiguration"/> for deserialization. </summary>
-        internal LeafCertificateConfiguration()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual LeafCertificateConfiguration PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DevCenter
     /// <summary> Represents an environment type. </summary>
     public partial class DevCenterProjectEnvironmentData : TrackedResourceData, IJsonModel<DevCenterProjectEnvironmentData>
     {
-        /// <summary> Initializes a new instance of <see cref="DevCenterProjectEnvironmentData"/> for deserialization. </summary>
-        internal DevCenterProjectEnvironmentData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

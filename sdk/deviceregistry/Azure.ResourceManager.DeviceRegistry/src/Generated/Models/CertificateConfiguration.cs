@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.DeviceRegistry;
 
 namespace Azure.ResourceManager.DeviceRegistry.Models
 {
@@ -16,18 +15,6 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
     {
         /// <summary> Keeps track of any properties unknown to the library. </summary>
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
-
-        /// <summary> Initializes a new instance of <see cref="CertificateConfiguration"/>. </summary>
-        /// <param name="certificateAuthorityConfiguration"> The configuration to set up an ICA. </param>
-        /// <param name="leafCertificateValidityPeriodInDays"> The validity period in days. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="certificateAuthorityConfiguration"/> is null. </exception>
-        public CertificateConfiguration(CertificateAuthorityConfiguration certificateAuthorityConfiguration, int leafCertificateValidityPeriodInDays)
-        {
-            Argument.AssertNotNull(certificateAuthorityConfiguration, nameof(certificateAuthorityConfiguration));
-
-            CertificateAuthorityConfiguration = certificateAuthorityConfiguration;
-            LeafCertificateConfiguration = new LeafCertificateConfiguration(leafCertificateValidityPeriodInDays);
-        }
 
         /// <summary> Initializes a new instance of <see cref="CertificateConfiguration"/>. </summary>
         /// <param name="certificateAuthorityConfiguration"> The configuration to set up an ICA. </param>
@@ -55,7 +42,11 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
             }
             set
             {
-                LeafCertificateConfiguration = new LeafCertificateConfiguration(value);
+                if (LeafCertificateConfiguration is null)
+                {
+                    LeafCertificateConfiguration = new LeafCertificateConfiguration();
+                }
+                LeafCertificateConfiguration.ValidityPeriodInDays = value;
             }
         }
     }

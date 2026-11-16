@@ -18,13 +18,6 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
 
         /// <summary> Initializes a new instance of <see cref="CertificateAuthorityConfiguration"/>. </summary>
         /// <param name="keyType"> Crypto type: ECC. </param>
-        public CertificateAuthorityConfiguration(SupportedKeyType keyType)
-        {
-            KeyType = keyType;
-        }
-
-        /// <summary> Initializes a new instance of <see cref="CertificateAuthorityConfiguration"/>. </summary>
-        /// <param name="keyType"> Crypto type: ECC. </param>
         /// <param name="subject"> Certificate subject. </param>
         /// <param name="validityNotBefore"> Certificate is valid not before this date. Format ISO8601. Generated based on on validity period. </param>
         /// <param name="validityNotAfter"> Certificate is valid not after this date. Format ISO8601. Generated based on validity period. </param>

@@ -20,9 +20,8 @@ namespace Azure.ResourceManager.Databricks
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DatabricksWorkspaceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="computeMode"> The workspace compute mode. Required on create, cannot be changed. Possible values include: 'Serverless', 'Hybrid'. </param>
-        public DatabricksWorkspaceData(AzureLocation location, DatabricksComputeMode computeMode) : base(location)
+        public DatabricksWorkspaceData(DatabricksComputeMode computeMode)
         {
 
             Properties = new WorkspaceProperties(computeMode);

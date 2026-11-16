@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.DisconnectedOperations
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DisconnectedOperationData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DisconnectedOperationData(AzureLocation location) : base(location)
+        public DisconnectedOperationData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.DisconnectedOperations
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DisconnectedOperationData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public DisconnectedOperationData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

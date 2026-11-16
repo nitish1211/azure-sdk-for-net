@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.DataFactory
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DataFactoryData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DataFactoryData(AzureLocation location) : base(location)
+        public DataFactoryData()
         {
             _additionalBinaryDataProperties = new ChangeTrackingDictionary<string, BinaryData>();
         }
@@ -44,6 +43,13 @@ namespace Azure.ResourceManager.DataFactory
             Identity = identity;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DataFactoryData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public DataFactoryData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the factory. </summary>

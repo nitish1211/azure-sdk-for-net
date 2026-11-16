@@ -17,10 +17,8 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="BringYourOwnRoot"/>. </summary>
-        /// <param name="enabled"> Indicates whether Bring Your Own Root is enabled. This can only be set at creation time and cannot be changed afterward. </param>
-        public BringYourOwnRoot(bool enabled)
+        public BringYourOwnRoot()
         {
-            Enabled = enabled;
         }
 
         /// <summary> Initializes a new instance of <see cref="BringYourOwnRoot"/>. </summary>

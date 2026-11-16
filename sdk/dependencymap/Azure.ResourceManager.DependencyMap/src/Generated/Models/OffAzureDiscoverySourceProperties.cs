@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.DependencyMap;
 
 namespace Azure.ResourceManager.DependencyMap.Models
 {
@@ -16,12 +15,8 @@ namespace Azure.ResourceManager.DependencyMap.Models
     public partial class OffAzureDiscoverySourceProperties : DependencyMapDiscoverySourceProperties
     {
         /// <summary> Initializes a new instance of <see cref="OffAzureDiscoverySourceProperties"/>. </summary>
-        /// <param name="sourceId"> Source ArmId of Discovery Source resource. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="sourceId"/> is null. </exception>
-        public OffAzureDiscoverySourceProperties(ResourceIdentifier sourceId) : base(SourceType.OffAzure, sourceId)
+        public OffAzureDiscoverySourceProperties() : base(SourceType.OffAzure)
         {
-            Argument.AssertNotNull(sourceId, nameof(sourceId));
-
         }
 
         /// <summary> Initializes a new instance of <see cref="OffAzureDiscoverySourceProperties"/>. </summary>

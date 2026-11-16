@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.DataMigration
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DataMigrationProjectData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DataMigrationProjectData(AzureLocation location) : base(location)
+        public DataMigrationProjectData()
         {
         }
 
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.DataMigration
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DataMigrationProjectData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public DataMigrationProjectData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Project properties. </summary>

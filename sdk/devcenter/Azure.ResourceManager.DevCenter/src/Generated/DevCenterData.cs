@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.DevCenter
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DevCenterData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DevCenterData(AzureLocation location) : base(location)
+        public DevCenterData()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.DevCenter
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DevCenterData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public DevCenterData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> DevCenter properties. </summary>

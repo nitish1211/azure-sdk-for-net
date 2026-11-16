@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.DevTestLabs
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DevTestLabEnvironmentData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DevTestLabEnvironmentData(AzureLocation location) : base(location)
+        public DevTestLabEnvironmentData()
         {
 
         }
@@ -39,6 +38,13 @@ namespace Azure.ResourceManager.DevTestLabs
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DevTestLabEnvironmentData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public DevTestLabEnvironmentData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The properties of the environment. </summary>

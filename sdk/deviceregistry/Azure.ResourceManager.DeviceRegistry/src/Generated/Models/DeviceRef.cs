@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.DeviceRegistry;
 
 namespace Azure.ResourceManager.DeviceRegistry.Models
 {
@@ -18,16 +17,8 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DeviceRef"/>. </summary>
-        /// <param name="deviceName"> Name of the device resource. </param>
-        /// <param name="endpointName"> The name of endpoint to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="deviceName"/> or <paramref name="endpointName"/> is null. </exception>
-        public DeviceRef(string deviceName, string endpointName)
+        public DeviceRef()
         {
-            Argument.AssertNotNull(deviceName, nameof(deviceName));
-            Argument.AssertNotNull(endpointName, nameof(endpointName));
-
-            DeviceName = deviceName;
-            EndpointName = endpointName;
         }
 
         /// <summary> Initializes a new instance of <see cref="DeviceRef"/>. </summary>

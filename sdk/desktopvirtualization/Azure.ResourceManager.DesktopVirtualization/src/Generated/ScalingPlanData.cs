@@ -21,10 +21,9 @@ namespace Azure.ResourceManager.DesktopVirtualization
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ScalingPlanData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="timeZone"> Timezone of the scaling plan. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="timeZone"/> is null. </exception>
-        public ScalingPlanData(AzureLocation location, string timeZone) : base(location)
+        public ScalingPlanData(string timeZone)
         {
             Argument.AssertNotNull(timeZone, nameof(timeZone));
 
@@ -56,6 +55,14 @@ namespace Azure.ResourceManager.DesktopVirtualization
             Plan = plan;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ScalingPlanData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="timeZone"> Timezone of the scaling plan. </param>
+        public ScalingPlanData(AzureLocation location, string timeZone) : this(timeZone)
+        {
+            Location = location;
         }
 
         /// <summary> Detailed properties for scaling plan. </summary>

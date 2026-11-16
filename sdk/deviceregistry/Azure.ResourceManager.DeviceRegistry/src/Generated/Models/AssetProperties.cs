@@ -19,13 +19,8 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AssetProperties"/>. </summary>
-        /// <param name="assetEndpointProfileRef"> A reference to the asset endpoint profile (connection information) used by brokers to connect to an endpoint that provides data points for this asset. Must provide asset endpoint profile name. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="assetEndpointProfileRef"/> is null. </exception>
-        public AssetProperties(string assetEndpointProfileRef)
+        public AssetProperties()
         {
-            Argument.AssertNotNull(assetEndpointProfileRef, nameof(assetEndpointProfileRef));
-
-            AssetEndpointProfileRef = assetEndpointProfileRef;
             Attributes = new ChangeTrackingDictionary<string, BinaryData>();
             DiscoveredAssetRefs = new ChangeTrackingList<string>();
             Datasets = new ChangeTrackingList<DeviceRegistryDataset>();
@@ -85,6 +80,16 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
             Status = status;
             ProvisioningState = provisioningState;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="AssetProperties"/>. </summary>
+        /// <param name="assetEndpointProfileRef"> A reference to the asset endpoint profile (connection information) used by brokers to connect to an endpoint that provides data points for this asset. Must provide asset endpoint profile name. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="assetEndpointProfileRef"/> is null. </exception>
+        public AssetProperties(string assetEndpointProfileRef) : this()
+        {
+            Argument.AssertNotNull(assetEndpointProfileRef, nameof(assetEndpointProfileRef));
+
+            AssetEndpointProfileRef = assetEndpointProfileRef;
         }
 
         /// <summary> Globally unique, immutable, non-reusable id. </summary>

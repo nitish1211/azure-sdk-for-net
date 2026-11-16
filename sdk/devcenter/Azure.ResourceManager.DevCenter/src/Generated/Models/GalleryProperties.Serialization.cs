@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.DevCenter.Models
     /// <summary> Properties of a gallery. </summary>
     internal partial class GalleryProperties : IJsonModel<GalleryProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="GalleryProperties"/> for deserialization. </summary>
-        internal GalleryProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual GalleryProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

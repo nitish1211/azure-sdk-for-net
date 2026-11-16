@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DevTestLabs.Models
     /// <summary> Schedules applicable to a virtual machine. The schedules may have been defined on a VM or on lab level. </summary>
     public partial class DevTestLabApplicableSchedule : TrackedResourceData, IJsonModel<DevTestLabApplicableSchedule>
     {
-        /// <summary> Initializes a new instance of <see cref="DevTestLabApplicableSchedule"/> for deserialization. </summary>
-        internal DevTestLabApplicableSchedule()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

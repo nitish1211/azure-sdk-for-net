@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
     /// <summary> The credentials for authentication mode UsernamePassword. </summary>
     public partial class DeviceRegistryUsernamePasswordCredentials : IJsonModel<DeviceRegistryUsernamePasswordCredentials>
     {
-        /// <summary> Initializes a new instance of <see cref="DeviceRegistryUsernamePasswordCredentials"/> for deserialization. </summary>
-        internal DeviceRegistryUsernamePasswordCredentials()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DeviceRegistryUsernamePasswordCredentials PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

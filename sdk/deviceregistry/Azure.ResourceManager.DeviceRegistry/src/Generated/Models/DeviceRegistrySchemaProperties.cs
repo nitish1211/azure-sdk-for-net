@@ -18,12 +18,8 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DeviceRegistrySchemaProperties"/>. </summary>
-        /// <param name="format"> Format of the schema. </param>
-        /// <param name="schemaType"> Type of the schema. </param>
-        public DeviceRegistrySchemaProperties(DeviceRegistrySchemaFormat format, DeviceRegistrySchemaType schemaType)
+        public DeviceRegistrySchemaProperties()
         {
-            Format = format;
-            SchemaType = schemaType;
             Tags = new ChangeTrackingDictionary<string, string>();
         }
 

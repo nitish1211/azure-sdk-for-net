@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.DevHub
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DevHubWorkflowData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DevHubWorkflowData(AzureLocation location) : base(location)
+        public DevHubWorkflowData()
         {
         }
 

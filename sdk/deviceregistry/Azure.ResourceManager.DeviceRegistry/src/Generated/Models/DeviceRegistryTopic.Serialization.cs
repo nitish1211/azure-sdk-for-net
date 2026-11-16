@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
     /// <summary> Object that describes the topic information. </summary>
     public partial class DeviceRegistryTopic : IJsonModel<DeviceRegistryTopic>
     {
-        /// <summary> Initializes a new instance of <see cref="DeviceRegistryTopic"/> for deserialization. </summary>
-        internal DeviceRegistryTopic()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DeviceRegistryTopic PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

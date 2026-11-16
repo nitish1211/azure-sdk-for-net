@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.DisconnectedOperations.Models
     /// <summary> The billing period. </summary>
     public partial class DisconnectedOperationsBillingPeriod : IJsonModel<DisconnectedOperationsBillingPeriod>
     {
-        /// <summary> Initializes a new instance of <see cref="DisconnectedOperationsBillingPeriod"/> for deserialization. </summary>
-        internal DisconnectedOperationsBillingPeriod()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DisconnectedOperationsBillingPeriod PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

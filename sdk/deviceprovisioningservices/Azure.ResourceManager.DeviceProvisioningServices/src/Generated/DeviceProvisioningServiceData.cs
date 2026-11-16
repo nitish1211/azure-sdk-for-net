@@ -21,11 +21,10 @@ namespace Azure.ResourceManager.DeviceProvisioningServices
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DeviceProvisioningServiceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> Service specific properties for a provisioning service. </param>
         /// <param name="sku"> Sku info for a provisioning Service. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="properties"/> or <paramref name="sku"/> is null. </exception>
-        public DeviceProvisioningServiceData(AzureLocation location, DeviceProvisioningServiceProperties properties, DeviceProvisioningServicesSkuInfo sku) : base(location)
+        public DeviceProvisioningServiceData(DeviceProvisioningServiceProperties properties, DeviceProvisioningServicesSkuInfo sku)
         {
             Argument.AssertNotNull(properties, nameof(properties));
             Argument.AssertNotNull(sku, nameof(sku));
@@ -57,6 +56,15 @@ namespace Azure.ResourceManager.DeviceProvisioningServices
             Sku = sku;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DeviceProvisioningServiceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="properties"> Service specific properties for a provisioning service. </param>
+        /// <param name="sku"> Sku info for a provisioning Service. </param>
+        public DeviceProvisioningServiceData(AzureLocation location, DeviceProvisioningServiceProperties properties, DeviceProvisioningServicesSkuInfo sku) : this(properties, sku)
+        {
+            Location = location;
         }
 
         /// <summary> The Etag field is <i>not</i> required. If it is provided in the response body, it must also be provided as a header per the normal ETag convention. </summary>

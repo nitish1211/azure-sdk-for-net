@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DevTestLabs
     /// <summary> A secret. </summary>
     public partial class DevTestLabSecretData : TrackedResourceData, IJsonModel<DevTestLabSecretData>
     {
-        /// <summary> Initializes a new instance of <see cref="DevTestLabSecretData"/> for deserialization. </summary>
-        internal DevTestLabSecretData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

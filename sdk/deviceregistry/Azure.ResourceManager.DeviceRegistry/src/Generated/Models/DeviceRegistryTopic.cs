@@ -18,13 +18,8 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DeviceRegistryTopic"/>. </summary>
-        /// <param name="path"> The topic path for messages published to an MQTT broker. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="path"/> is null. </exception>
-        public DeviceRegistryTopic(string path)
+        public DeviceRegistryTopic()
         {
-            Argument.AssertNotNull(path, nameof(path));
-
-            Path = path;
         }
 
         /// <summary> Initializes a new instance of <see cref="DeviceRegistryTopic"/>. </summary>
@@ -36,6 +31,16 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
             Path = path;
             Retain = retain;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DeviceRegistryTopic"/>. </summary>
+        /// <param name="path"> The topic path for messages published to an MQTT broker. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="path"/> is null. </exception>
+        public DeviceRegistryTopic(string path) : this()
+        {
+            Argument.AssertNotNull(path, nameof(path));
+
+            Path = path;
         }
 
         /// <summary> The topic path for messages published to an MQTT broker. </summary>

@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
     /// <summary> Configuration for Bring Your Own Root. When enabled, customers provide their own CA-signed certificates instead of using the service-managed CA. </summary>
     public partial class BringYourOwnRoot : IJsonModel<BringYourOwnRoot>
     {
-        /// <summary> Initializes a new instance of <see cref="BringYourOwnRoot"/> for deserialization. </summary>
-        internal BringYourOwnRoot()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual BringYourOwnRoot PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

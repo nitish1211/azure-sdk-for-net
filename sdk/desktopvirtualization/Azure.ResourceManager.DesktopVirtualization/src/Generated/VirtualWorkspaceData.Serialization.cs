@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DesktopVirtualization
     /// <summary> Represents a Workspace definition. </summary>
     public partial class VirtualWorkspaceData : TrackedResourceData, IJsonModel<VirtualWorkspaceData>
     {
-        /// <summary> Initializes a new instance of <see cref="VirtualWorkspaceData"/> for deserialization. </summary>
-        internal VirtualWorkspaceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

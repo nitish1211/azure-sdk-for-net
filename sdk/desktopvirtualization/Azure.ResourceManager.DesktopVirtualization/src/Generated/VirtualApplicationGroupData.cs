@@ -21,11 +21,10 @@ namespace Azure.ResourceManager.DesktopVirtualization
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="VirtualApplicationGroupData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="hostPoolId"> HostPool arm path of ApplicationGroup. </param>
         /// <param name="applicationGroupType"> Resource Type of ApplicationGroup. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="hostPoolId"/> is null. </exception>
-        public VirtualApplicationGroupData(AzureLocation location, ResourceIdentifier hostPoolId, VirtualApplicationGroupType applicationGroupType) : base(location)
+        public VirtualApplicationGroupData(ResourceIdentifier hostPoolId, VirtualApplicationGroupType applicationGroupType)
         {
             Argument.AssertNotNull(hostPoolId, nameof(hostPoolId));
 
@@ -57,6 +56,15 @@ namespace Azure.ResourceManager.DesktopVirtualization
             Plan = plan;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="VirtualApplicationGroupData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="hostPoolId"> HostPool arm path of ApplicationGroup. </param>
+        /// <param name="applicationGroupType"> Resource Type of ApplicationGroup. </param>
+        public VirtualApplicationGroupData(AzureLocation location, ResourceIdentifier hostPoolId, VirtualApplicationGroupType applicationGroupType) : this(hostPoolId, applicationGroupType)
+        {
+            Location = location;
         }
 
         /// <summary> Detailed properties for ApplicationGroup. </summary>

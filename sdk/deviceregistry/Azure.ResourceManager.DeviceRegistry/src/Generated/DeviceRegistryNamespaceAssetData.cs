@@ -20,14 +20,8 @@ namespace Azure.ResourceManager.DeviceRegistry
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DeviceRegistryNamespaceAssetData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        /// <param name="extendedLocation"> The extended location. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
-        public DeviceRegistryNamespaceAssetData(AzureLocation location, DeviceRegistryExtendedLocation extendedLocation) : base(location)
+        public DeviceRegistryNamespaceAssetData()
         {
-            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
-
-            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> Initializes a new instance of <see cref="DeviceRegistryNamespaceAssetData"/>. </summary>

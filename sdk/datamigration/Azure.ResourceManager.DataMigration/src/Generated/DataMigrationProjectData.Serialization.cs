@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DataMigration
     /// <summary> A project resource. </summary>
     public partial class DataMigrationProjectData : TrackedResourceData, IJsonModel<DataMigrationProjectData>
     {
-        /// <summary> Initializes a new instance of <see cref="DataMigrationProjectData"/> for deserialization. </summary>
-        internal DataMigrationProjectData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

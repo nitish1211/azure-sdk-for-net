@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.DeviceRegistry.Models
     /// <summary> The x509 certificate for authentication mode Certificate. </summary>
     internal partial class DeviceRegistryX509Credentials : IJsonModel<DeviceRegistryX509Credentials>
     {
-        /// <summary> Initializes a new instance of <see cref="DeviceRegistryX509Credentials"/> for deserialization. </summary>
-        internal DeviceRegistryX509Credentials()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DeviceRegistryX509Credentials PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

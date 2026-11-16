@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.DataBoxEdge
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DataBoxEdgeDeviceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DataBoxEdgeDeviceData(AzureLocation location) : base(location)
+        public DataBoxEdgeDeviceData()
         {
         }
 
@@ -47,6 +46,13 @@ namespace Azure.ResourceManager.DataBoxEdge
             Identity = identity;
             Kind = kind;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DataBoxEdgeDeviceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public DataBoxEdgeDeviceData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The properties of the Data Box Edge/Gateway device. </summary>

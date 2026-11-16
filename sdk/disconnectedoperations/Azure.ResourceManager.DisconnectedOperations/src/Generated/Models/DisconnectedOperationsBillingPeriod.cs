@@ -17,12 +17,8 @@ namespace Azure.ResourceManager.DisconnectedOperations.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DisconnectedOperationsBillingPeriod"/>. </summary>
-        /// <param name="cores"> The number of cores. </param>
-        /// <param name="pricingModel"> The pricing model. </param>
-        public DisconnectedOperationsBillingPeriod(int cores, DisconnectedOperationsPricingModel pricingModel)
+        public DisconnectedOperationsBillingPeriod()
         {
-            Cores = cores;
-            PricingModel = pricingModel;
         }
 
         /// <summary> Initializes a new instance of <see cref="DisconnectedOperationsBillingPeriod"/>. </summary>
@@ -38,6 +34,15 @@ namespace Azure.ResourceManager.DisconnectedOperations.Models
             StartOn = startOn;
             EndOn = endOn;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DisconnectedOperationsBillingPeriod"/>. </summary>
+        /// <param name="cores"> The number of cores. </param>
+        /// <param name="pricingModel"> The pricing model. </param>
+        public DisconnectedOperationsBillingPeriod(int cores, DisconnectedOperationsPricingModel pricingModel) : this()
+        {
+            Cores = cores;
+            PricingModel = pricingModel;
         }
 
         /// <summary> The number of cores. </summary>
