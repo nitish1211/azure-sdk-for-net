@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Azure;
 using Azure.ResourceManager.ProgramEnrollment;
 
@@ -20,13 +19,9 @@ namespace Azure.ResourceManager.ProgramEnrollment.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="EduEnrollmentProperties"/>. </summary>
-        /// <param name="domains"> The domain groups associated with this enrollment. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="domains"/> is null. </exception>
-        public EduEnrollmentProperties(IEnumerable<ProgramEnrollmentDomainGroup> domains)
+        public EduEnrollmentProperties()
         {
-            Argument.AssertNotNull(domains, nameof(domains));
-
-            Domains = domains.ToList();
+            Domains = new ChangeTrackingList<ProgramEnrollmentDomainGroup>();
         }
 
         /// <summary> Initializes a new instance of <see cref="EduEnrollmentProperties"/>. </summary>

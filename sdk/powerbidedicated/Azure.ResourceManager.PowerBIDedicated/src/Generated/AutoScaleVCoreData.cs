@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.PowerBIDedicated
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AutoScaleVCoreData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="sku"> The SKU of the auto scale v-core resource. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sku"/> is null. </exception>
-        public AutoScaleVCoreData(AzureLocation location, AutoScaleVCoreSku sku) : base(location)
+        public AutoScaleVCoreData(AutoScaleVCoreSku sku)
         {
             Argument.AssertNotNull(sku, nameof(sku));
 
@@ -45,6 +44,14 @@ namespace Azure.ResourceManager.PowerBIDedicated
             Properties = properties;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="AutoScaleVCoreData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="sku"> The SKU of the auto scale v-core resource. </param>
+        public AutoScaleVCoreData(AzureLocation location, AutoScaleVCoreSku sku) : this(sku)
+        {
+            Location = location;
         }
 
         /// <summary> Properties of an auto scale v-core resource. </summary>

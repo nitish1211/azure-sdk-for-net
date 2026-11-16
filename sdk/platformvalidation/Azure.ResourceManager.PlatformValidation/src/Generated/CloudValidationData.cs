@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.PlatformValidation
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CloudValidationData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public CloudValidationData(AzureLocation location) : base(location)
+        public CloudValidationData()
         {
         }
 

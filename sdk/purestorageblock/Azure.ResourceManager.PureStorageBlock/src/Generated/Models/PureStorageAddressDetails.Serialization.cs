@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.PureStorageBlock.Models
     /// <summary> Address details. </summary>
     public partial class PureStorageAddressDetails : IJsonModel<PureStorageAddressDetails>
     {
-        /// <summary> Initializes a new instance of <see cref="PureStorageAddressDetails"/> for deserialization. </summary>
-        internal PureStorageAddressDetails()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual PureStorageAddressDetails PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

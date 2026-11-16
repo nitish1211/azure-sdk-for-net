@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.PrivateDns
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="VirtualNetworkLinkData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public VirtualNetworkLinkData(AzureLocation location) : base(location)
+        public VirtualNetworkLinkData()
         {
         }
 
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.PrivateDns
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="VirtualNetworkLinkData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public VirtualNetworkLinkData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the virtual network link to the Private DNS zone. </summary>

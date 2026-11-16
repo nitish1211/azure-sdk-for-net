@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.PureStorageBlock.Models
     /// <summary> User details. </summary>
     public partial class PureStorageUserDetails : IJsonModel<PureStorageUserDetails>
     {
-        /// <summary> Initializes a new instance of <see cref="PureStorageUserDetails"/> for deserialization. </summary>
-        internal PureStorageUserDetails()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual PureStorageUserDetails PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -18,25 +18,8 @@ namespace Azure.ResourceManager.PureStorageBlock.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PureStorageAddressDetails"/>. </summary>
-        /// <param name="addressLine1"> Address line 1. </param>
-        /// <param name="city"> Name of the city. </param>
-        /// <param name="state"> State (if any). </param>
-        /// <param name="country"> Name of the country. </param>
-        /// <param name="postalCode"> Postal code. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="addressLine1"/>, <paramref name="city"/>, <paramref name="state"/>, <paramref name="country"/> or <paramref name="postalCode"/> is null. </exception>
-        public PureStorageAddressDetails(string addressLine1, string city, string state, string country, string postalCode)
+        public PureStorageAddressDetails()
         {
-            Argument.AssertNotNull(addressLine1, nameof(addressLine1));
-            Argument.AssertNotNull(city, nameof(city));
-            Argument.AssertNotNull(state, nameof(state));
-            Argument.AssertNotNull(country, nameof(country));
-            Argument.AssertNotNull(postalCode, nameof(postalCode));
-
-            AddressLine1 = addressLine1;
-            City = city;
-            State = state;
-            Country = country;
-            PostalCode = postalCode;
         }
 
         /// <summary> Initializes a new instance of <see cref="PureStorageAddressDetails"/>. </summary>
@@ -56,6 +39,28 @@ namespace Azure.ResourceManager.PureStorageBlock.Models
             Country = country;
             PostalCode = postalCode;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="PureStorageAddressDetails"/>. </summary>
+        /// <param name="addressLine1"> Address line 1. </param>
+        /// <param name="city"> Name of the city. </param>
+        /// <param name="state"> State (if any). </param>
+        /// <param name="country"> Name of the country. </param>
+        /// <param name="postalCode"> Postal code. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="addressLine1"/>, <paramref name="city"/>, <paramref name="state"/>, <paramref name="country"/> or <paramref name="postalCode"/> is null. </exception>
+        public PureStorageAddressDetails(string addressLine1, string city, string state, string country, string postalCode) : this()
+        {
+            Argument.AssertNotNull(addressLine1, nameof(addressLine1));
+            Argument.AssertNotNull(city, nameof(city));
+            Argument.AssertNotNull(state, nameof(state));
+            Argument.AssertNotNull(country, nameof(country));
+            Argument.AssertNotNull(postalCode, nameof(postalCode));
+
+            AddressLine1 = addressLine1;
+            City = city;
+            State = state;
+            Country = country;
+            PostalCode = postalCode;
         }
 
         /// <summary> Address line 1. </summary>

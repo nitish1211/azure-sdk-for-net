@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.ProviderHub
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ProviderMonitorSettingData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ProviderMonitorSettingData(AzureLocation location) : base(location)
+        public ProviderMonitorSettingData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.ProviderHub
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ProviderMonitorSettingData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ProviderMonitorSettingData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Gets or sets the Properties. </summary>

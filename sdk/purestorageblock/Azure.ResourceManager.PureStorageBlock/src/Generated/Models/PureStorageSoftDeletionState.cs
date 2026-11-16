@@ -17,10 +17,8 @@ namespace Azure.ResourceManager.PureStorageBlock.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PureStorageSoftDeletionState"/>. </summary>
-        /// <param name="isDestroyed"> If false, the resource is active; if true, the resource has been destroyed; resources can be soft-deleted by setting destroyed to true, and recovered by setting it to false. </param>
-        public PureStorageSoftDeletionState(bool isDestroyed)
+        public PureStorageSoftDeletionState()
         {
-            IsDestroyed = isDestroyed;
         }
 
         /// <summary> Initializes a new instance of <see cref="PureStorageSoftDeletionState"/>. </summary>
@@ -32,6 +30,13 @@ namespace Azure.ResourceManager.PureStorageBlock.Models
             IsDestroyed = isDestroyed;
             EradicatedOn = eradicatedOn;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="PureStorageSoftDeletionState"/>. </summary>
+        /// <param name="isDestroyed"> If false, the resource is active; if true, the resource has been destroyed; resources can be soft-deleted by setting destroyed to true, and recovered by setting it to false. </param>
+        public PureStorageSoftDeletionState(bool isDestroyed) : this()
+        {
+            IsDestroyed = isDestroyed;
         }
 
         /// <summary> If false, the resource is active; if true, the resource has been destroyed; resources can be soft-deleted by setting destroyed to true, and recovered by setting it to false. </summary>

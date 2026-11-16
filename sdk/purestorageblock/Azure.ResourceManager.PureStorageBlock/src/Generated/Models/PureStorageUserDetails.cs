@@ -18,19 +18,8 @@ namespace Azure.ResourceManager.PureStorageBlock.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PureStorageUserDetails"/>. </summary>
-        /// <param name="firstName"> First name. </param>
-        /// <param name="lastName"> Last name. </param>
-        /// <param name="emailAddress"> Email address. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="firstName"/>, <paramref name="lastName"/> or <paramref name="emailAddress"/> is null. </exception>
-        public PureStorageUserDetails(string firstName, string lastName, string emailAddress)
+        public PureStorageUserDetails()
         {
-            Argument.AssertNotNull(firstName, nameof(firstName));
-            Argument.AssertNotNull(lastName, nameof(lastName));
-            Argument.AssertNotNull(emailAddress, nameof(emailAddress));
-
-            FirstName = firstName;
-            LastName = lastName;
-            EmailAddress = emailAddress;
         }
 
         /// <summary> Initializes a new instance of <see cref="PureStorageUserDetails"/>. </summary>
@@ -50,6 +39,22 @@ namespace Azure.ResourceManager.PureStorageBlock.Models
             PhoneNumber = phoneNumber;
             CompanyDetails = companyDetails;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="PureStorageUserDetails"/>. </summary>
+        /// <param name="firstName"> First name. </param>
+        /// <param name="lastName"> Last name. </param>
+        /// <param name="emailAddress"> Email address. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="firstName"/>, <paramref name="lastName"/> or <paramref name="emailAddress"/> is null. </exception>
+        public PureStorageUserDetails(string firstName, string lastName, string emailAddress) : this()
+        {
+            Argument.AssertNotNull(firstName, nameof(firstName));
+            Argument.AssertNotNull(lastName, nameof(lastName));
+            Argument.AssertNotNull(emailAddress, nameof(emailAddress));
+
+            FirstName = firstName;
+            LastName = lastName;
+            EmailAddress = emailAddress;
         }
 
         /// <summary> First name. </summary>

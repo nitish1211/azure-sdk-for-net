@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.PureStorageBlock
     /// <summary> Storage pool resource. </summary>
     public partial class PureStoragePoolData : TrackedResourceData, IJsonModel<PureStoragePoolData>
     {
-        /// <summary> Initializes a new instance of <see cref="PureStoragePoolData"/> for deserialization. </summary>
-        internal PureStoragePoolData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

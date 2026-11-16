@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.PostgreSql.FlexibleServers
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PostgreSqlFlexibleServerData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public PostgreSqlFlexibleServerData(AzureLocation location) : base(location)
+        public PostgreSqlFlexibleServerData()
         {
         }
 
@@ -42,6 +41,13 @@ namespace Azure.ResourceManager.PostgreSql.FlexibleServers
             Sku = sku;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="PostgreSqlFlexibleServerData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public PostgreSqlFlexibleServerData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of a server. </summary>

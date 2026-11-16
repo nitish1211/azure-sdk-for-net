@@ -19,21 +19,10 @@ namespace Azure.ResourceManager.PureStorageBlock.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PureStoragePoolProperties"/>. </summary>
-        /// <param name="availabilityZone"> Azure Availability Zone the Pool is located in. </param>
-        /// <param name="vnetInjection"> Network properties of the storage pool. </param>
         /// <param name="provisionedBandwidthMbPerSec"> Total bandwidth provisioned for the pool, in MB/s. </param>
-        /// <param name="reservationResourceId"> Azure resource ID of the Pure Storage Cloud service (reservation resource) this storage pool belongs to. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="availabilityZone"/>, <paramref name="vnetInjection"/> or <paramref name="reservationResourceId"/> is null. </exception>
-        public PureStoragePoolProperties(string availabilityZone, PureStoragePoolVnetInjection vnetInjection, long provisionedBandwidthMbPerSec, ResourceIdentifier reservationResourceId)
+        public PureStoragePoolProperties(long provisionedBandwidthMbPerSec)
         {
-            Argument.AssertNotNull(availabilityZone, nameof(availabilityZone));
-            Argument.AssertNotNull(vnetInjection, nameof(vnetInjection));
-            Argument.AssertNotNull(reservationResourceId, nameof(reservationResourceId));
-
-            AvailabilityZone = availabilityZone;
-            VnetInjection = vnetInjection;
             ProvisionedBandwidthMbPerSec = provisionedBandwidthMbPerSec;
-            ReservationResourceId = reservationResourceId;
         }
 
         /// <summary> Initializes a new instance of <see cref="PureStoragePoolProperties"/>. </summary>
@@ -59,6 +48,23 @@ namespace Azure.ResourceManager.PureStorageBlock.Models
             ProvisioningState = provisioningState;
             ReservationResourceId = reservationResourceId;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="PureStoragePoolProperties"/>. </summary>
+        /// <param name="availabilityZone"> Azure Availability Zone the Pool is located in. </param>
+        /// <param name="vnetInjection"> Network properties of the storage pool. </param>
+        /// <param name="provisionedBandwidthMbPerSec"> Total bandwidth provisioned for the pool, in MB/s. </param>
+        /// <param name="reservationResourceId"> Azure resource ID of the Pure Storage Cloud service (reservation resource) this storage pool belongs to. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="availabilityZone"/>, <paramref name="vnetInjection"/> or <paramref name="reservationResourceId"/> is null. </exception>
+        public PureStoragePoolProperties(string availabilityZone, PureStoragePoolVnetInjection vnetInjection, long provisionedBandwidthMbPerSec, ResourceIdentifier reservationResourceId) : this(provisionedBandwidthMbPerSec)
+        {
+            Argument.AssertNotNull(availabilityZone, nameof(availabilityZone));
+            Argument.AssertNotNull(vnetInjection, nameof(vnetInjection));
+            Argument.AssertNotNull(reservationResourceId, nameof(reservationResourceId));
+
+            AvailabilityZone = availabilityZone;
+            VnetInjection = vnetInjection;
+            ReservationResourceId = reservationResourceId;
         }
 
         /// <summary> Pure Storage's internal ID of the storage pool. </summary>

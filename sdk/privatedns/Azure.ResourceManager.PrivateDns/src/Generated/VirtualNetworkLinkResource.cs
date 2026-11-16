@@ -441,7 +441,7 @@ namespace Azure.ResourceManager.PrivateDns
                 else
                 {
                     VirtualNetworkLinkData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    VirtualNetworkLinkData patch = new VirtualNetworkLinkData(current.Location);
+                    VirtualNetworkLinkData patch = new VirtualNetworkLinkData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -489,7 +489,7 @@ namespace Azure.ResourceManager.PrivateDns
                 else
                 {
                     VirtualNetworkLinkData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    VirtualNetworkLinkData patch = new VirtualNetworkLinkData(current.Location);
+                    VirtualNetworkLinkData patch = new VirtualNetworkLinkData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -535,7 +535,7 @@ namespace Azure.ResourceManager.PrivateDns
                 else
                 {
                     VirtualNetworkLinkData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    VirtualNetworkLinkData patch = new VirtualNetworkLinkData(current.Location);
+                    VirtualNetworkLinkData patch = new VirtualNetworkLinkData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<VirtualNetworkLinkResource> result = await UpdateAsync(WaitUntil.Completed, patch, cancellationToken: cancellationToken).ConfigureAwait(false);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -577,7 +577,7 @@ namespace Azure.ResourceManager.PrivateDns
                 else
                 {
                     VirtualNetworkLinkData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    VirtualNetworkLinkData patch = new VirtualNetworkLinkData(current.Location);
+                    VirtualNetworkLinkData patch = new VirtualNetworkLinkData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<VirtualNetworkLinkResource> result = Update(WaitUntil.Completed, patch, cancellationToken: cancellationToken);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -619,7 +619,7 @@ namespace Azure.ResourceManager.PrivateDns
                 else
                 {
                     VirtualNetworkLinkData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    VirtualNetworkLinkData patch = new VirtualNetworkLinkData(current.Location);
+                    VirtualNetworkLinkData patch = new VirtualNetworkLinkData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -665,7 +665,7 @@ namespace Azure.ResourceManager.PrivateDns
                 else
                 {
                     VirtualNetworkLinkData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    VirtualNetworkLinkData patch = new VirtualNetworkLinkData(current.Location);
+                    VirtualNetworkLinkData patch = new VirtualNetworkLinkData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);

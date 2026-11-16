@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.PostgreSql.FlexibleServers
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PostgreSqlMigrationData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public PostgreSqlMigrationData(AzureLocation location) : base(location)
+        public PostgreSqlMigrationData()
         {
         }
 
@@ -39,6 +38,13 @@ namespace Azure.ResourceManager.PostgreSql.FlexibleServers
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="PostgreSqlMigrationData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public PostgreSqlMigrationData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Migration properties. </summary>

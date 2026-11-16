@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Quantum
     /// <summary> The resource proxy definition object for Quantum Workspace. </summary>
     public partial class QuantumWorkspaceData : TrackedResourceData, IJsonModel<QuantumWorkspaceData>
     {
-        /// <summary> Initializes a new instance of <see cref="QuantumWorkspaceData"/> for deserialization. </summary>
-        internal QuantumWorkspaceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

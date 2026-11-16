@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.PowerBIDedicated
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DedicatedCapacityData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="sku"> The SKU of the PowerBI Dedicated capacity resource. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sku"/> is null. </exception>
-        public DedicatedCapacityData(AzureLocation location, CapacitySku sku) : base(location)
+        public DedicatedCapacityData(CapacitySku sku)
         {
             Argument.AssertNotNull(sku, nameof(sku));
 
@@ -45,6 +44,14 @@ namespace Azure.ResourceManager.PowerBIDedicated
             Properties = properties;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DedicatedCapacityData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="sku"> The SKU of the PowerBI Dedicated capacity resource. </param>
+        public DedicatedCapacityData(AzureLocation location, CapacitySku sku) : this(sku)
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the provision operation request. </summary>

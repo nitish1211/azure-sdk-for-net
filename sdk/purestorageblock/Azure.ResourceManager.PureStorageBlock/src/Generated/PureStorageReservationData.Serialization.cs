@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.PureStorageBlock
     /// <summary> Pure Storage cloud service resource type, also called reservation. </summary>
     public partial class PureStorageReservationData : TrackedResourceData, IJsonModel<PureStorageReservationData>
     {
-        /// <summary> Initializes a new instance of <see cref="PureStorageReservationData"/> for deserialization. </summary>
-        internal PureStorageReservationData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

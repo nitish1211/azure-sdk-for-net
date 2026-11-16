@@ -21,7 +21,6 @@ namespace Azure.ResourceManager.ProgrammableConnectivity.Models
 
         /// <summary> Initializes a new instance of <see cref="OperatorApiConnectionProperties"/>. </summary>
         /// <param name="operatorApiPlanId"> Reference to the Operator API Plan Resource ID. </param>
-        /// <param name="gatewayId"> Reference to the APC Gateway resource ID. </param>
         /// <param name="isPlanTermsAndConditionsAccepted">
         /// Whether the caller has accepted the Terms and Conditions of the associated Operator API Plan.
         /// After creation, the planTermsAndConditionsLink property is set to the Terms and Conditions that
@@ -31,17 +30,15 @@ namespace Azure.ResourceManager.ProgrammableConnectivity.Models
         /// <param name="purposes"> The purpose for which the Application will use the API. Max Items 1 currently as Operators do not support multiple. </param>
         /// <param name="purposeReason"> Explanation of the reason that justifies the purpose: specifically why is the API used for the application's use case. </param>
         /// <param name="dataProcessingList"> List of ways the data returned on this API is processed. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="operatorApiPlanId"/>, <paramref name="gatewayId"/>, <paramref name="purposes"/>, <paramref name="purposeReason"/> or <paramref name="dataProcessingList"/> is null. </exception>
-        public OperatorApiConnectionProperties(ResourceIdentifier operatorApiPlanId, ResourceIdentifier gatewayId, bool isPlanTermsAndConditionsAccepted, IEnumerable<OperatorApiConnectionPurpose> purposes, string purposeReason, IEnumerable<OperatorApiConnectionDataProcessing> dataProcessingList)
+        /// <exception cref="ArgumentNullException"> <paramref name="operatorApiPlanId"/>, <paramref name="purposes"/>, <paramref name="purposeReason"/> or <paramref name="dataProcessingList"/> is null. </exception>
+        public OperatorApiConnectionProperties(ResourceIdentifier operatorApiPlanId, bool isPlanTermsAndConditionsAccepted, IEnumerable<OperatorApiConnectionPurpose> purposes, string purposeReason, IEnumerable<OperatorApiConnectionDataProcessing> dataProcessingList)
         {
             Argument.AssertNotNull(operatorApiPlanId, nameof(operatorApiPlanId));
-            Argument.AssertNotNull(gatewayId, nameof(gatewayId));
             Argument.AssertNotNull(purposes, nameof(purposes));
             Argument.AssertNotNull(purposeReason, nameof(purposeReason));
             Argument.AssertNotNull(dataProcessingList, nameof(dataProcessingList));
 
             OperatorApiPlanId = operatorApiPlanId;
-            GatewayId = gatewayId;
             IsPlanTermsAndConditionsAccepted = isPlanTermsAndConditionsAccepted;
             PlanTermsAndConditionsLinks = new ChangeTrackingList<string>();
             Purposes = purposes.ToList();

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ProgramEnrollment
     /// <summary> An education program enrollment that groups Entra domains under a single sovereign/edu program scope. </summary>
     public partial class EduEnrollmentData : TrackedResourceData, IJsonModel<EduEnrollmentData>
     {
-        /// <summary> Initializes a new instance of <see cref="EduEnrollmentData"/> for deserialization. </summary>
-        internal EduEnrollmentData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -617,7 +617,7 @@ namespace Azure.ResourceManager.PrivateDns
                 else
                 {
                     PrivateDnsZoneData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    PrivateDnsZoneData patch = new PrivateDnsZoneData(current.Location);
+                    PrivateDnsZoneData patch = new PrivateDnsZoneData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -665,7 +665,7 @@ namespace Azure.ResourceManager.PrivateDns
                 else
                 {
                     PrivateDnsZoneData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    PrivateDnsZoneData patch = new PrivateDnsZoneData(current.Location);
+                    PrivateDnsZoneData patch = new PrivateDnsZoneData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -711,7 +711,7 @@ namespace Azure.ResourceManager.PrivateDns
                 else
                 {
                     PrivateDnsZoneData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    PrivateDnsZoneData patch = new PrivateDnsZoneData(current.Location);
+                    PrivateDnsZoneData patch = new PrivateDnsZoneData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<PrivateDnsZoneResource> result = await UpdateAsync(WaitUntil.Completed, patch, cancellationToken: cancellationToken).ConfigureAwait(false);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -753,7 +753,7 @@ namespace Azure.ResourceManager.PrivateDns
                 else
                 {
                     PrivateDnsZoneData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    PrivateDnsZoneData patch = new PrivateDnsZoneData(current.Location);
+                    PrivateDnsZoneData patch = new PrivateDnsZoneData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<PrivateDnsZoneResource> result = Update(WaitUntil.Completed, patch, cancellationToken: cancellationToken);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -795,7 +795,7 @@ namespace Azure.ResourceManager.PrivateDns
                 else
                 {
                     PrivateDnsZoneData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    PrivateDnsZoneData patch = new PrivateDnsZoneData(current.Location);
+                    PrivateDnsZoneData patch = new PrivateDnsZoneData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -841,7 +841,7 @@ namespace Azure.ResourceManager.PrivateDns
                 else
                 {
                     PrivateDnsZoneData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    PrivateDnsZoneData patch = new PrivateDnsZoneData(current.Location);
+                    PrivateDnsZoneData patch = new PrivateDnsZoneData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);

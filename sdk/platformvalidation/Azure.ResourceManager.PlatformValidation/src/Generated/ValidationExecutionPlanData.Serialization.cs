@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.PlatformValidation
     /// <summary> Validation Test Execution Plan. </summary>
     public partial class ValidationExecutionPlanData : TrackedResourceData, IJsonModel<ValidationExecutionPlanData>
     {
-        /// <summary> Initializes a new instance of <see cref="ValidationExecutionPlanData"/> for deserialization. </summary>
-        internal ValidationExecutionPlanData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

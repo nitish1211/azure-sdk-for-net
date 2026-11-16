@@ -18,11 +18,6 @@ namespace Azure.ResourceManager.ProgramEnrollment.Models
     /// <summary> Details of the Program EduEnrollment. </summary>
     public partial class EduEnrollmentProperties : IJsonModel<EduEnrollmentProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="EduEnrollmentProperties"/> for deserialization. </summary>
-        internal EduEnrollmentProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual EduEnrollmentProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

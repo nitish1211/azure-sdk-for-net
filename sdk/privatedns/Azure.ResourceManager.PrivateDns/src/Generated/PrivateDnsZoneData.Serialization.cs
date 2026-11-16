@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.PrivateDns
     /// <summary> Describes a Private DNS zone. </summary>
     public partial class PrivateDnsZoneData : TrackedResourceData, IJsonModel<PrivateDnsZoneData>
     {
-        /// <summary> Initializes a new instance of <see cref="PrivateDnsZoneData"/> for deserialization. </summary>
-        internal PrivateDnsZoneData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

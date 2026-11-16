@@ -18,15 +18,12 @@ namespace Azure.ResourceManager.PureStorageBlock.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PureStorageReservationProperties"/>. </summary>
-        /// <param name="marketplace"> Marketplace details. </param>
         /// <param name="user"> User details. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="marketplace"/> or <paramref name="user"/> is null. </exception>
-        public PureStorageReservationProperties(PureStorageMarketplaceDetails marketplace, PureStorageUserDetails user)
+        /// <exception cref="ArgumentNullException"> <paramref name="user"/> is null. </exception>
+        public PureStorageReservationProperties(PureStorageUserDetails user)
         {
-            Argument.AssertNotNull(marketplace, nameof(marketplace));
             Argument.AssertNotNull(user, nameof(user));
 
-            Marketplace = marketplace;
             User = user;
         }
 
@@ -43,6 +40,17 @@ namespace Azure.ResourceManager.PureStorageBlock.Models
             User = user;
             ProvisioningState = provisioningState;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="PureStorageReservationProperties"/>. </summary>
+        /// <param name="marketplace"> Marketplace details. </param>
+        /// <param name="user"> User details. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="marketplace"/> is null. </exception>
+        public PureStorageReservationProperties(PureStorageMarketplaceDetails marketplace, PureStorageUserDetails user) : this(user)
+        {
+            Argument.AssertNotNull(marketplace, nameof(marketplace));
+
+            Marketplace = marketplace;
         }
 
         /// <summary> Pure Storage's internal ID for the reservation. </summary>

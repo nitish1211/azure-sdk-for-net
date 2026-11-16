@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.PureStorageBlock.Models
     /// <summary> Soft-deletion state. </summary>
     public partial class PureStorageSoftDeletionState : IJsonModel<PureStorageSoftDeletionState>
     {
-        /// <summary> Initializes a new instance of <see cref="PureStorageSoftDeletionState"/> for deserialization. </summary>
-        internal PureStorageSoftDeletionState()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual PureStorageSoftDeletionState PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

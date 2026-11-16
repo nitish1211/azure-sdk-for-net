@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.Qumulo
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="QumuloFileSystemResourceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public QumuloFileSystemResourceData(AzureLocation location) : base(location)
+        public QumuloFileSystemResourceData()
         {
         }
 
@@ -43,6 +42,13 @@ namespace Azure.ResourceManager.Qumulo
             Identity = identity;
             InitialCapacity = initialCapacity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="QumuloFileSystemResourceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public QumuloFileSystemResourceData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

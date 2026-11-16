@@ -20,9 +20,8 @@ namespace Azure.ResourceManager.PowerPlatform
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="EnterprisePolicyData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="kind"> The kind (type) of Enterprise Policy. </param>
-        public EnterprisePolicyData(AzureLocation location, EnterprisePolicyKind kind) : base(location)
+        public EnterprisePolicyData(EnterprisePolicyKind kind)
         {
             Kind = kind;
         }

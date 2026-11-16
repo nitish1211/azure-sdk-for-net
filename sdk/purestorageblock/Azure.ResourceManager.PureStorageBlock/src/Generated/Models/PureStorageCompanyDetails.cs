@@ -18,13 +18,8 @@ namespace Azure.ResourceManager.PureStorageBlock.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PureStorageCompanyDetails"/>. </summary>
-        /// <param name="companyName"> Company name. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="companyName"/> is null. </exception>
-        public PureStorageCompanyDetails(string companyName)
+        public PureStorageCompanyDetails()
         {
-            Argument.AssertNotNull(companyName, nameof(companyName));
-
-            CompanyName = companyName;
         }
 
         /// <summary> Initializes a new instance of <see cref="PureStorageCompanyDetails"/>. </summary>
@@ -36,6 +31,16 @@ namespace Azure.ResourceManager.PureStorageBlock.Models
             CompanyName = companyName;
             Address = address;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="PureStorageCompanyDetails"/>. </summary>
+        /// <param name="companyName"> Company name. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="companyName"/> is null. </exception>
+        public PureStorageCompanyDetails(string companyName) : this()
+        {
+            Argument.AssertNotNull(companyName, nameof(companyName));
+
+            CompanyName = companyName;
         }
 
         /// <summary> Company name. </summary>
