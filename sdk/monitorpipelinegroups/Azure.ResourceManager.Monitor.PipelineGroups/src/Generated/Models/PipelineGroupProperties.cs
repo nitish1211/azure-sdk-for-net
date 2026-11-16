@@ -19,22 +19,11 @@ namespace Azure.ResourceManager.Monitor.PipelineGroups.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PipelineGroupProperties"/>. </summary>
-        /// <param name="receivers"> The receivers specified for a pipeline group instance. </param>
-        /// <param name="processors"> The processors specified for a pipeline group instance. </param>
-        /// <param name="exporters"> The exporters specified for a pipeline group instance. </param>
-        /// <param name="service"> The service section for a given pipeline group instance. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="receivers"/>, <paramref name="processors"/>, <paramref name="exporters"/> or <paramref name="service"/> is null. </exception>
-        public PipelineGroupProperties(IEnumerable<PipelineGroupReceiver> receivers, IEnumerable<PipelineGroupProcessor> processors, IEnumerable<PipelineGroupExporter> exporters, PipelineGroupService service)
+        public PipelineGroupProperties()
         {
-            Argument.AssertNotNull(receivers, nameof(receivers));
-            Argument.AssertNotNull(processors, nameof(processors));
-            Argument.AssertNotNull(exporters, nameof(exporters));
-            Argument.AssertNotNull(service, nameof(service));
-
-            Receivers = receivers.ToList();
-            Processors = processors.ToList();
-            Exporters = exporters.ToList();
-            Service = service;
+            Receivers = new ChangeTrackingList<PipelineGroupReceiver>();
+            Processors = new ChangeTrackingList<PipelineGroupProcessor>();
+            Exporters = new ChangeTrackingList<PipelineGroupExporter>();
             TlsConfigurations = new ChangeTrackingList<PipelineGroupTlsConfiguration>();
         }
 
@@ -59,6 +48,25 @@ namespace Azure.ResourceManager.Monitor.PipelineGroups.Models
             TlsConfigurations = tlsConfigurations;
             ProvisioningState = provisioningState;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="PipelineGroupProperties"/>. </summary>
+        /// <param name="receivers"> The receivers specified for a pipeline group instance. </param>
+        /// <param name="processors"> The processors specified for a pipeline group instance. </param>
+        /// <param name="exporters"> The exporters specified for a pipeline group instance. </param>
+        /// <param name="service"> The service section for a given pipeline group instance. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="receivers"/>, <paramref name="processors"/>, <paramref name="exporters"/> or <paramref name="service"/> is null. </exception>
+        public PipelineGroupProperties(IEnumerable<PipelineGroupReceiver> receivers, IEnumerable<PipelineGroupProcessor> processors, IEnumerable<PipelineGroupExporter> exporters, PipelineGroupService service) : this()
+        {
+            Argument.AssertNotNull(receivers, nameof(receivers));
+            Argument.AssertNotNull(processors, nameof(processors));
+            Argument.AssertNotNull(exporters, nameof(exporters));
+            Argument.AssertNotNull(service, nameof(service));
+
+            Receivers = receivers.ToList();
+            Processors = processors.ToList();
+            Exporters = exporters.ToList();
+            Service = service;
         }
 
         /// <summary> Defines the amount of replicas of the pipeline group instance. </summary>

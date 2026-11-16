@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.ManufacturingPlatform.Models
     /// <summary> The resource model definition representing SKU. </summary>
     public partial class ManufacturingPlatformSku : IJsonModel<ManufacturingPlatformSku>
     {
-        /// <summary> Initializes a new instance of <see cref="ManufacturingPlatformSku"/> for deserialization. </summary>
-        internal ManufacturingPlatformSku()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ManufacturingPlatformSku PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

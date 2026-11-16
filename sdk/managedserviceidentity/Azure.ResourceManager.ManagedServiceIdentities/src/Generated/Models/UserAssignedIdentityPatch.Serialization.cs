@@ -19,11 +19,6 @@ namespace Azure.ResourceManager.ManagedServiceIdentities.Models
     /// <summary> Describes an identity resource. </summary>
     public partial class UserAssignedIdentityPatch : TrackedResourceData, IJsonModel<UserAssignedIdentityPatch>
     {
-        /// <summary> Initializes a new instance of <see cref="UserAssignedIdentityPatch"/> for deserialization. </summary>
-        internal UserAssignedIdentityPatch()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

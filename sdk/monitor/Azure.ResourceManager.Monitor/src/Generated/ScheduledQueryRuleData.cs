@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.Monitor
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ScheduledQueryRuleData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ScheduledQueryRuleData(AzureLocation location) : base(location)
+        public ScheduledQueryRuleData()
         {
 
         }
@@ -46,6 +45,13 @@ namespace Azure.ResourceManager.Monitor
             Kind = kind;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ScheduledQueryRuleData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ScheduledQueryRuleData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The rule properties of the resource. </summary>

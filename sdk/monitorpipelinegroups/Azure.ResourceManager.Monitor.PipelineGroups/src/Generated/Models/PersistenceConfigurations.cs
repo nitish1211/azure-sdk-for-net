@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.Monitor.PipelineGroups;
 
 namespace Azure.ResourceManager.Monitor.PipelineGroups.Models
 {
@@ -18,13 +17,8 @@ namespace Azure.ResourceManager.Monitor.PipelineGroups.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PersistenceConfigurations"/>. </summary>
-        /// <param name="persistentVolumeName"> The name of the mounted persistent volume. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="persistentVolumeName"/> is null. </exception>
-        public PersistenceConfigurations(string persistentVolumeName)
+        public PersistenceConfigurations()
         {
-            Argument.AssertNotNull(persistentVolumeName, nameof(persistentVolumeName));
-
-            PersistentVolumeName = persistentVolumeName;
         }
 
         /// <summary> Initializes a new instance of <see cref="PersistenceConfigurations"/>. </summary>

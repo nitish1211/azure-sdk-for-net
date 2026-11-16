@@ -20,12 +20,11 @@ namespace Azure.ResourceManager.Monitor
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="LogProfileData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="locations"> List of regions for which Activity Log events should be stored or streamed. It is a comma separated list of valid ARM locations including the 'global' location. </param>
         /// <param name="categories"> the categories of the logs. These categories are created as is convenient to the user. Some values are: 'Write', 'Delete', and/or 'Action.'. </param>
         /// <param name="retentionPolicy"> the retention policy for the events in the log. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="locations"/>, <paramref name="categories"/> or <paramref name="retentionPolicy"/> is null. </exception>
-        public LogProfileData(AzureLocation location, IEnumerable<AzureLocation> locations, IEnumerable<string> categories, RetentionPolicy retentionPolicy) : base(location)
+        public LogProfileData(IEnumerable<AzureLocation> locations, IEnumerable<string> categories, RetentionPolicy retentionPolicy)
         {
             Argument.AssertNotNull(locations, nameof(locations));
             Argument.AssertNotNull(categories, nameof(categories));
@@ -47,6 +46,16 @@ namespace Azure.ResourceManager.Monitor
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="LogProfileData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="locations"> List of regions for which Activity Log events should be stored or streamed. It is a comma separated list of valid ARM locations including the 'global' location. </param>
+        /// <param name="categories"> the categories of the logs. These categories are created as is convenient to the user. Some values are: 'Write', 'Delete', and/or 'Action.'. </param>
+        /// <param name="retentionPolicy"> the retention policy for the events in the log. </param>
+        public LogProfileData(AzureLocation location, IEnumerable<AzureLocation> locations, IEnumerable<string> categories, RetentionPolicy retentionPolicy) : this(locations, categories, retentionPolicy)
+        {
+            Location = location;
         }
 
         /// <summary> The log profile properties of the resource. </summary>

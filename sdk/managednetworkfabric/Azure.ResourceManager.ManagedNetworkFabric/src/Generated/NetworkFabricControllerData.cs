@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkFabricControllerData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public NetworkFabricControllerData(AzureLocation location) : base(location)
+        public NetworkFabricControllerData()
         {
 
         }
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkFabricControllerData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public NetworkFabricControllerData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The NetworkFabricController Properties. </summary>

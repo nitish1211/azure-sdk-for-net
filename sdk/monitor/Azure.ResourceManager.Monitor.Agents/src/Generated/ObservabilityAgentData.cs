@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Monitor.Agents
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ObservabilityAgentData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ObservabilityAgentData(AzureLocation location) : base(location)
+        public ObservabilityAgentData()
         {
         }
 

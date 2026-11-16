@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.MongoDBAtlas.Models
     /// <summary> User details for an organization. </summary>
     public partial class MongoDBAtlasUserDetails : IJsonModel<MongoDBAtlasUserDetails>
     {
-        /// <summary> Initializes a new instance of <see cref="MongoDBAtlasUserDetails"/> for deserialization. </summary>
-        internal MongoDBAtlasUserDetails()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual MongoDBAtlasUserDetails PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

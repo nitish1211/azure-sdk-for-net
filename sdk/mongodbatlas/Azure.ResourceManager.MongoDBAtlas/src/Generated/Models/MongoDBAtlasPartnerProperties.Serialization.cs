@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.MongoDBAtlas.Models
     /// <summary> MongoDB specific Properties. </summary>
     public partial class MongoDBAtlasPartnerProperties : IJsonModel<MongoDBAtlasPartnerProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="MongoDBAtlasPartnerProperties"/> for deserialization. </summary>
-        internal MongoDBAtlasPartnerProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual MongoDBAtlasPartnerProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

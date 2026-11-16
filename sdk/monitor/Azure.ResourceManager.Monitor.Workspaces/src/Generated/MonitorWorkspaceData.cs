@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.Monitor.Workspaces
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="MonitorWorkspaceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public MonitorWorkspaceData(AzureLocation location) : base(location)
+        public MonitorWorkspaceData()
         {
         }
 
@@ -43,6 +42,13 @@ namespace Azure.ResourceManager.Monitor.Workspaces
             Identity = identity;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MonitorWorkspaceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public MonitorWorkspaceData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Resource properties. </summary>

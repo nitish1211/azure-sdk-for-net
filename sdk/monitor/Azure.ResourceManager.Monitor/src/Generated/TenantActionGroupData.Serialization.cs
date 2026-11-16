@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Monitor
     /// <summary> A tenant action group resource. </summary>
     public partial class TenantActionGroupData : TrackedResourceData, IJsonModel<TenantActionGroupData>
     {
-        /// <summary> Initializes a new instance of <see cref="TenantActionGroupData"/> for deserialization. </summary>
-        internal TenantActionGroupData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

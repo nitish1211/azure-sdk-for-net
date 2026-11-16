@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.ManagedNetworkFabric.Models
     /// <summary> L3 Isolation Domain Properties defines the properties of the resource. </summary>
     internal partial class L3IsolationDomainProperties : IJsonModel<L3IsolationDomainProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="L3IsolationDomainProperties"/> for deserialization. </summary>
-        internal L3IsolationDomainProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual L3IsolationDomainProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

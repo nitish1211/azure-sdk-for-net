@@ -20,14 +20,13 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkFabricL3IsolationDomainData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="networkFabricId"> ARM Resource ID of the Network Fabric. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="networkFabricId"/> is null. </exception>
-        public NetworkFabricL3IsolationDomainData(AzureLocation location, ResourceIdentifier networkFabricId) : base(location)
+        public NetworkFabricL3IsolationDomainData(ResourceIdentifier networkFabricId)
         {
             Argument.AssertNotNull(networkFabricId, nameof(networkFabricId));
 
-            Properties = new L3IsolationDomainProperties(networkFabricId);
+            Properties = new L3IsolationDomainProperties();
         }
 
         /// <summary> Initializes a new instance of <see cref="NetworkFabricL3IsolationDomainData"/>. </summary>
@@ -45,6 +44,14 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkFabricL3IsolationDomainData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="networkFabricId"> ARM Resource ID of the Network Fabric. </param>
+        public NetworkFabricL3IsolationDomainData(AzureLocation location, ResourceIdentifier networkFabricId) : this(networkFabricId)
+        {
+            Location = location;
         }
 
         /// <summary> The L3 Isolation Domain Properties. </summary>

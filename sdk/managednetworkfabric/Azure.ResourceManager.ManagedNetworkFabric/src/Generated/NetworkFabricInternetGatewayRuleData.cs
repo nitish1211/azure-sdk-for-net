@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkFabricInternetGatewayRuleData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="ruleProperties"> Rules for the InternetGateways. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="ruleProperties"/> is null. </exception>
-        public NetworkFabricInternetGatewayRuleData(AzureLocation location, Models.InternetGatewayRules ruleProperties) : base(location)
+        public NetworkFabricInternetGatewayRuleData(Models.InternetGatewayRules ruleProperties)
         {
             Argument.AssertNotNull(ruleProperties, nameof(ruleProperties));
 
@@ -43,6 +42,14 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkFabricInternetGatewayRuleData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="ruleProperties"> Rules for the InternetGateways. </param>
+        public NetworkFabricInternetGatewayRuleData(AzureLocation location, Models.InternetGatewayRules ruleProperties) : this(ruleProperties)
+        {
+            Location = location;
         }
 
         /// <summary> The Internet Gateway Rule properties. </summary>

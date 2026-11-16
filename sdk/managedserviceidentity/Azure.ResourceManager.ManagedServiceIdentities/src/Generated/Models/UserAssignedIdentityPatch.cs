@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.ManagedServiceIdentities.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="UserAssignedIdentityPatch"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public UserAssignedIdentityPatch(AzureLocation location) : base(location)
+        public UserAssignedIdentityPatch()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.ManagedServiceIdentities.Models
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="UserAssignedIdentityPatch"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public UserAssignedIdentityPatch(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The properties associated with the identity. </summary>

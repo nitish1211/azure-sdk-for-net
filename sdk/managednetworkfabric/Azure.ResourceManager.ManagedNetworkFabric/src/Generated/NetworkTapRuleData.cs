@@ -20,9 +20,8 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkTapRuleData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="configurationType"> Input method to configure Network Tap Rule. </param>
-        public NetworkTapRuleData(AzureLocation location, NetworkFabricConfigurationType configurationType) : base(location)
+        public NetworkTapRuleData(NetworkFabricConfigurationType configurationType)
         {
 
             Properties = new NetworkTapRuleProperties(configurationType);

@@ -20,10 +20,8 @@ namespace Azure.ResourceManager.Monitor
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ServiceDiagnosticSettingData"/>. </summary>
-        /// <param name="location"> Resource location. </param>
-        public ServiceDiagnosticSettingData(AzureLocation location)
+        public ServiceDiagnosticSettingData()
         {
-            Location = location;
             Tags = new ChangeTrackingDictionary<string, string>();
         }
 

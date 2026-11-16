@@ -17,15 +17,12 @@ namespace Azure.ResourceManager.ManagedNetworkFabric.Models
     internal partial class NetworkTapProperties : AnnotationResourceProperties
     {
         /// <summary> Initializes a new instance of <see cref="NetworkTapProperties"/>. </summary>
-        /// <param name="networkPacketBrokerId"> ARM resource ID of the Network Packet Broker. </param>
         /// <param name="destinationSettings"> List of destinations to send the filter traffic. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="networkPacketBrokerId"/> or <paramref name="destinationSettings"/> is null. </exception>
-        public NetworkTapProperties(ResourceIdentifier networkPacketBrokerId, IEnumerable<NetworkTapDestinationProperties> destinationSettings)
+        /// <exception cref="ArgumentNullException"> <paramref name="destinationSettings"/> is null. </exception>
+        public NetworkTapProperties(IEnumerable<NetworkTapDestinationProperties> destinationSettings)
         {
-            Argument.AssertNotNull(networkPacketBrokerId, nameof(networkPacketBrokerId));
             Argument.AssertNotNull(destinationSettings, nameof(destinationSettings));
 
-            NetworkPacketBrokerId = networkPacketBrokerId;
             NetworkFabricIds = new ChangeTrackingList<ResourceIdentifier>();
             DestinationSettings = destinationSettings.ToList();
         }

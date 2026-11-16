@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Monitor.PipelineGroups.Models
     /// <summary> Persistence options to all pipelines in the instance. </summary>
     internal partial class PersistenceConfigurations : IJsonModel<PersistenceConfigurations>
     {
-        /// <summary> Initializes a new instance of <see cref="PersistenceConfigurations"/> for deserialization. </summary>
-        internal PersistenceConfigurations()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual PersistenceConfigurations PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

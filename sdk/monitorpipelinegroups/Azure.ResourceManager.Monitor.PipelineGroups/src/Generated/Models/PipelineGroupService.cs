@@ -19,13 +19,9 @@ namespace Azure.ResourceManager.Monitor.PipelineGroups.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PipelineGroupService"/>. </summary>
-        /// <param name="pipelines"> Pipelines belonging to a given pipeline group. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="pipelines"/> is null. </exception>
-        public PipelineGroupService(IEnumerable<PipelineGroupPipeline> pipelines)
+        public PipelineGroupService()
         {
-            Argument.AssertNotNull(pipelines, nameof(pipelines));
-
-            Pipelines = pipelines.ToList();
+            Pipelines = new ChangeTrackingList<PipelineGroupPipeline>();
         }
 
         /// <summary> Initializes a new instance of <see cref="PipelineGroupService"/>. </summary>
@@ -37,6 +33,16 @@ namespace Azure.ResourceManager.Monitor.PipelineGroups.Models
             Pipelines = pipelines;
             Persistence = persistence;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="PipelineGroupService"/>. </summary>
+        /// <param name="pipelines"> Pipelines belonging to a given pipeline group. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="pipelines"/> is null. </exception>
+        public PipelineGroupService(IEnumerable<PipelineGroupPipeline> pipelines) : this()
+        {
+            Argument.AssertNotNull(pipelines, nameof(pipelines));
+
+            Pipelines = pipelines.ToList();
         }
 
         /// <summary> Pipelines belonging to a given pipeline group. </summary>
@@ -54,7 +60,11 @@ namespace Azure.ResourceManager.Monitor.PipelineGroups.Models
             }
             set
             {
-                Persistence = new PersistenceConfigurations(value);
+                if (Persistence is null)
+                {
+                    Persistence = new PersistenceConfigurations();
+                }
+                Persistence.PersistentVolumeName = value;
             }
         }
     }

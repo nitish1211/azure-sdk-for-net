@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.ManufacturingPlatform;
 
 namespace Azure.ResourceManager.ManufacturingPlatform.Models
 {
@@ -19,19 +18,8 @@ namespace Azure.ResourceManager.ManufacturingPlatform.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="UserManagedOpenAIProfile"/>. </summary>
-        /// <param name="id"> Resource Id of OpenAI Resource. </param>
-        /// <param name="gptModelDeploymentName"> GPT Model Deployment Name. </param>
-        /// <param name="embeddingModelDeploymentName"> Embedding Model Deployment Name. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="id"/>, <paramref name="gptModelDeploymentName"/> or <paramref name="embeddingModelDeploymentName"/> is null. </exception>
-        public UserManagedOpenAIProfile(ResourceIdentifier id, string gptModelDeploymentName, string embeddingModelDeploymentName)
+        public UserManagedOpenAIProfile()
         {
-            Argument.AssertNotNull(id, nameof(id));
-            Argument.AssertNotNull(gptModelDeploymentName, nameof(gptModelDeploymentName));
-            Argument.AssertNotNull(embeddingModelDeploymentName, nameof(embeddingModelDeploymentName));
-
-            Id = id;
-            GptModelDeploymentName = gptModelDeploymentName;
-            EmbeddingModelDeploymentName = embeddingModelDeploymentName;
         }
 
         /// <summary> Initializes a new instance of <see cref="UserManagedOpenAIProfile"/>. </summary>

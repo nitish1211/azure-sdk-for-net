@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.ManagedNetworkFabric;
 
 namespace Azure.ResourceManager.ManagedNetworkFabric.Models
 {
@@ -19,13 +18,8 @@ namespace Azure.ResourceManager.ManagedNetworkFabric.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="L3IsolationDomainProperties"/>. </summary>
-        /// <param name="networkFabricId"> ARM Resource ID of the Network Fabric. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="networkFabricId"/> is null. </exception>
-        public L3IsolationDomainProperties(ResourceIdentifier networkFabricId)
+        public L3IsolationDomainProperties()
         {
-            Argument.AssertNotNull(networkFabricId, nameof(networkFabricId));
-
-            NetworkFabricId = networkFabricId;
         }
 
         /// <summary> Initializes a new instance of <see cref="L3IsolationDomainProperties"/>. </summary>

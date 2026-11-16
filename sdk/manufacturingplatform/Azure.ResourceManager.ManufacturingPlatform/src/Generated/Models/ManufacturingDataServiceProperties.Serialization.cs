@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.ManufacturingPlatform.Models
     /// <summary> Details of the ManufacturingPlatform MdsResource. </summary>
     public partial class ManufacturingDataServiceProperties : IJsonModel<ManufacturingDataServiceProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="ManufacturingDataServiceProperties"/> for deserialization. </summary>
-        internal ManufacturingDataServiceProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ManufacturingDataServiceProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

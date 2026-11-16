@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
     /// <summary> The NetworkMonitor resource definition. </summary>
     public partial class NetworkMonitorData : TrackedResourceData, IJsonModel<NetworkMonitorData>
     {
-        /// <summary> Initializes a new instance of <see cref="NetworkMonitorData"/> for deserialization. </summary>
-        internal NetworkMonitorData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

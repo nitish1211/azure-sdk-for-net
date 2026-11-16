@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkFabricIPExtendedCommunityData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="ipExtendedCommunityRules"> List of IP Extended Community Rules. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="ipExtendedCommunityRules"/> is null. </exception>
-        public NetworkFabricIPExtendedCommunityData(AzureLocation location, IEnumerable<IPExtendedCommunityRule> ipExtendedCommunityRules) : base(location)
+        public NetworkFabricIPExtendedCommunityData(IEnumerable<IPExtendedCommunityRule> ipExtendedCommunityRules)
         {
             Argument.AssertNotNull(ipExtendedCommunityRules, nameof(ipExtendedCommunityRules));
 
@@ -43,6 +42,14 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkFabricIPExtendedCommunityData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="ipExtendedCommunityRules"> List of IP Extended Community Rules. </param>
+        public NetworkFabricIPExtendedCommunityData(AzureLocation location, IEnumerable<IPExtendedCommunityRule> ipExtendedCommunityRules) : this(ipExtendedCommunityRules)
+        {
+            Location = location;
         }
 
         /// <summary> The IpExtendedCommunity properties. </summary>

@@ -20,11 +20,10 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkFabricRoutePolicyData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="statements"> Route Policy statements. </param>
         /// <param name="networkFabricId"> Arm Resource ID of Network Fabric. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="statements"/> or <paramref name="networkFabricId"/> is null. </exception>
-        public NetworkFabricRoutePolicyData(AzureLocation location, IEnumerable<RoutePolicyStatementProperties> statements, ResourceIdentifier networkFabricId) : base(location)
+        public NetworkFabricRoutePolicyData(IEnumerable<RoutePolicyStatementProperties> statements, ResourceIdentifier networkFabricId)
         {
             Argument.AssertNotNull(statements, nameof(statements));
             Argument.AssertNotNull(networkFabricId, nameof(networkFabricId));
@@ -45,6 +44,15 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkFabricRoutePolicyData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="statements"> Route Policy statements. </param>
+        /// <param name="networkFabricId"> Arm Resource ID of Network Fabric. </param>
+        public NetworkFabricRoutePolicyData(AzureLocation location, IEnumerable<RoutePolicyStatementProperties> statements, ResourceIdentifier networkFabricId) : this(statements, networkFabricId)
+        {
+            Location = location;
         }
 
         /// <summary> The RoutePolicy properties. </summary>

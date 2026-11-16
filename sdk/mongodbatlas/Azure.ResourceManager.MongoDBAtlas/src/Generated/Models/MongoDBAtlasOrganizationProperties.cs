@@ -18,15 +18,12 @@ namespace Azure.ResourceManager.MongoDBAtlas.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="MongoDBAtlasOrganizationProperties"/>. </summary>
-        /// <param name="marketplace"> Marketplace details of the resource. </param>
         /// <param name="user"> Details of the user. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="marketplace"/> or <paramref name="user"/> is null. </exception>
-        public MongoDBAtlasOrganizationProperties(MongoDBAtlasMarketplaceDetails marketplace, MongoDBAtlasUserDetails user)
+        /// <exception cref="ArgumentNullException"> <paramref name="user"/> is null. </exception>
+        public MongoDBAtlasOrganizationProperties(MongoDBAtlasUserDetails user)
         {
-            Argument.AssertNotNull(marketplace, nameof(marketplace));
             Argument.AssertNotNull(user, nameof(user));
 
-            Marketplace = marketplace;
             User = user;
         }
 
@@ -43,6 +40,17 @@ namespace Azure.ResourceManager.MongoDBAtlas.Models
             ProvisioningState = provisioningState;
             PartnerProperties = partnerProperties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MongoDBAtlasOrganizationProperties"/>. </summary>
+        /// <param name="marketplace"> Marketplace details of the resource. </param>
+        /// <param name="user"> Details of the user. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="marketplace"/> is null. </exception>
+        public MongoDBAtlasOrganizationProperties(MongoDBAtlasMarketplaceDetails marketplace, MongoDBAtlasUserDetails user) : this(user)
+        {
+            Argument.AssertNotNull(marketplace, nameof(marketplace));
+
+            Marketplace = marketplace;
         }
 
         /// <summary> Marketplace details of the resource. </summary>

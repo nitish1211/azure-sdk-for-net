@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Monitor
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="TenantActionGroupData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public TenantActionGroupData(AzureLocation location) : base(location)
+        public TenantActionGroupData()
         {
         }
 

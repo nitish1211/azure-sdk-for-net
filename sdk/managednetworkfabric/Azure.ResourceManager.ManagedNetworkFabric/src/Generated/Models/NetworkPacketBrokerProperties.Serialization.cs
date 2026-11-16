@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.ManagedNetworkFabric.Models
     /// <summary> Network Packet Broker Properties defines the properties of the resource. </summary>
     internal partial class NetworkPacketBrokerProperties : IJsonModel<NetworkPacketBrokerProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="NetworkPacketBrokerProperties"/> for deserialization. </summary>
-        internal NetworkPacketBrokerProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual NetworkPacketBrokerProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

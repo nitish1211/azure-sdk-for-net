@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.MongoCluster
     /// <summary> Represents a mongo cluster resource. </summary>
     public partial class MongoClusterData : TrackedResourceData, IJsonModel<MongoClusterData>
     {
-        /// <summary> Initializes a new instance of <see cref="MongoClusterData"/> for deserialization. </summary>
-        internal MongoClusterData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

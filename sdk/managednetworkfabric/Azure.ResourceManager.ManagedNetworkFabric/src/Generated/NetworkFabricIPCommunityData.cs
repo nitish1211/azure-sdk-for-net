@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkFabricIPCommunityData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="ipCommunityRules"> List of IP Community Rules. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="ipCommunityRules"/> is null. </exception>
-        public NetworkFabricIPCommunityData(AzureLocation location, IEnumerable<IPCommunityRule> ipCommunityRules) : base(location)
+        public NetworkFabricIPCommunityData(IEnumerable<IPCommunityRule> ipCommunityRules)
         {
             Argument.AssertNotNull(ipCommunityRules, nameof(ipCommunityRules));
 
@@ -43,6 +42,14 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkFabricIPCommunityData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="ipCommunityRules"> List of IP Community Rules. </param>
+        public NetworkFabricIPCommunityData(AzureLocation location, IEnumerable<IPCommunityRule> ipCommunityRules) : this(ipCommunityRules)
+        {
+            Location = location;
         }
 
         /// <summary> The IP Community Properties. </summary>

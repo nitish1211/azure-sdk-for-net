@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.MongoDBAtlas.Models
     /// <summary> Properties specific to a MongoDB Atlas Cluster. </summary>
     public partial class MongoDBAtlasClusterProperties : IJsonModel<MongoDBAtlasClusterProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="MongoDBAtlasClusterProperties"/> for deserialization. </summary>
-        internal MongoDBAtlasClusterProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual MongoDBAtlasClusterProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

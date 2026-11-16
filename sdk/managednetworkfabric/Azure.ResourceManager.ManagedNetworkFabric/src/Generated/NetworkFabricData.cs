@@ -20,7 +20,6 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkFabricData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="networkFabricSku"> Supported Network Fabric SKU.Example: Compute / Aggregate racks. Once the user chooses a particular SKU, only supported racks can be added to the Network Fabric. The SKU determines whether it is a single / multi rack Network Fabric. </param>
         /// <param name="networkFabricControllerId"> Azure resource ID for the NetworkFabricController the NetworkFabric belongs. </param>
         /// <param name="serverCountPerRack"> Number of servers.Possible values are from 1-16. </param>
@@ -29,7 +28,7 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         /// <param name="terminalServerSettings"> Network and credentials configuration currently applied to terminal server. </param>
         /// <param name="managementNetworkConfiguration"> Configuration to be used to setup the management network. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="networkFabricSku"/>, <paramref name="networkFabricControllerId"/>, <paramref name="ipv4Prefix"/>, <paramref name="terminalServerSettings"/> or <paramref name="managementNetworkConfiguration"/> is null. </exception>
-        public NetworkFabricData(AzureLocation location, string networkFabricSku, ResourceIdentifier networkFabricControllerId, int serverCountPerRack, string ipv4Prefix, long fabricAsn, NetworkFabricTerminalServerConfiguration terminalServerSettings, ManagementNetworkConfigurationProperties managementNetworkConfiguration) : base(location)
+        public NetworkFabricData(string networkFabricSku, ResourceIdentifier networkFabricControllerId, int serverCountPerRack, string ipv4Prefix, long fabricAsn, NetworkFabricTerminalServerConfiguration terminalServerSettings, ManagementNetworkConfigurationProperties managementNetworkConfiguration)
         {
             Argument.AssertNotNull(networkFabricSku, nameof(networkFabricSku));
             Argument.AssertNotNull(networkFabricControllerId, nameof(networkFabricControllerId));
@@ -37,14 +36,7 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
             Argument.AssertNotNull(terminalServerSettings, nameof(terminalServerSettings));
             Argument.AssertNotNull(managementNetworkConfiguration, nameof(managementNetworkConfiguration));
 
-            Properties = new NetworkFabricProperties(
-                networkFabricSku,
-                networkFabricControllerId,
-                serverCountPerRack,
-                ipv4Prefix,
-                fabricAsn,
-                terminalServerSettings,
-                managementNetworkConfiguration);
+            Properties = new NetworkFabricProperties(serverCountPerRack, ipv4Prefix, fabricAsn, terminalServerSettings, managementNetworkConfiguration);
         }
 
         /// <summary> Initializes a new instance of <see cref="NetworkFabricData"/>. </summary>

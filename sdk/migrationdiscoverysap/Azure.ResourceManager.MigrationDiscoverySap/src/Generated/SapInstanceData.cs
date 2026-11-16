@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.MigrationDiscoverySap
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="SapInstanceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public SapInstanceData(AzureLocation location) : base(location)
+        public SapInstanceData()
         {
         }
 

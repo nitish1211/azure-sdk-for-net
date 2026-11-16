@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.MongoDBAtlas
     /// <summary> The resource model definition for an Azure Organization. </summary>
     public partial class MongoDBAtlasOrganizationData : TrackedResourceData, IJsonModel<MongoDBAtlasOrganizationData>
     {
-        /// <summary> Initializes a new instance of <see cref="MongoDBAtlasOrganizationData"/> for deserialization. </summary>
-        internal MongoDBAtlasOrganizationData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

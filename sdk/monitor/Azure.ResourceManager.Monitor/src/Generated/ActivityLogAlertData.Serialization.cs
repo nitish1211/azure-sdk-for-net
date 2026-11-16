@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Monitor
     /// <summary> An Activity Log Alert rule resource. </summary>
     public partial class ActivityLogAlertData : TrackedResourceData, IJsonModel<ActivityLogAlertData>
     {
-        /// <summary> Initializes a new instance of <see cref="ActivityLogAlertData"/> for deserialization. </summary>
-        internal ActivityLogAlertData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -18,13 +18,8 @@ namespace Azure.ResourceManager.MongoDBAtlas.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="MongoDBAtlasPartnerProperties"/>. </summary>
-        /// <param name="organizationName"> Organization name in MongoDB system. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="organizationName"/> is null. </exception>
-        public MongoDBAtlasPartnerProperties(string organizationName)
+        public MongoDBAtlasPartnerProperties()
         {
-            Argument.AssertNotNull(organizationName, nameof(organizationName));
-
-            OrganizationName = organizationName;
         }
 
         /// <summary> Initializes a new instance of <see cref="MongoDBAtlasPartnerProperties"/>. </summary>
@@ -38,6 +33,16 @@ namespace Azure.ResourceManager.MongoDBAtlas.Models
             RedirectUri = redirectUri;
             OrganizationName = organizationName;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MongoDBAtlasPartnerProperties"/>. </summary>
+        /// <param name="organizationName"> Organization name in MongoDB system. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="organizationName"/> is null. </exception>
+        public MongoDBAtlasPartnerProperties(string organizationName) : this()
+        {
+            Argument.AssertNotNull(organizationName, nameof(organizationName));
+
+            OrganizationName = organizationName;
         }
 
         /// <summary> Organization Id in MongoDB system. </summary>

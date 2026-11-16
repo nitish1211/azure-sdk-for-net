@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.Monitor
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="MonitorPrivateLinkScopeData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="accessModeSettings"> Access mode settings. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="accessModeSettings"/> is null. </exception>
-        public MonitorPrivateLinkScopeData(AzureLocation location, MonitorPrivateLinkAccessModeSettings accessModeSettings) : base(location)
+        public MonitorPrivateLinkScopeData(MonitorPrivateLinkAccessModeSettings accessModeSettings)
         {
             Argument.AssertNotNull(accessModeSettings, nameof(accessModeSettings));
 
@@ -43,6 +42,14 @@ namespace Azure.ResourceManager.Monitor
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MonitorPrivateLinkScopeData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="accessModeSettings"> Access mode settings. </param>
+        public MonitorPrivateLinkScopeData(AzureLocation location, MonitorPrivateLinkAccessModeSettings accessModeSettings) : this(accessModeSettings)
+        {
+            Location = location;
         }
 
         /// <summary> Properties that define a Azure Monitor PrivateLinkScope resource. </summary>

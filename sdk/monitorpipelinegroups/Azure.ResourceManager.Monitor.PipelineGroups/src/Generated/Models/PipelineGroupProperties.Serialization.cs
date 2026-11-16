@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Monitor.PipelineGroups.Models
     /// <summary> Properties that need to be specified to create a new pipeline group instance. </summary>
     public partial class PipelineGroupProperties : IJsonModel<PipelineGroupProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="PipelineGroupProperties"/> for deserialization. </summary>
-        internal PipelineGroupProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual PipelineGroupProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

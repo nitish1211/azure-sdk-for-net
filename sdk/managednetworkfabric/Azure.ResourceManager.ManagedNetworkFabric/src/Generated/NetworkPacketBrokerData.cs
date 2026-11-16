@@ -20,14 +20,13 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkPacketBrokerData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="networkFabricId"> ARM resource ID of the Network Fabric. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="networkFabricId"/> is null. </exception>
-        public NetworkPacketBrokerData(AzureLocation location, ResourceIdentifier networkFabricId) : base(location)
+        public NetworkPacketBrokerData(ResourceIdentifier networkFabricId)
         {
             Argument.AssertNotNull(networkFabricId, nameof(networkFabricId));
 
-            Properties = new NetworkPacketBrokerProperties(networkFabricId);
+            Properties = new NetworkPacketBrokerProperties();
         }
 
         /// <summary> Initializes a new instance of <see cref="NetworkPacketBrokerData"/>. </summary>
@@ -45,6 +44,14 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkPacketBrokerData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="networkFabricId"> ARM resource ID of the Network Fabric. </param>
+        public NetworkPacketBrokerData(AzureLocation location, ResourceIdentifier networkFabricId) : this(networkFabricId)
+        {
+            Location = location;
         }
 
         /// <summary> The NetworkPacketBroker properties. </summary>

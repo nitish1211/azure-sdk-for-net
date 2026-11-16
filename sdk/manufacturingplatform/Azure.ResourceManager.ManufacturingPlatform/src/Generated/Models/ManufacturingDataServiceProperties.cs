@@ -19,10 +19,8 @@ namespace Azure.ResourceManager.ManufacturingPlatform.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ManufacturingDataServiceProperties"/>. </summary>
-        /// <param name="aadApplicationId"> AAD Application Id. </param>
-        public ManufacturingDataServiceProperties(Guid aadApplicationId)
+        public ManufacturingDataServiceProperties()
         {
-            AadApplicationId = aadApplicationId;
             DenyAssignmentExclusions = new ChangeTrackingList<DenyAssignmentExclusion>();
         }
 

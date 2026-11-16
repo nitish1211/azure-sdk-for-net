@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.Monitor.PipelineGroups
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PipelineGroupData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public PipelineGroupData(AzureLocation location) : base(location)
+        public PipelineGroupData()
         {
         }
 
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.Monitor.PipelineGroups
             Properties = properties;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="PipelineGroupData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public PipelineGroupData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

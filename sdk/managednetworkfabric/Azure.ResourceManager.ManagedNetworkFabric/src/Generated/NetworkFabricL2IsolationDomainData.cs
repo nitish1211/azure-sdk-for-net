@@ -20,11 +20,10 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkFabricL2IsolationDomainData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="networkFabricId"> ARM Resource ID of the Network Fabric. </param>
         /// <param name="vlanId"> Vlan Identifier of the Network Fabric. Example: 501. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="networkFabricId"/> is null. </exception>
-        public NetworkFabricL2IsolationDomainData(AzureLocation location, ResourceIdentifier networkFabricId, int vlanId) : base(location)
+        public NetworkFabricL2IsolationDomainData(ResourceIdentifier networkFabricId, int vlanId)
         {
             Argument.AssertNotNull(networkFabricId, nameof(networkFabricId));
 
@@ -46,6 +45,15 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkFabricL2IsolationDomainData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="networkFabricId"> ARM Resource ID of the Network Fabric. </param>
+        /// <param name="vlanId"> Vlan Identifier of the Network Fabric. Example: 501. </param>
+        public NetworkFabricL2IsolationDomainData(AzureLocation location, ResourceIdentifier networkFabricId, int vlanId) : this(networkFabricId, vlanId)
+        {
+            Location = location;
         }
 
         /// <summary> The L2IsolationDomain properties. </summary>

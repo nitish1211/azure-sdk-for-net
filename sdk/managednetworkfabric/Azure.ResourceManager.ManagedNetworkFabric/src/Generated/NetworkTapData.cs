@@ -20,16 +20,15 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkTapData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="networkPacketBrokerId"> ARM resource ID of the Network Packet Broker. </param>
         /// <param name="destinationSettings"> List of destinations to send the filter traffic. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="networkPacketBrokerId"/> or <paramref name="destinationSettings"/> is null. </exception>
-        public NetworkTapData(AzureLocation location, ResourceIdentifier networkPacketBrokerId, IEnumerable<NetworkTapDestinationProperties> destinationSettings) : base(location)
+        public NetworkTapData(ResourceIdentifier networkPacketBrokerId, IEnumerable<NetworkTapDestinationProperties> destinationSettings)
         {
             Argument.AssertNotNull(networkPacketBrokerId, nameof(networkPacketBrokerId));
             Argument.AssertNotNull(destinationSettings, nameof(destinationSettings));
 
-            Properties = new NetworkTapProperties(networkPacketBrokerId, destinationSettings);
+            Properties = new NetworkTapProperties(destinationSettings);
         }
 
         /// <summary> Initializes a new instance of <see cref="NetworkTapData"/>. </summary>

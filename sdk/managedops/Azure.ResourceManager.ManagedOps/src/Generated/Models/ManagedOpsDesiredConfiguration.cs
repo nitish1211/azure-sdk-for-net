@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.ManagedOps;
 
 namespace Azure.ResourceManager.ManagedOps.Models
 {
@@ -19,19 +18,8 @@ namespace Azure.ResourceManager.ManagedOps.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ManagedOpsDesiredConfiguration"/>. </summary>
-        /// <param name="changeTrackingAndInventoryLogAnalyticsWorkspaceId"> Log analytics workspace resource ID used by the service. </param>
-        /// <param name="azureMonitorWorkspaceId"> Azure monitor workspace resource ID used by the service. </param>
-        /// <param name="userAssignedManagedIdentityId"> User assigned Managed Identity used to perform operations on machines managed by Ops360. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="changeTrackingAndInventoryLogAnalyticsWorkspaceId"/>, <paramref name="azureMonitorWorkspaceId"/> or <paramref name="userAssignedManagedIdentityId"/> is null. </exception>
-        public ManagedOpsDesiredConfiguration(ResourceIdentifier changeTrackingAndInventoryLogAnalyticsWorkspaceId, ResourceIdentifier azureMonitorWorkspaceId, ResourceIdentifier userAssignedManagedIdentityId)
+        public ManagedOpsDesiredConfiguration()
         {
-            Argument.AssertNotNull(changeTrackingAndInventoryLogAnalyticsWorkspaceId, nameof(changeTrackingAndInventoryLogAnalyticsWorkspaceId));
-            Argument.AssertNotNull(azureMonitorWorkspaceId, nameof(azureMonitorWorkspaceId));
-            Argument.AssertNotNull(userAssignedManagedIdentityId, nameof(userAssignedManagedIdentityId));
-
-            ChangeTrackingAndInventory = new ChangeTrackingConfiguration(changeTrackingAndInventoryLogAnalyticsWorkspaceId);
-            AzureMonitorInsights = new AzureMonitorConfiguration(azureMonitorWorkspaceId);
-            UserAssignedManagedIdentityId = userAssignedManagedIdentityId;
         }
 
         /// <summary> Initializes a new instance of <see cref="ManagedOpsDesiredConfiguration"/>. </summary>

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ManagedServiceIdentities
     /// <summary> Describes a system assigned identity resource. </summary>
     public partial class SystemAssignedIdentityData : TrackedResourceData, IJsonModel<SystemAssignedIdentityData>
     {
-        /// <summary> Initializes a new instance of <see cref="SystemAssignedIdentityData"/> for deserialization. </summary>
-        internal SystemAssignedIdentityData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

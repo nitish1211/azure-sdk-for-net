@@ -21,10 +21,9 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkDeviceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="serialNumber"> Serial number of the device. Format of serial Number - Make;Model;HardwareRevisionId;SerialNumber. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="serialNumber"/> is null. </exception>
-        public NetworkDeviceData(AzureLocation location, string serialNumber) : base(location)
+        public NetworkDeviceData(string serialNumber)
         {
             Argument.AssertNotNull(serialNumber, nameof(serialNumber));
 
@@ -46,6 +45,14 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkDeviceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="serialNumber"> Serial number of the device. Format of serial Number - Make;Model;HardwareRevisionId;SerialNumber. </param>
+        public NetworkDeviceData(AzureLocation location, string serialNumber) : this(serialNumber)
+        {
+            Location = location;
         }
 
         /// <summary> The NetworkDevice properties. </summary>

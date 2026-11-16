@@ -18,19 +18,8 @@ namespace Azure.ResourceManager.MongoDBAtlas.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="MongoDBAtlasUserDetails"/>. </summary>
-        /// <param name="firstName"> First name of the user. </param>
-        /// <param name="lastName"> Last name of the user. </param>
-        /// <param name="emailAddress"> Email address of the user. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="firstName"/>, <paramref name="lastName"/> or <paramref name="emailAddress"/> is null. </exception>
-        public MongoDBAtlasUserDetails(string firstName, string lastName, string emailAddress)
+        public MongoDBAtlasUserDetails()
         {
-            Argument.AssertNotNull(firstName, nameof(firstName));
-            Argument.AssertNotNull(lastName, nameof(lastName));
-            Argument.AssertNotNull(emailAddress, nameof(emailAddress));
-
-            FirstName = firstName;
-            LastName = lastName;
-            EmailAddress = emailAddress;
         }
 
         /// <summary> Initializes a new instance of <see cref="MongoDBAtlasUserDetails"/>. </summary>
@@ -50,6 +39,22 @@ namespace Azure.ResourceManager.MongoDBAtlas.Models
             PhoneNumber = phoneNumber;
             CompanyName = companyName;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MongoDBAtlasUserDetails"/>. </summary>
+        /// <param name="firstName"> First name of the user. </param>
+        /// <param name="lastName"> Last name of the user. </param>
+        /// <param name="emailAddress"> Email address of the user. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="firstName"/>, <paramref name="lastName"/> or <paramref name="emailAddress"/> is null. </exception>
+        public MongoDBAtlasUserDetails(string firstName, string lastName, string emailAddress) : this()
+        {
+            Argument.AssertNotNull(firstName, nameof(firstName));
+            Argument.AssertNotNull(lastName, nameof(lastName));
+            Argument.AssertNotNull(emailAddress, nameof(emailAddress));
+
+            FirstName = firstName;
+            LastName = lastName;
+            EmailAddress = emailAddress;
         }
 
         /// <summary> First name of the user. </summary>

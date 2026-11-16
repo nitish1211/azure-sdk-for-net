@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkRackData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="networkFabricId"> ARM resource ID of the Network Fabric. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="networkFabricId"/> is null. </exception>
-        public NetworkRackData(AzureLocation location, ResourceIdentifier networkFabricId) : base(location)
+        public NetworkRackData(ResourceIdentifier networkFabricId)
         {
             Argument.AssertNotNull(networkFabricId, nameof(networkFabricId));
 
@@ -43,6 +42,14 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkRackData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="networkFabricId"> ARM resource ID of the Network Fabric. </param>
+        public NetworkRackData(AzureLocation location, ResourceIdentifier networkFabricId) : this(networkFabricId)
+        {
+            Location = location;
         }
 
         /// <summary> Network Rack Properties. </summary>

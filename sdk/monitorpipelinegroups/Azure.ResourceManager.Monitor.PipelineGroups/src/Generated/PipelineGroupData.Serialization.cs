@@ -21,11 +21,6 @@ namespace Azure.ResourceManager.Monitor.PipelineGroups
     /// <summary> A pipeline group definition. </summary>
     public partial class PipelineGroupData : TrackedResourceData, IJsonModel<PipelineGroupData>
     {
-        /// <summary> Initializes a new instance of <see cref="PipelineGroupData"/> for deserialization. </summary>
-        internal PipelineGroupData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

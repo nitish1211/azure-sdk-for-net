@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.ManufacturingPlatform.Models
     /// <summary> The properties related to Fabric. </summary>
     public partial class FabricProfile : IJsonModel<FabricProfile>
     {
-        /// <summary> Initializes a new instance of <see cref="FabricProfile"/> for deserialization. </summary>
-        internal FabricProfile()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual FabricProfile PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

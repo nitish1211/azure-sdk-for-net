@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Monitor.PipelineGroups.Models
     /// <summary> Service Info. </summary>
     public partial class PipelineGroupService : IJsonModel<PipelineGroupService>
     {
-        /// <summary> Initializes a new instance of <see cref="PipelineGroupService"/> for deserialization. </summary>
-        internal PipelineGroupService()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual PipelineGroupService PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

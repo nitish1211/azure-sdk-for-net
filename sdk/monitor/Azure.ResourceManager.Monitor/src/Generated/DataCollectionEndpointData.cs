@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.Monitor
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DataCollectionEndpointData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DataCollectionEndpointData(AzureLocation location) : base(location)
+        public DataCollectionEndpointData()
         {
         }
 
@@ -47,6 +46,13 @@ namespace Azure.ResourceManager.Monitor
             Identity = identity;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DataCollectionEndpointData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public DataCollectionEndpointData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Gets or sets the Properties. </summary>

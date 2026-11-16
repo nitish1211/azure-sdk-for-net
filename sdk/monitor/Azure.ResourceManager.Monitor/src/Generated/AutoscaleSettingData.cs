@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.Monitor
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AutoscaleSettingData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="profiles"> the collection of automatic scaling profiles that specify different scaling parameters for different time periods. A maximum of 20 profiles can be specified. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="profiles"/> is null. </exception>
-        public AutoscaleSettingData(AzureLocation location, IEnumerable<AutoscaleProfile> profiles) : base(location)
+        public AutoscaleSettingData(IEnumerable<AutoscaleProfile> profiles)
         {
             Argument.AssertNotNull(profiles, nameof(profiles));
 
@@ -45,6 +44,14 @@ namespace Azure.ResourceManager.Monitor
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="AutoscaleSettingData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="profiles"> the collection of automatic scaling profiles that specify different scaling parameters for different time periods. A maximum of 20 profiles can be specified. </param>
+        public AutoscaleSettingData(AzureLocation location, IEnumerable<AutoscaleProfile> profiles) : this(profiles)
+        {
+            Location = location;
         }
 
         /// <summary> The autoscale setting of the resource. </summary>

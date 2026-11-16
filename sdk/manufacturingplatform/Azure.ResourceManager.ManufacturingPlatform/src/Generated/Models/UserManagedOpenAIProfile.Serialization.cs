@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.ManufacturingPlatform.Models
     /// <summary> The properties related to User Managed OpenAI Resource. </summary>
     public partial class UserManagedOpenAIProfile : IJsonModel<UserManagedOpenAIProfile>
     {
-        /// <summary> Initializes a new instance of <see cref="UserManagedOpenAIProfile"/> for deserialization. </summary>
-        internal UserManagedOpenAIProfile()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual UserManagedOpenAIProfile PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

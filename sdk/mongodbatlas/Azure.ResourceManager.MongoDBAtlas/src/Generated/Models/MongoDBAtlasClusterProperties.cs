@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.MongoDBAtlas;
 
 namespace Azure.ResourceManager.MongoDBAtlas.Models
 {
@@ -22,15 +21,8 @@ namespace Azure.ResourceManager.MongoDBAtlas.Models
         private bool _stateIsDefined;
 
         /// <summary> Initializes a new instance of <see cref="MongoDBAtlasClusterProperties"/>. </summary>
-        /// <param name="clusterTier"> Cluster tier (FREE, FLEX, M10, M30). </param>
-        /// <param name="regionName"> Azure region where the cluster is deployed. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="regionName"/> is null. </exception>
-        public MongoDBAtlasClusterProperties(MongoDBAtlasClusterTier clusterTier, string regionName)
+        public MongoDBAtlasClusterProperties()
         {
-            Argument.AssertNotNull(regionName, nameof(regionName));
-
-            ClusterTier = clusterTier;
-            RegionName = regionName;
         }
 
         /// <summary> Initializes a new instance of <see cref="MongoDBAtlasClusterProperties"/>. </summary>

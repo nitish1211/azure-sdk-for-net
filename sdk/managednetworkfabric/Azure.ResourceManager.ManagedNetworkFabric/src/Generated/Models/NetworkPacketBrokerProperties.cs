@@ -19,13 +19,8 @@ namespace Azure.ResourceManager.ManagedNetworkFabric.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkPacketBrokerProperties"/>. </summary>
-        /// <param name="networkFabricId"> ARM resource ID of the Network Fabric. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="networkFabricId"/> is null. </exception>
-        public NetworkPacketBrokerProperties(ResourceIdentifier networkFabricId)
+        public NetworkPacketBrokerProperties()
         {
-            Argument.AssertNotNull(networkFabricId, nameof(networkFabricId));
-
-            NetworkFabricId = networkFabricId;
             NetworkDeviceIds = new ChangeTrackingList<ResourceIdentifier>();
             SourceInterfaceIds = new ChangeTrackingList<ResourceIdentifier>();
             NetworkTapIds = new ChangeTrackingList<ResourceIdentifier>();

@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.Maps
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="MapsAccountData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="sku"> The SKU of this account. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sku"/> is null. </exception>
-        public MapsAccountData(AzureLocation location, MapsSku sku) : base(location)
+        public MapsAccountData(MapsSku sku)
         {
             Argument.AssertNotNull(sku, nameof(sku));
 
@@ -49,6 +48,14 @@ namespace Azure.ResourceManager.Maps
             Kind = kind;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MapsAccountData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="sku"> The SKU of this account. </param>
+        public MapsAccountData(AzureLocation location, MapsSku sku) : this(sku)
+        {
+            Location = location;
         }
 
         /// <summary> The map account properties. </summary>

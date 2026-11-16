@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.ManufacturingPlatform;
 
 namespace Azure.ResourceManager.ManufacturingPlatform.Models
 {
@@ -18,19 +17,8 @@ namespace Azure.ResourceManager.ManufacturingPlatform.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="FabricProfile"/>. </summary>
-        /// <param name="keyUri"> Azure Key Vault Uri. </param>
-        /// <param name="oneLakeUri"> URI of One Lake. </param>
-        /// <param name="oneLakePath"> One Lake Path. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="keyUri"/>, <paramref name="oneLakeUri"/> or <paramref name="oneLakePath"/> is null. </exception>
-        public FabricProfile(string keyUri, string oneLakeUri, string oneLakePath)
+        public FabricProfile()
         {
-            Argument.AssertNotNull(keyUri, nameof(keyUri));
-            Argument.AssertNotNull(oneLakeUri, nameof(oneLakeUri));
-            Argument.AssertNotNull(oneLakePath, nameof(oneLakePath));
-
-            KeyUri = keyUri;
-            OneLakeUri = oneLakeUri;
-            OneLakePath = oneLakePath;
         }
 
         /// <summary> Initializes a new instance of <see cref="FabricProfile"/>. </summary>

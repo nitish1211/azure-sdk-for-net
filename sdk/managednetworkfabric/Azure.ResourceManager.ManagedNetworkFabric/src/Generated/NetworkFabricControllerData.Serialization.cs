@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
     /// <summary> The Network Fabric Controller resource definition. </summary>
     public partial class NetworkFabricControllerData : TrackedResourceData, IJsonModel<NetworkFabricControllerData>
     {
-        /// <summary> Initializes a new instance of <see cref="NetworkFabricControllerData"/> for deserialization. </summary>
-        internal NetworkFabricControllerData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -16,26 +16,20 @@ namespace Azure.ResourceManager.ManagedNetworkFabric.Models
     public partial class NetworkFabricProperties : AnnotationResourceProperties
     {
         /// <summary> Initializes a new instance of <see cref="NetworkFabricProperties"/>. </summary>
-        /// <param name="networkFabricSku"> Supported Network Fabric SKU.Example: Compute / Aggregate racks. Once the user chooses a particular SKU, only supported racks can be added to the Network Fabric. The SKU determines whether it is a single / multi rack Network Fabric. </param>
-        /// <param name="networkFabricControllerId"> Azure resource ID for the NetworkFabricController the NetworkFabric belongs. </param>
         /// <param name="serverCountPerRack"> Number of servers.Possible values are from 1-16. </param>
         /// <param name="ipv4Prefix"> IPv4Prefix for Management Network. Example: 10.1.0.0/19. </param>
         /// <param name="fabricAsn"> ASN of CE devices for CE/PE connectivity. </param>
         /// <param name="terminalServerSettings"> Network and credentials configuration currently applied to terminal server. </param>
         /// <param name="managementNetworkConfiguration"> Configuration to be used to setup the management network. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="networkFabricSku"/>, <paramref name="networkFabricControllerId"/>, <paramref name="ipv4Prefix"/>, <paramref name="terminalServerSettings"/> or <paramref name="managementNetworkConfiguration"/> is null. </exception>
-        public NetworkFabricProperties(string networkFabricSku, ResourceIdentifier networkFabricControllerId, int serverCountPerRack, string ipv4Prefix, long fabricAsn, NetworkFabricTerminalServerConfiguration terminalServerSettings, ManagementNetworkConfigurationProperties managementNetworkConfiguration)
+        /// <exception cref="ArgumentNullException"> <paramref name="ipv4Prefix"/>, <paramref name="terminalServerSettings"/> or <paramref name="managementNetworkConfiguration"/> is null. </exception>
+        public NetworkFabricProperties(int serverCountPerRack, string ipv4Prefix, long fabricAsn, NetworkFabricTerminalServerConfiguration terminalServerSettings, ManagementNetworkConfigurationProperties managementNetworkConfiguration)
         {
-            Argument.AssertNotNull(networkFabricSku, nameof(networkFabricSku));
-            Argument.AssertNotNull(networkFabricControllerId, nameof(networkFabricControllerId));
             Argument.AssertNotNull(ipv4Prefix, nameof(ipv4Prefix));
             Argument.AssertNotNull(terminalServerSettings, nameof(terminalServerSettings));
             Argument.AssertNotNull(managementNetworkConfiguration, nameof(managementNetworkConfiguration));
 
-            NetworkFabricSku = networkFabricSku;
             RouterIds = new ChangeTrackingList<string>();
             FabricLocks = new ChangeTrackingList<NetworkFabricLock>();
-            NetworkFabricControllerId = networkFabricControllerId;
             ServerCountPerRack = serverCountPerRack;
             IPv4Prefix = ipv4Prefix;
             FabricAsn = fabricAsn;

@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.Maps
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="MapsCreatorData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> The Creator resource properties. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
-        public MapsCreatorData(AzureLocation location, MapsCreatorProperties properties) : base(location)
+        public MapsCreatorData(MapsCreatorProperties properties)
         {
             Argument.AssertNotNull(properties, nameof(properties));
 
@@ -43,6 +42,14 @@ namespace Azure.ResourceManager.Maps
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MapsCreatorData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="properties"> The Creator resource properties. </param>
+        public MapsCreatorData(AzureLocation location, MapsCreatorProperties properties) : this(properties)
+        {
+            Location = location;
         }
 
         /// <summary> The Creator resource properties. </summary>

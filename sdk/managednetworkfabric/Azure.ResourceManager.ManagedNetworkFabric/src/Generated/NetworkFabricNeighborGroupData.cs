@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkFabricNeighborGroupData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="destination"> An array of destination IPv4 Addresses or IPv6 Addresses. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="destination"/> is null. </exception>
-        public NetworkFabricNeighborGroupData(AzureLocation location, NeighborGroupDestination destination) : base(location)
+        public NetworkFabricNeighborGroupData(NeighborGroupDestination destination)
         {
             Argument.AssertNotNull(destination, nameof(destination));
 
@@ -45,6 +44,14 @@ namespace Azure.ResourceManager.ManagedNetworkFabric
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkFabricNeighborGroupData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="destination"> An array of destination IPv4 Addresses or IPv6 Addresses. </param>
+        public NetworkFabricNeighborGroupData(AzureLocation location, NeighborGroupDestination destination) : this(destination)
+        {
+            Location = location;
         }
 
         /// <summary> The NeighborGroup Properties. </summary>

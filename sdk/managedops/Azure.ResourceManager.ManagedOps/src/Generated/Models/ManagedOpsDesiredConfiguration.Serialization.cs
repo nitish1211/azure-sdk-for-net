@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.ManagedOps.Models
     /// <summary> Desired configuration input by the user. </summary>
     public partial class ManagedOpsDesiredConfiguration : IJsonModel<ManagedOpsDesiredConfiguration>
     {
-        /// <summary> Initializes a new instance of <see cref="ManagedOpsDesiredConfiguration"/> for deserialization. </summary>
-        internal ManagedOpsDesiredConfiguration()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ManagedOpsDesiredConfiguration PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)
