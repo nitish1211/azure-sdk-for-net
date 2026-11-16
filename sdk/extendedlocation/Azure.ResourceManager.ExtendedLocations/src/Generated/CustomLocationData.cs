@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.ExtendedLocations
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CustomLocationData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public CustomLocationData(AzureLocation location) : base(location)
+        public CustomLocationData()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.ExtendedLocations
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CustomLocationData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public CustomLocationData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The set of properties specific to a Custom Location. </summary>

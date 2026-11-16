@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.FileShares
     /// <summary> File share resource. </summary>
     public partial class FileShareData : TrackedResourceData, IJsonModel<FileShareData>
     {
-        /// <summary> Initializes a new instance of <see cref="FileShareData"/> for deserialization. </summary>
-        internal FileShareData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

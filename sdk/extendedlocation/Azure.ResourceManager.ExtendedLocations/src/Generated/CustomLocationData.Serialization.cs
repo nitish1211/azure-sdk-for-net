@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ExtendedLocations
     /// <summary> Custom Locations definition. </summary>
     public partial class CustomLocationData : TrackedResourceData, IJsonModel<CustomLocationData>
     {
-        /// <summary> Initializes a new instance of <see cref="CustomLocationData"/> for deserialization. </summary>
-        internal CustomLocationData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

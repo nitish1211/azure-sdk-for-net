@@ -18,18 +18,10 @@ namespace Azure.ResourceManager.HardwareSecurityModules.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PaymentHsmClusterProperties"/>. </summary>
-        /// <param name="applicationTrustedIssuer"> The application trusted issuer for the Payment HSM Cluster. </param>
-        /// <param name="managementTrustedIssuer"> The management trusted issuer for the Payment HSM Cluster. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="applicationTrustedIssuer"/> or <paramref name="managementTrustedIssuer"/> is null. </exception>
-        public PaymentHsmClusterProperties(string applicationTrustedIssuer, string managementTrustedIssuer)
+        public PaymentHsmClusterProperties()
         {
-            Argument.AssertNotNull(applicationTrustedIssuer, nameof(applicationTrustedIssuer));
-            Argument.AssertNotNull(managementTrustedIssuer, nameof(managementTrustedIssuer));
-
             Hsms = new ChangeTrackingList<PaymentHsmProperties>();
             PrivateEndpointConnections = new ChangeTrackingList<PaymentHsmClusterPrivateEndpointConnectionData>();
-            ApplicationTrustedIssuer = applicationTrustedIssuer;
-            ManagementTrustedIssuer = managementTrustedIssuer;
         }
 
         /// <summary> Initializes a new instance of <see cref="PaymentHsmClusterProperties"/>. </summary>

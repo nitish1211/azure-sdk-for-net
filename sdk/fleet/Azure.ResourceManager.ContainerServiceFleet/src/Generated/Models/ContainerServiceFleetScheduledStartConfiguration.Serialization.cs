@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.ContainerServiceFleet.Models
     /// <summary> Configuration for ScheduledStart gate. </summary>
     public partial class ContainerServiceFleetScheduledStartConfiguration : IJsonModel<ContainerServiceFleetScheduledStartConfiguration>
     {
-        /// <summary> Initializes a new instance of <see cref="ContainerServiceFleetScheduledStartConfiguration"/> for deserialization. </summary>
-        internal ContainerServiceFleetScheduledStartConfiguration()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ContainerServiceFleetScheduledStartConfiguration PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

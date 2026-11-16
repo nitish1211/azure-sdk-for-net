@@ -723,7 +723,7 @@ namespace Azure.ResourceManager.EventHubs
                 else
                 {
                     EventHubsClusterData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    EventHubsClusterData patch = new EventHubsClusterData(current.Location);
+                    EventHubsClusterData patch = new EventHubsClusterData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -771,7 +771,7 @@ namespace Azure.ResourceManager.EventHubs
                 else
                 {
                     EventHubsClusterData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    EventHubsClusterData patch = new EventHubsClusterData(current.Location);
+                    EventHubsClusterData patch = new EventHubsClusterData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -817,7 +817,7 @@ namespace Azure.ResourceManager.EventHubs
                 else
                 {
                     EventHubsClusterData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    EventHubsClusterData patch = new EventHubsClusterData(current.Location);
+                    EventHubsClusterData patch = new EventHubsClusterData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<EventHubsClusterResource> result = await UpdateAsync(WaitUntil.Completed, patch, cancellationToken: cancellationToken).ConfigureAwait(false);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -859,7 +859,7 @@ namespace Azure.ResourceManager.EventHubs
                 else
                 {
                     EventHubsClusterData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    EventHubsClusterData patch = new EventHubsClusterData(current.Location);
+                    EventHubsClusterData patch = new EventHubsClusterData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<EventHubsClusterResource> result = Update(WaitUntil.Completed, patch, cancellationToken: cancellationToken);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -901,7 +901,7 @@ namespace Azure.ResourceManager.EventHubs
                 else
                 {
                     EventHubsClusterData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    EventHubsClusterData patch = new EventHubsClusterData(current.Location);
+                    EventHubsClusterData patch = new EventHubsClusterData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -947,7 +947,7 @@ namespace Azure.ResourceManager.EventHubs
                 else
                 {
                     EventHubsClusterData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    EventHubsClusterData patch = new EventHubsClusterData(current.Location);
+                    EventHubsClusterData patch = new EventHubsClusterData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);

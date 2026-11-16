@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.EventHubs
     /// <summary> Single Event Hubs Cluster resource in List or Get operations. </summary>
     public partial class EventHubsClusterData : TrackedResourceData, IJsonModel<EventHubsClusterData>
     {
-        /// <summary> Initializes a new instance of <see cref="EventHubsClusterData"/> for deserialization. </summary>
-        internal EventHubsClusterData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

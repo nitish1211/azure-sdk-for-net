@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.HardwareSecurityModules
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DedicatedHsmData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> Properties of the dedicated HSM. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
-        public DedicatedHsmData(AzureLocation location, DedicatedHsmProperties properties) : base(location)
+        public DedicatedHsmData(DedicatedHsmProperties properties)
         {
             Argument.AssertNotNull(properties, nameof(properties));
 
@@ -48,6 +47,14 @@ namespace Azure.ResourceManager.HardwareSecurityModules
             Sku = sku;
             Zones = zones;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DedicatedHsmData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="properties"> Properties of the dedicated HSM. </param>
+        public DedicatedHsmData(AzureLocation location, DedicatedHsmProperties properties) : this(properties)
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the dedicated HSM. </summary>

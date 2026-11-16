@@ -17,11 +17,8 @@ namespace Azure.ResourceManager.ContainerServiceFleet.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ContainerServiceFleetGatePatch"/>. </summary>
-        /// <param name="gatePatchState"> The state of the Gate. </param>
-        public ContainerServiceFleetGatePatch(ContainerServiceFleetGateState gatePatchState)
+        public ContainerServiceFleetGatePatch()
         {
-
-            Properties = new GatePatchProperties(gatePatchState);
         }
 
         /// <summary> Initializes a new instance of <see cref="ContainerServiceFleetGatePatch"/>. </summary>
@@ -33,15 +30,30 @@ namespace Azure.ResourceManager.ContainerServiceFleet.Models
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
         }
 
+        /// <summary> Initializes a new instance of <see cref="ContainerServiceFleetGatePatch"/>. </summary>
+        /// <param name="gatePatchState"> The state of the Gate. </param>
+        public ContainerServiceFleetGatePatch(ContainerServiceFleetGateState gatePatchState) : this()
+        {
+            GatePatchState = gatePatchState;
+        }
+
         /// <summary> Properties of a Gate that can be patched. </summary>
-        internal GatePatchProperties Properties { get; }
+        internal GatePatchProperties Properties { get; set; }
 
         /// <summary> The state of the Gate. </summary>
         public ContainerServiceFleetGateState GatePatchState
         {
             get
             {
-                return Properties.State;
+                return Properties is null ? default : Properties.State;
+            }
+            set
+            {
+                if (Properties is null)
+                {
+                    Properties = new GatePatchProperties();
+                }
+                Properties.State = value;
             }
         }
     }

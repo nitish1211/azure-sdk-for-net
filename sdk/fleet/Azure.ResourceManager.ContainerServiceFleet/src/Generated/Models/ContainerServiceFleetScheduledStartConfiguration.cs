@@ -18,18 +18,8 @@ namespace Azure.ResourceManager.ContainerServiceFleet.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ContainerServiceFleetScheduledStartConfiguration"/>. </summary>
-        /// <param name="startDay"> The day of the week when the scheduled start occurs. </param>
-        /// <param name="startTime"> The local time of day when the scheduled start occurs in 24-hour (HH:mm) format. </param>
-        /// <param name="utcOffset"> The UTC offset for the scheduled time in HH:mm format, -14:00 to +14:00. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="startTime"/> or <paramref name="utcOffset"/> is null. </exception>
-        public ContainerServiceFleetScheduledStartConfiguration(ContainerServiceFleetDayOfWeek startDay, string startTime, string utcOffset)
+        public ContainerServiceFleetScheduledStartConfiguration()
         {
-            Argument.AssertNotNull(startTime, nameof(startTime));
-            Argument.AssertNotNull(utcOffset, nameof(utcOffset));
-
-            StartDay = startDay;
-            StartTime = startTime;
-            UtcOffset = utcOffset;
         }
 
         /// <summary> Initializes a new instance of <see cref="ContainerServiceFleetScheduledStartConfiguration"/>. </summary>
@@ -43,6 +33,21 @@ namespace Azure.ResourceManager.ContainerServiceFleet.Models
             StartTime = startTime;
             UtcOffset = utcOffset;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ContainerServiceFleetScheduledStartConfiguration"/>. </summary>
+        /// <param name="startDay"> The day of the week when the scheduled start occurs. </param>
+        /// <param name="startTime"> The local time of day when the scheduled start occurs in 24-hour (HH:mm) format. </param>
+        /// <param name="utcOffset"> The UTC offset for the scheduled time in HH:mm format, -14:00 to +14:00. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="startTime"/> or <paramref name="utcOffset"/> is null. </exception>
+        public ContainerServiceFleetScheduledStartConfiguration(ContainerServiceFleetDayOfWeek startDay, string startTime, string utcOffset) : this()
+        {
+            Argument.AssertNotNull(startTime, nameof(startTime));
+            Argument.AssertNotNull(utcOffset, nameof(utcOffset));
+
+            StartDay = startDay;
+            StartTime = startTime;
+            UtcOffset = utcOffset;
         }
 
         /// <summary> The day of the week when the scheduled start occurs. </summary>

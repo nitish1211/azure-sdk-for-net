@@ -19,13 +19,8 @@ namespace Azure.ResourceManager.Enclave.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="VirtualEnclavePatchProperties"/>. </summary>
-        /// <param name="enclaveVirtualNetwork"> Virtual Network. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="enclaveVirtualNetwork"/> is null. </exception>
-        public VirtualEnclavePatchProperties(EnclaveVirtualNetwork enclaveVirtualNetwork)
+        public VirtualEnclavePatchProperties()
         {
-            Argument.AssertNotNull(enclaveVirtualNetwork, nameof(enclaveVirtualNetwork));
-
-            EnclaveVirtualNetwork = enclaveVirtualNetwork;
             EnclaveRoleAssignments = new ChangeTrackingList<VirtualEnclaveRoleAssignmentItem>();
             WorkloadRoleAssignments = new ChangeTrackingList<VirtualEnclaveRoleAssignmentItem>();
             GovernedServiceList = new ChangeTrackingList<VirtualEnclaveGovernedService>();
@@ -62,8 +57,18 @@ namespace Azure.ResourceManager.Enclave.Models
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
         }
 
+        /// <summary> Initializes a new instance of <see cref="VirtualEnclavePatchProperties"/>. </summary>
+        /// <param name="enclaveVirtualNetwork"> Virtual Network. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="enclaveVirtualNetwork"/> is null. </exception>
+        public VirtualEnclavePatchProperties(EnclaveVirtualNetwork enclaveVirtualNetwork) : this()
+        {
+            Argument.AssertNotNull(enclaveVirtualNetwork, nameof(enclaveVirtualNetwork));
+
+            EnclaveVirtualNetwork = enclaveVirtualNetwork;
+        }
+
         /// <summary> Virtual Network. </summary>
-        public EnclaveVirtualNetwork EnclaveVirtualNetwork { get; }
+        public EnclaveVirtualNetwork EnclaveVirtualNetwork { get; set; }
 
         /// <summary> Deploy Bastion service (True or False). </summary>
         public bool? IsBastionEnabled { get; set; }

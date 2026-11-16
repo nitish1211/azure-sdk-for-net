@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.Enclave.Models
     /// <summary> Approvals patch properties. </summary>
     public partial class VirtualEnclaveApprovalPatchProperties : IJsonModel<VirtualEnclaveApprovalPatchProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="VirtualEnclaveApprovalPatchProperties"/> for deserialization. </summary>
-        internal VirtualEnclaveApprovalPatchProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual VirtualEnclaveApprovalPatchProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

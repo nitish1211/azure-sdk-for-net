@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Grafana
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ManagedPrivateEndpointModelData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ManagedPrivateEndpointModelData(AzureLocation location) : base(location)
+        public ManagedPrivateEndpointModelData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.Grafana
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ManagedPrivateEndpointModelData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ManagedPrivateEndpointModelData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Resource properties. </summary>

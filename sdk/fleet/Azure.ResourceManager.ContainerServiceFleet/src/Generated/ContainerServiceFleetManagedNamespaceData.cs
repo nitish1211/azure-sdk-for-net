@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.ContainerServiceFleet
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ContainerServiceFleetManagedNamespaceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ContainerServiceFleetManagedNamespaceData(AzureLocation location) : base(location)
+        public ContainerServiceFleetManagedNamespaceData()
         {
         }
 
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.ContainerServiceFleet
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ContainerServiceFleetManagedNamespaceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ContainerServiceFleetManagedNamespaceData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.Enclave.Models
     /// <summary> Enclave Connection Resource properties. </summary>
     public partial class VirtualEnclaveConnectionProperties : IJsonModel<VirtualEnclaveConnectionProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="VirtualEnclaveConnectionProperties"/> for deserialization. </summary>
-        internal VirtualEnclaveConnectionProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual VirtualEnclaveConnectionProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.Enclave.Models
     /// <summary> Monitoring Destination Patch Model. </summary>
     public partial class VirtualEnclaveMonitoringDestinationPatch : IJsonModel<VirtualEnclaveMonitoringDestinationPatch>
     {
-        /// <summary> Initializes a new instance of <see cref="VirtualEnclaveMonitoringDestinationPatch"/> for deserialization. </summary>
-        internal VirtualEnclaveMonitoringDestinationPatch()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual VirtualEnclaveMonitoringDestinationPatch PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

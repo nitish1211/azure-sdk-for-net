@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.FileShares
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="FileShareData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public FileShareData(AzureLocation location) : base(location)
+        public FileShareData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.FileShares
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="FileShareData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public FileShareData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

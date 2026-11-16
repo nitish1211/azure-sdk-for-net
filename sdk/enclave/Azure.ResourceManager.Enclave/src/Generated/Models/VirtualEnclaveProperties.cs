@@ -20,15 +20,12 @@ namespace Azure.ResourceManager.Enclave.Models
 
         /// <summary> Initializes a new instance of <see cref="VirtualEnclaveProperties"/>. </summary>
         /// <param name="enclaveVirtualNetwork"> Virtual Network. </param>
-        /// <param name="communityResourceId"> Community Resource Id. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="enclaveVirtualNetwork"/> or <paramref name="communityResourceId"/> is null. </exception>
-        public VirtualEnclaveProperties(EnclaveVirtualNetwork enclaveVirtualNetwork, ResourceIdentifier communityResourceId)
+        /// <exception cref="ArgumentNullException"> <paramref name="enclaveVirtualNetwork"/> is null. </exception>
+        public VirtualEnclaveProperties(EnclaveVirtualNetwork enclaveVirtualNetwork)
         {
             Argument.AssertNotNull(enclaveVirtualNetwork, nameof(enclaveVirtualNetwork));
-            Argument.AssertNotNull(communityResourceId, nameof(communityResourceId));
 
             EnclaveVirtualNetwork = enclaveVirtualNetwork;
-            CommunityResourceId = communityResourceId;
             ResourceCollection = new ChangeTrackingList<ResourceIdentifier>();
             EnclaveRoleAssignments = new ChangeTrackingList<VirtualEnclaveRoleAssignmentItem>();
             WorkloadRoleAssignments = new ChangeTrackingList<VirtualEnclaveRoleAssignmentItem>();
@@ -76,6 +73,17 @@ namespace Azure.ResourceManager.Enclave.Models
             ApprovalSettings = approvalSettings;
             MonitoringSettings = monitoringSettings;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="VirtualEnclaveProperties"/>. </summary>
+        /// <param name="enclaveVirtualNetwork"> Virtual Network. </param>
+        /// <param name="communityResourceId"> Community Resource Id. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="communityResourceId"/> is null. </exception>
+        public VirtualEnclaveProperties(EnclaveVirtualNetwork enclaveVirtualNetwork, ResourceIdentifier communityResourceId) : this(enclaveVirtualNetwork)
+        {
+            Argument.AssertNotNull(communityResourceId, nameof(communityResourceId));
+
+            CommunityResourceId = communityResourceId;
         }
 
         /// <summary> Provisioning State. </summary>

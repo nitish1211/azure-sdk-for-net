@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.EventGrid
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PartnerTopicData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public PartnerTopicData(AzureLocation location) : base(location)
+        public PartnerTopicData()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.EventGrid
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="PartnerTopicData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public PartnerTopicData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the Partner Topic. </summary>

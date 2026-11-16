@@ -5,6 +5,7 @@
 
 #nullable disable
 
+using System;
 using System.Threading;
 using Azure;
 using Azure.Core;
@@ -56,6 +57,7 @@ namespace Azure.ResourceManager.HanaOnAzure.Mocking
         /// </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <returns> A collection of <see cref="SapMonitorResource"/> that may take multiple service requests to iterate over. </returns>
+        [Obsolete("deprecated on origin swagger")]
         public virtual AsyncPageable<SapMonitorResource> GetSapMonitorsAsync(CancellationToken cancellationToken = default)
         {
             RequestContext context = new RequestContext
@@ -84,6 +86,7 @@ namespace Azure.ResourceManager.HanaOnAzure.Mocking
         /// </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <returns> A collection of <see cref="SapMonitorResource"/> that may take multiple service requests to iterate over. </returns>
+        [Obsolete("deprecated on origin swagger")]
         public virtual Pageable<SapMonitorResource> GetSapMonitors(CancellationToken cancellationToken = default)
         {
             RequestContext context = new RequestContext

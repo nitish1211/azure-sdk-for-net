@@ -19,13 +19,8 @@ namespace Azure.ResourceManager.ContainerServiceFleet.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="FleetMemberProperties"/>. </summary>
-        /// <param name="clusterResourceId"> The ARM resource id of the cluster that joins the Fleet. Must be a valid Azure resource id. e.g.: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerService/managedClusters/{clusterName}'. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="clusterResourceId"/> is null. </exception>
-        public FleetMemberProperties(ResourceIdentifier clusterResourceId)
+        public FleetMemberProperties()
         {
-            Argument.AssertNotNull(clusterResourceId, nameof(clusterResourceId));
-
-            ClusterResourceId = clusterResourceId;
             Labels = new ChangeTrackingDictionary<string, string>();
         }
 

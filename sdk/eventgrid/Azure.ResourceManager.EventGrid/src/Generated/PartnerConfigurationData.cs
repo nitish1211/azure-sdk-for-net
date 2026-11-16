@@ -12,5 +12,9 @@ namespace Azure.ResourceManager.EventGrid
     /// <summary> Partner configuration information. </summary>
     public partial class PartnerConfigurationData : TrackedResourceData
     {
+        /// <summary> Initializes a new instance of <see cref="PartnerConfigurationData"/>. </summary>
+        public PartnerConfigurationData()
+        {
+        }
     }
 }

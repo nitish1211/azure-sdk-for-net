@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.ContainerServiceFleet.Models
     /// <summary> A member of the Fleet. It contains a reference to an existing Kubernetes cluster on Azure. </summary>
     internal partial class FleetMemberProperties : IJsonModel<FleetMemberProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="FleetMemberProperties"/> for deserialization. </summary>
-        internal FleetMemberProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual FleetMemberProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

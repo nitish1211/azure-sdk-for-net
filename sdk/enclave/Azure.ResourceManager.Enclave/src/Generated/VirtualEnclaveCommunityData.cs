@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Enclave
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="VirtualEnclaveCommunityData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public VirtualEnclaveCommunityData(AzureLocation location) : base(location)
+        public VirtualEnclaveCommunityData()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.Enclave
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="VirtualEnclaveCommunityData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public VirtualEnclaveCommunityData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

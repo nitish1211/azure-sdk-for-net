@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Grafana
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ManagedGrafanaData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ManagedGrafanaData(AzureLocation location) : base(location)
+        public ManagedGrafanaData()
         {
         }
 
@@ -42,6 +41,13 @@ namespace Azure.ResourceManager.Grafana
             Sku = sku;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ManagedGrafanaData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ManagedGrafanaData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties specific to the grafana resource. </summary>

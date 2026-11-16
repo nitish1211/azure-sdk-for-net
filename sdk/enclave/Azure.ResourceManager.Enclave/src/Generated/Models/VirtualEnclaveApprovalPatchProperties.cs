@@ -19,14 +19,9 @@ namespace Azure.ResourceManager.Enclave.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="VirtualEnclaveApprovalPatchProperties"/>. </summary>
-        /// <param name="requestMetadata"> Request metadata for the approval request. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="requestMetadata"/> is null. </exception>
-        public VirtualEnclaveApprovalPatchProperties(ApprovalRequestMetadataPatch requestMetadata)
+        public VirtualEnclaveApprovalPatchProperties()
         {
-            Argument.AssertNotNull(requestMetadata, nameof(requestMetadata));
-
             Approvers = new ChangeTrackingList<VirtualEnclaveApprover>();
-            RequestMetadata = requestMetadata;
         }
 
         /// <summary> Initializes a new instance of <see cref="VirtualEnclaveApprovalPatchProperties"/>. </summary>
@@ -50,6 +45,16 @@ namespace Azure.ResourceManager.Enclave.Models
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
         }
 
+        /// <summary> Initializes a new instance of <see cref="VirtualEnclaveApprovalPatchProperties"/>. </summary>
+        /// <param name="requestMetadata"> Request metadata for the approval request. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="requestMetadata"/> is null. </exception>
+        public VirtualEnclaveApprovalPatchProperties(ApprovalRequestMetadataPatch requestMetadata) : this()
+        {
+            Argument.AssertNotNull(requestMetadata, nameof(requestMetadata));
+
+            RequestMetadata = requestMetadata;
+        }
+
         /// <summary> Parameter for optimizing query results. </summary>
         public ResourceIdentifier ParentResourceId { get; set; }
 
@@ -69,6 +74,6 @@ namespace Azure.ResourceManager.Enclave.Models
         public DateTimeOffset? StateChangedOn { get; set; }
 
         /// <summary> Request metadata for the approval request. </summary>
-        public ApprovalRequestMetadataPatch RequestMetadata { get; }
+        public ApprovalRequestMetadataPatch RequestMetadata { get; set; }
     }
 }

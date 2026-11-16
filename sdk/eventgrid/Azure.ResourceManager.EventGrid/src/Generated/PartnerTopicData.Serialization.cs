@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.EventGrid
     /// <summary> Event Grid Partner Topic. </summary>
     public partial class PartnerTopicData : TrackedResourceData, IJsonModel<PartnerTopicData>
     {
-        /// <summary> Initializes a new instance of <see cref="PartnerTopicData"/> for deserialization. </summary>
-        internal PartnerTopicData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -17,10 +17,8 @@ namespace Azure.ResourceManager.ContainerServiceFleet.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AutoUpgradeNodeImageSelection"/>. </summary>
-        /// <param name="selectionType"> The node image upgrade type. </param>
-        public AutoUpgradeNodeImageSelection(AutoUpgradeNodeImageSelectionType selectionType)
+        public AutoUpgradeNodeImageSelection()
         {
-            SelectionType = selectionType;
         }
 
         /// <summary> Initializes a new instance of <see cref="AutoUpgradeNodeImageSelection"/>. </summary>

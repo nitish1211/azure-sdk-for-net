@@ -18,10 +18,8 @@ namespace Azure.ResourceManager.Enclave.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="VirtualEnclaveMaintenanceModeConfigurationPatch"/>. </summary>
-        /// <param name="mode"> Current mode of Maintenance Mode Configuration. </param>
-        public VirtualEnclaveMaintenanceModeConfigurationPatch(VirtualEnclaveMaintenanceModeConfigurationMode mode)
+        public VirtualEnclaveMaintenanceModeConfigurationPatch()
         {
-            Mode = mode;
             Principals = new ChangeTrackingList<VirtualEnclavePrincipal>();
         }
 
@@ -38,8 +36,15 @@ namespace Azure.ResourceManager.Enclave.Models
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
         }
 
+        /// <summary> Initializes a new instance of <see cref="VirtualEnclaveMaintenanceModeConfigurationPatch"/>. </summary>
+        /// <param name="mode"> Current mode of Maintenance Mode Configuration. </param>
+        public VirtualEnclaveMaintenanceModeConfigurationPatch(VirtualEnclaveMaintenanceModeConfigurationMode mode) : this()
+        {
+            Mode = mode;
+        }
+
         /// <summary> Current mode of Maintenance Mode Configuration. </summary>
-        public VirtualEnclaveMaintenanceModeConfigurationMode Mode { get; }
+        public VirtualEnclaveMaintenanceModeConfigurationMode Mode { get; set; }
 
         /// <summary> The user, group or service principal object affected by Maintenance Mode. </summary>
         public IList<VirtualEnclavePrincipal> Principals { get; }

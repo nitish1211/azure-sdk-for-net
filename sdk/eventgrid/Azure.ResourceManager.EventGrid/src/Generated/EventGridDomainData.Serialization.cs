@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.EventGrid
     /// <summary> EventGrid Domain. </summary>
     public partial class EventGridDomainData : TrackedResourceData, IJsonModel<EventGridDomainData>
     {
-        /// <summary> Initializes a new instance of <see cref="EventGridDomainData"/> for deserialization. </summary>
-        internal EventGridDomainData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

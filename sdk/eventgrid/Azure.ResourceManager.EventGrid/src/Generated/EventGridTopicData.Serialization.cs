@@ -21,11 +21,6 @@ namespace Azure.ResourceManager.EventGrid
     /// <summary> EventGrid Topic. </summary>
     public partial class EventGridTopicData : TrackedResourceData, IJsonModel<EventGridTopicData>
     {
-        /// <summary> Initializes a new instance of <see cref="EventGridTopicData"/> for deserialization. </summary>
-        internal EventGridTopicData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

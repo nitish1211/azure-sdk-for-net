@@ -108,7 +108,14 @@ namespace Azure.ResourceManager.ContainerServiceFleet.Models
             }
             set
             {
-                NodeImageSelection = value.HasValue ? new AutoUpgradeNodeImageSelection(value.Value) : default;
+                if (value.HasValue)
+                {
+                    if (NodeImageSelection is null)
+                    {
+                        NodeImageSelection = new AutoUpgradeNodeImageSelection();
+                    }
+                    NodeImageSelection.SelectionType = value.Value;
+                }
             }
         }
     }

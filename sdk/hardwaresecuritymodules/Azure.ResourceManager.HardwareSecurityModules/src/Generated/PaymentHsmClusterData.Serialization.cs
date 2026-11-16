@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.HardwareSecurityModules
     /// <summary> Resource information with extended details. </summary>
     public partial class PaymentHsmClusterData : TrackedResourceData, IJsonModel<PaymentHsmClusterData>
     {
-        /// <summary> Initializes a new instance of <see cref="PaymentHsmClusterData"/> for deserialization. </summary>
-        internal PaymentHsmClusterData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

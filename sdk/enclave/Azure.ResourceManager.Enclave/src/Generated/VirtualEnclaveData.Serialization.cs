@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Enclave
     /// <summary> Virtual Enclave Model Resource. </summary>
     public partial class VirtualEnclaveData : TrackedResourceData, IJsonModel<VirtualEnclaveData>
     {
-        /// <summary> Initializes a new instance of <see cref="VirtualEnclaveData"/> for deserialization. </summary>
-        internal VirtualEnclaveData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

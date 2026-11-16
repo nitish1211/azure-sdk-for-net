@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Enclave
     /// <summary> TransitHub Model Resource. </summary>
     public partial class VirtualEnclaveTransitHubData : TrackedResourceData, IJsonModel<VirtualEnclaveTransitHubData>
     {
-        /// <summary> Initializes a new instance of <see cref="VirtualEnclaveTransitHubData"/> for deserialization. </summary>
-        internal VirtualEnclaveTransitHubData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

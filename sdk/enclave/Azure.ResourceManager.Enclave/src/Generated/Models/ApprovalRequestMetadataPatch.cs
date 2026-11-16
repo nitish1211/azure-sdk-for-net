@@ -18,13 +18,8 @@ namespace Azure.ResourceManager.Enclave.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ApprovalRequestMetadataPatch"/>. </summary>
-        /// <param name="resourceAction"> Resource Action of the item being approved or declined. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="resourceAction"/> is null. </exception>
-        public ApprovalRequestMetadataPatch(string resourceAction)
+        public ApprovalRequestMetadataPatch()
         {
-            Argument.AssertNotNull(resourceAction, nameof(resourceAction));
-
-            ResourceAction = resourceAction;
         }
 
         /// <summary> Initializes a new instance of <see cref="ApprovalRequestMetadataPatch"/>. </summary>
@@ -42,8 +37,18 @@ namespace Azure.ResourceManager.Enclave.Models
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
         }
 
+        /// <summary> Initializes a new instance of <see cref="ApprovalRequestMetadataPatch"/>. </summary>
+        /// <param name="resourceAction"> Resource Action of the item being approved or declined. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="resourceAction"/> is null. </exception>
+        public ApprovalRequestMetadataPatch(string resourceAction) : this()
+        {
+            Argument.AssertNotNull(resourceAction, nameof(resourceAction));
+
+            ResourceAction = resourceAction;
+        }
+
         /// <summary> Resource Action of the item being approved or declined. </summary>
-        public string ResourceAction { get; }
+        public string ResourceAction { get; set; }
 
         /// <summary> Route name for the approval callback. </summary>
         public string ApprovalCallbackRoute { get; set; }

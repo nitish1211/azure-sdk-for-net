@@ -19,19 +19,8 @@ namespace Azure.ResourceManager.Enclave.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="VirtualEnclaveConnectionProperties"/>. </summary>
-        /// <param name="communityResourceId"> Community Resource Id. </param>
-        /// <param name="sourceResourceId"> Source Resource Id. </param>
-        /// <param name="destinationEndpointId"> Destination Endpoint Resource Id. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="communityResourceId"/>, <paramref name="sourceResourceId"/> or <paramref name="destinationEndpointId"/> is null. </exception>
-        public VirtualEnclaveConnectionProperties(ResourceIdentifier communityResourceId, ResourceIdentifier sourceResourceId, ResourceIdentifier destinationEndpointId)
+        public VirtualEnclaveConnectionProperties()
         {
-            Argument.AssertNotNull(communityResourceId, nameof(communityResourceId));
-            Argument.AssertNotNull(sourceResourceId, nameof(sourceResourceId));
-            Argument.AssertNotNull(destinationEndpointId, nameof(destinationEndpointId));
-
-            CommunityResourceId = communityResourceId;
-            SourceResourceId = sourceResourceId;
-            DestinationEndpointId = destinationEndpointId;
             ResourceCollection = new ChangeTrackingList<ResourceIdentifier>();
         }
 
@@ -56,6 +45,22 @@ namespace Azure.ResourceManager.Enclave.Models
             ResourceCollection = resourceCollection;
             UpdateMode = updateMode;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="VirtualEnclaveConnectionProperties"/>. </summary>
+        /// <param name="communityResourceId"> Community Resource Id. </param>
+        /// <param name="sourceResourceId"> Source Resource Id. </param>
+        /// <param name="destinationEndpointId"> Destination Endpoint Resource Id. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="communityResourceId"/>, <paramref name="sourceResourceId"/> or <paramref name="destinationEndpointId"/> is null. </exception>
+        public VirtualEnclaveConnectionProperties(ResourceIdentifier communityResourceId, ResourceIdentifier sourceResourceId, ResourceIdentifier destinationEndpointId) : this()
+        {
+            Argument.AssertNotNull(communityResourceId, nameof(communityResourceId));
+            Argument.AssertNotNull(sourceResourceId, nameof(sourceResourceId));
+            Argument.AssertNotNull(destinationEndpointId, nameof(destinationEndpointId));
+
+            CommunityResourceId = communityResourceId;
+            SourceResourceId = sourceResourceId;
+            DestinationEndpointId = destinationEndpointId;
         }
 
         /// <summary> The state of the enclaveConnection. </summary>

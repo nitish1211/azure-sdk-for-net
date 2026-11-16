@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.EventGrid
     /// <summary> Event Grid Partner Destination. </summary>
     public partial class PartnerDestinationData : TrackedResourceData, IJsonModel<PartnerDestinationData>
     {
-        /// <summary> Initializes a new instance of <see cref="PartnerDestinationData"/> for deserialization. </summary>
-        internal PartnerDestinationData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

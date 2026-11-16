@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.ContainerServiceFleet.Models
     /// <summary> Properties of a Gate that can be patched. </summary>
     internal partial class GatePatchProperties : IJsonModel<GatePatchProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="GatePatchProperties"/> for deserialization. </summary>
-        internal GatePatchProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual GatePatchProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

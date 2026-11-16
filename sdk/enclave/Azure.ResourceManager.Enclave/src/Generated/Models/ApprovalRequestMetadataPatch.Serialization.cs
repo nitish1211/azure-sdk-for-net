@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Enclave.Models
     /// <summary> Request Metadata patch properties. </summary>
     public partial class ApprovalRequestMetadataPatch : IJsonModel<ApprovalRequestMetadataPatch>
     {
-        /// <summary> Initializes a new instance of <see cref="ApprovalRequestMetadataPatch"/> for deserialization. </summary>
-        internal ApprovalRequestMetadataPatch()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ApprovalRequestMetadataPatch PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

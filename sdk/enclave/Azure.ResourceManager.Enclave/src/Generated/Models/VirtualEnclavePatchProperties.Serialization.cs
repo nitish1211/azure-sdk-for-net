@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.Enclave.Models
     /// <summary> Virtual Enclave Patchable Properties. </summary>
     public partial class VirtualEnclavePatchProperties : IJsonModel<VirtualEnclavePatchProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="VirtualEnclavePatchProperties"/> for deserialization. </summary>
-        internal VirtualEnclavePatchProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual VirtualEnclavePatchProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

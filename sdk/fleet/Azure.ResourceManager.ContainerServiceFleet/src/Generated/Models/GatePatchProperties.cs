@@ -17,10 +17,8 @@ namespace Azure.ResourceManager.ContainerServiceFleet.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="GatePatchProperties"/>. </summary>
-        /// <param name="state"> The state of the Gate. </param>
-        public GatePatchProperties(ContainerServiceFleetGateState state)
+        public GatePatchProperties()
         {
-            State = state;
         }
 
         /// <summary> Initializes a new instance of <see cref="GatePatchProperties"/>. </summary>
@@ -33,6 +31,6 @@ namespace Azure.ResourceManager.ContainerServiceFleet.Models
         }
 
         /// <summary> The state of the Gate. </summary>
-        public ContainerServiceFleetGateState State { get; }
+        public ContainerServiceFleetGateState State { get; set; }
     }
 }

@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.EventHubs
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="EventHubsNamespaceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public EventHubsNamespaceData(AzureLocation location) : base(location)
+        public EventHubsNamespaceData()
         {
         }
 
@@ -42,6 +41,13 @@ namespace Azure.ResourceManager.EventHubs
             Sku = sku;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="EventHubsNamespaceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public EventHubsNamespaceData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

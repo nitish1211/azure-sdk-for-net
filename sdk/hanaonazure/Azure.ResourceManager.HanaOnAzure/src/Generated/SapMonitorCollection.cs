@@ -75,6 +75,7 @@ namespace Azure.ResourceManager.HanaOnAzure
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sapMonitorName"/> or <paramref name="data"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="sapMonitorName"/> is an empty string, and was expected to be non-empty. </exception>
+        [Obsolete("deprecated on origin swagger")]
         public virtual async Task<ArmOperation<SapMonitorResource>> CreateOrUpdateAsync(WaitUntil waitUntil, string sapMonitorName, SapMonitorData data, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(sapMonitorName, nameof(sapMonitorName));
@@ -133,6 +134,7 @@ namespace Azure.ResourceManager.HanaOnAzure
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sapMonitorName"/> or <paramref name="data"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="sapMonitorName"/> is an empty string, and was expected to be non-empty. </exception>
+        [Obsolete("deprecated on origin swagger")]
         public virtual ArmOperation<SapMonitorResource> CreateOrUpdate(WaitUntil waitUntil, string sapMonitorName, SapMonitorData data, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(sapMonitorName, nameof(sapMonitorName));
@@ -189,6 +191,7 @@ namespace Azure.ResourceManager.HanaOnAzure
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sapMonitorName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="sapMonitorName"/> is an empty string, and was expected to be non-empty. </exception>
+        [Obsolete("deprecated on origin swagger")]
         public virtual async Task<Response<SapMonitorResource>> GetAsync(string sapMonitorName, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(sapMonitorName, nameof(sapMonitorName));
@@ -238,6 +241,7 @@ namespace Azure.ResourceManager.HanaOnAzure
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sapMonitorName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="sapMonitorName"/> is an empty string, and was expected to be non-empty. </exception>
+        [Obsolete("deprecated on origin swagger")]
         public virtual Response<SapMonitorResource> Get(string sapMonitorName, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(sapMonitorName, nameof(sapMonitorName));
@@ -287,6 +291,7 @@ namespace Azure.ResourceManager.HanaOnAzure
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sapMonitorName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="sapMonitorName"/> is an empty string, and was expected to be non-empty. </exception>
+        [Obsolete("deprecated on origin swagger")]
         public virtual async Task<Response<bool>> ExistsAsync(string sapMonitorName, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(sapMonitorName, nameof(sapMonitorName));
@@ -344,6 +349,7 @@ namespace Azure.ResourceManager.HanaOnAzure
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sapMonitorName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="sapMonitorName"/> is an empty string, and was expected to be non-empty. </exception>
+        [Obsolete("deprecated on origin swagger")]
         public virtual Response<bool> Exists(string sapMonitorName, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(sapMonitorName, nameof(sapMonitorName));
@@ -401,6 +407,7 @@ namespace Azure.ResourceManager.HanaOnAzure
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sapMonitorName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="sapMonitorName"/> is an empty string, and was expected to be non-empty. </exception>
+        [Obsolete("deprecated on origin swagger")]
         public virtual async Task<NullableResponse<SapMonitorResource>> GetIfExistsAsync(string sapMonitorName, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(sapMonitorName, nameof(sapMonitorName));
@@ -462,6 +469,7 @@ namespace Azure.ResourceManager.HanaOnAzure
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sapMonitorName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="sapMonitorName"/> is an empty string, and was expected to be non-empty. </exception>
+        [Obsolete("deprecated on origin swagger")]
         public virtual NullableResponse<SapMonitorResource> GetIfExists(string sapMonitorName, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(sapMonitorName, nameof(sapMonitorName));

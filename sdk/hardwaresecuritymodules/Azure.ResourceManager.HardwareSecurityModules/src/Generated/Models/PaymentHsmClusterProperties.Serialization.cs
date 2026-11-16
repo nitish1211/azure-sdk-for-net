@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.HardwareSecurityModules.Models
     /// <summary> Properties of a Payment HSM Cluster. </summary>
     public partial class PaymentHsmClusterProperties : IJsonModel<PaymentHsmClusterProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="PaymentHsmClusterProperties"/> for deserialization. </summary>
-        internal PaymentHsmClusterProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual PaymentHsmClusterProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

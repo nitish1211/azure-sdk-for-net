@@ -19,13 +19,9 @@ namespace Azure.ResourceManager.Enclave.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="VirtualEnclaveEndpointPatchProperties"/>. </summary>
-        /// <param name="ruleCollection"> Enclave Endpoint Rule Collection. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="ruleCollection"/> is null. </exception>
-        public VirtualEnclaveEndpointPatchProperties(IEnumerable<EnclaveEndpointDestinationRule> ruleCollection)
+        public VirtualEnclaveEndpointPatchProperties()
         {
-            Argument.AssertNotNull(ruleCollection, nameof(ruleCollection));
-
-            RuleCollection = ruleCollection.ToList();
+            RuleCollection = new ChangeTrackingList<EnclaveEndpointDestinationRule>();
         }
 
         /// <summary> Initializes a new instance of <see cref="VirtualEnclaveEndpointPatchProperties"/>. </summary>
@@ -37,6 +33,16 @@ namespace Azure.ResourceManager.Enclave.Models
             RuleCollection = ruleCollection;
             UpdateMode = updateMode;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="VirtualEnclaveEndpointPatchProperties"/>. </summary>
+        /// <param name="ruleCollection"> Enclave Endpoint Rule Collection. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="ruleCollection"/> is null. </exception>
+        public VirtualEnclaveEndpointPatchProperties(IEnumerable<EnclaveEndpointDestinationRule> ruleCollection) : this()
+        {
+            Argument.AssertNotNull(ruleCollection, nameof(ruleCollection));
+
+            RuleCollection = ruleCollection.ToList();
         }
 
         /// <summary> Enclave Endpoint Rule Collection. </summary>

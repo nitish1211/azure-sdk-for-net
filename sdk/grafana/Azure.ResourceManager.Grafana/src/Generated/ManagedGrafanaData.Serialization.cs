@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Grafana
     /// <summary> The grafana resource type. </summary>
     public partial class ManagedGrafanaData : TrackedResourceData, IJsonModel<ManagedGrafanaData>
     {
-        /// <summary> Initializes a new instance of <see cref="ManagedGrafanaData"/> for deserialization. </summary>
-        internal ManagedGrafanaData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

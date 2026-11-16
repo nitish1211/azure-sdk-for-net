@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.ContainerServiceFleet.Models
     /// <summary> The node image upgrade to be applied to the target clusters in auto upgrade. </summary>
     internal partial class AutoUpgradeNodeImageSelection : IJsonModel<AutoUpgradeNodeImageSelection>
     {
-        /// <summary> Initializes a new instance of <see cref="AutoUpgradeNodeImageSelection"/> for deserialization. </summary>
-        internal AutoUpgradeNodeImageSelection()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual AutoUpgradeNodeImageSelection PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

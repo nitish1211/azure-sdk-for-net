@@ -20,11 +20,10 @@ namespace Azure.ResourceManager.Fabric
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="FabricCapacityData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> The resource-specific properties for this resource. </param>
         /// <param name="sku"> The SKU details. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="properties"/> or <paramref name="sku"/> is null. </exception>
-        public FabricCapacityData(AzureLocation location, FabricCapacityProperties properties, FabricSku sku) : base(location)
+        public FabricCapacityData(FabricCapacityProperties properties, FabricSku sku)
         {
             Argument.AssertNotNull(properties, nameof(properties));
             Argument.AssertNotNull(sku, nameof(sku));
@@ -48,6 +47,15 @@ namespace Azure.ResourceManager.Fabric
             Properties = properties;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="FabricCapacityData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="properties"> The resource-specific properties for this resource. </param>
+        /// <param name="sku"> The SKU details. </param>
+        public FabricCapacityData(AzureLocation location, FabricCapacityProperties properties, FabricSku sku) : this(properties, sku)
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

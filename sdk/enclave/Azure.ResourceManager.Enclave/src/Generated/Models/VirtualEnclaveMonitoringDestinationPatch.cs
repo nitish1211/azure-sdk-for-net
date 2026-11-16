@@ -18,10 +18,8 @@ namespace Azure.ResourceManager.Enclave.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="VirtualEnclaveMonitoringDestinationPatch"/>. </summary>
-        /// <param name="destinationType"> The type of monitoring workspace destination. </param>
-        public VirtualEnclaveMonitoringDestinationPatch(VirtualEnclaveMonitoringDestinationType destinationType)
+        public VirtualEnclaveMonitoringDestinationPatch()
         {
-            DestinationType = destinationType;
         }
 
         /// <summary> Initializes a new instance of <see cref="VirtualEnclaveMonitoringDestinationPatch"/>. </summary>
@@ -37,8 +35,15 @@ namespace Azure.ResourceManager.Enclave.Models
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
         }
 
+        /// <summary> Initializes a new instance of <see cref="VirtualEnclaveMonitoringDestinationPatch"/>. </summary>
+        /// <param name="destinationType"> The type of monitoring workspace destination. </param>
+        public VirtualEnclaveMonitoringDestinationPatch(VirtualEnclaveMonitoringDestinationType destinationType) : this()
+        {
+            DestinationType = destinationType;
+        }
+
         /// <summary> The type of monitoring workspace destination. </summary>
-        public VirtualEnclaveMonitoringDestinationType DestinationType { get; }
+        public VirtualEnclaveMonitoringDestinationType DestinationType { get; set; }
 
         /// <summary> Log analytics workspace resource ID for custom workspace. </summary>
         public ResourceIdentifier CustomWorkspaceResourceId { get; set; }
