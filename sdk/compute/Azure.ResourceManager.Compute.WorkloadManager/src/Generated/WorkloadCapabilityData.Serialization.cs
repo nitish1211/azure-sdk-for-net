@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Compute.WorkloadManager
     /// <summary> A capability enabled for a workload space. </summary>
     public partial class WorkloadCapabilityData : TrackedResourceData, IJsonModel<WorkloadCapabilityData>
     {
-        /// <summary> Initializes a new instance of <see cref="WorkloadCapabilityData"/> for deserialization. </summary>
-        internal WorkloadCapabilityData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

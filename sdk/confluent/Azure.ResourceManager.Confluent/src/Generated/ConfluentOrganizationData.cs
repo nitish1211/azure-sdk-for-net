@@ -20,11 +20,10 @@ namespace Azure.ResourceManager.Confluent
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ConfluentOrganizationData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="offerDetail"> Confluent offer detail. </param>
         /// <param name="userDetail"> Subscriber detail. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="offerDetail"/> or <paramref name="userDetail"/> is null. </exception>
-        public ConfluentOrganizationData(AzureLocation location, ConfluentOfferDetail offerDetail, ConfluentUserDetail userDetail) : base(location)
+        public ConfluentOrganizationData(ConfluentOfferDetail offerDetail, ConfluentUserDetail userDetail)
         {
             Argument.AssertNotNull(offerDetail, nameof(offerDetail));
             Argument.AssertNotNull(userDetail, nameof(userDetail));
@@ -45,6 +44,15 @@ namespace Azure.ResourceManager.Confluent
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ConfluentOrganizationData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="offerDetail"> Confluent offer detail. </param>
+        /// <param name="userDetail"> Subscriber detail. </param>
+        public ConfluentOrganizationData(AzureLocation location, ConfluentOfferDetail offerDetail, ConfluentUserDetail userDetail) : this(offerDetail, userDetail)
+        {
+            Location = location;
         }
 
         /// <summary> Organization resource properties. </summary>

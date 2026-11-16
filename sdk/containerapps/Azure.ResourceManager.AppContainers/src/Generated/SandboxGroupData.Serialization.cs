@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.AppContainers
     /// <summary> A SandboxGroup resource, representing a group of sandboxes that share configuration defaults and quotas. </summary>
     public partial class SandboxGroupData : TrackedResourceData, IJsonModel<SandboxGroupData>
     {
-        /// <summary> Initializes a new instance of <see cref="SandboxGroupData"/> for deserialization. </summary>
-        internal SandboxGroupData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

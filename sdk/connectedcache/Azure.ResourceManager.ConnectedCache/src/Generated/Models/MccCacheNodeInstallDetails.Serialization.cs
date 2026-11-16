@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ConnectedCache.Models
     /// <summary> Mcc cache node resource all install details. </summary>
     public partial class MccCacheNodeInstallDetails : TrackedResourceData, IJsonModel<MccCacheNodeInstallDetails>
     {
-        /// <summary> Initializes a new instance of <see cref="MccCacheNodeInstallDetails"/> for deserialization. </summary>
-        internal MccCacheNodeInstallDetails()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

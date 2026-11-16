@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.ContainerInstance
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ContainerGroupData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="containers"> The containers within the container group. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="containers"/> is null. </exception>
-        public ContainerGroupData(AzureLocation location, IEnumerable<ContainerInstanceContainer> containers) : base(location)
+        public ContainerGroupData(IEnumerable<ContainerInstanceContainer> containers)
         {
             Argument.AssertNotNull(containers, nameof(containers));
 
@@ -48,6 +47,14 @@ namespace Azure.ResourceManager.ContainerInstance
             Identity = identity;
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ContainerGroupData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="containers"> The containers within the container group. </param>
+        public ContainerGroupData(AzureLocation location, IEnumerable<ContainerInstanceContainer> containers) : this(containers)
+        {
+            Location = location;
         }
 
         /// <summary> The availability zones. </summary>

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Compute.WorkloadManager
     /// <summary> A relationship between an orchestrator runtime and an optional execution runtime. </summary>
     public partial class RuntimeLinkData : TrackedResourceData, IJsonModel<RuntimeLinkData>
     {
-        /// <summary> Initializes a new instance of <see cref="RuntimeLinkData"/> for deserialization. </summary>
-        internal RuntimeLinkData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

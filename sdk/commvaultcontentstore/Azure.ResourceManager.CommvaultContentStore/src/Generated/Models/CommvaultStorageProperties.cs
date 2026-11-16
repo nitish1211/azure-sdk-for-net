@@ -18,13 +18,11 @@ namespace Azure.ResourceManager.CommvaultContentStore.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CommvaultStorageProperties"/>. </summary>
-        /// <param name="location"> Location of the Commvault Storage. </param>
         /// <param name="storageType"> The type of Commvault Storage. </param>
         /// <param name="vendor"> The vendor of Commvault Storage. </param>
         /// <param name="storageClass"> The class of Commvault Storage. </param>
-        public CommvaultStorageProperties(AzureLocation location, CommvaultStorageType storageType, CommvaultVendor vendor, CommvaultStorageClassType storageClass)
+        public CommvaultStorageProperties(CommvaultStorageType storageType, CommvaultVendor vendor, CommvaultStorageClassType storageClass)
         {
-            Location = location;
             StorageType = storageType;
             Vendor = vendor;
             StorageClass = storageClass;
@@ -47,6 +45,16 @@ namespace Azure.ResourceManager.CommvaultContentStore.Models
             ProvisioningState = provisioningState;
             ComplianceLockStatus = complianceLockStatus;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CommvaultStorageProperties"/>. </summary>
+        /// <param name="location"> Location of the Commvault Storage. </param>
+        /// <param name="storageType"> The type of Commvault Storage. </param>
+        /// <param name="vendor"> The vendor of Commvault Storage. </param>
+        /// <param name="storageClass"> The class of Commvault Storage. </param>
+        public CommvaultStorageProperties(AzureLocation location, CommvaultStorageType storageType, CommvaultVendor vendor, CommvaultStorageClassType storageClass) : this(storageType, vendor, storageClass)
+        {
+            Location = location;
         }
 
         /// <summary> Location of the Commvault Storage. </summary>

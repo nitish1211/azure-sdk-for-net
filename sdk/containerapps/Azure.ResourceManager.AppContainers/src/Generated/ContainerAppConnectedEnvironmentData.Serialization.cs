@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.AppContainers
     /// <summary> An environment for Kubernetes cluster specialized for web workloads by Azure App Service. </summary>
     public partial class ContainerAppConnectedEnvironmentData : TrackedResourceData, IJsonModel<ContainerAppConnectedEnvironmentData>
     {
-        /// <summary> Initializes a new instance of <see cref="ContainerAppConnectedEnvironmentData"/> for deserialization. </summary>
-        internal ContainerAppConnectedEnvironmentData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

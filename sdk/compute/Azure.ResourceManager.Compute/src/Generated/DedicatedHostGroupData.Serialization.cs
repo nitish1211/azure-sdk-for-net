@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Compute
     /// <summary> Specifies information about the dedicated host group that the dedicated hosts should be assigned to. Currently, a dedicated host can only be added to a dedicated host group at creation time. An existing dedicated host cannot be added to another dedicated host group. </summary>
     public partial class DedicatedHostGroupData : TrackedResourceData, IJsonModel<DedicatedHostGroupData>
     {
-        /// <summary> Initializes a new instance of <see cref="DedicatedHostGroupData"/> for deserialization. </summary>
-        internal DedicatedHostGroupData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

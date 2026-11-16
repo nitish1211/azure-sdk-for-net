@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ConfidentialLedger
     /// <summary> Confidential Ledger. Contains the properties of Confidential Ledger Resource. </summary>
     public partial class ConfidentialLedgerData : TrackedResourceData, IJsonModel<ConfidentialLedgerData>
     {
-        /// <summary> Initializes a new instance of <see cref="ConfidentialLedgerData"/> for deserialization. </summary>
-        internal ConfidentialLedgerData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

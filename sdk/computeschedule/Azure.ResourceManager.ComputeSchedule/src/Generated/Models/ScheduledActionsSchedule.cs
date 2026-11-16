@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Azure.ResourceManager.ComputeSchedule;
 
 namespace Azure.ResourceManager.ComputeSchedule.Models
@@ -19,24 +18,11 @@ namespace Azure.ResourceManager.ComputeSchedule.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ScheduledActionsSchedule"/>. </summary>
-        /// <param name="scheduledTime"> The time the scheduled action is supposed to run on. </param>
-        /// <param name="timeZone"> The timezone the scheduled time is specified on. </param>
-        /// <param name="requestedWeekDays"> The week days the scheduled action is supposed to run on. </param>
-        /// <param name="requestedMonths"> The months the scheduled action is supposed to run on. </param>
-        /// <param name="requestedDaysOfTheMonth"> The days of the month the scheduled action is supposed to run on. If empty, it means it will run on every day of the month. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="timeZone"/>, <paramref name="requestedWeekDays"/>, <paramref name="requestedMonths"/> or <paramref name="requestedDaysOfTheMonth"/> is null. </exception>
-        public ScheduledActionsSchedule(TimeSpan scheduledTime, string timeZone, IEnumerable<ScheduledActionsScheduleWeekDay> requestedWeekDays, IEnumerable<ScheduledActionsScheduleMonth> requestedMonths, IEnumerable<int> requestedDaysOfTheMonth)
+        public ScheduledActionsSchedule()
         {
-            Argument.AssertNotNull(timeZone, nameof(timeZone));
-            Argument.AssertNotNull(requestedWeekDays, nameof(requestedWeekDays));
-            Argument.AssertNotNull(requestedMonths, nameof(requestedMonths));
-            Argument.AssertNotNull(requestedDaysOfTheMonth, nameof(requestedDaysOfTheMonth));
-
-            ScheduledTime = scheduledTime;
-            TimeZone = timeZone;
-            RequestedWeekDays = requestedWeekDays.ToList();
-            RequestedMonths = requestedMonths.ToList();
-            RequestedDaysOfTheMonth = requestedDaysOfTheMonth.ToList();
+            RequestedWeekDays = new ChangeTrackingList<ScheduledActionsScheduleWeekDay>();
+            RequestedMonths = new ChangeTrackingList<ScheduledActionsScheduleMonth>();
+            RequestedDaysOfTheMonth = new ChangeTrackingList<int>();
         }
 
         /// <summary> Initializes a new instance of <see cref="ScheduledActionsSchedule"/>. </summary>

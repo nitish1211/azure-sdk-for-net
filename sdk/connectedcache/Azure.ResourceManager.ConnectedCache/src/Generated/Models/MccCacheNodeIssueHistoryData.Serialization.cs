@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ConnectedCache.Models
     /// <summary> Mcc cache node resource issue history. </summary>
     public partial class MccCacheNodeIssueHistoryData : TrackedResourceData, IJsonModel<MccCacheNodeIssueHistoryData>
     {
-        /// <summary> Initializes a new instance of <see cref="MccCacheNodeIssueHistoryData"/> for deserialization. </summary>
-        internal MccCacheNodeIssueHistoryData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

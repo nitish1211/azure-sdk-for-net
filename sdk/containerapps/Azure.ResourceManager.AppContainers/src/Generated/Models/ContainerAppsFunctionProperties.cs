@@ -34,7 +34,11 @@ namespace Azure.ResourceManager.AppContainers.Models
             InvokeUrlTemplate = invokeUrlTemplate;
             TriggerType = triggerType;
             Language = language;
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
             IsDisabled = isDisabled;
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
             State = state;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
         }
@@ -52,6 +56,7 @@ namespace Azure.ResourceManager.AppContainers.Models
         public string Language { get; }
 
         /// <summary> Indicates whether the function is disabled. This property is deprecated; use `state` instead. </summary>
+        [Obsolete("Use `state` instead.")]
         [WirePath("isDisabled")]
         public bool? IsDisabled { get; }
 

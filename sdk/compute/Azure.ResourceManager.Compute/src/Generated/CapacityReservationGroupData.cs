@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Compute
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CapacityReservationGroupData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public CapacityReservationGroupData(AzureLocation location) : base(location)
+        public CapacityReservationGroupData()
         {
             Zones = new ChangeTrackingList<string>();
         }
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.Compute
             Properties = properties;
             Zones = zones;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CapacityReservationGroupData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public CapacityReservationGroupData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> capacity reservation group Properties. </summary>

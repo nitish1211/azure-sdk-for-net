@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Compute.WorkloadManager
     /// <summary> A runtime participant in a workload space. </summary>
     public partial class RuntimeBindingData : TrackedResourceData, IJsonModel<RuntimeBindingData>
     {
-        /// <summary> Initializes a new instance of <see cref="RuntimeBindingData"/> for deserialization. </summary>
-        internal RuntimeBindingData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Compute
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ProximityPlacementGroupData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ProximityPlacementGroupData(AzureLocation location) : base(location)
+        public ProximityPlacementGroupData()
         {
             Zones = new ChangeTrackingList<string>();
         }
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.Compute
             Properties = properties;
             Zones = zones;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ProximityPlacementGroupData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ProximityPlacementGroupData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Describes the properties of a Proximity Placement Group. </summary>

@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.Compute.WorkloadManager;
 
 namespace Azure.ResourceManager.Compute.WorkloadManager.Models
 {
@@ -19,13 +18,8 @@ namespace Azure.ResourceManager.Compute.WorkloadManager.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="RuntimeLinkProperties"/>. </summary>
-        /// <param name="orchestratorBindingResourceId"> The sibling runtime binding that provides orchestration. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="orchestratorBindingResourceId"/> is null. </exception>
-        public RuntimeLinkProperties(ResourceIdentifier orchestratorBindingResourceId)
+        public RuntimeLinkProperties()
         {
-            Argument.AssertNotNull(orchestratorBindingResourceId, nameof(orchestratorBindingResourceId));
-
-            OrchestratorBindingResourceId = orchestratorBindingResourceId;
         }
 
         /// <summary> Initializes a new instance of <see cref="RuntimeLinkProperties"/>. </summary>

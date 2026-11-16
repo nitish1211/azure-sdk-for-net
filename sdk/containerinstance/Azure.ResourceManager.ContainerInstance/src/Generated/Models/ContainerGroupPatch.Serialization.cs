@@ -19,11 +19,6 @@ namespace Azure.ResourceManager.ContainerInstance.Models
     /// <summary> The Resource model definition. </summary>
     public partial class ContainerGroupPatch : TrackedResourceData, IJsonModel<ContainerGroupPatch>
     {
-        /// <summary> Initializes a new instance of <see cref="ContainerGroupPatch"/> for deserialization. </summary>
-        internal ContainerGroupPatch()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

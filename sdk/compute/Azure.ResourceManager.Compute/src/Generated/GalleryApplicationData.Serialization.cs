@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Compute
     /// <summary> Specifies information about the gallery Application Definition that you want to create or update. </summary>
     public partial class GalleryApplicationData : TrackedResourceData, IJsonModel<GalleryApplicationData>
     {
-        /// <summary> Initializes a new instance of <see cref="GalleryApplicationData"/> for deserialization. </summary>
-        internal GalleryApplicationData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

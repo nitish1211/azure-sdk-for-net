@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Compute
     /// <summary> Specifies information about the SSH public key. </summary>
     public partial class SshPublicKeyData : TrackedResourceData, IJsonModel<SshPublicKeyData>
     {
-        /// <summary> Initializes a new instance of <see cref="SshPublicKeyData"/> for deserialization. </summary>
-        internal SshPublicKeyData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

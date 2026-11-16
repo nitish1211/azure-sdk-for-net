@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Compute
     /// <summary> The status of the latest virtual machine scale set rolling upgrade. </summary>
     public partial class VirtualMachineScaleSetRollingUpgradeData : TrackedResourceData, IJsonModel<VirtualMachineScaleSetRollingUpgradeData>
     {
-        /// <summary> Initializes a new instance of <see cref="VirtualMachineScaleSetRollingUpgradeData"/> for deserialization. </summary>
-        internal VirtualMachineScaleSetRollingUpgradeData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ContainerInstance
     /// <summary> A SandboxGroup tracked resource. </summary>
     public partial class ContainerGroupSandboxData : TrackedResourceData, IJsonModel<ContainerGroupSandboxData>
     {
-        /// <summary> Initializes a new instance of <see cref="ContainerGroupSandboxData"/> for deserialization. </summary>
-        internal ContainerGroupSandboxData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

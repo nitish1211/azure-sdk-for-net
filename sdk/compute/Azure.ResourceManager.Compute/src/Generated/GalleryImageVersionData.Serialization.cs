@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Compute
     /// <summary> Specifies information about the gallery image version that you want to create or update. </summary>
     public partial class GalleryImageVersionData : TrackedResourceData, IJsonModel<GalleryImageVersionData>
     {
-        /// <summary> Initializes a new instance of <see cref="GalleryImageVersionData"/> for deserialization. </summary>
-        internal GalleryImageVersionData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

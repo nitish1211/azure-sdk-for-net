@@ -1113,7 +1113,7 @@ namespace Azure.ResourceManager.AppContainers
                 else
                 {
                     ContainerAppData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    ContainerAppData patch = new ContainerAppData(current.Location);
+                    ContainerAppData patch = new ContainerAppData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -1161,7 +1161,7 @@ namespace Azure.ResourceManager.AppContainers
                 else
                 {
                     ContainerAppData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    ContainerAppData patch = new ContainerAppData(current.Location);
+                    ContainerAppData patch = new ContainerAppData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -1207,7 +1207,7 @@ namespace Azure.ResourceManager.AppContainers
                 else
                 {
                     ContainerAppData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    ContainerAppData patch = new ContainerAppData(current.Location);
+                    ContainerAppData patch = new ContainerAppData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<ContainerAppResource> result = await UpdateAsync(WaitUntil.Completed, patch, cancellationToken: cancellationToken).ConfigureAwait(false);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -1249,7 +1249,7 @@ namespace Azure.ResourceManager.AppContainers
                 else
                 {
                     ContainerAppData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    ContainerAppData patch = new ContainerAppData(current.Location);
+                    ContainerAppData patch = new ContainerAppData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<ContainerAppResource> result = Update(WaitUntil.Completed, patch, cancellationToken: cancellationToken);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -1291,7 +1291,7 @@ namespace Azure.ResourceManager.AppContainers
                 else
                 {
                     ContainerAppData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    ContainerAppData patch = new ContainerAppData(current.Location);
+                    ContainerAppData patch = new ContainerAppData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -1337,7 +1337,7 @@ namespace Azure.ResourceManager.AppContainers
                 else
                 {
                     ContainerAppData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    ContainerAppData patch = new ContainerAppData(current.Location);
+                    ContainerAppData patch = new ContainerAppData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);

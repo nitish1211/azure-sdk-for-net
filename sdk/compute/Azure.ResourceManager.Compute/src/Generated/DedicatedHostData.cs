@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.Compute
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DedicatedHostData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="sku"> SKU of the dedicated host for Hardware Generation and VM family. Only name is required to be set. List Microsoft.Compute SKUs for a list of possible values. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sku"/> is null. </exception>
-        public DedicatedHostData(AzureLocation location, ComputeSku sku) : base(location)
+        public DedicatedHostData(ComputeSku sku)
         {
             Argument.AssertNotNull(sku, nameof(sku));
 
@@ -45,6 +44,14 @@ namespace Azure.ResourceManager.Compute
             Properties = properties;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DedicatedHostData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="sku"> SKU of the dedicated host for Hardware Generation and VM family. Only name is required to be set. List Microsoft.Compute SKUs for a list of possible values. </param>
+        public DedicatedHostData(AzureLocation location, ComputeSku sku) : this(sku)
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the dedicated host. </summary>

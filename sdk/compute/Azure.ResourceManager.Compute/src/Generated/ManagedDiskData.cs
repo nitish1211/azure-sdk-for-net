@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.Compute
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ManagedDiskData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ManagedDiskData(AzureLocation location) : base(location)
+        public ManagedDiskData()
         {
             ManagedByExtended = new ChangeTrackingList<ResourceIdentifier>();
             Zones = new ChangeTrackingList<string>();
@@ -51,6 +50,13 @@ namespace Azure.ResourceManager.Compute
             Zones = zones;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ManagedDiskData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ManagedDiskData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Disk resource properties. </summary>

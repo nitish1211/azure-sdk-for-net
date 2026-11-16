@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Compute
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="GalleryData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public GalleryData(AzureLocation location) : base(location)
+        public GalleryData()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.Compute
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="GalleryData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public GalleryData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Describes the properties of a Shared Image Gallery. </summary>

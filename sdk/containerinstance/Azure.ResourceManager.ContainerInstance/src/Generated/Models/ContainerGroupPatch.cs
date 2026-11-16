@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.ContainerInstance.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ContainerGroupPatch"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ContainerGroupPatch(AzureLocation location) : base(location)
+        public ContainerGroupPatch()
         {
             Zones = new ChangeTrackingList<string>();
         }
@@ -39,6 +38,13 @@ namespace Azure.ResourceManager.ContainerInstance.Models
         {
             Zones = zones;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ContainerGroupPatch"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ContainerGroupPatch(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The zones for the container group. </summary>

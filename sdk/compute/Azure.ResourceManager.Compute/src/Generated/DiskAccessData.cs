@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.Compute
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DiskAccessData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DiskAccessData(AzureLocation location) : base(location)
+        public DiskAccessData()
         {
         }
 
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.Compute
             Properties = properties;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DiskAccessData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public DiskAccessData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Gets or sets the Properties. </summary>

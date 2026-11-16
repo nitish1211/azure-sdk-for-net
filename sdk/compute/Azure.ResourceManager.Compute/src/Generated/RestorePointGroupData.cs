@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Compute
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="RestorePointGroupData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public RestorePointGroupData(AzureLocation location) : base(location)
+        public RestorePointGroupData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.Compute
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="RestorePointGroupData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public RestorePointGroupData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The restore point collection properties. </summary>

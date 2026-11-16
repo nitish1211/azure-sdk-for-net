@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Confluent.Models
     /// <summary> Link an existing Confluent organization. </summary>
     internal partial class LinkOrganization : IJsonModel<LinkOrganization>
     {
-        /// <summary> Initializes a new instance of <see cref="LinkOrganization"/> for deserialization. </summary>
-        internal LinkOrganization()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual LinkOrganization PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

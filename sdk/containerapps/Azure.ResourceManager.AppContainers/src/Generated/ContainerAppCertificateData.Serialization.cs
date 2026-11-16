@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.AppContainers
     /// <summary> Certificate used for Custom Domain bindings of Container Apps in a Managed Environment. </summary>
     public partial class ContainerAppCertificateData : TrackedResourceData, IJsonModel<ContainerAppCertificateData>
     {
-        /// <summary> Initializes a new instance of <see cref="ContainerAppCertificateData"/> for deserialization. </summary>
-        internal ContainerAppCertificateData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -19,8 +19,7 @@ namespace Azure.ResourceManager.Compute.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="GallerySoftDeletedResourceDetails"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public GallerySoftDeletedResourceDetails(AzureLocation location) : base(location)
+        public GallerySoftDeletedResourceDetails()
         {
         }
 
@@ -37,6 +36,13 @@ namespace Azure.ResourceManager.Compute.Models
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="GallerySoftDeletedResourceDetails"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public GallerySoftDeletedResourceDetails(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Describes the properties of a soft-deleted resource. </summary>

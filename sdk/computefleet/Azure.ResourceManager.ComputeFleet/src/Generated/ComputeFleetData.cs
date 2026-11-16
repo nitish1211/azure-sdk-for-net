@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.ComputeFleet
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ComputeFleetData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ComputeFleetData(AzureLocation location) : base(location)
+        public ComputeFleetData()
         {
             Zones = new ChangeTrackingList<string>();
         }
@@ -45,6 +44,13 @@ namespace Azure.ResourceManager.ComputeFleet
             Identity = identity;
             Plan = plan;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ComputeFleetData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ComputeFleetData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

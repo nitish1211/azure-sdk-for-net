@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.Compute
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="VirtualMachineScaleSetData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public VirtualMachineScaleSetData(AzureLocation location) : base(location)
+        public VirtualMachineScaleSetData()
         {
             Zones = new ChangeTrackingList<string>();
         }
@@ -54,6 +53,13 @@ namespace Azure.ResourceManager.Compute
             ETag = eTag;
             Placement = placement;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="VirtualMachineScaleSetData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public VirtualMachineScaleSetData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The virtual machine scale set sku. </summary>

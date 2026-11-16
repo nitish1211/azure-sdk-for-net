@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.AppContainers
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ContainerAppConnectedEnvironmentData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ContainerAppConnectedEnvironmentData(AzureLocation location) : base(location)
+        public ContainerAppConnectedEnvironmentData()
         {
         }
 
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.AppContainers
             Properties = properties;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ContainerAppConnectedEnvironmentData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ContainerAppConnectedEnvironmentData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> ConnectedEnvironment resource specific properties. </summary>

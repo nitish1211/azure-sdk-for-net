@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Compute
     /// <summary> Specifies information about the capacity reservation group that the capacity reservations should be assigned to. Currently, a capacity reservation can only be added to a capacity reservation group at creation time. An existing capacity reservation cannot be added or moved to another capacity reservation group. </summary>
     public partial class CapacityReservationGroupData : TrackedResourceData, IJsonModel<CapacityReservationGroupData>
     {
-        /// <summary> Initializes a new instance of <see cref="CapacityReservationGroupData"/> for deserialization. </summary>
-        internal CapacityReservationGroupData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

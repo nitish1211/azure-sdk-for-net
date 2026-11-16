@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Compute.BulkActions
     /// <summary> A recurring bulk action that operates on specified compute resources. </summary>
     public partial class ScheduledActionData : TrackedResourceData, IJsonModel<ScheduledActionData>
     {
-        /// <summary> Initializes a new instance of <see cref="ScheduledActionData"/> for deserialization. </summary>
-        internal ScheduledActionData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

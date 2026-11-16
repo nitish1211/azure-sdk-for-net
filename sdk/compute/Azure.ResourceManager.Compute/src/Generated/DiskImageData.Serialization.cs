@@ -21,11 +21,6 @@ namespace Azure.ResourceManager.Compute
     /// <summary> The source user image virtual hard disk. The virtual hard disk will be copied before being attached to the virtual machine. If SourceImage is provided, the destination virtual hard drive must not exist. </summary>
     public partial class DiskImageData : TrackedResourceData, IJsonModel<DiskImageData>
     {
-        /// <summary> Initializes a new instance of <see cref="DiskImageData"/> for deserialization. </summary>
-        internal DiskImageData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

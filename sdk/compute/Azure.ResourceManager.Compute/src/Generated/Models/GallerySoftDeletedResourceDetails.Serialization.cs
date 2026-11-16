@@ -19,11 +19,6 @@ namespace Azure.ResourceManager.Compute.Models
     /// <summary> The details information of soft-deleted resource. </summary>
     public partial class GallerySoftDeletedResourceDetails : TrackedResourceData, IJsonModel<GallerySoftDeletedResourceDetails>
     {
-        /// <summary> Initializes a new instance of <see cref="GallerySoftDeletedResourceDetails"/> for deserialization. </summary>
-        internal GallerySoftDeletedResourceDetails()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

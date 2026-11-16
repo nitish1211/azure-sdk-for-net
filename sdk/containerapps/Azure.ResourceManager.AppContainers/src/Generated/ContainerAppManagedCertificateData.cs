@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.AppContainers
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ContainerAppManagedCertificateData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ContainerAppManagedCertificateData(AzureLocation location) : base(location)
+        public ContainerAppManagedCertificateData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.AppContainers
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ContainerAppManagedCertificateData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ContainerAppManagedCertificateData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Certificate resource specific properties. </summary>

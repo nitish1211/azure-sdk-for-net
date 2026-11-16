@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ContainerInstance
     /// <summary> A container group profile object. </summary>
     public partial class ContainerGroupProfileData : TrackedResourceData, IJsonModel<ContainerGroupProfileData>
     {
-        /// <summary> Initializes a new instance of <see cref="ContainerGroupProfileData"/> for deserialization. </summary>
-        internal ContainerGroupProfileData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

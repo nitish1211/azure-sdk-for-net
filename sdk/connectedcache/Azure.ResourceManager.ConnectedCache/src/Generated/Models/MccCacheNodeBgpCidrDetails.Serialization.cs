@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ConnectedCache.Models
     /// <summary> Represents all Cidr details of the Bgp request for a specific cache node resource. </summary>
     public partial class MccCacheNodeBgpCidrDetails : TrackedResourceData, IJsonModel<MccCacheNodeBgpCidrDetails>
     {
-        /// <summary> Initializes a new instance of <see cref="MccCacheNodeBgpCidrDetails"/> for deserialization. </summary>
-        internal MccCacheNodeBgpCidrDetails()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

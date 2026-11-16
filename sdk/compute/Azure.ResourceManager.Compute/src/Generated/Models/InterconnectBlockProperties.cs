@@ -21,7 +21,6 @@ namespace Azure.ResourceManager.Compute.Models
         /// <summary> Initializes a new instance of <see cref="InterconnectBlockProperties"/>. </summary>
         public InterconnectBlockProperties()
         {
-
             VirtualMachinesAssociated = new ChangeTrackingList<ComputeSubResourceData>();
         }
 

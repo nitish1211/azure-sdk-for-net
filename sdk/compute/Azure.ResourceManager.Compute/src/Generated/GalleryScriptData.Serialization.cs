@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Compute
     /// <summary> Specifies information about the gallery Script Definition that you want to create or update. </summary>
     public partial class GalleryScriptData : TrackedResourceData, IJsonModel<GalleryScriptData>
     {
-        /// <summary> Initializes a new instance of <see cref="GalleryScriptData"/> for deserialization. </summary>
-        internal GalleryScriptData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

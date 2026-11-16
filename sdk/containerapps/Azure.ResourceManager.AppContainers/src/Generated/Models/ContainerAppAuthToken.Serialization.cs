@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.AppContainers.Models
     /// <summary> Container App Auth Token. </summary>
     public partial class ContainerAppAuthToken : TrackedResourceData, IJsonModel<ContainerAppAuthToken>
     {
-        /// <summary> Initializes a new instance of <see cref="ContainerAppAuthToken"/> for deserialization. </summary>
-        internal ContainerAppAuthToken()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.AppContainers.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ContainerAppEnvironmentAuthToken"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ContainerAppEnvironmentAuthToken(AzureLocation location) : base(location)
+        public ContainerAppEnvironmentAuthToken()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.AppContainers.Models
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ContainerAppEnvironmentAuthToken"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ContainerAppEnvironmentAuthToken(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Environment auth token resource specific properties. </summary>

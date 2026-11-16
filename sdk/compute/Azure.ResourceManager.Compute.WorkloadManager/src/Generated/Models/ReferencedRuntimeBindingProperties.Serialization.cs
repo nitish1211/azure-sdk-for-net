@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.Compute.WorkloadManager.Models
     /// <summary> Properties of a customer-owned runtime attached to a workload space. </summary>
     public partial class ReferencedRuntimeBindingProperties : RuntimeBindingProperties, IJsonModel<ReferencedRuntimeBindingProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="ReferencedRuntimeBindingProperties"/> for deserialization. </summary>
-        internal ReferencedRuntimeBindingProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected override RuntimeBindingProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

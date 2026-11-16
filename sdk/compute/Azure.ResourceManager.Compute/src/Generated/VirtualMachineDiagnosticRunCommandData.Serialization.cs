@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Compute
     /// <summary> Describes a Virtual Machine diagnostic run command. </summary>
     public partial class VirtualMachineDiagnosticRunCommandData : TrackedResourceData, IJsonModel<VirtualMachineDiagnosticRunCommandData>
     {
-        /// <summary> Initializes a new instance of <see cref="VirtualMachineDiagnosticRunCommandData"/> for deserialization. </summary>
-        internal VirtualMachineDiagnosticRunCommandData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

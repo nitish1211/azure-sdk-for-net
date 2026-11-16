@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.CommvaultContentStore.Models
     /// <summary> The properties of Commvault Plan. </summary>
     public partial class CommvaultPlanProperties : IJsonModel<CommvaultPlanProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="CommvaultPlanProperties"/> for deserialization. </summary>
-        internal CommvaultPlanProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual CommvaultPlanProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

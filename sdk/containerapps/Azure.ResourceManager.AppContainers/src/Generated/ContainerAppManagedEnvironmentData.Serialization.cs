@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.AppContainers
     /// <summary> An environment for hosting container apps. </summary>
     public partial class ContainerAppManagedEnvironmentData : TrackedResourceData, IJsonModel<ContainerAppManagedEnvironmentData>
     {
-        /// <summary> Initializes a new instance of <see cref="ContainerAppManagedEnvironmentData"/> for deserialization. </summary>
-        internal ContainerAppManagedEnvironmentData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Compute
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AvailabilitySetData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public AvailabilitySetData(AzureLocation location) : base(location)
+        public AvailabilitySetData()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.Compute
             Properties = properties;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="AvailabilitySetData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public AvailabilitySetData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The instance view of a resource. </summary>

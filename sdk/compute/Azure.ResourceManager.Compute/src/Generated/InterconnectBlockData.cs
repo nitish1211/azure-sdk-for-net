@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.Compute
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="InterconnectBlockData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="sku"> SKU of the resource for which capacity needs to be pre-allocated. Both `sku.name` and `sku.capacity` are required at create. After create, only `sku.capacity` can be updated. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sku"/> is null. </exception>
-        public InterconnectBlockData(AzureLocation location, ComputeSku sku) : base(location)
+        public InterconnectBlockData(ComputeSku sku)
         {
             Argument.AssertNotNull(sku, nameof(sku));
 
@@ -50,6 +49,14 @@ namespace Azure.ResourceManager.Compute
             Zones = zones;
             Placement = placement;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="InterconnectBlockData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="sku"> SKU of the resource for which capacity needs to be pre-allocated. Both `sku.name` and `sku.capacity` are required at create. After create, only `sku.capacity` can be updated. </param>
+        public InterconnectBlockData(AzureLocation location, ComputeSku sku) : this(sku)
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the Interconnect Block. </summary>

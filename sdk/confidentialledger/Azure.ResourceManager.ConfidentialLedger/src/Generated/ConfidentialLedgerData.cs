@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.ConfidentialLedger
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ConfidentialLedgerData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ConfidentialLedgerData(AzureLocation location) : base(location)
+        public ConfidentialLedgerData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.ConfidentialLedger
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ConfidentialLedgerData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ConfidentialLedgerData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of Confidential Ledger Resource. </summary>

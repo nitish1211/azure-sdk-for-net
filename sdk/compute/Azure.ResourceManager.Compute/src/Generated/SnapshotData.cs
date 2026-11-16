@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.Compute
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="SnapshotData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public SnapshotData(AzureLocation location) : base(location)
+        public SnapshotData()
         {
         }
 
@@ -45,6 +44,13 @@ namespace Azure.ResourceManager.Compute
             Sku = sku;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="SnapshotData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public SnapshotData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Snapshot resource properties. </summary>

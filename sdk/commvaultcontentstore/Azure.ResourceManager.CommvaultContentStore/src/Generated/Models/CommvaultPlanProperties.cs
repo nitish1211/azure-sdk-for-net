@@ -20,15 +20,9 @@ namespace Azure.ResourceManager.CommvaultContentStore.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CommvaultPlanProperties"/>. </summary>
-        /// <param name="location"> Location of the Commvault Plan. </param>
-        /// <param name="storagePlans"> The storage plans associated with the Commvault Plan. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="storagePlans"/> is null. </exception>
-        public CommvaultPlanProperties(AzureLocation location, IEnumerable<CommvaultStoragePlan> storagePlans)
+        public CommvaultPlanProperties()
         {
-            Argument.AssertNotNull(storagePlans, nameof(storagePlans));
-
-            Location = location;
-            StoragePlans = storagePlans.ToList();
+            StoragePlans = new ChangeTrackingList<CommvaultStoragePlan>();
             Schedules = new ChangeTrackingList<CommvaultBackupSchedule>();
         }
 
@@ -47,6 +41,18 @@ namespace Azure.ResourceManager.CommvaultContentStore.Models
             Retention = retention;
             ProvisioningState = provisioningState;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CommvaultPlanProperties"/>. </summary>
+        /// <param name="location"> Location of the Commvault Plan. </param>
+        /// <param name="storagePlans"> The storage plans associated with the Commvault Plan. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="storagePlans"/> is null. </exception>
+        public CommvaultPlanProperties(AzureLocation location, IEnumerable<CommvaultStoragePlan> storagePlans) : this()
+        {
+            Argument.AssertNotNull(storagePlans, nameof(storagePlans));
+
+            Location = location;
+            StoragePlans = storagePlans.ToList();
         }
 
         /// <summary> Location of the Commvault Plan. </summary>

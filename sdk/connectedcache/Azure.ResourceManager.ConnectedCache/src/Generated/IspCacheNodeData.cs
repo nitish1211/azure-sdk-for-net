@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.ConnectedCache
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="IspCacheNodeData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public IspCacheNodeData(AzureLocation location) : base(location)
+        public IspCacheNodeData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.ConnectedCache
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="IspCacheNodeData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public IspCacheNodeData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

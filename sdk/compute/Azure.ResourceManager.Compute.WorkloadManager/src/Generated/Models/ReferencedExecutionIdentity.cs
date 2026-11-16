@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.Compute.WorkloadManager;
 
 namespace Azure.ResourceManager.Compute.WorkloadManager.Models
 {
@@ -17,13 +16,8 @@ namespace Azure.ResourceManager.Compute.WorkloadManager.Models
     {
         /// <summary> Initializes a new instance of <see cref="ReferencedExecutionIdentity"/>. </summary>
         /// <param name="scope"> The execution boundary across which the identity is shared. </param>
-        /// <param name="userAssignedIdentityResourceId"> The customer-provided user-assigned identity. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="userAssignedIdentityResourceId"/> is null. </exception>
-        public ReferencedExecutionIdentity(ExecutionIdentityScope scope, ResourceIdentifier userAssignedIdentityResourceId) : base(ExecutionIdentityProvisioningMode.Referenced, scope)
+        public ReferencedExecutionIdentity(ExecutionIdentityScope scope) : base(ExecutionIdentityProvisioningMode.Referenced, scope)
         {
-            Argument.AssertNotNull(userAssignedIdentityResourceId, nameof(userAssignedIdentityResourceId));
-
-            UserAssignedIdentityResourceId = userAssignedIdentityResourceId;
         }
 
         /// <summary> Initializes a new instance of <see cref="ReferencedExecutionIdentity"/>. </summary>

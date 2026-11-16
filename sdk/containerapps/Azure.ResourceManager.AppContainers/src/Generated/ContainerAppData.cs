@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.AppContainers
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ContainerAppData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ContainerAppData(AzureLocation location) : base(location)
+        public ContainerAppData()
         {
         }
 
@@ -47,6 +46,13 @@ namespace Azure.ResourceManager.AppContainers
             ManagedBy = managedBy;
             Kind = kind;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ContainerAppData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ContainerAppData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> ContainerApp resource specific properties. </summary>

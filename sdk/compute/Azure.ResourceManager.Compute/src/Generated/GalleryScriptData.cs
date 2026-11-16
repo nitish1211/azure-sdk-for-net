@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Compute
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="GalleryScriptData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public GalleryScriptData(AzureLocation location) : base(location)
+        public GalleryScriptData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.Compute
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="GalleryScriptData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public GalleryScriptData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Describes the properties of a gallery Script Definition. </summary>

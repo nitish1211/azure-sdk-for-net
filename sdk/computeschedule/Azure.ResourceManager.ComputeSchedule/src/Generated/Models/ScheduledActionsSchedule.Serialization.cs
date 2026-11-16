@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.ComputeSchedule.Models
     /// <summary> Specify the schedule in which the scheduled action is supposed to follow. </summary>
     public partial class ScheduledActionsSchedule : IJsonModel<ScheduledActionsSchedule>
     {
-        /// <summary> Initializes a new instance of <see cref="ScheduledActionsSchedule"/> for deserialization. </summary>
-        internal ScheduledActionsSchedule()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ScheduledActionsSchedule PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.Compute
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="VirtualMachineData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public VirtualMachineData(AzureLocation location) : base(location)
+        public VirtualMachineData()
         {
             Resources = new ChangeTrackingList<VirtualMachineExtensionData>();
             Zones = new ChangeTrackingList<string>();
@@ -57,6 +56,13 @@ namespace Azure.ResourceManager.Compute
             ETag = eTag;
             Placement = placement;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="VirtualMachineData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public VirtualMachineData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Describes the properties of a Virtual Machine. </summary>

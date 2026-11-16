@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Compute
     /// <summary> disk encryption set resource. </summary>
     public partial class DiskEncryptionSetData : TrackedResourceData, IJsonModel<DiskEncryptionSetData>
     {
-        /// <summary> Initializes a new instance of <see cref="DiskEncryptionSetData"/> for deserialization. </summary>
-        internal DiskEncryptionSetData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Compute
     /// <summary> Describes a Virtual Machine Extension. </summary>
     public partial class VirtualMachineExtensionData : TrackedResourceData, IJsonModel<VirtualMachineExtensionData>
     {
-        /// <summary> Initializes a new instance of <see cref="VirtualMachineExtensionData"/> for deserialization. </summary>
-        internal VirtualMachineExtensionData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

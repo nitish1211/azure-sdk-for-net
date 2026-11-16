@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.ContainerInstance
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NGroupData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public NGroupData(AzureLocation location) : base(location)
+        public NGroupData()
         {
             Zones = new ChangeTrackingList<string>();
         }
@@ -43,6 +42,13 @@ namespace Azure.ResourceManager.ContainerInstance
             Zones = zones;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NGroupData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public NGroupData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Describes the properties of the NGroups resource. </summary>

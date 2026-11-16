@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.Compute.WorkloadManager.Models
     /// <summary> Properties of a relationship between runtime bindings. </summary>
     public partial class RuntimeLinkProperties : IJsonModel<RuntimeLinkProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="RuntimeLinkProperties"/> for deserialization. </summary>
-        internal RuntimeLinkProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual RuntimeLinkProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

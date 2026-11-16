@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Compute
     /// <summary> Describes a Virtual Machine run command. </summary>
     public partial class VirtualMachineRunCommandData : TrackedResourceData, IJsonModel<VirtualMachineRunCommandData>
     {
-        /// <summary> Initializes a new instance of <see cref="VirtualMachineRunCommandData"/> for deserialization. </summary>
-        internal VirtualMachineRunCommandData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

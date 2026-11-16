@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Compute
     /// <summary> Specifies information about the Shared Image Gallery that you want to create or update. </summary>
     public partial class GalleryData : TrackedResourceData, IJsonModel<GalleryData>
     {
-        /// <summary> Initializes a new instance of <see cref="GalleryData"/> for deserialization. </summary>
-        internal GalleryData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

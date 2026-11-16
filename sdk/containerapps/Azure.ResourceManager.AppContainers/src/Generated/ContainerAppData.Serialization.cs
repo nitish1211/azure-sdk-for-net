@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.AppContainers
     /// <summary> Container App. </summary>
     public partial class ContainerAppData : TrackedResourceData, IJsonModel<ContainerAppData>
     {
-        /// <summary> Initializes a new instance of <see cref="ContainerAppData"/> for deserialization. </summary>
-        internal ContainerAppData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

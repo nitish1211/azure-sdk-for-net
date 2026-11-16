@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.Compute.WorkloadManager;
 
 namespace Azure.ResourceManager.Compute.WorkloadManager.Models
 {
@@ -16,13 +15,8 @@ namespace Azure.ResourceManager.Compute.WorkloadManager.Models
     public partial class ReferencedRuntimeBindingProperties : RuntimeBindingProperties
     {
         /// <summary> Initializes a new instance of <see cref="ReferencedRuntimeBindingProperties"/>. </summary>
-        /// <param name="resourceId"> The existing customer-owned runtime resource. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="resourceId"/> is null. </exception>
-        public ReferencedRuntimeBindingProperties(ResourceIdentifier resourceId) : base(RuntimeBindingProvisioningMode.Referenced)
+        public ReferencedRuntimeBindingProperties() : base(RuntimeBindingProvisioningMode.Referenced)
         {
-            Argument.AssertNotNull(resourceId, nameof(resourceId));
-
-            ResourceId = resourceId;
         }
 
         /// <summary> Initializes a new instance of <see cref="ReferencedRuntimeBindingProperties"/>. </summary>

@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.ContainerInstance
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ContainerGroupProfileData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ContainerGroupProfileData(AzureLocation location) : base(location)
+        public ContainerGroupProfileData()
         {
             Zones = new ChangeTrackingList<string>();
         }
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.ContainerInstance
             Properties = properties;
             Zones = zones;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ContainerGroupProfileData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ContainerGroupProfileData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The container group profile properties. </summary>

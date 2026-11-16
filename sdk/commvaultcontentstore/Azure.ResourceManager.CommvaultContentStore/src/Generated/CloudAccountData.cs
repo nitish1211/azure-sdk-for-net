@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.CommvaultContentStore
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CloudAccountData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public CloudAccountData(AzureLocation location) : base(location)
+        public CloudAccountData()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.CommvaultContentStore
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CloudAccountData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public CloudAccountData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

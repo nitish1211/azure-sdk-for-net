@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.CommvaultContentStore
     /// <summary> A Commvault Cloud Account Resource. </summary>
     public partial class CloudAccountData : TrackedResourceData, IJsonModel<CloudAccountData>
     {
-        /// <summary> Initializes a new instance of <see cref="CloudAccountData"/> for deserialization. </summary>
-        internal CloudAccountData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

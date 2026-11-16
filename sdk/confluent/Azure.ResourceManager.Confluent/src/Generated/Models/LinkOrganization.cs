@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.Confluent;
 
 namespace Azure.ResourceManager.Confluent.Models
 {
@@ -18,13 +17,8 @@ namespace Azure.ResourceManager.Confluent.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="LinkOrganization"/>. </summary>
-        /// <param name="token"> User auth token. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="token"/> is null. </exception>
-        public LinkOrganization(string token)
+        public LinkOrganization()
         {
-            Argument.AssertNotNull(token, nameof(token));
-
-            Token = token;
         }
 
         /// <summary> Initializes a new instance of <see cref="LinkOrganization"/>. </summary>

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Compute
     /// <summary> Describes a virtual machine scale set virtual machine. </summary>
     public partial class VirtualMachineScaleSetVmData : TrackedResourceData, IJsonModel<VirtualMachineScaleSetVmData>
     {
-        /// <summary> Initializes a new instance of <see cref="VirtualMachineScaleSetVmData"/> for deserialization. </summary>
-        internal VirtualMachineScaleSetVmData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

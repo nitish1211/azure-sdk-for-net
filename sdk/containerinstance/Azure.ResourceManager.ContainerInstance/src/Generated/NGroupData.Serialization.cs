@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ContainerInstance
     /// <summary> Describes the NGroups resource. </summary>
     public partial class NGroupData : TrackedResourceData, IJsonModel<NGroupData>
     {
-        /// <summary> Initializes a new instance of <see cref="NGroupData"/> for deserialization. </summary>
-        internal NGroupData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Compute
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="GalleryInVmAccessControlProfileVersionData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public GalleryInVmAccessControlProfileVersionData(AzureLocation location) : base(location)
+        public GalleryInVmAccessControlProfileVersionData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.Compute
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="GalleryInVmAccessControlProfileVersionData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public GalleryInVmAccessControlProfileVersionData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Describes the properties of an inVMAccessControlProfile version. </summary>

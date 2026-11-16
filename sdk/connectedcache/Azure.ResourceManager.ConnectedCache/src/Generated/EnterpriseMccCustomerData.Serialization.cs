@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ConnectedCache
     /// <summary> Represents the high level Nodes needed to provision customer resources. </summary>
     public partial class EnterpriseMccCustomerData : TrackedResourceData, IJsonModel<EnterpriseMccCustomerData>
     {
-        /// <summary> Initializes a new instance of <see cref="EnterpriseMccCustomerData"/> for deserialization. </summary>
-        internal EnterpriseMccCustomerData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

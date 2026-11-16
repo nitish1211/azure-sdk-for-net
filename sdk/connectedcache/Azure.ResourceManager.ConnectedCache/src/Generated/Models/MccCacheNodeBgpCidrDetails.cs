@@ -19,8 +19,7 @@ namespace Azure.ResourceManager.ConnectedCache.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="MccCacheNodeBgpCidrDetails"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        internal MccCacheNodeBgpCidrDetails(AzureLocation location) : base(location)
+        internal MccCacheNodeBgpCidrDetails()
         {
         }
 
