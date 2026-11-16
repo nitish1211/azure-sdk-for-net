@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.CosmosDB
     /// <summary> An Azure Cosmos DB Cassandra table. </summary>
     public partial class CassandraTableData : TrackedResourceData, IJsonModel<CassandraTableData>
     {
-        /// <summary> Initializes a new instance of <see cref="CassandraTableData"/> for deserialization. </summary>
-        internal CassandraTableData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

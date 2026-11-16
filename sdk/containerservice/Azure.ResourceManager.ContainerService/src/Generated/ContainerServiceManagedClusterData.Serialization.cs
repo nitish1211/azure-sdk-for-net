@@ -21,11 +21,6 @@ namespace Azure.ResourceManager.ContainerService
     /// <summary> Managed cluster. </summary>
     public partial class ContainerServiceManagedClusterData : TrackedResourceData, IJsonModel<ContainerServiceManagedClusterData>
     {
-        /// <summary> Initializes a new instance of <see cref="ContainerServiceManagedClusterData"/> for deserialization. </summary>
-        internal ContainerServiceManagedClusterData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -540,6 +540,8 @@ namespace Azure.ResourceManager.ContainerService
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="roleName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="roleName"/> is an empty string, and was expected to be non-empty. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<Response<ManagedClusterAccessProfile>> GetAccessProfileAsync(string roleName, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(roleName, nameof(roleName));
@@ -567,6 +569,8 @@ namespace Azure.ResourceManager.ContainerService
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// <b>WARNING</b>: This API will be deprecated. Instead use [ListClusterUserCredentials](https://docs.microsoft.com/rest/api/aks/managedclusters/listclusterusercredentials) or [ListClusterAdminCredentials](https://docs.microsoft.com/rest/api/aks/managedclusters/listclusteradmincredentials) .
@@ -593,6 +597,8 @@ namespace Azure.ResourceManager.ContainerService
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="roleName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="roleName"/> is an empty string, and was expected to be non-empty. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual Response<ManagedClusterAccessProfile> GetAccessProfile(string roleName, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(roleName, nameof(roleName));
@@ -620,6 +626,8 @@ namespace Azure.ResourceManager.ContainerService
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// See [supported Kubernetes versions](https://docs.microsoft.com/azure/aks/supported-kubernetes-versions) for more details about the version lifecycle.
@@ -1506,6 +1514,8 @@ namespace Azure.ResourceManager.ContainerService
         /// <param name="managedClusterAadProfile"> The AAD profile to set on the Managed Cluster. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="managedClusterAadProfile"/> is null. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<ArmOperation> ResetAadProfileAsync(WaitUntil waitUntil, ManagedClusterAadProfile managedClusterAadProfile, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNull(managedClusterAadProfile, nameof(managedClusterAadProfile));
@@ -1533,6 +1543,8 @@ namespace Azure.ResourceManager.ContainerService
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// <b>WARNING</b>: This API will be deprecated. Please see [AKS-managed Azure Active Directory integration](https://aka.ms/aks-managed-aad) to update your cluster with AKS-managed Azure AD.
@@ -1559,6 +1571,8 @@ namespace Azure.ResourceManager.ContainerService
         /// <param name="managedClusterAadProfile"> The AAD profile to set on the Managed Cluster. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="managedClusterAadProfile"/> is null. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual ArmOperation ResetAadProfile(WaitUntil waitUntil, ManagedClusterAadProfile managedClusterAadProfile, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNull(managedClusterAadProfile, nameof(managedClusterAadProfile));
@@ -1586,6 +1600,8 @@ namespace Azure.ResourceManager.ContainerService
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// This action cannot be performed on a cluster that is not using a service principal

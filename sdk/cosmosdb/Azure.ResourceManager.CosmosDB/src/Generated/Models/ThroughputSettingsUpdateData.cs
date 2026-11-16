@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.CosmosDB.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ThroughputSettingsUpdateData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="resource"> The standard JSON format of a resource throughput. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="resource"/> is null. </exception>
-        public ThroughputSettingsUpdateData(AzureLocation location, ThroughputSettingsResourceInfo resource) : base(location)
+        public ThroughputSettingsUpdateData(ThroughputSettingsResourceInfo resource)
         {
             Argument.AssertNotNull(resource, nameof(resource));
 
@@ -43,6 +42,14 @@ namespace Azure.ResourceManager.CosmosDB.Models
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ThroughputSettingsUpdateData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="resource"> The standard JSON format of a resource throughput. </param>
+        public ThroughputSettingsUpdateData(AzureLocation location, ThroughputSettingsResourceInfo resource) : this(resource)
+        {
+            Location = location;
         }
 
         /// <summary> Properties to update Azure Cosmos DB resource throughput. </summary>

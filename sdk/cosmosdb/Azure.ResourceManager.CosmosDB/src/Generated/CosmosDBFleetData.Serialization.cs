@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.CosmosDB
     /// <summary> An Azure Cosmos DB FleetResource. </summary>
     public partial class CosmosDBFleetData : TrackedResourceData, IJsonModel<CosmosDBFleetData>
     {
-        /// <summary> Initializes a new instance of <see cref="CosmosDBFleetData"/> for deserialization. </summary>
-        internal CosmosDBFleetData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

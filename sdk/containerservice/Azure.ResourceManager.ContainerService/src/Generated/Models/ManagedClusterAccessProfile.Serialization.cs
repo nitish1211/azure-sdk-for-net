@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ContainerService.Models
     /// <summary> Managed cluster Access Profile. </summary>
     public partial class ManagedClusterAccessProfile : TrackedResourceData, IJsonModel<ManagedClusterAccessProfile>
     {
-        /// <summary> Initializes a new instance of <see cref="ManagedClusterAccessProfile"/> for deserialization. </summary>
-        internal ManagedClusterAccessProfile()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

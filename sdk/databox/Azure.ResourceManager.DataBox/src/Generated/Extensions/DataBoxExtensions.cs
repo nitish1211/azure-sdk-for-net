@@ -317,12 +317,16 @@ namespace Azure.ResourceManager.DataBox
         /// <param name="content"> The request body. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="subscriptionResource"/> is null. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public static async Task<Response<AddressValidationOutput>> ValidateAddressAsync(this SubscriptionResource subscriptionResource, AzureLocation location, DataBoxValidateAddressContent content, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNull(subscriptionResource, nameof(subscriptionResource));
 
             return await GetMockableDataBoxSubscriptionResource(subscriptionResource).ValidateAddressAsync(location, content, cancellationToken).ConfigureAwait(false);
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// [DEPRECATED NOTICE: This operation will soon be removed]. This method validates the customer shipping address and provide alternate addresses if any.
@@ -336,12 +340,16 @@ namespace Azure.ResourceManager.DataBox
         /// <param name="content"> The request body. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="subscriptionResource"/> is null. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public static Response<AddressValidationOutput> ValidateAddress(this SubscriptionResource subscriptionResource, AzureLocation location, DataBoxValidateAddressContent content, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNull(subscriptionResource, nameof(subscriptionResource));
 
             return GetMockableDataBoxSubscriptionResource(subscriptionResource).ValidateAddress(location, content, cancellationToken);
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// This method does all necessary pre-job creation validation under subscription.

@@ -21,11 +21,10 @@ namespace Azure.ResourceManager.DataBox
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DataBoxJobData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="transferType"> Type of the data transfer. </param>
         /// <param name="sku"> The sku type. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sku"/> is null. </exception>
-        public DataBoxJobData(AzureLocation location, DataBoxJobTransferType transferType, DataBoxSku sku) : base(location)
+        public DataBoxJobData(DataBoxJobTransferType transferType, DataBoxSku sku)
         {
             Argument.AssertNotNull(sku, nameof(sku));
 
@@ -50,6 +49,15 @@ namespace Azure.ResourceManager.DataBox
             Sku = sku;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DataBoxJobData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="transferType"> Type of the data transfer. </param>
+        /// <param name="sku"> The sku type. </param>
+        public DataBoxJobData(AzureLocation location, DataBoxJobTransferType transferType, DataBoxSku sku) : this(transferType, sku)
+        {
+            Location = location;
         }
 
         /// <summary> Properties of a job. </summary>

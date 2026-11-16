@@ -23,8 +23,7 @@ namespace Azure.ResourceManager.ContainerRegistry.Tasks
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ContainerRegistryAgentPoolData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ContainerRegistryAgentPoolData(AzureLocation location) : base(location)
+        public ContainerRegistryAgentPoolData()
         {
         }
 

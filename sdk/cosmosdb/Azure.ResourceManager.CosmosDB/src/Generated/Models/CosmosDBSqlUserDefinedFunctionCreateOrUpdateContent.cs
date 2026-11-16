@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.CosmosDB.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CosmosDBSqlUserDefinedFunctionCreateOrUpdateContent"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="resource"> The standard JSON format of a userDefinedFunction. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="resource"/> is null. </exception>
-        public CosmosDBSqlUserDefinedFunctionCreateOrUpdateContent(AzureLocation location, CosmosDBSqlUserDefinedFunctionResourceInfo resource) : base(location)
+        public CosmosDBSqlUserDefinedFunctionCreateOrUpdateContent(CosmosDBSqlUserDefinedFunctionResourceInfo resource)
         {
             Argument.AssertNotNull(resource, nameof(resource));
 
@@ -43,6 +42,14 @@ namespace Azure.ResourceManager.CosmosDB.Models
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CosmosDBSqlUserDefinedFunctionCreateOrUpdateContent"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="resource"> The standard JSON format of a userDefinedFunction. </param>
+        public CosmosDBSqlUserDefinedFunctionCreateOrUpdateContent(AzureLocation location, CosmosDBSqlUserDefinedFunctionResourceInfo resource) : this(resource)
+        {
+            Location = location;
         }
 
         /// <summary> Properties to create and update Azure Cosmos DB userDefinedFunction. </summary>

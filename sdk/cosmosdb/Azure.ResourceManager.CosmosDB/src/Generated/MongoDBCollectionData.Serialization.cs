@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.CosmosDB
     /// <summary> An Azure Cosmos DB MongoDB collection. </summary>
     public partial class MongoDBCollectionData : TrackedResourceData, IJsonModel<MongoDBCollectionData>
     {
-        /// <summary> Initializes a new instance of <see cref="MongoDBCollectionData"/> for deserialization. </summary>
-        internal MongoDBCollectionData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

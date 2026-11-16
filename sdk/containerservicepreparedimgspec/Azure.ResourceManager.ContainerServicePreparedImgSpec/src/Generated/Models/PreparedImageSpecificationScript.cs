@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.ContainerServicePreparedImgSpec;
 
 namespace Azure.ResourceManager.ContainerServicePreparedImgSpec.Models
 {
@@ -18,22 +17,13 @@ namespace Azure.ResourceManager.ContainerServicePreparedImgSpec.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PreparedImageSpecificationScript"/>. </summary>
-        /// <param name="name">
-        /// The name for the customization script. 
-        /// Must be unique within the prepared image specification resource.
-        /// Can only contain lowercase alphanumeric,'-' or '.' characters.
-        /// </param>
         /// <param name="executionPoint">
         /// The stage at which the script is executed.
         /// Specifying `NodeImageBuildTime` will ensure changes are persisted into the node image.
         /// </param>
         /// <param name="scriptType"> The runtime environment for the script (e.g. Bash). </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="name"/> is null. </exception>
-        public PreparedImageSpecificationScript(string name, PreparedImageSpecificationExecutionPoint executionPoint, PreparedImageSpecificationScriptType scriptType)
+        public PreparedImageSpecificationScript(PreparedImageSpecificationExecutionPoint executionPoint, PreparedImageSpecificationScriptType scriptType)
         {
-            Argument.AssertNotNull(name, nameof(name));
-
-            Name = name;
             ExecutionPoint = executionPoint;
             ScriptType = scriptType;
         }

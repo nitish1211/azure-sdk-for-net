@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.CosmosDB
     /// <summary> An Azure Cosmos DB database account. </summary>
     public partial class CosmosDBAccountData : TrackedResourceData, IJsonModel<CosmosDBAccountData>
     {
-        /// <summary> Initializes a new instance of <see cref="CosmosDBAccountData"/> for deserialization. </summary>
-        internal CosmosDBAccountData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

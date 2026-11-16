@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.ContainerRegistry
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ContainerRegistryReplicationData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ContainerRegistryReplicationData(AzureLocation location) : base(location)
+        public ContainerRegistryReplicationData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.ContainerRegistry
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ContainerRegistryReplicationData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ContainerRegistryReplicationData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The properties of the replication. </summary>

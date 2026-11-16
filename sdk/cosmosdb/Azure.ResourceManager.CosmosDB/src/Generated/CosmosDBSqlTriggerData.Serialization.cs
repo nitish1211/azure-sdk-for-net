@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.CosmosDB
     /// <summary> An Azure Cosmos DB trigger. </summary>
     public partial class CosmosDBSqlTriggerData : TrackedResourceData, IJsonModel<CosmosDBSqlTriggerData>
     {
-        /// <summary> Initializes a new instance of <see cref="CosmosDBSqlTriggerData"/> for deserialization. </summary>
-        internal CosmosDBSqlTriggerData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.CosmosDB
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CosmosDBAccountData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public CosmosDBAccountData(AzureLocation location) : base(location)
+        public CosmosDBAccountData()
         {
         }
 
@@ -42,6 +41,13 @@ namespace Azure.ResourceManager.CosmosDB
             Identity = identity;
             Kind = kind;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CosmosDBAccountData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public CosmosDBAccountData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties for the database account. </summary>

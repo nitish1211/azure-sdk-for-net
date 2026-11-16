@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.CosmosDB
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CosmosDBGraphData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        internal CosmosDBGraphData(AzureLocation location) : base(location)
+        internal CosmosDBGraphData()
         {
         }
 

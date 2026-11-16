@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ContainerRegistry
     /// <summary> An object that represents a webhook for a container registry. </summary>
     public partial class ContainerRegistryWebhookData : TrackedResourceData, IJsonModel<ContainerRegistryWebhookData>
     {
-        /// <summary> Initializes a new instance of <see cref="ContainerRegistryWebhookData"/> for deserialization. </summary>
-        internal ContainerRegistryWebhookData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

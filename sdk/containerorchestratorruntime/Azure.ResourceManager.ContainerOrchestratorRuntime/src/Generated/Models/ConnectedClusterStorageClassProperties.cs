@@ -18,16 +18,11 @@ namespace Azure.ResourceManager.ContainerOrchestratorRuntime.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ConnectedClusterStorageClassProperties"/>. </summary>
-        /// <param name="typeProperties"> Properties of the StorageClass. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="typeProperties"/> is null. </exception>
-        public ConnectedClusterStorageClassProperties(StorageClassTypeProperties typeProperties)
+        public ConnectedClusterStorageClassProperties()
         {
-            Argument.AssertNotNull(typeProperties, nameof(typeProperties));
-
             MountOptions = new ChangeTrackingList<string>();
             AccessModes = new ChangeTrackingList<StorageClassAccessMode>();
             Limitations = new ChangeTrackingList<string>();
-            TypeProperties = typeProperties;
         }
 
         /// <summary> Initializes a new instance of <see cref="ConnectedClusterStorageClassProperties"/>. </summary>

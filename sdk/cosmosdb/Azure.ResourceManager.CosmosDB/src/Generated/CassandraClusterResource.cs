@@ -1053,7 +1053,7 @@ namespace Azure.ResourceManager.CosmosDB
         /// </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <returns> A collection of <see cref="CassandraClusterCommand"/> that may take multiple service requests to iterate over. </returns>
-        public virtual AsyncPageable<CassandraClusterCommand> GetCommandAsync(CancellationToken cancellationToken = default)
+        public virtual AsyncPageable<CassandraClusterCommand> ListCommandAsync(CancellationToken cancellationToken = default)
         {
             RequestContext context = new RequestContext
             {
@@ -1065,7 +1065,7 @@ namespace Azure.ResourceManager.CosmosDB
                 Id.ResourceGroupName,
                 Id.Name,
                 context,
-                "CassandraClusterResource.GetCommand");
+                "CassandraClusterResource.ListCommand");
         }
 
         /// <summary>
@@ -1091,7 +1091,7 @@ namespace Azure.ResourceManager.CosmosDB
         /// </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <returns> A collection of <see cref="CassandraClusterCommand"/> that may take multiple service requests to iterate over. </returns>
-        public virtual Pageable<CassandraClusterCommand> GetCommand(CancellationToken cancellationToken = default)
+        public virtual Pageable<CassandraClusterCommand> ListCommand(CancellationToken cancellationToken = default)
         {
             RequestContext context = new RequestContext
             {
@@ -1103,7 +1103,7 @@ namespace Azure.ResourceManager.CosmosDB
                 Id.ResourceGroupName,
                 Id.Name,
                 context,
-                "CassandraClusterResource.GetCommand");
+                "CassandraClusterResource.ListCommand");
         }
 
         /// <summary>
@@ -1331,7 +1331,7 @@ namespace Azure.ResourceManager.CosmosDB
                 else
                 {
                     CassandraClusterData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    CassandraClusterData patch = new CassandraClusterData(current.Location);
+                    CassandraClusterData patch = new CassandraClusterData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -1379,7 +1379,7 @@ namespace Azure.ResourceManager.CosmosDB
                 else
                 {
                     CassandraClusterData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    CassandraClusterData patch = new CassandraClusterData(current.Location);
+                    CassandraClusterData patch = new CassandraClusterData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -1425,7 +1425,7 @@ namespace Azure.ResourceManager.CosmosDB
                 else
                 {
                     CassandraClusterData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    CassandraClusterData patch = new CassandraClusterData(current.Location);
+                    CassandraClusterData patch = new CassandraClusterData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<CassandraClusterResource> result = await UpdateAsync(WaitUntil.Completed, patch, cancellationToken: cancellationToken).ConfigureAwait(false);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -1467,7 +1467,7 @@ namespace Azure.ResourceManager.CosmosDB
                 else
                 {
                     CassandraClusterData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    CassandraClusterData patch = new CassandraClusterData(current.Location);
+                    CassandraClusterData patch = new CassandraClusterData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<CassandraClusterResource> result = Update(WaitUntil.Completed, patch, cancellationToken: cancellationToken);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -1509,7 +1509,7 @@ namespace Azure.ResourceManager.CosmosDB
                 else
                 {
                     CassandraClusterData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    CassandraClusterData patch = new CassandraClusterData(current.Location);
+                    CassandraClusterData patch = new CassandraClusterData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -1555,7 +1555,7 @@ namespace Azure.ResourceManager.CosmosDB
                 else
                 {
                     CassandraClusterData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    CassandraClusterData patch = new CassandraClusterData(current.Location);
+                    CassandraClusterData patch = new CassandraClusterData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);

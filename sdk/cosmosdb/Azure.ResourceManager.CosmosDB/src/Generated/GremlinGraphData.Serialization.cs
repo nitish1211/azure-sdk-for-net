@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.CosmosDB
     /// <summary> An Azure Cosmos DB Gremlin graph. </summary>
     public partial class GremlinGraphData : TrackedResourceData, IJsonModel<GremlinGraphData>
     {
-        /// <summary> Initializes a new instance of <see cref="GremlinGraphData"/> for deserialization. </summary>
-        internal GremlinGraphData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.ContainerService.Models
     /// <summary> IdentityBinding properties. </summary>
     public partial class ManagedClusterIdentityBindingProperties : IJsonModel<ManagedClusterIdentityBindingProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="ManagedClusterIdentityBindingProperties"/> for deserialization. </summary>
-        internal ManagedClusterIdentityBindingProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ManagedClusterIdentityBindingProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

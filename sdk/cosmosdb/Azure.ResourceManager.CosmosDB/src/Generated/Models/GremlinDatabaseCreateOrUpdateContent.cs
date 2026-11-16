@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.CosmosDB.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="GremlinDatabaseCreateOrUpdateContent"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="resource"> The standard JSON format of a Gremlin database. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="resource"/> is null. </exception>
-        public GremlinDatabaseCreateOrUpdateContent(AzureLocation location, GremlinDatabaseResourceInfo resource) : base(location)
+        public GremlinDatabaseCreateOrUpdateContent(GremlinDatabaseResourceInfo resource)
         {
             Argument.AssertNotNull(resource, nameof(resource));
 
@@ -43,6 +42,14 @@ namespace Azure.ResourceManager.CosmosDB.Models
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="GremlinDatabaseCreateOrUpdateContent"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="resource"> The standard JSON format of a Gremlin database. </param>
+        public GremlinDatabaseCreateOrUpdateContent(AzureLocation location, GremlinDatabaseResourceInfo resource) : this(resource)
+        {
+            Location = location;
         }
 
         /// <summary> Properties to create and update Azure Cosmos DB Gremlin database. </summary>

@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.CosmosDBForPostgreSql
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CosmosDBForPostgreSqlClusterData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public CosmosDBForPostgreSqlClusterData(AzureLocation location) : base(location)
+        public CosmosDBForPostgreSqlClusterData()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.CosmosDBForPostgreSql
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CosmosDBForPostgreSqlClusterData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public CosmosDBForPostgreSqlClusterData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the cluster. </summary>

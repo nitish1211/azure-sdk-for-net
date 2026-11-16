@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ContainerRegistry
     /// <summary> An object that represents a replication for a container registry. </summary>
     public partial class ContainerRegistryReplicationData : TrackedResourceData, IJsonModel<ContainerRegistryReplicationData>
     {
-        /// <summary> Initializes a new instance of <see cref="ContainerRegistryReplicationData"/> for deserialization. </summary>
-        internal ContainerRegistryReplicationData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

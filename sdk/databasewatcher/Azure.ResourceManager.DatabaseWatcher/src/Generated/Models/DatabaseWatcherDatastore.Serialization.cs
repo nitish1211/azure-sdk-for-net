@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.DatabaseWatcher.Models
     /// <summary> The properties of a data store. </summary>
     public partial class DatabaseWatcherDatastore : IJsonModel<DatabaseWatcherDatastore>
     {
-        /// <summary> Initializes a new instance of <see cref="DatabaseWatcherDatastore"/> for deserialization. </summary>
-        internal DatabaseWatcherDatastore()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DatabaseWatcherDatastore PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

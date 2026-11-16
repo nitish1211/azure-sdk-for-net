@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.CosmosDB
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="GremlinDatabaseData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public GremlinDatabaseData(AzureLocation location) : base(location)
+        public GremlinDatabaseData()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.CosmosDB
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="GremlinDatabaseData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public GremlinDatabaseData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The properties of an Azure Cosmos DB SQL database. </summary>

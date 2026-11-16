@@ -23,11 +23,6 @@ namespace Azure.ResourceManager.ContainerRegistry.Tasks
     /// </summary>
     public partial class ContainerRegistryAgentPoolData : TrackedResourceData, IJsonModel<ContainerRegistryAgentPoolData>
     {
-        /// <summary> Initializes a new instance of <see cref="ContainerRegistryAgentPoolData"/> for deserialization. </summary>
-        internal ContainerRegistryAgentPoolData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

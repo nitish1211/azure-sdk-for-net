@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.ContainerRegistry
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ContainerRegistryData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="sku"> The SKU of the container registry. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sku"/> is null. </exception>
-        public ContainerRegistryData(AzureLocation location, ContainerRegistrySku sku) : base(location)
+        public ContainerRegistryData(ContainerRegistrySku sku)
         {
             Argument.AssertNotNull(sku, nameof(sku));
 
@@ -47,6 +46,14 @@ namespace Azure.ResourceManager.ContainerRegistry
             Sku = sku;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ContainerRegistryData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="sku"> The SKU of the container registry. </param>
+        public ContainerRegistryData(AzureLocation location, ContainerRegistrySku sku) : this(sku)
+        {
+            Location = location;
         }
 
         /// <summary> The properties of the container registry. </summary>

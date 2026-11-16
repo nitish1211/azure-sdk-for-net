@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.DatabaseFleetManager
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DatabaseFleetData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DatabaseFleetData(AzureLocation location) : base(location)
+        public DatabaseFleetData()
         {
         }
 

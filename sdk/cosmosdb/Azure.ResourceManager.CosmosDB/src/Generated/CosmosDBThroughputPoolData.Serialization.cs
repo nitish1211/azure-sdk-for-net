@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.CosmosDB
     /// <summary> An Azure Cosmos DB Throughputpool. </summary>
     public partial class CosmosDBThroughputPoolData : TrackedResourceData, IJsonModel<CosmosDBThroughputPoolData>
     {
-        /// <summary> Initializes a new instance of <see cref="CosmosDBThroughputPoolData"/> for deserialization. </summary>
-        internal CosmosDBThroughputPoolData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

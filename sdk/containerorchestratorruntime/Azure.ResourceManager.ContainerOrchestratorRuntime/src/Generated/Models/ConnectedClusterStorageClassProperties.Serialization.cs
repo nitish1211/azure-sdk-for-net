@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.ContainerOrchestratorRuntime.Models
     /// <summary> Details of the StorageClass StorageClass. </summary>
     public partial class ConnectedClusterStorageClassProperties : IJsonModel<ConnectedClusterStorageClassProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="ConnectedClusterStorageClassProperties"/> for deserialization. </summary>
-        internal ConnectedClusterStorageClassProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ConnectedClusterStorageClassProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -223,6 +223,8 @@ namespace Azure.ResourceManager.DataBox.Mocking
         /// <param name="content"> The request body. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<Response<AddressValidationOutput>> ValidateAddressAsync(AzureLocation location, DataBoxValidateAddressContent content, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNull(content, nameof(content));
@@ -250,6 +252,8 @@ namespace Azure.ResourceManager.DataBox.Mocking
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// [DEPRECATED NOTICE: This operation will soon be removed]. This method validates the customer shipping address and provide alternate addresses if any.
@@ -272,6 +276,8 @@ namespace Azure.ResourceManager.DataBox.Mocking
         /// <param name="content"> The request body. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="content"/> is null. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual Response<AddressValidationOutput> ValidateAddress(AzureLocation location, DataBoxValidateAddressContent content, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNull(content, nameof(content));
@@ -299,6 +305,8 @@ namespace Azure.ResourceManager.DataBox.Mocking
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// This method does all necessary pre-job creation validation under subscription.

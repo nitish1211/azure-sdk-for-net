@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.CosmosDB
     /// <summary> An Azure Cosmos DB userDefinedFunction. </summary>
     public partial class CosmosDBSqlUserDefinedFunctionData : TrackedResourceData, IJsonModel<CosmosDBSqlUserDefinedFunctionData>
     {
-        /// <summary> Initializes a new instance of <see cref="CosmosDBSqlUserDefinedFunctionData"/> for deserialization. </summary>
-        internal CosmosDBSqlUserDefinedFunctionData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

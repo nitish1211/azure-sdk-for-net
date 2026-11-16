@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DatabaseFleetManager
     /// <summary> A Database Fleet. </summary>
     public partial class DatabaseFleetData : TrackedResourceData, IJsonModel<DatabaseFleetData>
     {
-        /// <summary> Initializes a new instance of <see cref="DatabaseFleetData"/> for deserialization. </summary>
-        internal DatabaseFleetData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

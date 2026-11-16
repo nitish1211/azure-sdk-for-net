@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ContainerService
     /// <summary> A maintenance window is a resource-group-scoped resource that defines a reusable maintenance schedule which can be linked to maintenance configurations on one or more managed clusters. For more information, see https://aka.ms/aks/maintenance-windows. </summary>
     public partial class ContainerServiceManagedMaintenanceWindowData : TrackedResourceData, IJsonModel<ContainerServiceManagedMaintenanceWindowData>
     {
-        /// <summary> Initializes a new instance of <see cref="ContainerServiceManagedMaintenanceWindowData"/> for deserialization. </summary>
-        internal ContainerServiceManagedMaintenanceWindowData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

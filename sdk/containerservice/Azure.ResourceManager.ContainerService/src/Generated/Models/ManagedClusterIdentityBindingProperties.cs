@@ -18,13 +18,8 @@ namespace Azure.ResourceManager.ContainerService.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ManagedClusterIdentityBindingProperties"/>. </summary>
-        /// <param name="managedIdentity"> Managed identity profile for the identity binding. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="managedIdentity"/> is null. </exception>
-        public ManagedClusterIdentityBindingProperties(IdentityBindingManagedIdentityProfile managedIdentity)
+        public ManagedClusterIdentityBindingProperties()
         {
-            Argument.AssertNotNull(managedIdentity, nameof(managedIdentity));
-
-            ManagedIdentity = managedIdentity;
             AllowedSubjects = new ChangeTrackingList<ManagedClusterIdentityBindingAllowedSubject>();
         }
 
@@ -48,6 +43,16 @@ namespace Azure.ResourceManager.ContainerService.Models
             ProvisioningState = provisioningState;
             AllowedSubjects = allowedSubjects;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ManagedClusterIdentityBindingProperties"/>. </summary>
+        /// <param name="managedIdentity"> Managed identity profile for the identity binding. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="managedIdentity"/> is null. </exception>
+        public ManagedClusterIdentityBindingProperties(IdentityBindingManagedIdentityProfile managedIdentity) : this()
+        {
+            Argument.AssertNotNull(managedIdentity, nameof(managedIdentity));
+
+            ManagedIdentity = managedIdentity;
         }
 
         /// <summary> Managed identity profile for the identity binding. </summary>

@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.CosmosDB.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CassandraKeyspaceCreateOrUpdateContent"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="resourceKeyspaceName"> Name of the Cosmos DB Cassandra keyspace. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="resourceKeyspaceName"/> is null. </exception>
-        public CassandraKeyspaceCreateOrUpdateContent(AzureLocation location, string resourceKeyspaceName) : base(location)
+        public CassandraKeyspaceCreateOrUpdateContent(string resourceKeyspaceName)
         {
             Argument.AssertNotNull(resourceKeyspaceName, nameof(resourceKeyspaceName));
 
@@ -43,6 +42,14 @@ namespace Azure.ResourceManager.CosmosDB.Models
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CassandraKeyspaceCreateOrUpdateContent"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="resourceKeyspaceName"> Name of the Cosmos DB Cassandra keyspace. </param>
+        public CassandraKeyspaceCreateOrUpdateContent(AzureLocation location, string resourceKeyspaceName) : this(resourceKeyspaceName)
+        {
+            Location = location;
         }
 
         /// <summary> Properties to create and update Azure Cosmos DB Cassandra keyspace. </summary>

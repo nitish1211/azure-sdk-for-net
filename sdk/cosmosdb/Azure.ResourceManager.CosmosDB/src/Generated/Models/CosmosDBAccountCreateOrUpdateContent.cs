@@ -20,11 +20,10 @@ namespace Azure.ResourceManager.CosmosDB.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CosmosDBAccountCreateOrUpdateContent"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="locations"> An array that contains the georeplication locations enabled for the Cosmos DB account. </param>
         /// <param name="databaseAccountOfferType"> The offer type for the Cosmos DB database account. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="locations"/> is null. </exception>
-        public CosmosDBAccountCreateOrUpdateContent(AzureLocation location, IEnumerable<CosmosDBAccountLocation> locations, CosmosDBAccountOfferType databaseAccountOfferType) : base(location)
+        public CosmosDBAccountCreateOrUpdateContent(IEnumerable<CosmosDBAccountLocation> locations, CosmosDBAccountOfferType databaseAccountOfferType)
         {
             Argument.AssertNotNull(locations, nameof(locations));
 
@@ -48,6 +47,15 @@ namespace Azure.ResourceManager.CosmosDB.Models
             Identity = identity;
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CosmosDBAccountCreateOrUpdateContent"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="locations"> An array that contains the georeplication locations enabled for the Cosmos DB account. </param>
+        /// <param name="databaseAccountOfferType"> The offer type for the Cosmos DB database account. </param>
+        public CosmosDBAccountCreateOrUpdateContent(AzureLocation location, IEnumerable<CosmosDBAccountLocation> locations, CosmosDBAccountOfferType databaseAccountOfferType) : this(locations, databaseAccountOfferType)
+        {
+            Location = location;
         }
 
         /// <summary> Indicates the type of database account. This can only be set at database account creation. </summary>

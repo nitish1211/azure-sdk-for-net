@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.DatabaseWatcher;
 
 namespace Azure.ResourceManager.DatabaseWatcher.Models
 {
@@ -19,24 +18,8 @@ namespace Azure.ResourceManager.DatabaseWatcher.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DatabaseWatcherDatastore"/>. </summary>
-        /// <param name="kustoClusterUri"> The Kusto cluster URI. </param>
-        /// <param name="kustoDataIngestionUri"> The Kusto data ingestion URI. </param>
-        /// <param name="kustoDatabaseName"> The name of a Kusto database. </param>
-        /// <param name="kustoManagementUri"> The Kusto management URL. </param>
-        /// <param name="kustoOfferingType"> The type of a Kusto offering. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="kustoClusterUri"/>, <paramref name="kustoDataIngestionUri"/>, <paramref name="kustoDatabaseName"/> or <paramref name="kustoManagementUri"/> is null. </exception>
-        public DatabaseWatcherDatastore(Uri kustoClusterUri, Uri kustoDataIngestionUri, string kustoDatabaseName, Uri kustoManagementUri, KustoOfferingType kustoOfferingType)
+        public DatabaseWatcherDatastore()
         {
-            Argument.AssertNotNull(kustoClusterUri, nameof(kustoClusterUri));
-            Argument.AssertNotNull(kustoDataIngestionUri, nameof(kustoDataIngestionUri));
-            Argument.AssertNotNull(kustoDatabaseName, nameof(kustoDatabaseName));
-            Argument.AssertNotNull(kustoManagementUri, nameof(kustoManagementUri));
-
-            KustoClusterUri = kustoClusterUri;
-            KustoDataIngestionUri = kustoDataIngestionUri;
-            KustoDatabaseName = kustoDatabaseName;
-            KustoManagementUri = kustoManagementUri;
-            KustoOfferingType = kustoOfferingType;
         }
 
         /// <summary> Initializes a new instance of <see cref="DatabaseWatcherDatastore"/>. </summary>

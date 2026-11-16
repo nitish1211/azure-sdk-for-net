@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.CosmosDB
     /// <summary> Representation of a Garnet cache cluster. </summary>
     public partial class GarnetClusterData : TrackedResourceData, IJsonModel<GarnetClusterData>
     {
-        /// <summary> Initializes a new instance of <see cref="GarnetClusterData"/> for deserialization. </summary>
-        internal GarnetClusterData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

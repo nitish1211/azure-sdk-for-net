@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ContainerService
     /// <summary> A node pool snapshot resource. </summary>
     public partial class AgentPoolSnapshotData : TrackedResourceData, IJsonModel<AgentPoolSnapshotData>
     {
-        /// <summary> Initializes a new instance of <see cref="AgentPoolSnapshotData"/> for deserialization. </summary>
-        internal AgentPoolSnapshotData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

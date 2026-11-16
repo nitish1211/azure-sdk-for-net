@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.CosmosDB
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CassandraViewData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        internal CassandraViewData(AzureLocation location) : base(location)
+        internal CassandraViewData()
         {
         }
 

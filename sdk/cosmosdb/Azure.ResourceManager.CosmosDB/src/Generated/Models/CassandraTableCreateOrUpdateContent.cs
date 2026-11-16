@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.CosmosDB.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CassandraTableCreateOrUpdateContent"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="resource"> The standard JSON format of a Cassandra table. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="resource"/> is null. </exception>
-        public CassandraTableCreateOrUpdateContent(AzureLocation location, CassandraTableResourceInfo resource) : base(location)
+        public CassandraTableCreateOrUpdateContent(CassandraTableResourceInfo resource)
         {
             Argument.AssertNotNull(resource, nameof(resource));
 
@@ -43,6 +42,14 @@ namespace Azure.ResourceManager.CosmosDB.Models
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CassandraTableCreateOrUpdateContent"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="resource"> The standard JSON format of a Cassandra table. </param>
+        public CassandraTableCreateOrUpdateContent(AzureLocation location, CassandraTableResourceInfo resource) : this(resource)
+        {
+            Location = location;
         }
 
         /// <summary> Properties to create and update Azure Cosmos DB Cassandra table. </summary>
