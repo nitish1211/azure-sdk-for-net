@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.NetworkCloud
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudKubernetesClusterFeatureData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public NetworkCloudKubernetesClusterFeatureData(AzureLocation location) : base(location)
+        public NetworkCloudKubernetesClusterFeatureData()
         {
         }
 
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.NetworkCloud
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkCloudKubernetesClusterFeatureData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public NetworkCloudKubernetesClusterFeatureData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The list of the resource properties. </summary>

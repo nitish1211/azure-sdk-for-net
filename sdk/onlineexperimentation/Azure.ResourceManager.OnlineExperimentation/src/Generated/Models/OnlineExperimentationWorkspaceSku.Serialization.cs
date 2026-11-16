@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.OnlineExperimentation.Models
     /// <summary> The SKU (Stock Keeping Unit) assigned to this resource. </summary>
     public partial class OnlineExperimentationWorkspaceSku : IJsonModel<OnlineExperimentationWorkspaceSku>
     {
-        /// <summary> Initializes a new instance of <see cref="OnlineExperimentationWorkspaceSku"/> for deserialization. </summary>
-        internal OnlineExperimentationWorkspaceSku()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual OnlineExperimentationWorkspaceSku PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

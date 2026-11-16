@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.NetApp
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetAppAccountData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public NetAppAccountData(AzureLocation location) : base(location)
+        public NetAppAccountData()
         {
         }
 
@@ -43,6 +42,13 @@ namespace Azure.ResourceManager.NetApp
             ETag = eTag;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetAppAccountData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public NetAppAccountData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> NetApp Account properties. </summary>

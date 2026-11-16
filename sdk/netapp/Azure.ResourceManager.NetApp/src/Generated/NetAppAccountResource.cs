@@ -1133,7 +1133,7 @@ namespace Azure.ResourceManager.NetApp
                 else
                 {
                     NetAppAccountData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    NetAppAccountPatch patch = new NetAppAccountPatch(current.Location);
+                    NetAppAccountPatch patch = new NetAppAccountPatch();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -1181,7 +1181,7 @@ namespace Azure.ResourceManager.NetApp
                 else
                 {
                     NetAppAccountData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    NetAppAccountPatch patch = new NetAppAccountPatch(current.Location);
+                    NetAppAccountPatch patch = new NetAppAccountPatch();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -1227,7 +1227,7 @@ namespace Azure.ResourceManager.NetApp
                 else
                 {
                     NetAppAccountData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    NetAppAccountPatch patch = new NetAppAccountPatch(current.Location);
+                    NetAppAccountPatch patch = new NetAppAccountPatch();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<NetAppAccountResource> result = await UpdateAsync(WaitUntil.Completed, patch, cancellationToken: cancellationToken).ConfigureAwait(false);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -1269,7 +1269,7 @@ namespace Azure.ResourceManager.NetApp
                 else
                 {
                     NetAppAccountData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    NetAppAccountPatch patch = new NetAppAccountPatch(current.Location);
+                    NetAppAccountPatch patch = new NetAppAccountPatch();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<NetAppAccountResource> result = Update(WaitUntil.Completed, patch, cancellationToken: cancellationToken);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -1311,7 +1311,7 @@ namespace Azure.ResourceManager.NetApp
                 else
                 {
                     NetAppAccountData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    NetAppAccountPatch patch = new NetAppAccountPatch(current.Location);
+                    NetAppAccountPatch patch = new NetAppAccountPatch();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -1357,7 +1357,7 @@ namespace Azure.ResourceManager.NetApp
                 else
                 {
                     NetAppAccountData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    NetAppAccountPatch patch = new NetAppAccountPatch(current.Location);
+                    NetAppAccountPatch patch = new NetAppAccountPatch();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);

@@ -21,13 +21,8 @@ namespace Azure.ResourceManager.PaloAltoNetworks.Ngfw
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="LocalRulestackFqdnData"/>. </summary>
-        /// <param name="fqdnList"> fqdn list. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="fqdnList"/> is null. </exception>
-        public LocalRulestackFqdnData(IEnumerable<string> fqdnList)
+        public LocalRulestackFqdnData()
         {
-            Argument.AssertNotNull(fqdnList, nameof(fqdnList));
-
-            Properties = new FqdnObject(fqdnList);
         }
 
         /// <summary> Initializes a new instance of <see cref="LocalRulestackFqdnData"/>. </summary>

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.NotificationHubs
     /// <summary> Response for POST requests that return single SharedAccessAuthorizationRule. </summary>
     public partial class NotificationHubAuthorizationRuleData : TrackedResourceData, IJsonModel<NotificationHubAuthorizationRuleData>
     {
-        /// <summary> Initializes a new instance of <see cref="NotificationHubAuthorizationRuleData"/> for deserialization. </summary>
-        internal NotificationHubAuthorizationRuleData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -16,15 +16,8 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     public partial class AutonomousDatabaseCloneProperties : AutonomousDatabaseBaseProperties
     {
         /// <summary> Initializes a new instance of <see cref="AutonomousDatabaseCloneProperties"/>. </summary>
-        /// <param name="sourceId"> The Azure resource ID of the Autonomous Database that was cloned to create the current Autonomous Database. </param>
-        /// <param name="cloneType"> The Autonomous Database clone type. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="sourceId"/> is null. </exception>
-        public AutonomousDatabaseCloneProperties(ResourceIdentifier sourceId, AutonomousDatabaseCloneType cloneType) : base(OracleDataBaseType.Clone)
+        public AutonomousDatabaseCloneProperties() : base(OracleDataBaseType.Clone)
         {
-            Argument.AssertNotNull(sourceId, nameof(sourceId));
-
-            SourceId = sourceId;
-            CloneType = cloneType;
         }
 
         /// <summary> Initializes a new instance of <see cref="AutonomousDatabaseCloneProperties"/>. </summary>
@@ -130,6 +123,18 @@ namespace Azure.ResourceManager.OracleDatabase.Models
             RefreshableModel = refreshableModel;
             RefreshableStatus = refreshableStatus;
             ReconnectCloneEnabledOn = reconnectCloneEnabledOn;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="AutonomousDatabaseCloneProperties"/>. </summary>
+        /// <param name="sourceId"> The Azure resource ID of the Autonomous Database that was cloned to create the current Autonomous Database. </param>
+        /// <param name="cloneType"> The Autonomous Database clone type. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="sourceId"/> is null. </exception>
+        public AutonomousDatabaseCloneProperties(ResourceIdentifier sourceId, AutonomousDatabaseCloneType cloneType) : this()
+        {
+            Argument.AssertNotNull(sourceId, nameof(sourceId));
+
+            SourceId = sourceId;
+            CloneType = cloneType;
         }
 
         /// <summary> The source of the database. </summary>

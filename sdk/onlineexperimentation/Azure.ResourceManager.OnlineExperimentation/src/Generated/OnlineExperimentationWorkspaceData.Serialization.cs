@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.OnlineExperimentation
     /// <summary> An online experimentation workspace resource. </summary>
     public partial class OnlineExperimentationWorkspaceData : TrackedResourceData, IJsonModel<OnlineExperimentationWorkspaceData>
     {
-        /// <summary> Initializes a new instance of <see cref="OnlineExperimentationWorkspaceData"/> for deserialization. </summary>
-        internal OnlineExperimentationWorkspaceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

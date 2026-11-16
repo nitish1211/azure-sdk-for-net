@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.NetworkCloud.Models
     /// <summary> TrunkedNetworkProperties represents properties of the trunked network. </summary>
     internal partial class TrunkedNetworkProperties : IJsonModel<TrunkedNetworkProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="TrunkedNetworkProperties"/> for deserialization. </summary>
-        internal TrunkedNetworkProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual TrunkedNetworkProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

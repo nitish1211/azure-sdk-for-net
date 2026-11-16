@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     /// <summary> Autonomous Database From Backup Timestamp resource model. </summary>
     public partial class AutonomousDatabaseFromBackupTimestampProperties : AutonomousDatabaseBaseProperties, IJsonModel<AutonomousDatabaseFromBackupTimestampProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="AutonomousDatabaseFromBackupTimestampProperties"/> for deserialization. </summary>
-        internal AutonomousDatabaseFromBackupTimestampProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected override AutonomousDatabaseBaseProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

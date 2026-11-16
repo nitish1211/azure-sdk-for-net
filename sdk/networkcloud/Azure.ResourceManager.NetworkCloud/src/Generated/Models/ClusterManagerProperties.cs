@@ -20,15 +20,10 @@ namespace Azure.ResourceManager.NetworkCloud.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ClusterManagerProperties"/>. </summary>
-        /// <param name="fabricControllerId"> The resource ID of the fabric controller that has one to one mapping with the cluster manager. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="fabricControllerId"/> is null. </exception>
-        public ClusterManagerProperties(ResourceIdentifier fabricControllerId)
+        public ClusterManagerProperties()
         {
-            Argument.AssertNotNull(fabricControllerId, nameof(fabricControllerId));
-
             AvailabilityZones = new ChangeTrackingList<string>();
             ClusterVersions = new ChangeTrackingList<ClusterAvailableVersion>();
-            FabricControllerId = fabricControllerId;
         }
 
         /// <summary> Initializes a new instance of <see cref="ClusterManagerProperties"/>. </summary>

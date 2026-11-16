@@ -438,7 +438,7 @@ namespace Azure.ResourceManager.NetApp
                 else
                 {
                     SnapshotPolicyData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    SnapshotPolicyPatch patch = new SnapshotPolicyPatch(current.Location);
+                    SnapshotPolicyPatch patch = new SnapshotPolicyPatch();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -486,7 +486,7 @@ namespace Azure.ResourceManager.NetApp
                 else
                 {
                     SnapshotPolicyData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    SnapshotPolicyPatch patch = new SnapshotPolicyPatch(current.Location);
+                    SnapshotPolicyPatch patch = new SnapshotPolicyPatch();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -532,7 +532,7 @@ namespace Azure.ResourceManager.NetApp
                 else
                 {
                     SnapshotPolicyData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    SnapshotPolicyPatch patch = new SnapshotPolicyPatch(current.Location);
+                    SnapshotPolicyPatch patch = new SnapshotPolicyPatch();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<SnapshotPolicyResource> result = await UpdateAsync(WaitUntil.Completed, patch, cancellationToken: cancellationToken).ConfigureAwait(false);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -574,7 +574,7 @@ namespace Azure.ResourceManager.NetApp
                 else
                 {
                     SnapshotPolicyData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    SnapshotPolicyPatch patch = new SnapshotPolicyPatch(current.Location);
+                    SnapshotPolicyPatch patch = new SnapshotPolicyPatch();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<SnapshotPolicyResource> result = Update(WaitUntil.Completed, patch, cancellationToken: cancellationToken);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -616,7 +616,7 @@ namespace Azure.ResourceManager.NetApp
                 else
                 {
                     SnapshotPolicyData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    SnapshotPolicyPatch patch = new SnapshotPolicyPatch(current.Location);
+                    SnapshotPolicyPatch patch = new SnapshotPolicyPatch();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -662,7 +662,7 @@ namespace Azure.ResourceManager.NetApp
                 else
                 {
                     SnapshotPolicyData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    SnapshotPolicyPatch patch = new SnapshotPolicyPatch(current.Location);
+                    SnapshotPolicyPatch patch = new SnapshotPolicyPatch();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);

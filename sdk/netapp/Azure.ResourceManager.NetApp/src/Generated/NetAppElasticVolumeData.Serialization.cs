@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.NetApp
     /// <summary> NetApp Elastic Volume resource. </summary>
     public partial class NetAppElasticVolumeData : TrackedResourceData, IJsonModel<NetAppElasticVolumeData>
     {
-        /// <summary> Initializes a new instance of <see cref="NetAppElasticVolumeData"/> for deserialization. </summary>
-        internal NetAppElasticVolumeData()
-        {
-        }
-
         /// <param name="netAppElasticVolumeData"> The <see cref="NetAppElasticVolumeData"/> to serialize into <see cref="RequestContent"/>. </param>
         internal static RequestContent ToRequestContent(NetAppElasticVolumeData netAppElasticVolumeData)
         {

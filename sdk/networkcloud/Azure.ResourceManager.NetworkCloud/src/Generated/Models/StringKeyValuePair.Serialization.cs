@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.NetworkCloud.Models
     /// <summary> StringKeyValuePair represents a single entry in a mapping of keys to values. </summary>
     public partial class StringKeyValuePair : IJsonModel<StringKeyValuePair>
     {
-        /// <summary> Initializes a new instance of <see cref="StringKeyValuePair"/> for deserialization. </summary>
-        internal StringKeyValuePair()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual StringKeyValuePair PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

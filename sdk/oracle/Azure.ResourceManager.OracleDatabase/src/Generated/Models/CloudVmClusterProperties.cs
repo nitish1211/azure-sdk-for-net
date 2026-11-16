@@ -7,7 +7,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Azure.Core;
+using Azure.ResourceManager.OracleDatabase;
 
 namespace Azure.ResourceManager.OracleDatabase.Models
 {
@@ -16,6 +18,27 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     {
         /// <summary> Keeps track of any properties unknown to the library. </summary>
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
+
+        /// <summary> Initializes a new instance of <see cref="CloudVmClusterProperties"/>. </summary>
+        /// <param name="cpuCoreCount"> The number of CPU cores enabled on the cloud VM cluster. </param>
+        /// <param name="sshPublicKeys"> The public key portion of one or more key pairs used for SSH access to the cloud VM cluster. </param>
+        /// <param name="displayName"> Display Name. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="sshPublicKeys"/> or <paramref name="displayName"/> is null. </exception>
+        public CloudVmClusterProperties(int cpuCoreCount, IEnumerable<string> sshPublicKeys, string displayName)
+        {
+            Argument.AssertNotNull(sshPublicKeys, nameof(sshPublicKeys));
+            Argument.AssertNotNull(displayName, nameof(displayName));
+
+            FileSystemConfigurationDetails = new ChangeTrackingList<FileSystemConfigurationDetails>();
+            CpuCoreCount = cpuCoreCount;
+            SshPublicKeys = sshPublicKeys.ToList();
+            ScanIPIds = new ChangeTrackingList<string>();
+            VipIds = new ChangeTrackingList<string>();
+            NsgCidrs = new ChangeTrackingList<CloudVmClusterNsgCidr>();
+            DisplayName = displayName;
+            ComputeNodeOcids = new ChangeTrackingList<string>();
+            DBServerOcids = new ChangeTrackingList<string>();
+        }
 
         /// <summary> Initializes a new instance of <see cref="CloudVmClusterProperties"/>. </summary>
         /// <param name="cloudVmClusterOcid"> Cloud VM Cluster ocid. </param>

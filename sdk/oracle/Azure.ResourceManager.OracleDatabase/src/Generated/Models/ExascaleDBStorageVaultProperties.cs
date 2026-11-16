@@ -8,6 +8,7 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
+using Azure.ResourceManager.OracleDatabase;
 
 namespace Azure.ResourceManager.OracleDatabase.Models
 {
@@ -16,6 +17,12 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     {
         /// <summary> Keeps track of any properties unknown to the library. </summary>
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
+
+        /// <summary> Initializes a new instance of <see cref="ExascaleDBStorageVaultProperties"/>. </summary>
+        public ExascaleDBStorageVaultProperties()
+        {
+            AttachedShapeAttributes = new ChangeTrackingList<ExascaleStorageShapeAttribute>();
+        }
 
         /// <summary> Initializes a new instance of <see cref="ExascaleDBStorageVaultProperties"/>. </summary>
         /// <param name="additionalFlashCacheInPercent"> The size of additional Flash Cache in percentage of High Capacity database storage. </param>

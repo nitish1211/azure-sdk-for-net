@@ -22,23 +22,19 @@ namespace Azure.ResourceManager.NetworkCloud
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudBareMetalMachineKeySetData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="azureGroupId"> The object ID of Azure Active Directory group that all users in the list must be in for access to be granted. Users that are not in the group will not have access. </param>
         /// <param name="expireOn"> The date and time after which the users in this key set will be removed from the bare metal machines. </param>
         /// <param name="jumpHostsAllowed"> The list of IP addresses of jump hosts with management network access from which a login will be allowed for the users. </param>
         /// <param name="privilegeLevel"> The access level allowed for the users in this key set. </param>
         /// <param name="userList"> The unique list of permitted users. </param>
-        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="azureGroupId"/>, <paramref name="jumpHostsAllowed"/>, <paramref name="userList"/> or <paramref name="extendedLocation"/> is null. </exception>
-        public NetworkCloudBareMetalMachineKeySetData(AzureLocation location, string azureGroupId, DateTimeOffset expireOn, IEnumerable<IPAddress> jumpHostsAllowed, BareMetalMachineKeySetPrivilegeLevel privilegeLevel, IEnumerable<KeySetUser> userList, ExtendedLocation extendedLocation) : base(location)
+        /// <exception cref="ArgumentNullException"> <paramref name="azureGroupId"/>, <paramref name="jumpHostsAllowed"/> or <paramref name="userList"/> is null. </exception>
+        public NetworkCloudBareMetalMachineKeySetData(string azureGroupId, DateTimeOffset expireOn, IEnumerable<IPAddress> jumpHostsAllowed, BareMetalMachineKeySetPrivilegeLevel privilegeLevel, IEnumerable<KeySetUser> userList)
         {
             Argument.AssertNotNull(azureGroupId, nameof(azureGroupId));
             Argument.AssertNotNull(jumpHostsAllowed, nameof(jumpHostsAllowed));
             Argument.AssertNotNull(userList, nameof(userList));
-            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
 
-            Properties = new BareMetalMachineKeySetProperties(azureGroupId, expireOn, jumpHostsAllowed, privilegeLevel, userList);
-            ExtendedLocation = extendedLocation;
+            Properties = new BareMetalMachineKeySetProperties(expireOn, jumpHostsAllowed, userList);
         }
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudBareMetalMachineKeySetData"/>. </summary>
@@ -58,6 +54,23 @@ namespace Azure.ResourceManager.NetworkCloud
             ETag = eTag;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkCloudBareMetalMachineKeySetData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="azureGroupId"> The object ID of Azure Active Directory group that all users in the list must be in for access to be granted. Users that are not in the group will not have access. </param>
+        /// <param name="expireOn"> The date and time after which the users in this key set will be removed from the bare metal machines. </param>
+        /// <param name="jumpHostsAllowed"> The list of IP addresses of jump hosts with management network access from which a login will be allowed for the users. </param>
+        /// <param name="privilegeLevel"> The access level allowed for the users in this key set. </param>
+        /// <param name="userList"> The unique list of permitted users. </param>
+        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
+        public NetworkCloudBareMetalMachineKeySetData(AzureLocation location, string azureGroupId, DateTimeOffset expireOn, IEnumerable<IPAddress> jumpHostsAllowed, BareMetalMachineKeySetPrivilegeLevel privilegeLevel, IEnumerable<KeySetUser> userList, ExtendedLocation extendedLocation) : this(azureGroupId, expireOn, jumpHostsAllowed, privilegeLevel, userList)
+        {
+            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
+
+            Location = location;
+            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> The list of the resource properties. </summary>

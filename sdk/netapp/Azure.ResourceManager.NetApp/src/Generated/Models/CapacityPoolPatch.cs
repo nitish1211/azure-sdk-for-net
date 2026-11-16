@@ -19,8 +19,7 @@ namespace Azure.ResourceManager.NetApp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CapacityPoolPatch"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public CapacityPoolPatch(AzureLocation location) : base(location)
+        public CapacityPoolPatch()
         {
         }
 
@@ -37,6 +36,13 @@ namespace Azure.ResourceManager.NetApp.Models
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CapacityPoolPatch"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public CapacityPoolPatch(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Capacity pool properties. </summary>

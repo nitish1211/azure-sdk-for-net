@@ -19,8 +19,7 @@ namespace Azure.ResourceManager.NetApp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetAppBackupPolicyPatch"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public NetAppBackupPolicyPatch(AzureLocation location) : base(location)
+        public NetAppBackupPolicyPatch()
         {
         }
 
@@ -37,6 +36,13 @@ namespace Azure.ResourceManager.NetApp.Models
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetAppBackupPolicyPatch"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public NetAppBackupPolicyPatch(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Backup policy Properties. </summary>

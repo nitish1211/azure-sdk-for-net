@@ -21,23 +21,19 @@ namespace Azure.ResourceManager.NetworkCloud
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudKubernetesClusterData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="controlPlaneNodeConfiguration"> The defining characteristics of the control plane for this Kubernetes Cluster. </param>
         /// <param name="initialAgentPoolConfigurations"> The agent pools that are created with this Kubernetes cluster for running critical system services and workloads. This data in this field is only used during creation, and the field will be empty following the creation of the Kubernetes Cluster. After creation, the management of agent pools is done using the agentPools sub-resource. </param>
         /// <param name="kubernetesVersion"> The Kubernetes version for this cluster. </param>
         /// <param name="networkConfiguration"> The configuration of the Kubernetes cluster networking, including the attachment of networks that span the cluster. </param>
-        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="controlPlaneNodeConfiguration"/>, <paramref name="initialAgentPoolConfigurations"/>, <paramref name="kubernetesVersion"/>, <paramref name="networkConfiguration"/> or <paramref name="extendedLocation"/> is null. </exception>
-        public NetworkCloudKubernetesClusterData(AzureLocation location, ControlPlaneNodeConfiguration controlPlaneNodeConfiguration, IEnumerable<InitialAgentPoolConfiguration> initialAgentPoolConfigurations, string kubernetesVersion, KubernetesClusterNetworkConfiguration networkConfiguration, ExtendedLocation extendedLocation) : base(location)
+        /// <exception cref="ArgumentNullException"> <paramref name="controlPlaneNodeConfiguration"/>, <paramref name="initialAgentPoolConfigurations"/>, <paramref name="kubernetesVersion"/> or <paramref name="networkConfiguration"/> is null. </exception>
+        public NetworkCloudKubernetesClusterData(ControlPlaneNodeConfiguration controlPlaneNodeConfiguration, IList<InitialAgentPoolConfiguration> initialAgentPoolConfigurations, string kubernetesVersion, KubernetesClusterNetworkConfiguration networkConfiguration)
         {
             Argument.AssertNotNull(controlPlaneNodeConfiguration, nameof(controlPlaneNodeConfiguration));
             Argument.AssertNotNull(initialAgentPoolConfigurations, nameof(initialAgentPoolConfigurations));
             Argument.AssertNotNull(kubernetesVersion, nameof(kubernetesVersion));
             Argument.AssertNotNull(networkConfiguration, nameof(networkConfiguration));
-            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
 
-            Properties = new KubernetesClusterProperties(controlPlaneNodeConfiguration, initialAgentPoolConfigurations, kubernetesVersion, networkConfiguration);
-            ExtendedLocation = extendedLocation;
+            Properties = new KubernetesClusterProperties(controlPlaneNodeConfiguration, kubernetesVersion);
         }
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudKubernetesClusterData"/>. </summary>

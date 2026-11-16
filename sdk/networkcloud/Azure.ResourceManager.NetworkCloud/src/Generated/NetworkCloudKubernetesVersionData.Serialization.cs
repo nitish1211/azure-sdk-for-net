@@ -21,11 +21,6 @@ namespace Azure.ResourceManager.NetworkCloud
     /// <summary> KubernetesVersion represents the available Kubernetes versions for a cluster. </summary>
     public partial class NetworkCloudKubernetesVersionData : TrackedResourceData, IJsonModel<NetworkCloudKubernetesVersionData>
     {
-        /// <summary> Initializes a new instance of <see cref="NetworkCloudKubernetesVersionData"/> for deserialization. </summary>
-        internal NetworkCloudKubernetesVersionData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

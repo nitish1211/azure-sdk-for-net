@@ -31,20 +31,17 @@ namespace Azure.ResourceManager.NetApp.Models
         private bool _inheritedSizeInBytesIsDefined;
 
         /// <summary> Initializes a new instance of <see cref="VolumeProperties"/>. </summary>
-        /// <param name="creationToken"> A unique file path for the volume. Used when creating mount targets. </param>
         /// <param name="usageThreshold">
         /// Maximum storage quota allowed for a file system in bytes. This is a soft quota used for alerting only. For regular volumes, valid values are in the range 50GiB to 100TiB.
         /// For large volumes, valid values are in the range 100TiB to 500TiB, and on an exceptional basis, from to 2400GiB to 2400TiB.
         /// For extra large volumes, valid values are in the range 2400GiB to 7200TiB. Values expressed in bytes as multiples of 1 GiB.
         /// </param>
         /// <param name="subnetId"> The Azure Resource URI for a delegated subnet. Must have the delegation Microsoft.NetApp/volumes. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="creationToken"/> or <paramref name="subnetId"/> is null. </exception>
-        public VolumeProperties(string creationToken, long usageThreshold, ResourceIdentifier subnetId)
+        /// <exception cref="ArgumentNullException"> <paramref name="subnetId"/> is null. </exception>
+        public VolumeProperties(long usageThreshold, ResourceIdentifier subnetId)
         {
-            Argument.AssertNotNull(creationToken, nameof(creationToken));
             Argument.AssertNotNull(subnetId, nameof(subnetId));
 
-            CreationToken = creationToken;
             UsageThreshold = usageThreshold;
             ProtocolTypes = new ChangeTrackingList<string>();
             SubnetId = subnetId;
@@ -139,6 +136,8 @@ namespace Azure.ResourceManager.NetApp.Models
         /// <param name="breakthroughMode"> Specifies whether the volume operates in Breakthrough Mode. </param>
         /// <param name="geoNamespaceProperties"> Geographic namespace properties for this volume. </param>
         /// <param name="additionalBinaryDataProperties"> Keeps track of any properties unknown to the library. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         internal VolumeProperties(Guid? fileSystemId, string creationToken, NetAppFileServiceLevel? serviceLevel, long usageThreshold, NetAppVolumeExportPolicy exportPolicy, IList<string> protocolTypes, string provisioningState, string snapshotId, bool? deleteBaseSnapshot, string backupId, string baremetalTenantId, ResourceIdentifier subnetId, NetAppNetworkFeature? networkFeatures, NetAppNetworkFeature? effectiveNetworkFeatures, Guid? networkSiblingSetId, NetAppVolumeStorageToNetworkProximity? storageToNetworkProximity, IReadOnlyList<NetAppVolumeMountTarget> mountTargets, string volumeType, NetAppVolumeDataProtection dataProtection, AcceptGrowCapacityPoolForShortTermCloneSplit? acceptGrowCapacityPoolForShortTermCloneSplit, bool? isRestoring, bool? isSnapshotDirectoryVisible, bool? isKerberosEnabled, NetAppVolumeSecurityStyle? securityStyle, bool? isSmbEncryptionEnabled, SmbAccessBasedEnumeration? smbAccessBasedEnumeration, SmbNonBrowsable? smbNonBrowsable, bool? isSmbContinuouslyAvailable, SmbOplocks? smbOplocks, float? throughputMibps, float? actualThroughputMibps, NetAppEncryptionKeySource? encryptionKeySource, ResourceIdentifier keyVaultPrivateEndpointResourceId, bool? isLdapEnabled, NetAppLdapServerType? ldapServerType, bool? isCoolAccessEnabled, int? coolnessPeriod, CoolAccessRetrievalPolicy? coolAccessRetrievalPolicy, CoolAccessTieringPolicy? coolAccessTieringPolicy, string unixPermissions, int? cloneProgress, NetAppFileAccessLog? fileAccessLogs, NetAppAvsDataStore? avsDataStore, IReadOnlyList<ResourceIdentifier> dataStoreResourceId, bool? isDefaultQuotaEnabled, AsyncDirectoryDelete asyncDirectoryDelete, long? defaultUserQuotaInKiBs, long? defaultGroupQuotaInKiBs, long? maximumNumberOfFiles, string volumeGroupName, ResourceIdentifier capacityPoolResourceId, ResourceIdentifier proximityPlacementGroupId, string t2Network, string volumeSpecName, bool? isEncrypted, IList<NetAppVolumePlacementRule> placementRules, EnableNetAppSubvolume? enableSubvolumes, string provisionedAvailabilityZone, bool? isLargeVolume, LargeVolumeType? largeVolumeType, ResourceIdentifier originatingResourceId, long? inheritedSizeInBytes, NetAppVolumeLanguage? language, BreakthroughMode? breakthroughMode, VolumeNamespaceProperties geoNamespaceProperties, IDictionary<string, BinaryData> additionalBinaryDataProperties)
         {
             FileSystemId = fileSystemId;
@@ -208,6 +207,8 @@ namespace Azure.ResourceManager.NetApp.Models
             GeoNamespaceProperties = geoNamespaceProperties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary> Unique FileSystem Identifier. </summary>
         public Guid? FileSystemId { get; }
@@ -432,6 +433,7 @@ namespace Azure.ResourceManager.NetApp.Models
         /// Flag indicating whether subvolume operations are enabled on the volume
         /// Deprecated. Subvolume operations and this flag will be removed in a future API version.
         /// </summary>
+        [Obsolete("Deprecated. This property will be removed in a future API version.")]
         public EnableNetAppSubvolume? EnableSubvolumes { get; set; }
 
         /// <summary> The availability zone where the volume is provisioned. This refers to the logical availability zone where the volume resides. </summary>

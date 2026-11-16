@@ -21,11 +21,8 @@ namespace Azure.ResourceManager.PaloAltoNetworks.Ngfw
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="GlobalRulestackCertificateObjectData"/>. </summary>
-        /// <param name="certificateSelfSigned"> use certificate self signed. </param>
-        public GlobalRulestackCertificateObjectData(FirewallBooleanType certificateSelfSigned)
+        public GlobalRulestackCertificateObjectData()
         {
-
-            Properties = new CertificateObject(certificateSelfSigned);
         }
 
         /// <summary> Initializes a new instance of <see cref="GlobalRulestackCertificateObjectData"/>. </summary>
@@ -39,6 +36,13 @@ namespace Azure.ResourceManager.PaloAltoNetworks.Ngfw
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="GlobalRulestackCertificateObjectData"/>. </summary>
+        /// <param name="certificateSelfSigned"> use certificate self signed. </param>
+        public GlobalRulestackCertificateObjectData(FirewallBooleanType certificateSelfSigned) : this()
+        {
+            CertificateSelfSigned = certificateSelfSigned;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

@@ -116,6 +116,8 @@ namespace Azure.ResourceManager.NetApp
         /// </list>
         /// </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<Response<NetAppSubvolumeInfoResource>> GetAsync(CancellationToken cancellationToken = default)
         {
             using DiagnosticScope scope = _subvolumesClientDiagnostics.CreateScope("NetAppSubvolumeInfoResource.Get");
@@ -141,6 +143,8 @@ namespace Azure.ResourceManager.NetApp
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Returns the path associated with the subvolumeName provided
@@ -164,6 +168,8 @@ namespace Azure.ResourceManager.NetApp
         /// </list>
         /// </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual Response<NetAppSubvolumeInfoResource> Get(CancellationToken cancellationToken = default)
         {
             using DiagnosticScope scope = _subvolumesClientDiagnostics.CreateScope("NetAppSubvolumeInfoResource.Get");
@@ -189,6 +195,8 @@ namespace Azure.ResourceManager.NetApp
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Patch a subvolume
@@ -215,6 +223,8 @@ namespace Azure.ResourceManager.NetApp
         /// <param name="patch"> Subvolume object supplied in the body of the operation. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="patch"/> is null. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<ArmOperation<NetAppSubvolumeInfoResource>> UpdateAsync(WaitUntil waitUntil, NetAppSubvolumeInfoPatch patch, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNull(patch, nameof(patch));
@@ -248,6 +258,8 @@ namespace Azure.ResourceManager.NetApp
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Patch a subvolume
@@ -274,6 +286,8 @@ namespace Azure.ResourceManager.NetApp
         /// <param name="patch"> Subvolume object supplied in the body of the operation. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="patch"/> is null. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual ArmOperation<NetAppSubvolumeInfoResource> Update(WaitUntil waitUntil, NetAppSubvolumeInfoPatch patch, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNull(patch, nameof(patch));
@@ -307,6 +321,8 @@ namespace Azure.ResourceManager.NetApp
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Delete subvolume
@@ -331,6 +347,8 @@ namespace Azure.ResourceManager.NetApp
         /// </summary>
         /// <param name="waitUntil"> <see cref="WaitUntil.Completed"/> if the method should wait to return until the long-running operation has completed on the service; <see cref="WaitUntil.Started"/> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<ArmOperation> DeleteAsync(WaitUntil waitUntil, CancellationToken cancellationToken = default)
         {
             using DiagnosticScope scope = _subvolumesClientDiagnostics.CreateScope("NetAppSubvolumeInfoResource.Delete");
@@ -356,6 +374,8 @@ namespace Azure.ResourceManager.NetApp
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Delete subvolume
@@ -380,6 +400,8 @@ namespace Azure.ResourceManager.NetApp
         /// </summary>
         /// <param name="waitUntil"> <see cref="WaitUntil.Completed"/> if the method should wait to return until the long-running operation has completed on the service; <see cref="WaitUntil.Started"/> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual ArmOperation Delete(WaitUntil waitUntil, CancellationToken cancellationToken = default)
         {
             using DiagnosticScope scope = _subvolumesClientDiagnostics.CreateScope("NetAppSubvolumeInfoResource.Delete");
@@ -405,6 +427,8 @@ namespace Azure.ResourceManager.NetApp
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Get details of the specified subvolume
@@ -429,6 +453,8 @@ namespace Azure.ResourceManager.NetApp
         /// </summary>
         /// <param name="waitUntil"> <see cref="WaitUntil.Completed"/> if the method should wait to return until the long-running operation has completed on the service; <see cref="WaitUntil.Started"/> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<ArmOperation<NetAppSubvolumeMetadata>> GetMetadataAsync(WaitUntil waitUntil, CancellationToken cancellationToken = default)
         {
             using DiagnosticScope scope = _subvolumesClientDiagnostics.CreateScope("NetAppSubvolumeInfoResource.GetMetadata");
@@ -460,6 +486,8 @@ namespace Azure.ResourceManager.NetApp
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Get details of the specified subvolume
@@ -484,6 +512,8 @@ namespace Azure.ResourceManager.NetApp
         /// </summary>
         /// <param name="waitUntil"> <see cref="WaitUntil.Completed"/> if the method should wait to return until the long-running operation has completed on the service; <see cref="WaitUntil.Started"/> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual ArmOperation<NetAppSubvolumeMetadata> GetMetadata(WaitUntil waitUntil, CancellationToken cancellationToken = default)
         {
             using DiagnosticScope scope = _subvolumesClientDiagnostics.CreateScope("NetAppSubvolumeInfoResource.GetMetadata");
@@ -515,5 +545,7 @@ namespace Azure.ResourceManager.NetApp
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
     }
 }

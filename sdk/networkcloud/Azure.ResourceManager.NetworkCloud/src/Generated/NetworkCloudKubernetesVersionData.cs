@@ -22,14 +22,9 @@ namespace Azure.ResourceManager.NetworkCloud
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudKubernetesVersionData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
-        public NetworkCloudKubernetesVersionData(AzureLocation location, Resources.Models.ExtendedLocation extendedLocation) : base(location)
+        public NetworkCloudKubernetesVersionData()
         {
-            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
 
-            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudKubernetesVersionData"/>. </summary>
@@ -49,6 +44,18 @@ namespace Azure.ResourceManager.NetworkCloud
             ETag = eTag;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkCloudKubernetesVersionData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
+        public NetworkCloudKubernetesVersionData(AzureLocation location, Resources.Models.ExtendedLocation extendedLocation) : this()
+        {
+            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
+
+            Location = location;
+            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> The list of the resource properties. </summary>

@@ -8,6 +8,7 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
+using Azure.ResourceManager.OracleDatabase;
 
 namespace Azure.ResourceManager.OracleDatabase.Models
 {
@@ -16,6 +17,17 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     {
         /// <summary> Keeps track of any properties unknown to the library. </summary>
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
+
+        /// <summary> Initializes a new instance of <see cref="ExadbVmClusterProperties"/>. </summary>
+        /// <param name="nodeCount"> The number of nodes in the Exadata VM cluster on Exascale Infrastructure. </param>
+        public ExadbVmClusterProperties(int nodeCount)
+        {
+            NodeCount = nodeCount;
+            NsgCidrs = new ChangeTrackingList<CloudVmClusterNsgCidr>();
+            SshPublicKeys = new ChangeTrackingList<string>();
+            ScanIPIds = new ChangeTrackingList<string>();
+            VipIds = new ChangeTrackingList<string>();
+        }
 
         /// <summary> Initializes a new instance of <see cref="ExadbVmClusterProperties"/>. </summary>
         /// <param name="ocid"> ExadbVmCluster ocid. </param>

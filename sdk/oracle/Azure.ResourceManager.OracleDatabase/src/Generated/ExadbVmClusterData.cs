@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.OracleDatabase
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ExadbVmClusterData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ExadbVmClusterData(AzureLocation location) : base(location)
+        public ExadbVmClusterData()
         {
             Zones = new ChangeTrackingList<string>();
         }
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.OracleDatabase
             Properties = properties;
             Zones = zones;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ExadbVmClusterData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ExadbVmClusterData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

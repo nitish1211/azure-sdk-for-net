@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.OperationalInsights
     /// <summary> An Log Analytics QueryPack definition. </summary>
     public partial class LogAnalyticsQueryPackData : TrackedResourceData, IJsonModel<LogAnalyticsQueryPackData>
     {
-        /// <summary> Initializes a new instance of <see cref="LogAnalyticsQueryPackData"/> for deserialization. </summary>
-        internal LogAnalyticsQueryPackData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

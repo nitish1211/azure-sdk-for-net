@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.PaloAltoNetworks.Ngfw
     /// <summary> GlobalRulestack Certificate Object. </summary>
     public partial class GlobalRulestackCertificateObjectData : ResourceData, IJsonModel<GlobalRulestackCertificateObjectData>
     {
-        /// <summary> Initializes a new instance of <see cref="GlobalRulestackCertificateObjectData"/> for deserialization. </summary>
-        internal GlobalRulestackCertificateObjectData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

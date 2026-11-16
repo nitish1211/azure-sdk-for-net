@@ -21,11 +21,6 @@ namespace Azure.ResourceManager.MySql.FlexibleServers
     /// <summary> Represents a server. </summary>
     public partial class MySqlFlexibleServerData : TrackedResourceData, IJsonModel<MySqlFlexibleServerData>
     {
-        /// <summary> Initializes a new instance of <see cref="MySqlFlexibleServerData"/> for deserialization. </summary>
-        internal MySqlFlexibleServerData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

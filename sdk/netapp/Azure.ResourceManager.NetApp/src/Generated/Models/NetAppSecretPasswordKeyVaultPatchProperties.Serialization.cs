@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.NetApp.Models
     /// <summary> Properties of key vault to get the secrets for password. </summary>
     public partial class NetAppSecretPasswordKeyVaultPatchProperties : IJsonModel<NetAppSecretPasswordKeyVaultPatchProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="NetAppSecretPasswordKeyVaultPatchProperties"/> for deserialization. </summary>
-        internal NetAppSecretPasswordKeyVaultPatchProperties()
-        {
-        }
-
         /// <param name="element"> The JSON element to deserialize. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         internal static NetAppSecretPasswordKeyVaultPatchProperties DeserializeNetAppSecretPasswordKeyVaultPatchProperties(JsonElement element, ModelReaderWriterOptions options)

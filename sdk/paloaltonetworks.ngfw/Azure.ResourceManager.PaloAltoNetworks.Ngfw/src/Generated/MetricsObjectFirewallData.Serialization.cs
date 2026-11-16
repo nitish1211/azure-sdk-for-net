@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.PaloAltoNetworks.Ngfw
     /// <summary> Firewall Metrics Object. </summary>
     public partial class MetricsObjectFirewallData : ResourceData, IJsonModel<MetricsObjectFirewallData>
     {
-        /// <summary> Initializes a new instance of <see cref="MetricsObjectFirewallData"/> for deserialization. </summary>
-        internal MetricsObjectFirewallData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -26,7 +26,7 @@ namespace Azure.ResourceManager.NetApp
         {
             Argument.AssertNotNull(volumeResourceId, nameof(volumeResourceId));
 
-            Properties = new BackupProperties(volumeResourceId);
+            Properties = new BackupProperties();
         }
 
         /// <summary> Initializes a new instance of <see cref="NetAppBackupData"/>. </summary>

@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Nginx
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NginxDeploymentData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public NginxDeploymentData(AzureLocation location) : base(location)
+        public NginxDeploymentData()
         {
         }
 
@@ -42,6 +41,13 @@ namespace Azure.ResourceManager.Nginx
             Identity = identity;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NginxDeploymentData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public NginxDeploymentData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Nginx Deployment Properties. </summary>

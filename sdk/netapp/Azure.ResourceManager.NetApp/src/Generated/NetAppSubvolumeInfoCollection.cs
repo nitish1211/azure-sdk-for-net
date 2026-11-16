@@ -78,6 +78,8 @@ namespace Azure.ResourceManager.NetApp
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="subvolumeName"/> or <paramref name="data"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="subvolumeName"/> is an empty string, and was expected to be non-empty. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<ArmOperation<NetAppSubvolumeInfoResource>> CreateOrUpdateAsync(WaitUntil waitUntil, string subvolumeName, NetAppSubvolumeInfoData data, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(subvolumeName, nameof(subvolumeName));
@@ -112,6 +114,8 @@ namespace Azure.ResourceManager.NetApp
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Creates a subvolume in the path or clones the subvolume mentioned in the parentPath
@@ -137,6 +141,8 @@ namespace Azure.ResourceManager.NetApp
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="subvolumeName"/> or <paramref name="data"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="subvolumeName"/> is an empty string, and was expected to be non-empty. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual ArmOperation<NetAppSubvolumeInfoResource> CreateOrUpdate(WaitUntil waitUntil, string subvolumeName, NetAppSubvolumeInfoData data, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(subvolumeName, nameof(subvolumeName));
@@ -171,6 +177,8 @@ namespace Azure.ResourceManager.NetApp
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Returns the path associated with the subvolumeName provided
@@ -193,6 +201,8 @@ namespace Azure.ResourceManager.NetApp
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="subvolumeName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="subvolumeName"/> is an empty string, and was expected to be non-empty. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<Response<NetAppSubvolumeInfoResource>> GetAsync(string subvolumeName, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(subvolumeName, nameof(subvolumeName));
@@ -220,6 +230,8 @@ namespace Azure.ResourceManager.NetApp
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Returns the path associated with the subvolumeName provided
@@ -242,6 +254,8 @@ namespace Azure.ResourceManager.NetApp
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="subvolumeName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="subvolumeName"/> is an empty string, and was expected to be non-empty. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual Response<NetAppSubvolumeInfoResource> Get(string subvolumeName, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(subvolumeName, nameof(subvolumeName));
@@ -269,6 +283,8 @@ namespace Azure.ResourceManager.NetApp
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Returns a list of the subvolumes in the volume
@@ -289,6 +305,8 @@ namespace Azure.ResourceManager.NetApp
         /// </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <returns> A collection of <see cref="NetAppSubvolumeInfoResource"/> that may take multiple service requests to iterate over. </returns>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual AsyncPageable<NetAppSubvolumeInfoResource> GetAllAsync(CancellationToken cancellationToken = default)
         {
             RequestContext context = new RequestContext
@@ -305,6 +323,8 @@ namespace Azure.ResourceManager.NetApp
                 context,
                 "NetAppSubvolumeInfoCollection.GetAll"), data => new NetAppSubvolumeInfoResource(Client, data));
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Returns a list of the subvolumes in the volume
@@ -325,6 +345,8 @@ namespace Azure.ResourceManager.NetApp
         /// </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <returns> A collection of <see cref="NetAppSubvolumeInfoResource"/> that may take multiple service requests to iterate over. </returns>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual Pageable<NetAppSubvolumeInfoResource> GetAll(CancellationToken cancellationToken = default)
         {
             RequestContext context = new RequestContext
@@ -341,6 +363,8 @@ namespace Azure.ResourceManager.NetApp
                 context,
                 "NetAppSubvolumeInfoCollection.GetAll"), data => new NetAppSubvolumeInfoResource(Client, data));
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Checks to see if the resource exists in azure.
@@ -363,6 +387,8 @@ namespace Azure.ResourceManager.NetApp
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="subvolumeName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="subvolumeName"/> is an empty string, and was expected to be non-empty. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<Response<bool>> ExistsAsync(string subvolumeName, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(subvolumeName, nameof(subvolumeName));
@@ -398,6 +424,8 @@ namespace Azure.ResourceManager.NetApp
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Checks to see if the resource exists in azure.
@@ -420,6 +448,8 @@ namespace Azure.ResourceManager.NetApp
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="subvolumeName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="subvolumeName"/> is an empty string, and was expected to be non-empty. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual Response<bool> Exists(string subvolumeName, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(subvolumeName, nameof(subvolumeName));
@@ -455,6 +485,8 @@ namespace Azure.ResourceManager.NetApp
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Tries to get details for this resource from the service.
@@ -477,6 +509,8 @@ namespace Azure.ResourceManager.NetApp
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="subvolumeName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="subvolumeName"/> is an empty string, and was expected to be non-empty. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<NullableResponse<NetAppSubvolumeInfoResource>> GetIfExistsAsync(string subvolumeName, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(subvolumeName, nameof(subvolumeName));
@@ -516,6 +550,8 @@ namespace Azure.ResourceManager.NetApp
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Tries to get details for this resource from the service.
@@ -538,6 +574,8 @@ namespace Azure.ResourceManager.NetApp
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="subvolumeName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="subvolumeName"/> is an empty string, and was expected to be non-empty. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual NullableResponse<NetAppSubvolumeInfoResource> GetIfExists(string subvolumeName, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(subvolumeName, nameof(subvolumeName));
@@ -577,6 +615,8 @@ namespace Azure.ResourceManager.NetApp
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         IEnumerator<NetAppSubvolumeInfoResource> IEnumerable<NetAppSubvolumeInfoResource>.GetEnumerator()
         {

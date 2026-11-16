@@ -21,14 +21,13 @@ namespace Azure.ResourceManager.NetworkCloud
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudRackData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="availabilityZone"> The value that will be used for machines in this rack to represent the availability zones that can be referenced by Hybrid AKS Clusters for node arrangement. </param>
         /// <param name="rackLocation"> The free-form description of the rack location. (e.g. "DTN Datacenter, Floor 3, Isle 9, Rack 2B"). </param>
         /// <param name="rackSerialNumber"> The unique identifier for the rack within Network Cloud cluster. An alternate unique alphanumeric value other than a serial number may be provided if desired. </param>
         /// <param name="rackSkuId"> The SKU for the rack. </param>
         /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="availabilityZone"/>, <paramref name="rackLocation"/>, <paramref name="rackSerialNumber"/>, <paramref name="rackSkuId"/> or <paramref name="extendedLocation"/> is null. </exception>
-        public NetworkCloudRackData(AzureLocation location, string availabilityZone, string rackLocation, string rackSerialNumber, ResourceIdentifier rackSkuId, ExtendedLocation extendedLocation) : base(location)
+        public NetworkCloudRackData(string availabilityZone, string rackLocation, string rackSerialNumber, ResourceIdentifier rackSkuId, ExtendedLocation extendedLocation)
         {
             Argument.AssertNotNull(availabilityZone, nameof(availabilityZone));
             Argument.AssertNotNull(rackLocation, nameof(rackLocation));
@@ -57,6 +56,18 @@ namespace Azure.ResourceManager.NetworkCloud
             ETag = eTag;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkCloudRackData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="availabilityZone"> The value that will be used for machines in this rack to represent the availability zones that can be referenced by Hybrid AKS Clusters for node arrangement. </param>
+        /// <param name="rackLocation"> The free-form description of the rack location. (e.g. "DTN Datacenter, Floor 3, Isle 9, Rack 2B"). </param>
+        /// <param name="rackSerialNumber"> The unique identifier for the rack within Network Cloud cluster. An alternate unique alphanumeric value other than a serial number may be provided if desired. </param>
+        /// <param name="rackSkuId"> The SKU for the rack. </param>
+        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
+        public NetworkCloudRackData(AzureLocation location, string availabilityZone, string rackLocation, string rackSerialNumber, ResourceIdentifier rackSkuId, ExtendedLocation extendedLocation) : this(availabilityZone, rackLocation, rackSerialNumber, rackSkuId, extendedLocation)
+        {
+            Location = location;
         }
 
         /// <summary> The list of the resource properties. </summary>

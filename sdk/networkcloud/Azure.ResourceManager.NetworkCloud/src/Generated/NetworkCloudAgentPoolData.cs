@@ -21,16 +21,15 @@ namespace Azure.ResourceManager.NetworkCloud
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudAgentPoolData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="count"> The number of virtual machines that use this configuration. </param>
         /// <param name="mode"> The selection of how this agent pool is utilized, either as a system pool or a user pool. System pools run the features and critical services for the Kubernetes Cluster, while user pools are dedicated to user workloads. Every Kubernetes cluster must contain at least one system node pool with at least one node. </param>
         /// <param name="vmSkuName"> The name of the VM SKU that determines the size of resources allocated for node VMs. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="vmSkuName"/> is null. </exception>
-        public NetworkCloudAgentPoolData(AzureLocation location, long count, NetworkCloudAgentPoolMode mode, string vmSkuName) : base(location)
+        public NetworkCloudAgentPoolData(long count, NetworkCloudAgentPoolMode mode, string vmSkuName)
         {
             Argument.AssertNotNull(vmSkuName, nameof(vmSkuName));
 
-            Properties = new AgentPoolProperties(count, mode, vmSkuName);
+            Properties = new AgentPoolProperties(count);
         }
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudAgentPoolData"/>. </summary>
@@ -50,6 +49,16 @@ namespace Azure.ResourceManager.NetworkCloud
             ETag = eTag;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkCloudAgentPoolData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="count"> The number of virtual machines that use this configuration. </param>
+        /// <param name="mode"> The selection of how this agent pool is utilized, either as a system pool or a user pool. System pools run the features and critical services for the Kubernetes Cluster, while user pools are dedicated to user workloads. Every Kubernetes cluster must contain at least one system node pool with at least one node. </param>
+        /// <param name="vmSkuName"> The name of the VM SKU that determines the size of resources allocated for node VMs. </param>
+        public NetworkCloudAgentPoolData(AzureLocation location, long count, NetworkCloudAgentPoolMode mode, string vmSkuName) : this(count, mode, vmSkuName)
+        {
+            Location = location;
         }
 
         /// <summary> The list of the resource properties. </summary>

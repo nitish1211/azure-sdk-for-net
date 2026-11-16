@@ -21,16 +21,11 @@ namespace Azure.ResourceManager.NetworkCloud
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudClusterMetricsConfigurationData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="collectionInterval"> The interval in minutes by which metrics will be collected. </param>
-        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
-        public NetworkCloudClusterMetricsConfigurationData(AzureLocation location, long collectionInterval, ExtendedLocation extendedLocation) : base(location)
+        public NetworkCloudClusterMetricsConfigurationData(long collectionInterval)
         {
-            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
 
             Properties = new ClusterMetricsConfigurationProperties(collectionInterval);
-            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudClusterMetricsConfigurationData"/>. </summary>
@@ -50,6 +45,19 @@ namespace Azure.ResourceManager.NetworkCloud
             ETag = eTag;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkCloudClusterMetricsConfigurationData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="collectionInterval"> The interval in minutes by which metrics will be collected. </param>
+        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
+        public NetworkCloudClusterMetricsConfigurationData(AzureLocation location, long collectionInterval, ExtendedLocation extendedLocation) : this(collectionInterval)
+        {
+            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
+
+            Location = location;
+            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> The list of the resource properties. </summary>

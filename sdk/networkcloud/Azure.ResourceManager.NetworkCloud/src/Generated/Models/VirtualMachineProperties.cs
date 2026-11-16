@@ -20,29 +20,11 @@ namespace Azure.ResourceManager.NetworkCloud.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="VirtualMachineProperties"/>. </summary>
-        /// <param name="adminUsername"> The name of the administrator to which the ssh public keys will be added into the authorized keys. </param>
-        /// <param name="cloudServicesNetworkAttachment"> The cloud service network that provides platform-level services for the virtual machine. </param>
-        /// <param name="cpuCores"> The number of CPU cores in the virtual machine. </param>
-        /// <param name="memorySizeInGB"> The memory size of the virtual machine. Allocations are measured in gibibytes. </param>
-        /// <param name="storageProfile"> The storage profile that specifies size and other parameters about the disks related to the virtual machine. </param>
-        /// <param name="vmImage"> The virtual machine image that is currently provisioned to the OS disk, using the full url and tag notation used to pull the image. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="adminUsername"/>, <paramref name="cloudServicesNetworkAttachment"/>, <paramref name="storageProfile"/> or <paramref name="vmImage"/> is null. </exception>
-        public VirtualMachineProperties(string adminUsername, NetworkAttachment cloudServicesNetworkAttachment, long cpuCores, long memorySizeInGB, NetworkCloudStorageProfile storageProfile, string vmImage)
+        public VirtualMachineProperties()
         {
-            Argument.AssertNotNull(adminUsername, nameof(adminUsername));
-            Argument.AssertNotNull(cloudServicesNetworkAttachment, nameof(cloudServicesNetworkAttachment));
-            Argument.AssertNotNull(storageProfile, nameof(storageProfile));
-            Argument.AssertNotNull(vmImage, nameof(vmImage));
-
-            AdminUsername = adminUsername;
-            CloudServicesNetworkAttachment = cloudServicesNetworkAttachment;
-            CpuCores = cpuCores;
-            MemorySizeInGB = memorySizeInGB;
             NetworkAttachments = new ChangeTrackingList<NetworkAttachment>();
             PlacementHints = new ChangeTrackingList<VirtualMachinePlacementHint>();
             SshPublicKeys = new ChangeTrackingList<NetworkCloudSshPublicKey>();
-            StorageProfile = storageProfile;
-            VmImage = vmImage;
             Volumes = new ChangeTrackingList<ResourceIdentifier>();
         }
 

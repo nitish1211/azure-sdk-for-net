@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.NetApp
     /// <summary> External Cluster resource, representing a cluster on an external NetApp ONTAP system. </summary>
     public partial class ExternalClusterData : TrackedResourceData, IJsonModel<ExternalClusterData>
     {
-        /// <summary> Initializes a new instance of <see cref="ExternalClusterData"/> for deserialization. </summary>
-        internal ExternalClusterData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

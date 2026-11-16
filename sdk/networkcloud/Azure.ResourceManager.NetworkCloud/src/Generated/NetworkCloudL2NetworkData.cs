@@ -21,17 +21,13 @@ namespace Azure.ResourceManager.NetworkCloud
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudL2NetworkData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="l2IsolationDomainId"> The resource ID of the Network Fabric l2IsolationDomain. </param>
-        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="l2IsolationDomainId"/> or <paramref name="extendedLocation"/> is null. </exception>
-        public NetworkCloudL2NetworkData(AzureLocation location, ResourceIdentifier l2IsolationDomainId, ExtendedLocation extendedLocation) : base(location)
+        /// <exception cref="ArgumentNullException"> <paramref name="l2IsolationDomainId"/> is null. </exception>
+        public NetworkCloudL2NetworkData(ResourceIdentifier l2IsolationDomainId)
         {
             Argument.AssertNotNull(l2IsolationDomainId, nameof(l2IsolationDomainId));
-            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
 
-            Properties = new L2NetworkProperties(l2IsolationDomainId);
-            ExtendedLocation = extendedLocation;
+            Properties = new L2NetworkProperties();
         }
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudL2NetworkData"/>. </summary>
@@ -51,6 +47,19 @@ namespace Azure.ResourceManager.NetworkCloud
             ETag = eTag;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkCloudL2NetworkData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="l2IsolationDomainId"> The resource ID of the Network Fabric l2IsolationDomain. </param>
+        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
+        public NetworkCloudL2NetworkData(AzureLocation location, ResourceIdentifier l2IsolationDomainId, ExtendedLocation extendedLocation) : this(l2IsolationDomainId)
+        {
+            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
+
+            Location = location;
+            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> The list of the resource properties. </summary>

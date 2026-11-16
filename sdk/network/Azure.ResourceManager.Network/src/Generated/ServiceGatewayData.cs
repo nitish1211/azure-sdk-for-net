@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.Network
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ServiceGatewayData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ServiceGatewayData(AzureLocation location) : base(location)
+        public ServiceGatewayData()
         {
             Zones = new ChangeTrackingList<string>();
         }
@@ -49,6 +48,13 @@ namespace Azure.ResourceManager.Network
             Sku = sku;
             Zones = zones;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ServiceGatewayData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ServiceGatewayData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of service gateway. </summary>

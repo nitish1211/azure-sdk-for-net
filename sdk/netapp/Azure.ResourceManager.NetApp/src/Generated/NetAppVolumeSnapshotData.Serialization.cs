@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.NetApp
     /// <summary> Snapshot of a Volume. </summary>
     public partial class NetAppVolumeSnapshotData : ResourceData, IJsonModel<NetAppVolumeSnapshotData>
     {
-        /// <summary> Initializes a new instance of <see cref="NetAppVolumeSnapshotData"/> for deserialization. </summary>
-        internal NetAppVolumeSnapshotData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

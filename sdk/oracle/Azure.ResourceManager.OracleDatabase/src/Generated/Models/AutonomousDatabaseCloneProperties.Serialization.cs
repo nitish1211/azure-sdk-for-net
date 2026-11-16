@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     /// <summary> Autonomous Database clone resource model. </summary>
     public partial class AutonomousDatabaseCloneProperties : AutonomousDatabaseBaseProperties, IJsonModel<AutonomousDatabaseCloneProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="AutonomousDatabaseCloneProperties"/> for deserialization. </summary>
-        internal AutonomousDatabaseCloneProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected override AutonomousDatabaseBaseProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

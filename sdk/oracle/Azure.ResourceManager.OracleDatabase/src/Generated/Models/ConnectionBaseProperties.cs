@@ -23,14 +23,10 @@ namespace Azure.ResourceManager.OracleDatabase.Models
         /// <summary> Initializes a new instance of <see cref="ConnectionBaseProperties"/>. </summary>
         /// <param name="connectionType"> The connection type to be created. </param>
         /// <param name="displayName"> The connection display name. </param>
-        /// <param name="resourceAnchorId"> The corresponding resource anchor Azure ID. </param>
-        /// <param name="networkAnchorId"> The corresponding network anchor Azure ID. </param>
-        private protected ConnectionBaseProperties(ConnectionType connectionType, string displayName, ResourceIdentifier resourceAnchorId, ResourceIdentifier networkAnchorId)
+        private protected ConnectionBaseProperties(ConnectionType connectionType, string displayName)
         {
             ConnectionType = connectionType;
             DisplayName = displayName;
-            ResourceAnchorId = resourceAnchorId;
-            NetworkAnchorId = networkAnchorId;
         }
 
         /// <summary> Initializes a new instance of <see cref="ConnectionBaseProperties"/>. </summary>

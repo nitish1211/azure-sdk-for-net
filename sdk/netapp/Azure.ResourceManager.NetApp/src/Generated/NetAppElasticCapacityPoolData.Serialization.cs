@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.NetApp
     /// <summary> NetApp Elastic Capacity Pool resource. </summary>
     public partial class NetAppElasticCapacityPoolData : TrackedResourceData, IJsonModel<NetAppElasticCapacityPoolData>
     {
-        /// <summary> Initializes a new instance of <see cref="NetAppElasticCapacityPoolData"/> for deserialization. </summary>
-        internal NetAppElasticCapacityPoolData()
-        {
-        }
-
         /// <param name="netAppElasticCapacityPoolData"> The <see cref="NetAppElasticCapacityPoolData"/> to serialize into <see cref="RequestContent"/>. </param>
         internal static RequestContent ToRequestContent(NetAppElasticCapacityPoolData netAppElasticCapacityPoolData)
         {

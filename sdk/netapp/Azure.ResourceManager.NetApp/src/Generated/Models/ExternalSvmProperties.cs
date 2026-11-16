@@ -19,13 +19,8 @@ namespace Azure.ResourceManager.NetApp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ExternalSvmProperties"/>. </summary>
-        /// <param name="ontapSvmName"> Name of the external ONTAP SVM (different from Azure resource name). Must be unique across the cluster. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="ontapSvmName"/> is null. </exception>
-        public ExternalSvmProperties(string ontapSvmName)
+        public ExternalSvmProperties()
         {
-            Argument.AssertNotNull(ontapSvmName, nameof(ontapSvmName));
-
-            OntapSvmName = ontapSvmName;
             SvmPeerResourceIds = new ChangeTrackingList<ResourceIdentifier>();
         }
 

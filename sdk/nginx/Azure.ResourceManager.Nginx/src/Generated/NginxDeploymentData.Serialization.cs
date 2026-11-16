@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Nginx
     /// <summary> Nginx Deployment. </summary>
     public partial class NginxDeploymentData : TrackedResourceData, IJsonModel<NginxDeploymentData>
     {
-        /// <summary> Initializes a new instance of <see cref="NginxDeploymentData"/> for deserialization. </summary>
-        internal NginxDeploymentData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

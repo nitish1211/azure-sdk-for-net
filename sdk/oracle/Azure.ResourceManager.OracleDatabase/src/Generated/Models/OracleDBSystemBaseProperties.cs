@@ -8,6 +8,7 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
+using Azure.ResourceManager.OracleDatabase;
 
 namespace Azure.ResourceManager.OracleDatabase.Models
 {
@@ -19,6 +20,13 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     {
         /// <summary> Keeps track of any properties unknown to the library. </summary>
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
+
+        /// <summary> Initializes a new instance of <see cref="OracleDBSystemBaseProperties"/>. </summary>
+        private protected OracleDBSystemBaseProperties()
+        {
+            ScanIPs = new ChangeTrackingList<string>();
+            SshPublicKeys = new ChangeTrackingList<string>();
+        }
 
         /// <summary> Initializes a new instance of <see cref="OracleDBSystemBaseProperties"/>. </summary>
         /// <param name="source"> The source of the database: Use `None` for creating a new database. The default is `None`. </param>

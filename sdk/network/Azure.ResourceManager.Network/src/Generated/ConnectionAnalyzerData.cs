@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.Network
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ConnectionAnalyzerData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> Properties of the connection analyzer. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
-        public ConnectionAnalyzerData(AzureLocation location, ConnectionAnalyzerProperties properties) : base(location)
+        public ConnectionAnalyzerData(ConnectionAnalyzerProperties properties)
         {
             Argument.AssertNotNull(properties, nameof(properties));
 

@@ -13,6 +13,7 @@ using Azure.ResourceManager.NetApp;
 namespace Azure.ResourceManager.NetApp.Models
 {
     /// <summary> List of Subvolumes. </summary>
+    [Obsolete("Deprecated. This model will be removed in a future API version.")]
     internal partial class SubvolumesList
     {
         /// <summary> Keeps track of any properties unknown to the library. </summary>

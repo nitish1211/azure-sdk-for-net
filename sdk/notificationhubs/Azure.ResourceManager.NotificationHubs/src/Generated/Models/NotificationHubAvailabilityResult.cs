@@ -19,8 +19,7 @@ namespace Azure.ResourceManager.NotificationHubs.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NotificationHubAvailabilityResult"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public NotificationHubAvailabilityResult(AzureLocation location) : base(location)
+        public NotificationHubAvailabilityResult()
         {
         }
 
@@ -42,6 +41,13 @@ namespace Azure.ResourceManager.NotificationHubs.Models
             IsAvailiable = isAvailiable;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NotificationHubAvailabilityResult"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public NotificationHubAvailabilityResult(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary>

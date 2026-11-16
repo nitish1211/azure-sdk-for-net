@@ -21,13 +21,8 @@ namespace Azure.ResourceManager.PaloAltoNetworks.Ngfw
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="LocalRulestackPrefixData"/>. </summary>
-        /// <param name="prefixList"> prefix list. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="prefixList"/> is null. </exception>
-        public LocalRulestackPrefixData(IEnumerable<string> prefixList)
+        public LocalRulestackPrefixData()
         {
-            Argument.AssertNotNull(prefixList, nameof(prefixList));
-
-            Properties = new PrefixObject(prefixList);
         }
 
         /// <summary> Initializes a new instance of <see cref="LocalRulestackPrefixData"/>. </summary>

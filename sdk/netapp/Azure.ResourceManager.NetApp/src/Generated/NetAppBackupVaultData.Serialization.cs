@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.NetApp
     /// <summary> Backup Vault information. </summary>
     public partial class NetAppBackupVaultData : TrackedResourceData, IJsonModel<NetAppBackupVaultData>
     {
-        /// <summary> Initializes a new instance of <see cref="NetAppBackupVaultData"/> for deserialization. </summary>
-        internal NetAppBackupVaultData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

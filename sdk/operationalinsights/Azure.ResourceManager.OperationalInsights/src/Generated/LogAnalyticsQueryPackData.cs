@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.OperationalInsights
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="LogAnalyticsQueryPackData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public LogAnalyticsQueryPackData(AzureLocation location) : base(location)
+        public LogAnalyticsQueryPackData()
         {
 
         }
@@ -39,6 +38,13 @@ namespace Azure.ResourceManager.OperationalInsights
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="LogAnalyticsQueryPackData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public LogAnalyticsQueryPackData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties that define a Log Analytics QueryPack resource. </summary>

@@ -21,10 +21,9 @@ namespace Azure.ResourceManager.OracleDatabase
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CloudExadataInfrastructureData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="zones"> CloudExadataInfrastructure zones. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="zones"/> is null. </exception>
-        public CloudExadataInfrastructureData(AzureLocation location, IEnumerable<string> zones) : base(location)
+        public CloudExadataInfrastructureData(IEnumerable<string> zones)
         {
             Argument.AssertNotNull(zones, nameof(zones));
 
@@ -46,6 +45,14 @@ namespace Azure.ResourceManager.OracleDatabase
             Properties = properties;
             Zones = zones;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CloudExadataInfrastructureData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="zones"> CloudExadataInfrastructure zones. </param>
+        public CloudExadataInfrastructureData(AzureLocation location, IEnumerable<string> zones) : this(zones)
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

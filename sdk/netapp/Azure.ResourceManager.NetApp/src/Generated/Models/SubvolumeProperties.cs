@@ -11,6 +11,7 @@ using System.Collections.Generic;
 namespace Azure.ResourceManager.NetApp.Models
 {
     /// <summary> This represents path associated with the subvolume. </summary>
+    [Obsolete("Deprecated. This model will be removed in a future API version.")]
     internal partial class SubvolumeProperties
     {
         /// <summary> Keeps track of any properties unknown to the library. </summary>

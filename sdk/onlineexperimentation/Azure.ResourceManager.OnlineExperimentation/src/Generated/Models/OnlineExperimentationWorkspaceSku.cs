@@ -17,10 +17,8 @@ namespace Azure.ResourceManager.OnlineExperimentation.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="OnlineExperimentationWorkspaceSku"/>. </summary>
-        /// <param name="name"> The name of the SKU. Ex - F0, P0. It is typically a letter+number code. </param>
-        public OnlineExperimentationWorkspaceSku(OnlineExperimentationWorkspaceSkuName name)
+        public OnlineExperimentationWorkspaceSku()
         {
-            Name = name;
         }
 
         /// <summary> Initializes a new instance of <see cref="OnlineExperimentationWorkspaceSku"/>. </summary>

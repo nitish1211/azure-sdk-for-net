@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Network
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkSecurityPerimeterData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public NetworkSecurityPerimeterData(AzureLocation location) : base(location)
+        public NetworkSecurityPerimeterData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.Network
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkSecurityPerimeterData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public NetworkSecurityPerimeterData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The network security perimeter properties. </summary>

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.NewRelicObservability
     /// <summary> A Monitor Resource by NewRelic. </summary>
     public partial class NewRelicMonitorResourceData : TrackedResourceData, IJsonModel<NewRelicMonitorResourceData>
     {
-        /// <summary> Initializes a new instance of <see cref="NewRelicMonitorResourceData"/> for deserialization. </summary>
-        internal NewRelicMonitorResourceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

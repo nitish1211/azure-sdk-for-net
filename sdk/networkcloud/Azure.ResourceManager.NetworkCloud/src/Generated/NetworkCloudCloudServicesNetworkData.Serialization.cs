@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.NetworkCloud
     /// <summary> Upon creation, the additional services that are provided by the platform will be allocated and represented in the status of this resource. All resources associated with this cloud services network will be part of the same layer 2 (L2) isolation domain. At least one service network must be created but may be reused across many virtual machines and/or Hybrid AKS clusters. </summary>
     public partial class NetworkCloudCloudServicesNetworkData : TrackedResourceData, IJsonModel<NetworkCloudCloudServicesNetworkData>
     {
-        /// <summary> Initializes a new instance of <see cref="NetworkCloudCloudServicesNetworkData"/> for deserialization. </summary>
-        internal NetworkCloudCloudServicesNetworkData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

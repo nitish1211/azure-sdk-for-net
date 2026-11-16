@@ -3017,7 +3017,7 @@ namespace Azure.ResourceManager.NetApp
                 else
                 {
                     NetAppVolumeData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    NetAppVolumePatch patch = new NetAppVolumePatch(current.Location);
+                    NetAppVolumePatch patch = new NetAppVolumePatch();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -3065,7 +3065,7 @@ namespace Azure.ResourceManager.NetApp
                 else
                 {
                     NetAppVolumeData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    NetAppVolumePatch patch = new NetAppVolumePatch(current.Location);
+                    NetAppVolumePatch patch = new NetAppVolumePatch();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -3111,7 +3111,7 @@ namespace Azure.ResourceManager.NetApp
                 else
                 {
                     NetAppVolumeData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    NetAppVolumePatch patch = new NetAppVolumePatch(current.Location);
+                    NetAppVolumePatch patch = new NetAppVolumePatch();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<NetAppVolumeResource> result = await UpdateAsync(WaitUntil.Completed, patch, cancellationToken: cancellationToken).ConfigureAwait(false);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -3153,7 +3153,7 @@ namespace Azure.ResourceManager.NetApp
                 else
                 {
                     NetAppVolumeData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    NetAppVolumePatch patch = new NetAppVolumePatch(current.Location);
+                    NetAppVolumePatch patch = new NetAppVolumePatch();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<NetAppVolumeResource> result = Update(WaitUntil.Completed, patch, cancellationToken: cancellationToken);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -3195,7 +3195,7 @@ namespace Azure.ResourceManager.NetApp
                 else
                 {
                     NetAppVolumeData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    NetAppVolumePatch patch = new NetAppVolumePatch(current.Location);
+                    NetAppVolumePatch patch = new NetAppVolumePatch();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -3241,7 +3241,7 @@ namespace Azure.ResourceManager.NetApp
                 else
                 {
                     NetAppVolumeData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    NetAppVolumePatch patch = new NetAppVolumePatch(current.Location);
+                    NetAppVolumePatch patch = new NetAppVolumePatch();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);

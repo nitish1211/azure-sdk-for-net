@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.NetApp.Models
     /// <summary> Backup properties. </summary>
     internal partial class BackupProperties : IJsonModel<BackupProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="BackupProperties"/> for deserialization. </summary>
-        internal BackupProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual BackupProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

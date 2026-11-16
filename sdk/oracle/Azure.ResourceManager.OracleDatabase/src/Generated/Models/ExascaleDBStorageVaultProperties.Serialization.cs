@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     /// <summary> ExascaleDbStorageVault resource model. </summary>
     public partial class ExascaleDBStorageVaultProperties : IJsonModel<ExascaleDBStorageVaultProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="ExascaleDBStorageVaultProperties"/> for deserialization. </summary>
-        internal ExascaleDBStorageVaultProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ExascaleDBStorageVaultProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

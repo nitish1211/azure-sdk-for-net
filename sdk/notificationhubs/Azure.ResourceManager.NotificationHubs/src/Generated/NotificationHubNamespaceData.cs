@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.NotificationHubs
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NotificationHubNamespaceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="sku"> The Sku description for a namespace. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sku"/> is null. </exception>
-        public NotificationHubNamespaceData(AzureLocation location, NotificationHubSku sku) : base(location)
+        public NotificationHubNamespaceData(NotificationHubSku sku)
         {
             Argument.AssertNotNull(sku, nameof(sku));
 

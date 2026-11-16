@@ -19,19 +19,14 @@ namespace Azure.ResourceManager.NetworkCloud.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="BmcKeySetProperties"/>. </summary>
-        /// <param name="azureGroupId"> The object ID of Azure Active Directory group that all users in the list must be in for access to be granted. Users that are not in the group will not have access. </param>
         /// <param name="expiresOn"> The date and time after which the users in this key set will be removed from the baseboard management controllers. </param>
-        /// <param name="privilegeLevel"> The access level allowed for the users in this key set. </param>
         /// <param name="userList"> The unique list of permitted users. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="azureGroupId"/> or <paramref name="userList"/> is null. </exception>
-        public BmcKeySetProperties(string azureGroupId, DateTimeOffset expiresOn, BmcKeySetPrivilegeLevel privilegeLevel, IEnumerable<KeySetUser> userList)
+        /// <exception cref="ArgumentNullException"> <paramref name="userList"/> is null. </exception>
+        public BmcKeySetProperties(DateTimeOffset expiresOn, IEnumerable<KeySetUser> userList)
         {
-            Argument.AssertNotNull(azureGroupId, nameof(azureGroupId));
             Argument.AssertNotNull(userList, nameof(userList));
 
-            AzureGroupId = azureGroupId;
             ExpiresOn = expiresOn;
-            PrivilegeLevel = privilegeLevel;
             UserList = userList.ToList();
             UserListStatus = new ChangeTrackingList<KeySetUserStatus>();
         }

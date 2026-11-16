@@ -85,11 +85,15 @@ namespace Azure.ResourceManager.NetApp.Models
             {
                 throw new FormatException($"The model {nameof(NetAppSubvolumeInfoPatch)} does not support writing '{format}' format.");
             }
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
             if (Optional.IsDefined(Properties))
             {
                 writer.WritePropertyName("properties"u8);
                 writer.WriteObjectValue(Properties, options);
             }
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
             if (options.Format != "W" && _additionalBinaryDataProperties != null)
             {
                 foreach (var item in _additionalBinaryDataProperties)
@@ -126,6 +130,8 @@ namespace Azure.ResourceManager.NetApp.Models
 
         /// <param name="element"> The JSON element to deserialize. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         internal static NetAppSubvolumeInfoPatch DeserializeNetAppSubvolumeInfoPatch(JsonElement element, ModelReaderWriterOptions options)
         {
             if (element.ValueKind == JsonValueKind.Null)
@@ -152,5 +158,7 @@ namespace Azure.ResourceManager.NetApp.Models
             }
             return new NetAppSubvolumeInfoPatch(properties, additionalBinaryDataProperties);
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
     }
 }

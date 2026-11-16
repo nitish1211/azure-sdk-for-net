@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.NetApp
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetAppBackupVaultData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public NetAppBackupVaultData(AzureLocation location) : base(location)
+        public NetAppBackupVaultData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.NetApp
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetAppBackupVaultData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public NetAppBackupVaultData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Backup Vault Properties. </summary>

@@ -18,6 +18,11 @@ namespace Azure.ResourceManager.NetApp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ElasticEncryptionConfiguration"/>. </summary>
+        public ElasticEncryptionConfiguration()
+        {
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ElasticEncryptionConfiguration"/>. </summary>
         /// <param name="elasticPoolEncryptionKeySource"> Pool Encryption Key Source. </param>
         /// <param name="keyVaultPrivateEndpointResourceId"> The resource ID of private endpoint for KeyVault. It must reside in the same VNET as the volume. Only applicable if encryptionKeySource = 'Microsoft.KeyVault'. </param>
         /// <param name="additionalBinaryDataProperties"> Keeps track of any properties unknown to the library. </param>

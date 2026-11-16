@@ -19,16 +19,8 @@ namespace Azure.ResourceManager.OracleDatabase.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="OracleNetworkAnchorProperties"/>. </summary>
-        /// <param name="resourceAnchorId"> Corresponding resource anchor Azure ID. </param>
-        /// <param name="subnetId"> Client subnet. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="resourceAnchorId"/> or <paramref name="subnetId"/> is null. </exception>
-        public OracleNetworkAnchorProperties(string resourceAnchorId, ResourceIdentifier subnetId)
+        public OracleNetworkAnchorProperties()
         {
-            Argument.AssertNotNull(resourceAnchorId, nameof(resourceAnchorId));
-            Argument.AssertNotNull(subnetId, nameof(subnetId));
-
-            ResourceAnchorId = resourceAnchorId;
-            SubnetId = subnetId;
             DnsForwardingRules = new ChangeTrackingList<NetworkAnchorDnsForwardingRule>();
         }
 
@@ -77,6 +69,19 @@ namespace Azure.ResourceManager.OracleDatabase.Models
             DnsForwardingEndpointNsgRulesUri = dnsForwardingEndpointNsgRulesUri;
             ProximityPlacementGroup = proximityPlacementGroup;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="OracleNetworkAnchorProperties"/>. </summary>
+        /// <param name="resourceAnchorId"> Corresponding resource anchor Azure ID. </param>
+        /// <param name="subnetId"> Client subnet. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="resourceAnchorId"/> or <paramref name="subnetId"/> is null. </exception>
+        public OracleNetworkAnchorProperties(string resourceAnchorId, ResourceIdentifier subnetId) : this()
+        {
+            Argument.AssertNotNull(resourceAnchorId, nameof(resourceAnchorId));
+            Argument.AssertNotNull(subnetId, nameof(subnetId));
+
+            ResourceAnchorId = resourceAnchorId;
+            SubnetId = subnetId;
         }
 
         /// <summary> Corresponding resource anchor Azure ID. </summary>

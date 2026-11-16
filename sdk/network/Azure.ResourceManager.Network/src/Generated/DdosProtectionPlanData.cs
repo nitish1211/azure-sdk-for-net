@@ -22,8 +22,7 @@ namespace Azure.ResourceManager.Network
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DdosProtectionPlanData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DdosProtectionPlanData(AzureLocation location) : base(location)
+        public DdosProtectionPlanData()
         {
         }
 
@@ -42,6 +41,13 @@ namespace Azure.ResourceManager.Network
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DdosProtectionPlanData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public DdosProtectionPlanData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the DDoS protection plan. </summary>

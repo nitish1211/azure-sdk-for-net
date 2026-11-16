@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.OracleDatabase
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="GoldenGateConnectionData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public GoldenGateConnectionData(AzureLocation location) : base(location)
+        public GoldenGateConnectionData()
         {
             Zones = new ChangeTrackingList<string>();
         }
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.OracleDatabase
             Properties = properties;
             Zones = zones;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="GoldenGateConnectionData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public GoldenGateConnectionData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

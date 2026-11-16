@@ -21,18 +21,14 @@ namespace Azure.ResourceManager.NetworkCloud
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudVirtualMachineConsoleData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="enabled"> The indicator of whether the console access is enabled. </param>
         /// <param name="keyData"> The SSH public key data. </param>
-        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="keyData"/> or <paramref name="extendedLocation"/> is null. </exception>
-        public NetworkCloudVirtualMachineConsoleData(AzureLocation location, ConsoleEnabled enabled, string keyData, ExtendedLocation extendedLocation) : base(location)
+        /// <exception cref="ArgumentNullException"> <paramref name="keyData"/> is null. </exception>
+        public NetworkCloudVirtualMachineConsoleData(ConsoleEnabled enabled, string keyData)
         {
             Argument.AssertNotNull(keyData, nameof(keyData));
-            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
 
             Properties = new ConsoleProperties(enabled, keyData);
-            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudVirtualMachineConsoleData"/>. </summary>
@@ -52,6 +48,20 @@ namespace Azure.ResourceManager.NetworkCloud
             ETag = eTag;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkCloudVirtualMachineConsoleData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="enabled"> The indicator of whether the console access is enabled. </param>
+        /// <param name="keyData"> The SSH public key data. </param>
+        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
+        public NetworkCloudVirtualMachineConsoleData(AzureLocation location, ConsoleEnabled enabled, string keyData, ExtendedLocation extendedLocation) : this(enabled, keyData)
+        {
+            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
+
+            Location = location;
+            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> The list of the resource properties. </summary>

@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     /// <summary> GoldenGate Deployment resource model. </summary>
     public partial class DeploymentProperties : IJsonModel<DeploymentProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="DeploymentProperties"/> for deserialization. </summary>
-        internal DeploymentProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DeploymentProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

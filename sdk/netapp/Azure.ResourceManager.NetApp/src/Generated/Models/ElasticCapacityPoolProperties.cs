@@ -19,6 +19,13 @@ namespace Azure.ResourceManager.NetApp.Models
 
         /// <summary> Initializes a new instance of <see cref="ElasticCapacityPoolProperties"/>. </summary>
         /// <param name="size"> Provisioned size of the pool (in bytes). For zoneRedundant service level pool, value must be in the range 1TiB to 16TiB or 1TiB to 128TiB for supported region. Values expressed in bytes as multiples of 1TiB till 16TiB and in multiples of 8TiB from 24TiB to 128TiB. Pool size can't be shrunk once it is created. </param>
+        public ElasticCapacityPoolProperties(long size)
+        {
+            Size = size;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ElasticCapacityPoolProperties"/>. </summary>
+        /// <param name="size"> Provisioned size of the pool (in bytes). For zoneRedundant service level pool, value must be in the range 1TiB to 16TiB or 1TiB to 128TiB for supported region. Values expressed in bytes as multiples of 1TiB till 16TiB and in multiples of 8TiB from 24TiB to 128TiB. Pool size can't be shrunk once it is created. </param>
         /// <param name="serviceLevel"> The service level of the elastic capacity pool. </param>
         /// <param name="provisioningState"> Azure lifecycle management. </param>
         /// <param name="encryption"> Encryption settings. </param>

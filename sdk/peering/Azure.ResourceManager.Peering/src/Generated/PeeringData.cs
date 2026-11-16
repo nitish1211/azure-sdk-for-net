@@ -20,11 +20,10 @@ namespace Azure.ResourceManager.Peering
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PeeringData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="sku"> The SKU that defines the tier and kind of the peering. </param>
         /// <param name="kind"> The kind of the peering. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sku"/> is null. </exception>
-        public PeeringData(AzureLocation location, PeeringSku sku, PeeringKind kind) : base(location)
+        public PeeringData(PeeringSku sku, PeeringKind kind)
         {
             Argument.AssertNotNull(sku, nameof(sku));
 
@@ -49,6 +48,15 @@ namespace Azure.ResourceManager.Peering
             Sku = sku;
             Kind = kind;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="PeeringData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="sku"> The SKU that defines the tier and kind of the peering. </param>
+        /// <param name="kind"> The kind of the peering. </param>
+        public PeeringData(AzureLocation location, PeeringSku sku, PeeringKind kind) : this(sku, kind)
+        {
+            Location = location;
         }
 
         /// <summary> The properties that define a peering. </summary>

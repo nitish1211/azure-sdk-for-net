@@ -21,7 +21,6 @@ namespace Azure.ResourceManager.NetApp
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetAppVolumeData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="creationToken"> A unique file path for the volume. Used when creating mount targets. </param>
         /// <param name="usageThreshold">
         /// Maximum storage quota allowed for a file system in bytes. This is a soft quota used for alerting only. For regular volumes, valid values are in the range 50GiB to 100TiB.
@@ -30,12 +29,12 @@ namespace Azure.ResourceManager.NetApp
         /// </param>
         /// <param name="subnetId"> The Azure Resource URI for a delegated subnet. Must have the delegation Microsoft.NetApp/volumes. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="creationToken"/> or <paramref name="subnetId"/> is null. </exception>
-        public NetAppVolumeData(AzureLocation location, string creationToken, long usageThreshold, ResourceIdentifier subnetId) : base(location)
+        public NetAppVolumeData(string creationToken, long usageThreshold, ResourceIdentifier subnetId)
         {
             Argument.AssertNotNull(creationToken, nameof(creationToken));
             Argument.AssertNotNull(subnetId, nameof(subnetId));
 
-            Properties = new VolumeProperties(creationToken, usageThreshold, subnetId);
+            Properties = new VolumeProperties(usageThreshold, subnetId);
             Zones = new ChangeTrackingList<string>();
         }
 
@@ -56,6 +55,20 @@ namespace Azure.ResourceManager.NetApp
             ETag = eTag;
             Zones = zones;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetAppVolumeData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="creationToken"> A unique file path for the volume. Used when creating mount targets. </param>
+        /// <param name="usageThreshold">
+        /// Maximum storage quota allowed for a file system in bytes. This is a soft quota used for alerting only. For regular volumes, valid values are in the range 50GiB to 100TiB.
+        /// For large volumes, valid values are in the range 100TiB to 500TiB, and on an exceptional basis, from to 2400GiB to 2400TiB.
+        /// For extra large volumes, valid values are in the range 2400GiB to 7200TiB. Values expressed in bytes as multiples of 1 GiB.
+        /// </param>
+        /// <param name="subnetId"> The Azure Resource URI for a delegated subnet. Must have the delegation Microsoft.NetApp/volumes. </param>
+        public NetAppVolumeData(AzureLocation location, string creationToken, long usageThreshold, ResourceIdentifier subnetId) : this(creationToken, usageThreshold, subnetId)
+        {
+            Location = location;
         }
 
         /// <summary> Volume properties. </summary>
@@ -857,26 +870,6 @@ namespace Azure.ResourceManager.NetApp
                     Properties = new VolumeProperties();
                 }
                 return Properties.PlacementRules;
-            }
-        }
-
-        /// <summary>
-        /// Flag indicating whether subvolume operations are enabled on the volume
-        /// Deprecated. Subvolume operations and this flag will be removed in a future API version.
-        /// </summary>
-        public EnableNetAppSubvolume? EnableSubvolumes
-        {
-            get
-            {
-                return Properties is null ? default : Properties.EnableSubvolumes;
-            }
-            set
-            {
-                if (Properties is null)
-                {
-                    Properties = new VolumeProperties();
-                }
-                Properties.EnableSubvolumes = value;
             }
         }
 

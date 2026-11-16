@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.OracleDatabase
     /// <summary> DbSystem resource definition. </summary>
     public partial class OracleDBSystemData : TrackedResourceData, IJsonModel<OracleDBSystemData>
     {
-        /// <summary> Initializes a new instance of <see cref="OracleDBSystemData"/> for deserialization. </summary>
-        internal OracleDBSystemData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

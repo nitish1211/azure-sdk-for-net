@@ -20,22 +20,17 @@ namespace Azure.ResourceManager.NetworkCloud.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="BareMetalMachineKeySetProperties"/>. </summary>
-        /// <param name="azureGroupId"> The object ID of Azure Active Directory group that all users in the list must be in for access to be granted. Users that are not in the group will not have access. </param>
         /// <param name="expiresOn"> The date and time after which the users in this key set will be removed from the bare metal machines. </param>
         /// <param name="jumpHostsAllowed"> The list of IP addresses of jump hosts with management network access from which a login will be allowed for the users. </param>
-        /// <param name="privilegeLevel"> The access level allowed for the users in this key set. </param>
         /// <param name="userList"> The unique list of permitted users. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="azureGroupId"/>, <paramref name="jumpHostsAllowed"/> or <paramref name="userList"/> is null. </exception>
-        public BareMetalMachineKeySetProperties(string azureGroupId, DateTimeOffset expiresOn, IEnumerable<IPAddress> jumpHostsAllowed, BareMetalMachineKeySetPrivilegeLevel privilegeLevel, IEnumerable<KeySetUser> userList)
+        /// <exception cref="ArgumentNullException"> <paramref name="jumpHostsAllowed"/> or <paramref name="userList"/> is null. </exception>
+        public BareMetalMachineKeySetProperties(DateTimeOffset expiresOn, IEnumerable<IPAddress> jumpHostsAllowed, IEnumerable<KeySetUser> userList)
         {
-            Argument.AssertNotNull(azureGroupId, nameof(azureGroupId));
             Argument.AssertNotNull(jumpHostsAllowed, nameof(jumpHostsAllowed));
             Argument.AssertNotNull(userList, nameof(userList));
 
-            AzureGroupId = azureGroupId;
             ExpiresOn = expiresOn;
             JumpHostsAllowed = jumpHostsAllowed.ToList();
-            PrivilegeLevel = privilegeLevel;
             UserList = userList.ToList();
             UserListStatus = new ChangeTrackingList<KeySetUserStatus>();
         }

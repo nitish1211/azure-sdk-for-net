@@ -19,15 +19,8 @@ namespace Azure.ResourceManager.NetworkCloud.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="L3NetworkProperties"/>. </summary>
-        /// <param name="l3IsolationDomainId"> The resource ID of the Network Fabric l3IsolationDomain. </param>
-        /// <param name="vlan"> The VLAN from the l3IsolationDomain that is used for this network. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="l3IsolationDomainId"/> is null. </exception>
-        public L3NetworkProperties(ResourceIdentifier l3IsolationDomainId, long vlan)
+        public L3NetworkProperties()
         {
-            Argument.AssertNotNull(l3IsolationDomainId, nameof(l3IsolationDomainId));
-
-            L3IsolationDomainId = l3IsolationDomainId;
-            Vlan = vlan;
             AssociatedResourceIds = new ChangeTrackingList<ResourceIdentifier>();
             HybridAksClustersAssociatedIds = new ChangeTrackingList<ResourceIdentifier>();
             VirtualMachinesAssociatedIds = new ChangeTrackingList<ResourceIdentifier>();

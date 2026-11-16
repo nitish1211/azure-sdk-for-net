@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.PaloAltoNetworks.Ngfw
     /// <summary> PostRulestack rule list. </summary>
     public partial class PostRulestackRuleData : ResourceData, IJsonModel<PostRulestackRuleData>
     {
-        /// <summary> Initializes a new instance of <see cref="PostRulestackRuleData"/> for deserialization. </summary>
-        internal PostRulestackRuleData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

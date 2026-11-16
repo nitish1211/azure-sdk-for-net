@@ -23,19 +23,16 @@ namespace Azure.ResourceManager.NetworkCloud.Models
         /// <param name="aggregatorOrSingleRackDefinition"> The rack definition that is intended to reflect only a single rack in a single rack cluster, or an aggregator rack in a multi-rack cluster. </param>
         /// <param name="clusterType"> The type of rack configuration for the cluster. </param>
         /// <param name="clusterVersion"> The current runtime version of the cluster. </param>
-        /// <param name="networkFabricId"> The resource ID of the Network Fabric associated with the cluster. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="aggregatorOrSingleRackDefinition"/>, <paramref name="clusterVersion"/> or <paramref name="networkFabricId"/> is null. </exception>
-        public ClusterProperties(NetworkCloudRackDefinition aggregatorOrSingleRackDefinition, ClusterType clusterType, string clusterVersion, ResourceIdentifier networkFabricId)
+        /// <exception cref="ArgumentNullException"> <paramref name="aggregatorOrSingleRackDefinition"/> or <paramref name="clusterVersion"/> is null. </exception>
+        public ClusterProperties(NetworkCloudRackDefinition aggregatorOrSingleRackDefinition, ClusterType clusterType, string clusterVersion)
         {
             Argument.AssertNotNull(aggregatorOrSingleRackDefinition, nameof(aggregatorOrSingleRackDefinition));
             Argument.AssertNotNull(clusterVersion, nameof(clusterVersion));
-            Argument.AssertNotNull(networkFabricId, nameof(networkFabricId));
 
             AggregatorOrSingleRackDefinition = aggregatorOrSingleRackDefinition;
             ClusterType = clusterType;
             ClusterVersion = clusterVersion;
             ComputeRackDefinitions = new ChangeTrackingList<NetworkCloudRackDefinition>();
-            NetworkFabricId = networkFabricId;
             ActionStates = new ChangeTrackingList<NetworkCloudActionState>();
             AvailableUpgradeVersions = new ChangeTrackingList<ClusterAvailableUpgradeVersion>();
             ManagedCredentials = new ChangeTrackingList<string>();

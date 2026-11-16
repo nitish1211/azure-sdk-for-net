@@ -19,15 +19,10 @@ namespace Azure.ResourceManager.NetworkCloud.Models
 
         /// <summary> Initializes a new instance of <see cref="ControlPlaneNodeConfiguration"/>. </summary>
         /// <param name="count"> The number of virtual machines that use this configuration. </param>
-        /// <param name="vmSkuName"> The name of the VM SKU supplied during creation. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="vmSkuName"/> is null. </exception>
-        public ControlPlaneNodeConfiguration(long count, string vmSkuName)
+        public ControlPlaneNodeConfiguration(long count)
         {
-            Argument.AssertNotNull(vmSkuName, nameof(vmSkuName));
-
             AvailabilityZones = new ChangeTrackingList<string>();
             Count = count;
-            VmSkuName = vmSkuName;
         }
 
         /// <summary> Initializes a new instance of <see cref="ControlPlaneNodeConfiguration"/>. </summary>
@@ -43,6 +38,17 @@ namespace Azure.ResourceManager.NetworkCloud.Models
             Count = count;
             VmSkuName = vmSkuName;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ControlPlaneNodeConfiguration"/>. </summary>
+        /// <param name="count"> The number of virtual machines that use this configuration. </param>
+        /// <param name="vmSkuName"> The name of the VM SKU supplied during creation. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="vmSkuName"/> is null. </exception>
+        public ControlPlaneNodeConfiguration(long count, string vmSkuName) : this(count)
+        {
+            Argument.AssertNotNull(vmSkuName, nameof(vmSkuName));
+
+            VmSkuName = vmSkuName;
         }
 
         /// <summary> The administrator credentials to be used for the nodes in the control plane. </summary>

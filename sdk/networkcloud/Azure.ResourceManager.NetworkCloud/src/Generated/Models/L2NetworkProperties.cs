@@ -19,13 +19,8 @@ namespace Azure.ResourceManager.NetworkCloud.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="L2NetworkProperties"/>. </summary>
-        /// <param name="l2IsolationDomainId"> The resource ID of the Network Fabric l2IsolationDomain. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="l2IsolationDomainId"/> is null. </exception>
-        public L2NetworkProperties(ResourceIdentifier l2IsolationDomainId)
+        public L2NetworkProperties()
         {
-            Argument.AssertNotNull(l2IsolationDomainId, nameof(l2IsolationDomainId));
-
-            L2IsolationDomainId = l2IsolationDomainId;
             AssociatedResourceIds = new ChangeTrackingList<ResourceIdentifier>();
             HybridAksClustersAssociatedIds = new ChangeTrackingList<ResourceIdentifier>();
             VirtualMachinesAssociatedIds = new ChangeTrackingList<ResourceIdentifier>();

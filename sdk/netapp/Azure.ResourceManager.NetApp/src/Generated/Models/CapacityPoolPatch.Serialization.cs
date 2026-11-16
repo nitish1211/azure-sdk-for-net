@@ -19,11 +19,6 @@ namespace Azure.ResourceManager.NetApp.Models
     /// <summary> Capacity pool patch resource. </summary>
     public partial class CapacityPoolPatch : TrackedResourceData, IJsonModel<CapacityPoolPatch>
     {
-        /// <summary> Initializes a new instance of <see cref="CapacityPoolPatch"/> for deserialization. </summary>
-        internal CapacityPoolPatch()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

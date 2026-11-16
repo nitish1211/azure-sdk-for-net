@@ -22,8 +22,7 @@ namespace Azure.ResourceManager.NotificationHubs.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NotificationHubPnsCredentials"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public NotificationHubPnsCredentials(AzureLocation location) : base(location)
+        public NotificationHubPnsCredentials()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.NotificationHubs.Models
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NotificationHubPnsCredentials"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public NotificationHubPnsCredentials(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Collection of Notification Hub or Notification Hub Namespace PNS credentials. </summary>

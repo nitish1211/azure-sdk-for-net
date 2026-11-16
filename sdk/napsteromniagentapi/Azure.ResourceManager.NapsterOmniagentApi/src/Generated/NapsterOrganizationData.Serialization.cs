@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.NapsterOmniagentApi
     /// <summary> Concrete tracked resource types can be created by aliasing this type using a specific property type. </summary>
     public partial class NapsterOrganizationData : TrackedResourceData, IJsonModel<NapsterOrganizationData>
     {
-        /// <summary> Initializes a new instance of <see cref="NapsterOrganizationData"/> for deserialization. </summary>
-        internal NapsterOrganizationData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)
@@ -160,7 +155,6 @@ namespace Azure.ResourceManager.NapsterOmniagentApi
             IDictionary<string, string> tags = default;
             AzureLocation location = default;
             NapsterOrganizationProperties properties = default;
-            string organizationName = default;
             ManagedServiceIdentity identity = default;
             IDictionary<string, BinaryData> additionalBinaryDataProperties = new ChangeTrackingDictionary<string, BinaryData>();
             foreach (var prop in element.EnumerateObject())
@@ -254,7 +248,6 @@ namespace Azure.ResourceManager.NapsterOmniagentApi
                 tags ?? new ChangeTrackingDictionary<string, string>(),
                 location,
                 properties,
-                organizationName,
                 identity,
                 additionalBinaryDataProperties);
         }

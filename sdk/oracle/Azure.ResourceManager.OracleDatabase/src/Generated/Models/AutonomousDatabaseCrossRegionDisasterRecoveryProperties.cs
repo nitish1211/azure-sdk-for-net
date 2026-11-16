@@ -16,15 +16,8 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     public partial class AutonomousDatabaseCrossRegionDisasterRecoveryProperties : AutonomousDatabaseBaseProperties
     {
         /// <summary> Initializes a new instance of <see cref="AutonomousDatabaseCrossRegionDisasterRecoveryProperties"/>. </summary>
-        /// <param name="sourceId"> The Azure ID of the source Autonomous Database that will be used to create a new peer database for the DR association. </param>
-        /// <param name="remoteDisasterRecoveryType"> Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="sourceId"/> is null. </exception>
-        public AutonomousDatabaseCrossRegionDisasterRecoveryProperties(ResourceIdentifier sourceId, DisasterRecoveryType remoteDisasterRecoveryType) : base(OracleDataBaseType.CrossRegionDisasterRecovery)
+        public AutonomousDatabaseCrossRegionDisasterRecoveryProperties() : base(OracleDataBaseType.CrossRegionDisasterRecovery)
         {
-            Argument.AssertNotNull(sourceId, nameof(sourceId));
-
-            SourceId = sourceId;
-            RemoteDisasterRecoveryType = remoteDisasterRecoveryType;
         }
 
         /// <summary> Initializes a new instance of <see cref="AutonomousDatabaseCrossRegionDisasterRecoveryProperties"/>. </summary>
@@ -126,6 +119,18 @@ namespace Azure.ResourceManager.OracleDatabase.Models
             SourceOcid = sourceOcid;
             RemoteDisasterRecoveryType = remoteDisasterRecoveryType;
             IsReplicateAutomaticBackups = isReplicateAutomaticBackups;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="AutonomousDatabaseCrossRegionDisasterRecoveryProperties"/>. </summary>
+        /// <param name="sourceId"> The Azure ID of the source Autonomous Database that will be used to create a new peer database for the DR association. </param>
+        /// <param name="remoteDisasterRecoveryType"> Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="sourceId"/> is null. </exception>
+        public AutonomousDatabaseCrossRegionDisasterRecoveryProperties(ResourceIdentifier sourceId, DisasterRecoveryType remoteDisasterRecoveryType) : this()
+        {
+            Argument.AssertNotNull(sourceId, nameof(sourceId));
+
+            SourceId = sourceId;
+            RemoteDisasterRecoveryType = remoteDisasterRecoveryType;
         }
 
         /// <summary> The source of the database. </summary>

@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Azure.Core;
 using Azure.ResourceManager.NetworkCloud;
 
@@ -21,21 +20,16 @@ namespace Azure.ResourceManager.NetworkCloud.Models
 
         /// <summary> Initializes a new instance of <see cref="KubernetesClusterProperties"/>. </summary>
         /// <param name="controlPlaneNodeConfiguration"> The defining characteristics of the control plane for this Kubernetes Cluster. </param>
-        /// <param name="initialAgentPoolConfigurations"> The agent pools that are created with this Kubernetes cluster for running critical system services and workloads. This data in this field is only used during creation, and the field will be empty following the creation of the Kubernetes Cluster. After creation, the management of agent pools is done using the agentPools sub-resource. </param>
         /// <param name="kubernetesVersion"> The Kubernetes version for this cluster. </param>
-        /// <param name="networkConfiguration"> The configuration of the Kubernetes cluster networking, including the attachment of networks that span the cluster. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="controlPlaneNodeConfiguration"/>, <paramref name="initialAgentPoolConfigurations"/>, <paramref name="kubernetesVersion"/> or <paramref name="networkConfiguration"/> is null. </exception>
-        public KubernetesClusterProperties(ControlPlaneNodeConfiguration controlPlaneNodeConfiguration, IEnumerable<InitialAgentPoolConfiguration> initialAgentPoolConfigurations, string kubernetesVersion, KubernetesClusterNetworkConfiguration networkConfiguration)
+        /// <exception cref="ArgumentNullException"> <paramref name="controlPlaneNodeConfiguration"/> or <paramref name="kubernetesVersion"/> is null. </exception>
+        public KubernetesClusterProperties(ControlPlaneNodeConfiguration controlPlaneNodeConfiguration, string kubernetesVersion)
         {
             Argument.AssertNotNull(controlPlaneNodeConfiguration, nameof(controlPlaneNodeConfiguration));
-            Argument.AssertNotNull(initialAgentPoolConfigurations, nameof(initialAgentPoolConfigurations));
             Argument.AssertNotNull(kubernetesVersion, nameof(kubernetesVersion));
-            Argument.AssertNotNull(networkConfiguration, nameof(networkConfiguration));
 
             ControlPlaneNodeConfiguration = controlPlaneNodeConfiguration;
-            InitialAgentPoolConfigurations = initialAgentPoolConfigurations.ToList();
+            InitialAgentPoolConfigurations = new ChangeTrackingList<InitialAgentPoolConfiguration>();
             KubernetesVersion = kubernetesVersion;
-            NetworkConfiguration = networkConfiguration;
             AttachedNetworkIds = new ChangeTrackingList<ResourceIdentifier>();
             AvailableUpgrades = new ChangeTrackingList<AvailableUpgrade>();
             FeatureStatuses = new ChangeTrackingList<FeatureStatus>();

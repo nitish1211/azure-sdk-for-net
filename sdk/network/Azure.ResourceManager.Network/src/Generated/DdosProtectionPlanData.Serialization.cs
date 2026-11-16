@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Network
     /// <summary> A DDoS protection plan in a resource group. </summary>
     public partial class DdosProtectionPlanData : TrackedResourceData, IJsonModel<DdosProtectionPlanData>
     {
-        /// <summary> Initializes a new instance of <see cref="DdosProtectionPlanData"/> for deserialization. </summary>
-        internal DdosProtectionPlanData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

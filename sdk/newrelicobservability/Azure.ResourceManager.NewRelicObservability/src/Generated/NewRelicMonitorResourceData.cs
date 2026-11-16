@@ -20,10 +20,8 @@ namespace Azure.ResourceManager.NewRelicObservability
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NewRelicMonitorResourceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public NewRelicMonitorResourceData(AzureLocation location) : base(location)
+        public NewRelicMonitorResourceData()
         {
-
         }
 
         /// <summary> Initializes a new instance of <see cref="NewRelicMonitorResourceData"/>. </summary>
@@ -41,6 +39,13 @@ namespace Azure.ResourceManager.NewRelicObservability
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NewRelicMonitorResourceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public NewRelicMonitorResourceData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

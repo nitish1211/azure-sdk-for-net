@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.NetworkCloud.Models
     /// <summary> L2NetworkProperties represents properties of the L2 network. </summary>
     internal partial class L2NetworkProperties : IJsonModel<L2NetworkProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="L2NetworkProperties"/> for deserialization. </summary>
-        internal L2NetworkProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual L2NetworkProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.OracleDatabase;
 
 namespace Azure.ResourceManager.OracleDatabase.Models
 {
@@ -16,25 +15,8 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     public partial class OracleDBSystemProperties : OracleDBSystemBaseProperties
     {
         /// <summary> Initializes a new instance of <see cref="OracleDBSystemProperties"/>. </summary>
-        /// <param name="resourceAnchorId"> Azure Resource Anchor ID. </param>
-        /// <param name="networkAnchorId"> Azure Network Anchor ID. </param>
-        /// <param name="hostname"> The hostname for the DB system. </param>
-        /// <param name="shape"> The shape of the DB system. The shape determines resources to allocate to the DB system. For virtual machine shapes, the number of CPU cores and memory. For bare metal and Exadata shapes, the number of CPU cores, storage, and memory. </param>
-        /// <param name="sshPublicKeys"> The public key portion of one or more key pairs used for SSH access to the DB system. </param>
-        /// <param name="databaseEdition"> The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require EnterpriseEditionExtremePerformance. </param>
-        /// <param name="dbVersion"> A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="resourceAnchorId"/>, <paramref name="networkAnchorId"/>, <paramref name="hostname"/>, <paramref name="shape"/>, <paramref name="sshPublicKeys"/> or <paramref name="dbVersion"/> is null. </exception>
-        public OracleDBSystemProperties(ResourceIdentifier resourceAnchorId, ResourceIdentifier networkAnchorId, string hostname, string shape, IEnumerable<string> sshPublicKeys, DBSystemDatabaseEditionType databaseEdition, string dbVersion) : base(resourceAnchorId, networkAnchorId, hostname, shape, sshPublicKeys)
+        public OracleDBSystemProperties()
         {
-            Argument.AssertNotNull(resourceAnchorId, nameof(resourceAnchorId));
-            Argument.AssertNotNull(networkAnchorId, nameof(networkAnchorId));
-            Argument.AssertNotNull(hostname, nameof(hostname));
-            Argument.AssertNotNull(shape, nameof(shape));
-            Argument.AssertNotNull(sshPublicKeys, nameof(sshPublicKeys));
-            Argument.AssertNotNull(dbVersion, nameof(dbVersion));
-
-            DatabaseEdition = databaseEdition;
-            DBVersion = dbVersion;
             Source = DBSystemSourceType.None;
         }
 

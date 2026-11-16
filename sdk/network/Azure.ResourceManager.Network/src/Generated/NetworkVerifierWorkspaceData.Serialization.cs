@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Network
     /// <summary> Instance of Verifier Workspace. </summary>
     public partial class NetworkVerifierWorkspaceData : TrackedResourceData, IJsonModel<NetworkVerifierWorkspaceData>
     {
-        /// <summary> Initializes a new instance of <see cref="NetworkVerifierWorkspaceData"/> for deserialization. </summary>
-        internal NetworkVerifierWorkspaceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

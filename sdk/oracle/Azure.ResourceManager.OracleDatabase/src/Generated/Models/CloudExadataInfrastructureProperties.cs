@@ -19,17 +19,14 @@ namespace Azure.ResourceManager.OracleDatabase.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CloudExadataInfrastructureProperties"/>. </summary>
-        /// <param name="shape"> The model name of the cloud Exadata infrastructure resource. </param>
         /// <param name="displayName"> The name for the Exadata infrastructure. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="shape"/> or <paramref name="displayName"/> is null. </exception>
-        public CloudExadataInfrastructureProperties(string shape, string displayName)
+        /// <exception cref="ArgumentNullException"> <paramref name="displayName"/> is null. </exception>
+        public CloudExadataInfrastructureProperties(string displayName)
         {
-            Argument.AssertNotNull(shape, nameof(shape));
             Argument.AssertNotNull(displayName, nameof(displayName));
 
             DefinedFileSystemConfiguration = new ChangeTrackingList<DefinedFileSystemConfiguration>();
             CustomerContacts = new ChangeTrackingList<OracleCustomerContact>();
-            Shape = shape;
             DisplayName = displayName;
         }
 
@@ -114,6 +111,17 @@ namespace Azure.ResourceManager.OracleDatabase.Models
             ComputeModel = computeModel;
             ExascaleConfig = exascaleConfig;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CloudExadataInfrastructureProperties"/>. </summary>
+        /// <param name="shape"> The model name of the cloud Exadata infrastructure resource. </param>
+        /// <param name="displayName"> The name for the Exadata infrastructure. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="shape"/> is null. </exception>
+        public CloudExadataInfrastructureProperties(string shape, string displayName) : this(displayName)
+        {
+            Argument.AssertNotNull(shape, nameof(shape));
+
+            Shape = shape;
         }
 
         /// <summary> Defined file system configurations. </summary>

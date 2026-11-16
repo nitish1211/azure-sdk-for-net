@@ -34,7 +34,7 @@ namespace Azure.ResourceManager.NetApp.Models
 
             Tags = new ChangeTrackingDictionary<string, string>();
             Zones = new ChangeTrackingList<string>();
-            Properties = new VolumeProperties(creationToken, usageThreshold, subnetId);
+            Properties = new VolumeProperties(usageThreshold, subnetId);
         }
 
         /// <summary> Initializes a new instance of <see cref="NetAppVolumeGroupVolume"/>. </summary>
@@ -864,26 +864,6 @@ namespace Azure.ResourceManager.NetApp.Models
                     Properties = new VolumeProperties();
                 }
                 return Properties.PlacementRules;
-            }
-        }
-
-        /// <summary>
-        /// Flag indicating whether subvolume operations are enabled on the volume
-        /// Deprecated. Subvolume operations and this flag will be removed in a future API version.
-        /// </summary>
-        public EnableNetAppSubvolume? EnableSubvolumes
-        {
-            get
-            {
-                return Properties is null ? default : Properties.EnableSubvolumes;
-            }
-            set
-            {
-                if (Properties is null)
-                {
-                    Properties = new VolumeProperties();
-                }
-                Properties.EnableSubvolumes = value;
             }
         }
 

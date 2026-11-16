@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.NetApp
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetAppBackupPolicyData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public NetAppBackupPolicyData(AzureLocation location) : base(location)
+        public NetAppBackupPolicyData()
         {
 
         }
@@ -42,6 +41,13 @@ namespace Azure.ResourceManager.NetApp
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetAppBackupPolicyData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public NetAppBackupPolicyData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Backup policy Properties. </summary>

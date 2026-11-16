@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.NetApp
     /// <summary> External Cache Connection resource, representing a cache connection relationship between External and Azure NetApp Files volumes. </summary>
     public partial class ExternalCacheConnectionData : TrackedResourceData, IJsonModel<ExternalCacheConnectionData>
     {
-        /// <summary> Initializes a new instance of <see cref="ExternalCacheConnectionData"/> for deserialization. </summary>
-        internal ExternalCacheConnectionData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

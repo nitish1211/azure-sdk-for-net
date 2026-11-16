@@ -19,8 +19,7 @@ namespace Azure.ResourceManager.NotificationHubs.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NotificationHubTestSendResult"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public NotificationHubTestSendResult(AzureLocation location) : base(location)
+        public NotificationHubTestSendResult()
         {
         }
 
@@ -37,6 +36,13 @@ namespace Azure.ResourceManager.NotificationHubs.Models
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NotificationHubTestSendResult"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public NotificationHubTestSendResult(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Result of DebugSend operations. </summary>

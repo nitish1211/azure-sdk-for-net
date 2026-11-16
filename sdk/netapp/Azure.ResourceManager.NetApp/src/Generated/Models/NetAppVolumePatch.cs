@@ -19,8 +19,7 @@ namespace Azure.ResourceManager.NetApp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetAppVolumePatch"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public NetAppVolumePatch(AzureLocation location) : base(location)
+        public NetAppVolumePatch()
         {
         }
 
@@ -37,6 +36,13 @@ namespace Azure.ResourceManager.NetApp.Models
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetAppVolumePatch"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public NetAppVolumePatch(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Patchable volume properties. </summary>

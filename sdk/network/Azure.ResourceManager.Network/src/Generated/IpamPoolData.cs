@@ -21,10 +21,9 @@ namespace Azure.ResourceManager.Network
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="IpamPoolData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> Properties of IpamPool resource properties which are specific to the Pool resource. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
-        public IpamPoolData(AzureLocation location, IpamPoolProperties properties) : base(location)
+        public IpamPoolData(IpamPoolProperties properties)
         {
             Argument.AssertNotNull(properties, nameof(properties));
 
@@ -46,6 +45,14 @@ namespace Azure.ResourceManager.Network
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="IpamPoolData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="properties"> Properties of IpamPool resource properties which are specific to the Pool resource. </param>
+        public IpamPoolData(AzureLocation location, IpamPoolProperties properties) : this(properties)
+        {
+            Location = location;
         }
 
         /// <summary> Properties of IpamPool resource properties which are specific to the Pool resource. </summary>

@@ -18,16 +18,8 @@ namespace Azure.ResourceManager.NetworkCloud.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="StringKeyValuePair"/>. </summary>
-        /// <param name="key"> The key to the mapped value. </param>
-        /// <param name="value"> The value of the mapping key. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="key"/> or <paramref name="value"/> is null. </exception>
-        public StringKeyValuePair(string key, string value)
+        public StringKeyValuePair()
         {
-            Argument.AssertNotNull(key, nameof(key));
-            Argument.AssertNotNull(value, nameof(value));
-
-            Key = key;
-            Value = value;
         }
 
         /// <summary> Initializes a new instance of <see cref="StringKeyValuePair"/>. </summary>
@@ -39,6 +31,19 @@ namespace Azure.ResourceManager.NetworkCloud.Models
             Key = key;
             Value = value;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="StringKeyValuePair"/>. </summary>
+        /// <param name="key"> The key to the mapped value. </param>
+        /// <param name="value"> The value of the mapping key. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="key"/> or <paramref name="value"/> is null. </exception>
+        public StringKeyValuePair(string key, string value) : this()
+        {
+            Argument.AssertNotNull(key, nameof(key));
+            Argument.AssertNotNull(value, nameof(value));
+
+            Key = key;
+            Value = value;
         }
 
         /// <summary> The key to the mapped value. </summary>

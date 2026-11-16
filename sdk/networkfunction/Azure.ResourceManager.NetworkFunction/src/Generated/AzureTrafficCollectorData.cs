@@ -22,8 +22,7 @@ namespace Azure.ResourceManager.NetworkFunction
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AzureTrafficCollectorData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public AzureTrafficCollectorData(AzureLocation location) : base(location)
+        public AzureTrafficCollectorData()
         {
         }
 
@@ -42,6 +41,13 @@ namespace Azure.ResourceManager.NetworkFunction
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="AzureTrafficCollectorData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public AzureTrafficCollectorData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the Azure Traffic Collector. </summary>

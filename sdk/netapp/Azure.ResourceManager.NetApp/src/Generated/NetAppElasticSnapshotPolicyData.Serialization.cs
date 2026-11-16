@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.NetApp
     /// <summary> NetApp Elastic Snapshot Policy under an Elastic Account. </summary>
     public partial class NetAppElasticSnapshotPolicyData : TrackedResourceData, IJsonModel<NetAppElasticSnapshotPolicyData>
     {
-        /// <summary> Initializes a new instance of <see cref="NetAppElasticSnapshotPolicyData"/> for deserialization. </summary>
-        internal NetAppElasticSnapshotPolicyData()
-        {
-        }
-
         /// <param name="netAppElasticSnapshotPolicyData"> The <see cref="NetAppElasticSnapshotPolicyData"/> to serialize into <see cref="RequestContent"/>. </param>
         internal static RequestContent ToRequestContent(NetAppElasticSnapshotPolicyData netAppElasticSnapshotPolicyData)
         {

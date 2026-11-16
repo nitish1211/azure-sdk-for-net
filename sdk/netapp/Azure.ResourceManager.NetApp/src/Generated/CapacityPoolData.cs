@@ -21,10 +21,9 @@ namespace Azure.ResourceManager.NetApp
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CapacityPoolData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="size"> Provisioned size of the pool (in bytes). Allowed values are 512GiB (549755813888 bytes) or in 1TiB chunks (value must be multiple of 1099511627776). </param>
         /// <param name="serviceLevel"> The service level of the file system. </param>
-        public CapacityPoolData(AzureLocation location, long size, NetAppFileServiceLevel serviceLevel) : base(location)
+        public CapacityPoolData(long size, NetAppFileServiceLevel serviceLevel)
         {
 
             Properties = new PoolProperties(size, serviceLevel);
@@ -45,6 +44,15 @@ namespace Azure.ResourceManager.NetApp
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CapacityPoolData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="size"> Provisioned size of the pool (in bytes). Allowed values are 512GiB (549755813888 bytes) or in 1TiB chunks (value must be multiple of 1099511627776). </param>
+        /// <param name="serviceLevel"> The service level of the file system. </param>
+        public CapacityPoolData(AzureLocation location, long size, NetAppFileServiceLevel serviceLevel) : this(size, serviceLevel)
+        {
+            Location = location;
         }
 
         /// <summary> Capacity pool properties. </summary>

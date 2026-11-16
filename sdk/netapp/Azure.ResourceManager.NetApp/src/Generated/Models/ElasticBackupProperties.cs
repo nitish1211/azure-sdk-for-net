@@ -18,6 +18,11 @@ namespace Azure.ResourceManager.NetApp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ElasticBackupProperties"/>. </summary>
+        public ElasticBackupProperties()
+        {
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ElasticBackupProperties"/>. </summary>
         /// <param name="createdOn"> The creation date of the backup. </param>
         /// <param name="snapshotCreationOn"> The snapshot creation date of the backup. </param>
         /// <param name="completionOn"> The completion date of the backup. </param>

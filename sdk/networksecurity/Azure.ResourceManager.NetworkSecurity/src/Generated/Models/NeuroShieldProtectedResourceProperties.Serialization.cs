@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.NetworkSecurity.Models
     /// <summary> Properties of a protected resource. </summary>
     public partial class NeuroShieldProtectedResourceProperties : IJsonModel<NeuroShieldProtectedResourceProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="NeuroShieldProtectedResourceProperties"/> for deserialization. </summary>
-        internal NeuroShieldProtectedResourceProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual NeuroShieldProtectedResourceProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

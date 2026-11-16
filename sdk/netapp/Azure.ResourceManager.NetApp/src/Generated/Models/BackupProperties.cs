@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.NetApp;
 
 namespace Azure.ResourceManager.NetApp.Models
 {
@@ -23,13 +22,8 @@ namespace Azure.ResourceManager.NetApp.Models
         private bool _completionOnIsDefined;
 
         /// <summary> Initializes a new instance of <see cref="BackupProperties"/>. </summary>
-        /// <param name="volumeResourceId"> ResourceId used to identify the Volume. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="volumeResourceId"/> is null. </exception>
-        public BackupProperties(ResourceIdentifier volumeResourceId)
+        public BackupProperties()
         {
-            Argument.AssertNotNull(volumeResourceId, nameof(volumeResourceId));
-
-            VolumeResourceId = volumeResourceId;
         }
 
         /// <summary> Initializes a new instance of <see cref="BackupProperties"/>. </summary>

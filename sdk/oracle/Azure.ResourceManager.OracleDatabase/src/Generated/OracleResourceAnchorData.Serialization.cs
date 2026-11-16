@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.OracleDatabase
     /// <summary> Resource Anchor model. </summary>
     public partial class OracleResourceAnchorData : TrackedResourceData, IJsonModel<OracleResourceAnchorData>
     {
-        /// <summary> Initializes a new instance of <see cref="OracleResourceAnchorData"/> for deserialization. </summary>
-        internal OracleResourceAnchorData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

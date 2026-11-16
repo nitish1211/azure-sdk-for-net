@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.PaloAltoNetworks.Ngfw
     /// <summary> GlobalRulestack prefixList. </summary>
     public partial class GlobalRulestackPrefixData : ResourceData, IJsonModel<GlobalRulestackPrefixData>
     {
-        /// <summary> Initializes a new instance of <see cref="GlobalRulestackPrefixData"/> for deserialization. </summary>
-        internal GlobalRulestackPrefixData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -22,17 +22,13 @@ namespace Azure.ResourceManager.NetworkCloud
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudAccessBridgeData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="networkId"> The resource ID of the internal network in a layer 3 isolation domain containing the IP subnets to use. </param>
-        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="networkId"/> or <paramref name="extendedLocation"/> is null. </exception>
-        public NetworkCloudAccessBridgeData(AzureLocation location, ResourceIdentifier networkId, Resources.Models.ExtendedLocation extendedLocation) : base(location)
+        /// <exception cref="ArgumentNullException"> <paramref name="networkId"/> is null. </exception>
+        public NetworkCloudAccessBridgeData(ResourceIdentifier networkId)
         {
             Argument.AssertNotNull(networkId, nameof(networkId));
-            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
 
-            Properties = new AccessBridgeProperties(networkId);
-            ExtendedLocation = extendedLocation;
+            Properties = new AccessBridgeProperties();
         }
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudAccessBridgeData"/>. </summary>
@@ -52,6 +48,19 @@ namespace Azure.ResourceManager.NetworkCloud
             ETag = eTag;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkCloudAccessBridgeData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="networkId"> The resource ID of the internal network in a layer 3 isolation domain containing the IP subnets to use. </param>
+        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
+        public NetworkCloudAccessBridgeData(AzureLocation location, ResourceIdentifier networkId, Resources.Models.ExtendedLocation extendedLocation) : this(networkId)
+        {
+            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
+
+            Location = location;
+            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> The list of the resource properties. </summary>

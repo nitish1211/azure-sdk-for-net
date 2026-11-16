@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     /// <summary> Autonomous Database Cross Region Disaster Recovery resource model. </summary>
     public partial class AutonomousDatabaseCrossRegionDisasterRecoveryProperties : AutonomousDatabaseBaseProperties, IJsonModel<AutonomousDatabaseCrossRegionDisasterRecoveryProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="AutonomousDatabaseCrossRegionDisasterRecoveryProperties"/> for deserialization. </summary>
-        internal AutonomousDatabaseCrossRegionDisasterRecoveryProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected override AutonomousDatabaseBaseProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

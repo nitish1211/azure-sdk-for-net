@@ -19,28 +19,12 @@ namespace Azure.ResourceManager.NetApp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetAppCacheProperties"/>. </summary>
-        /// <param name="filePath"> The file path of the Cache. </param>
         /// <param name="size"> Maximum storage quota allowed for a file system in bytes. Valid values are in the range 50GiB to 1PiB. Values expressed in bytes as multiples of 1GiB. </param>
-        /// <param name="cacheSubnetResourceId"> The Azure Resource URI for a delegated cache subnet that will be used to allocate data IPs. </param>
-        /// <param name="peeringSubnetResourceId"> The Azure Resource URI for a delegated subnet that will be used for ANF Intercluster Interface IP addresses. </param>
-        /// <param name="encryptionKeySource"> Source of key used to encrypt data in the cache. Applicable if NetApp account has encryption.keySource = 'Microsoft.KeyVault'. Possible values (case-insensitive) are: 'Microsoft.NetApp, Microsoft.KeyVault'. </param>
-        /// <param name="originClusterInformation"> Origin cluster information. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="filePath"/>, <paramref name="cacheSubnetResourceId"/>, <paramref name="peeringSubnetResourceId"/> or <paramref name="originClusterInformation"/> is null. </exception>
-        public NetAppCacheProperties(string filePath, long size, ResourceIdentifier cacheSubnetResourceId, ResourceIdentifier peeringSubnetResourceId, NetAppEncryptionKeySource encryptionKeySource, NetAppOriginClusterInformation originClusterInformation)
+        public NetAppCacheProperties(long size)
         {
-            Argument.AssertNotNull(filePath, nameof(filePath));
-            Argument.AssertNotNull(cacheSubnetResourceId, nameof(cacheSubnetResourceId));
-            Argument.AssertNotNull(peeringSubnetResourceId, nameof(peeringSubnetResourceId));
-            Argument.AssertNotNull(originClusterInformation, nameof(originClusterInformation));
-
-            FilePath = filePath;
             Size = size;
             ProtocolTypes = new ChangeTrackingList<NetAppProtocolType>();
-            CacheSubnetResourceId = cacheSubnetResourceId;
-            PeeringSubnetResourceId = peeringSubnetResourceId;
             MountTargets = new ChangeTrackingList<NetAppCacheMountTargetProperties>();
-            EncryptionKeySource = encryptionKeySource;
-            OriginClusterInformation = originClusterInformation;
         }
 
         /// <summary> Initializes a new instance of <see cref="NetAppCacheProperties"/>. </summary>
@@ -98,6 +82,28 @@ namespace Azure.ResourceManager.NetApp.Models
             WriteBack = writeBack;
             FileAccessLogs = fileAccessLogs;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetAppCacheProperties"/>. </summary>
+        /// <param name="filePath"> The file path of the Cache. </param>
+        /// <param name="size"> Maximum storage quota allowed for a file system in bytes. Valid values are in the range 50GiB to 1PiB. Values expressed in bytes as multiples of 1GiB. </param>
+        /// <param name="cacheSubnetResourceId"> The Azure Resource URI for a delegated cache subnet that will be used to allocate data IPs. </param>
+        /// <param name="peeringSubnetResourceId"> The Azure Resource URI for a delegated subnet that will be used for ANF Intercluster Interface IP addresses. </param>
+        /// <param name="encryptionKeySource"> Source of key used to encrypt data in the cache. Applicable if NetApp account has encryption.keySource = 'Microsoft.KeyVault'. Possible values (case-insensitive) are: 'Microsoft.NetApp, Microsoft.KeyVault'. </param>
+        /// <param name="originClusterInformation"> Origin cluster information. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="filePath"/>, <paramref name="cacheSubnetResourceId"/>, <paramref name="peeringSubnetResourceId"/> or <paramref name="originClusterInformation"/> is null. </exception>
+        public NetAppCacheProperties(string filePath, long size, ResourceIdentifier cacheSubnetResourceId, ResourceIdentifier peeringSubnetResourceId, NetAppEncryptionKeySource encryptionKeySource, NetAppOriginClusterInformation originClusterInformation) : this(size)
+        {
+            Argument.AssertNotNull(filePath, nameof(filePath));
+            Argument.AssertNotNull(cacheSubnetResourceId, nameof(cacheSubnetResourceId));
+            Argument.AssertNotNull(peeringSubnetResourceId, nameof(peeringSubnetResourceId));
+            Argument.AssertNotNull(originClusterInformation, nameof(originClusterInformation));
+
+            FilePath = filePath;
+            CacheSubnetResourceId = cacheSubnetResourceId;
+            PeeringSubnetResourceId = peeringSubnetResourceId;
+            EncryptionKeySource = encryptionKeySource;
+            OriginClusterInformation = originClusterInformation;
         }
 
         /// <summary> The file path of the Cache. </summary>

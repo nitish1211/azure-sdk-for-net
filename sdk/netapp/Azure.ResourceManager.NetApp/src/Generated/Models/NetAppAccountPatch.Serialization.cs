@@ -19,11 +19,6 @@ namespace Azure.ResourceManager.NetApp.Models
     /// <summary> NetApp account patch resource. </summary>
     public partial class NetAppAccountPatch : TrackedResourceData, IJsonModel<NetAppAccountPatch>
     {
-        /// <summary> Initializes a new instance of <see cref="NetAppAccountPatch"/> for deserialization. </summary>
-        internal NetAppAccountPatch()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

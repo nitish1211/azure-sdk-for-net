@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.PaloAltoNetworks.Ngfw
     /// <summary> PaloAltoNetworks Firewall. </summary>
     public partial class PaloAltoNetworksFirewallData : TrackedResourceData, IJsonModel<PaloAltoNetworksFirewallData>
     {
-        /// <summary> Initializes a new instance of <see cref="PaloAltoNetworksFirewallData"/> for deserialization. </summary>
-        internal PaloAltoNetworksFirewallData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.OperationalInsights
     /// <summary> The top level Log Analytics cluster resource container. </summary>
     public partial class OperationalInsightsClusterData : TrackedResourceData, IJsonModel<OperationalInsightsClusterData>
     {
-        /// <summary> Initializes a new instance of <see cref="OperationalInsightsClusterData"/> for deserialization. </summary>
-        internal OperationalInsightsClusterData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

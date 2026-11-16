@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     /// <summary> Network Anchor properties. </summary>
     public partial class OracleNetworkAnchorProperties : IJsonModel<OracleNetworkAnchorProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="OracleNetworkAnchorProperties"/> for deserialization. </summary>
-        internal OracleNetworkAnchorProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual OracleNetworkAnchorProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.NetApp
     /// <summary> Snapshot policy information. </summary>
     public partial class SnapshotPolicyData : TrackedResourceData, IJsonModel<SnapshotPolicyData>
     {
-        /// <summary> Initializes a new instance of <see cref="SnapshotPolicyData"/> for deserialization. </summary>
-        internal SnapshotPolicyData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

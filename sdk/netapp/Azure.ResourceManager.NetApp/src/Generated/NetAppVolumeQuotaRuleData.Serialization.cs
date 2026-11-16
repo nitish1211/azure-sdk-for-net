@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.NetApp
     /// <summary> Quota Rule of a Volume. </summary>
     public partial class NetAppVolumeQuotaRuleData : TrackedResourceData, IJsonModel<NetAppVolumeQuotaRuleData>
     {
-        /// <summary> Initializes a new instance of <see cref="NetAppVolumeQuotaRuleData"/> for deserialization. </summary>
-        internal NetAppVolumeQuotaRuleData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

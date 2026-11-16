@@ -17,16 +17,12 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     {
         /// <summary> Initializes a new instance of <see cref="OracleConnectionDetails"/>. </summary>
         /// <param name="displayName"> The connection display name. </param>
-        /// <param name="resourceAnchorId"> The corresponding resource anchor Azure ID. </param>
-        /// <param name="networkAnchorId"> The corresponding network anchor Azure ID. </param>
         /// <param name="technologyType"> The Oracle technology type. </param>
         /// <param name="username"> The username that is used to connect the associated system of the given technology. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="displayName"/>, <paramref name="resourceAnchorId"/>, <paramref name="networkAnchorId"/> or <paramref name="username"/> is null. </exception>
-        public OracleConnectionDetails(string displayName, ResourceIdentifier resourceAnchorId, ResourceIdentifier networkAnchorId, OracleConnectionTechnologyType technologyType, string username) : base(ConnectionType.Oracle, displayName, resourceAnchorId, networkAnchorId)
+        /// <exception cref="ArgumentNullException"> <paramref name="displayName"/> or <paramref name="username"/> is null. </exception>
+        public OracleConnectionDetails(string displayName, OracleConnectionTechnologyType technologyType, string username) : base(ConnectionType.Oracle, displayName)
         {
             Argument.AssertNotNull(displayName, nameof(displayName));
-            Argument.AssertNotNull(resourceAnchorId, nameof(resourceAnchorId));
-            Argument.AssertNotNull(networkAnchorId, nameof(networkAnchorId));
             Argument.AssertNotNull(username, nameof(username));
 
             TechnologyType = technologyType;
@@ -70,6 +66,22 @@ namespace Azure.ResourceManager.OracleDatabase.Models
             WalletSecretId = walletSecretId;
             DatabaseId = databaseId;
             PrivateIP = privateIP;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="OracleConnectionDetails"/>. </summary>
+        /// <param name="displayName"> The connection display name. </param>
+        /// <param name="resourceAnchorId"> The corresponding resource anchor Azure ID. </param>
+        /// <param name="networkAnchorId"> The corresponding network anchor Azure ID. </param>
+        /// <param name="technologyType"> The Oracle technology type. </param>
+        /// <param name="username"> The username that is used to connect the associated system of the given technology. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="resourceAnchorId"/> or <paramref name="networkAnchorId"/> is null. </exception>
+        public OracleConnectionDetails(string displayName, ResourceIdentifier resourceAnchorId, ResourceIdentifier networkAnchorId, OracleConnectionTechnologyType technologyType, string username) : this(displayName, technologyType, username)
+        {
+            Argument.AssertNotNull(resourceAnchorId, nameof(resourceAnchorId));
+            Argument.AssertNotNull(networkAnchorId, nameof(networkAnchorId));
+
+            ResourceAnchorId = resourceAnchorId;
+            NetworkAnchorId = networkAnchorId;
         }
 
         /// <summary> The Oracle technology type. </summary>

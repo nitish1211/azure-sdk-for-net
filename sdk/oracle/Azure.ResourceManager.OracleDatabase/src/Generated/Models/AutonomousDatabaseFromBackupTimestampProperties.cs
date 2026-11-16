@@ -16,15 +16,8 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     public partial class AutonomousDatabaseFromBackupTimestampProperties : AutonomousDatabaseBaseProperties
     {
         /// <summary> Initializes a new instance of <see cref="AutonomousDatabaseFromBackupTimestampProperties"/>. </summary>
-        /// <param name="sourceId"> The ID of the source Autonomous Database that you will clone to create a new Autonomous Database. </param>
-        /// <param name="cloneType"> The Autonomous Database clone type. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="sourceId"/> is null. </exception>
-        public AutonomousDatabaseFromBackupTimestampProperties(ResourceIdentifier sourceId, AutonomousDatabaseCloneType cloneType) : base(OracleDataBaseType.CloneFromBackupTimestamp)
+        public AutonomousDatabaseFromBackupTimestampProperties() : base(OracleDataBaseType.CloneFromBackupTimestamp)
         {
-            Argument.AssertNotNull(sourceId, nameof(sourceId));
-
-            SourceId = sourceId;
-            CloneType = cloneType;
         }
 
         /// <summary> Initializes a new instance of <see cref="AutonomousDatabaseFromBackupTimestampProperties"/>. </summary>
@@ -124,6 +117,18 @@ namespace Azure.ResourceManager.OracleDatabase.Models
             CloneType = cloneType;
             Timestamp = timestamp;
             UseLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="AutonomousDatabaseFromBackupTimestampProperties"/>. </summary>
+        /// <param name="sourceId"> The ID of the source Autonomous Database that you will clone to create a new Autonomous Database. </param>
+        /// <param name="cloneType"> The Autonomous Database clone type. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="sourceId"/> is null. </exception>
+        public AutonomousDatabaseFromBackupTimestampProperties(ResourceIdentifier sourceId, AutonomousDatabaseCloneType cloneType) : this()
+        {
+            Argument.AssertNotNull(sourceId, nameof(sourceId));
+
+            SourceId = sourceId;
+            CloneType = cloneType;
         }
 
         /// <summary> The source of the database. </summary>

@@ -21,17 +21,14 @@ namespace Azure.ResourceManager.OnlineExperimentation.Models
         /// <summary> Initializes a new instance of <see cref="OnlineExperimentationWorkspaceProperties"/>. </summary>
         /// <param name="logAnalyticsWorkspaceResourceId"> The resource identifier of the Log Analytics workspace which online experimentation workspace uses for generating experiment analysis results. </param>
         /// <param name="logsExporterStorageAccountResourceId"> The resource identifier of storage account where logs are exported from Log Analytics workspace. online experimentation workspace uses it generating experiment analysis results. </param>
-        /// <param name="appConfigurationResourceId"> The resource identifier of App Configuration with which this online experimentation workspace is tied for experimentation. This is a required field for creating an online experimentation workspace. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="logAnalyticsWorkspaceResourceId"/>, <paramref name="logsExporterStorageAccountResourceId"/> or <paramref name="appConfigurationResourceId"/> is null. </exception>
-        public OnlineExperimentationWorkspaceProperties(ResourceIdentifier logAnalyticsWorkspaceResourceId, ResourceIdentifier logsExporterStorageAccountResourceId, ResourceIdentifier appConfigurationResourceId)
+        /// <exception cref="ArgumentNullException"> <paramref name="logAnalyticsWorkspaceResourceId"/> or <paramref name="logsExporterStorageAccountResourceId"/> is null. </exception>
+        public OnlineExperimentationWorkspaceProperties(ResourceIdentifier logAnalyticsWorkspaceResourceId, ResourceIdentifier logsExporterStorageAccountResourceId)
         {
             Argument.AssertNotNull(logAnalyticsWorkspaceResourceId, nameof(logAnalyticsWorkspaceResourceId));
             Argument.AssertNotNull(logsExporterStorageAccountResourceId, nameof(logsExporterStorageAccountResourceId));
-            Argument.AssertNotNull(appConfigurationResourceId, nameof(appConfigurationResourceId));
 
             LogAnalyticsWorkspaceResourceId = logAnalyticsWorkspaceResourceId;
             LogsExporterStorageAccountResourceId = logsExporterStorageAccountResourceId;
-            AppConfigurationResourceId = appConfigurationResourceId;
             PrivateEndpointConnections = new ChangeTrackingList<OnlineExperimentationPrivateEndpointConnectionData>();
         }
 

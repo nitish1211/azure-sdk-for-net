@@ -19,11 +19,6 @@ namespace Azure.ResourceManager.NetworkCloud.Models
     /// <summary> VirtualMachineProperties represents the properties of the virtual machine. </summary>
     internal partial class VirtualMachineProperties : IJsonModel<VirtualMachineProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="VirtualMachineProperties"/> for deserialization. </summary>
-        internal VirtualMachineProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual VirtualMachineProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

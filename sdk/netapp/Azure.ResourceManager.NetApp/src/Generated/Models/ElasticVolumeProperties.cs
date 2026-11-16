@@ -7,7 +7,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Azure.Core;
+using Azure.ResourceManager.NetApp;
 
 namespace Azure.ResourceManager.NetApp.Models
 {
@@ -16,6 +18,19 @@ namespace Azure.ResourceManager.NetApp.Models
     {
         /// <summary> Keeps track of any properties unknown to the library. </summary>
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
+
+        /// <summary> Initializes a new instance of <see cref="ElasticVolumeProperties"/>. </summary>
+        /// <param name="size"> Maximum size allowed for a volume in bytes. Valid values are in the range 1GiB to 16TiB. Values expressed in bytes as multiples of 1 GiB. </param>
+        /// <param name="protocolTypes"> Set of support protocol types for the elastic volume. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="protocolTypes"/> is null. </exception>
+        public ElasticVolumeProperties(long size, IEnumerable<ElasticProtocolType> protocolTypes)
+        {
+            Argument.AssertNotNull(protocolTypes, nameof(protocolTypes));
+
+            Size = size;
+            ProtocolTypes = protocolTypes.ToList();
+            MountTargets = new ChangeTrackingList<ElasticMountTargetProperties>();
+        }
 
         /// <summary> Initializes a new instance of <see cref="ElasticVolumeProperties"/>. </summary>
         /// <param name="filePath"> A unique file path for the volume. Used when creating mount targets. This needs to be unique within the elastic capacity pool. </param>

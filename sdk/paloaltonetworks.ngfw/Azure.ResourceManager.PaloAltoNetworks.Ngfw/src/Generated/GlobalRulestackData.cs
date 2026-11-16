@@ -24,7 +24,6 @@ namespace Azure.ResourceManager.PaloAltoNetworks.Ngfw
         /// <param name="location"> Global Location. </param>
         public GlobalRulestackData(AzureLocation location)
         {
-
             Location = location;
         }
 

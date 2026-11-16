@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.NetApp.Models
     /// <summary> Elastic Backup properties. </summary>
     public partial class ElasticBackupProperties : IJsonModel<ElasticBackupProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="ElasticBackupProperties"/> for deserialization. </summary>
-        internal ElasticBackupProperties()
-        {
-        }
-
         /// <param name="element"> The JSON element to deserialize. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         internal static ElasticBackupProperties DeserializeElasticBackupProperties(JsonElement element, ModelReaderWriterOptions options)

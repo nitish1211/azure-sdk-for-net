@@ -22,11 +22,6 @@ namespace Azure.ResourceManager.NotificationHubs.Models
     /// </summary>
     public partial class NotificationHubAvailabilityContent : TrackedResourceData, IJsonModel<NotificationHubAvailabilityContent>
     {
-        /// <summary> Initializes a new instance of <see cref="NotificationHubAvailabilityContent"/> for deserialization. </summary>
-        internal NotificationHubAvailabilityContent()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

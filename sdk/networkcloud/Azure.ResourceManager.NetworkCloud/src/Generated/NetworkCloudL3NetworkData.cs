@@ -21,18 +21,14 @@ namespace Azure.ResourceManager.NetworkCloud
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudL3NetworkData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="l3IsolationDomainId"> The resource ID of the Network Fabric l3IsolationDomain. </param>
         /// <param name="vlan"> The VLAN from the l3IsolationDomain that is used for this network. </param>
-        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="l3IsolationDomainId"/> or <paramref name="extendedLocation"/> is null. </exception>
-        public NetworkCloudL3NetworkData(AzureLocation location, ResourceIdentifier l3IsolationDomainId, long vlan, ExtendedLocation extendedLocation) : base(location)
+        /// <exception cref="ArgumentNullException"> <paramref name="l3IsolationDomainId"/> is null. </exception>
+        public NetworkCloudL3NetworkData(ResourceIdentifier l3IsolationDomainId, long vlan)
         {
             Argument.AssertNotNull(l3IsolationDomainId, nameof(l3IsolationDomainId));
-            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
 
-            Properties = new L3NetworkProperties(l3IsolationDomainId, vlan);
-            ExtendedLocation = extendedLocation;
+            Properties = new L3NetworkProperties();
         }
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudL3NetworkData"/>. </summary>
@@ -52,6 +48,20 @@ namespace Azure.ResourceManager.NetworkCloud
             ETag = eTag;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkCloudL3NetworkData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="l3IsolationDomainId"> The resource ID of the Network Fabric l3IsolationDomain. </param>
+        /// <param name="vlan"> The VLAN from the l3IsolationDomain that is used for this network. </param>
+        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
+        public NetworkCloudL3NetworkData(AzureLocation location, ResourceIdentifier l3IsolationDomainId, long vlan, ExtendedLocation extendedLocation) : this(l3IsolationDomainId, vlan)
+        {
+            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
+
+            Location = location;
+            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> The list of the resource properties. </summary>

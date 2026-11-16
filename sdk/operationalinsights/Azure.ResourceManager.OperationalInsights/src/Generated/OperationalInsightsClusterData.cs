@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.OperationalInsights
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="OperationalInsightsClusterData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public OperationalInsightsClusterData(AzureLocation location) : base(location)
+        public OperationalInsightsClusterData()
         {
         }
 
@@ -42,6 +41,13 @@ namespace Azure.ResourceManager.OperationalInsights
             Identity = identity;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="OperationalInsightsClusterData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public OperationalInsightsClusterData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Log Analytics cluster properties. </summary>

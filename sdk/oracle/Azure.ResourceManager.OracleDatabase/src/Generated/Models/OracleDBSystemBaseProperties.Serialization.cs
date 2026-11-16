@@ -19,11 +19,6 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     [PersistableModelProxy(typeof(UnknownOracleDBSystemBaseProperties))]
     public abstract partial class OracleDBSystemBaseProperties : IJsonModel<OracleDBSystemBaseProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="OracleDBSystemBaseProperties"/> for deserialization. </summary>
-        internal OracleDBSystemBaseProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual OracleDBSystemBaseProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

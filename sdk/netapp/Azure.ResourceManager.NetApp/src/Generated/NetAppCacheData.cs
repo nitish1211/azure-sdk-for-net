@@ -21,10 +21,9 @@ namespace Azure.ResourceManager.NetApp
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetAppCacheData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> Cache properties. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
-        public NetAppCacheData(AzureLocation location, NetAppCacheProperties properties) : base(location)
+        public NetAppCacheData(NetAppCacheProperties properties)
         {
             Argument.AssertNotNull(properties, nameof(properties));
 
@@ -49,6 +48,14 @@ namespace Azure.ResourceManager.NetApp
             ETag = eTag;
             Zones = zones;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetAppCacheData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="properties"> Cache properties. </param>
+        public NetAppCacheData(AzureLocation location, NetAppCacheProperties properties) : this(properties)
+        {
+            Location = location;
         }
 
         /// <summary> Cache properties. </summary>

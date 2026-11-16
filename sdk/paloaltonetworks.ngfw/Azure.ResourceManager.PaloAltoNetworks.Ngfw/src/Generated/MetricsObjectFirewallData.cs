@@ -21,15 +21,8 @@ namespace Azure.ResourceManager.PaloAltoNetworks.Ngfw
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="MetricsObjectFirewallData"/>. </summary>
-        /// <param name="applicationInsightsResourceId"> Resource Id of application insights resource. </param>
-        /// <param name="applicationInsightsConnectionString"> Connection string of application insights resource. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="applicationInsightsResourceId"/> or <paramref name="applicationInsightsConnectionString"/> is null. </exception>
-        public MetricsObjectFirewallData(string applicationInsightsResourceId, string applicationInsightsConnectionString)
+        public MetricsObjectFirewallData()
         {
-            Argument.AssertNotNull(applicationInsightsResourceId, nameof(applicationInsightsResourceId));
-            Argument.AssertNotNull(applicationInsightsConnectionString, nameof(applicationInsightsConnectionString));
-
-            Properties = new MetricsObject(applicationInsightsResourceId, applicationInsightsConnectionString);
         }
 
         /// <summary> Initializes a new instance of <see cref="MetricsObjectFirewallData"/>. </summary>
@@ -43,6 +36,19 @@ namespace Azure.ResourceManager.PaloAltoNetworks.Ngfw
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MetricsObjectFirewallData"/>. </summary>
+        /// <param name="applicationInsightsResourceId"> Resource Id of application insights resource. </param>
+        /// <param name="applicationInsightsConnectionString"> Connection string of application insights resource. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="applicationInsightsResourceId"/> or <paramref name="applicationInsightsConnectionString"/> is null. </exception>
+        public MetricsObjectFirewallData(string applicationInsightsResourceId, string applicationInsightsConnectionString) : this()
+        {
+            Argument.AssertNotNull(applicationInsightsResourceId, nameof(applicationInsightsResourceId));
+            Argument.AssertNotNull(applicationInsightsConnectionString, nameof(applicationInsightsConnectionString));
+
+            ApplicationInsightsResourceId = applicationInsightsResourceId;
+            ApplicationInsightsConnectionString = applicationInsightsConnectionString;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

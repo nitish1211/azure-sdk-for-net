@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.OracleDatabase
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="OracleResourceAnchorData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public OracleResourceAnchorData(AzureLocation location) : base(location)
+        public OracleResourceAnchorData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.OracleDatabase
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="OracleResourceAnchorData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public OracleResourceAnchorData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

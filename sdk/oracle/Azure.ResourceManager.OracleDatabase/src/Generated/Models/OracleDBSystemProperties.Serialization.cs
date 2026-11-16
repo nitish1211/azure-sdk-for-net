@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     /// <summary> DbSystem resource model. </summary>
     public partial class OracleDBSystemProperties : OracleDBSystemBaseProperties, IJsonModel<OracleDBSystemProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="OracleDBSystemProperties"/> for deserialization. </summary>
-        internal OracleDBSystemProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected override OracleDBSystemBaseProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

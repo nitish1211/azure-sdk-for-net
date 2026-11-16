@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.OracleDatabase
     /// <summary> GoldenGate Deployment resource definition. </summary>
     public partial class GoldenGateDeploymentData : TrackedResourceData, IJsonModel<GoldenGateDeploymentData>
     {
-        /// <summary> Initializes a new instance of <see cref="GoldenGateDeploymentData"/> for deserialization. </summary>
-        internal GoldenGateDeploymentData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -19,11 +19,6 @@ namespace Azure.ResourceManager.NetworkCloud.Models
     /// <summary> ClusterManagerProperties represents the properties of a cluster manager. </summary>
     internal partial class ClusterManagerProperties : IJsonModel<ClusterManagerProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="ClusterManagerProperties"/> for deserialization. </summary>
-        internal ClusterManagerProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ClusterManagerProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

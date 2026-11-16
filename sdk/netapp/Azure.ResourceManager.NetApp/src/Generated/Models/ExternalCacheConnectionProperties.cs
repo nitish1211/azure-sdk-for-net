@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.NetApp;
 
 namespace Azure.ResourceManager.NetApp.Models
 {
@@ -19,19 +18,8 @@ namespace Azure.ResourceManager.NetApp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ExternalCacheConnectionProperties"/>. </summary>
-        /// <param name="originVolumeResourceId"> Origin volume resource ID, the ANF volume that acts as the origin for the cache connection. </param>
-        /// <param name="externalCacheName"> Name of the cache associated with this connection. </param>
-        /// <param name="externalSvmResourceId"> External SVM resource ID, the external storage virtual machine associated with this cache connection. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="originVolumeResourceId"/>, <paramref name="externalCacheName"/> or <paramref name="externalSvmResourceId"/> is null. </exception>
-        public ExternalCacheConnectionProperties(ResourceIdentifier originVolumeResourceId, string externalCacheName, ResourceIdentifier externalSvmResourceId)
+        public ExternalCacheConnectionProperties()
         {
-            Argument.AssertNotNull(originVolumeResourceId, nameof(originVolumeResourceId));
-            Argument.AssertNotNull(externalCacheName, nameof(externalCacheName));
-            Argument.AssertNotNull(externalSvmResourceId, nameof(externalSvmResourceId));
-
-            OriginVolumeResourceId = originVolumeResourceId;
-            ExternalCacheName = externalCacheName;
-            ExternalSvmResourceId = externalSvmResourceId;
         }
 
         /// <summary> Initializes a new instance of <see cref="ExternalCacheConnectionProperties"/>. </summary>

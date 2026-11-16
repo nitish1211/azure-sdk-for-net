@@ -21,10 +21,9 @@ namespace Azure.ResourceManager.NetworkSecurity
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NeuroShieldData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> Properties of the NeuroShield resource. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
-        public NeuroShieldData(AzureLocation location, NeuroShieldProperties properties) : base(location)
+        public NeuroShieldData(NeuroShieldProperties properties)
         {
             Argument.AssertNotNull(properties, nameof(properties));
 

@@ -17,15 +17,11 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     {
         /// <summary> Initializes a new instance of <see cref="KafkaConnectionDetails"/>. </summary>
         /// <param name="displayName"> The connection display name. </param>
-        /// <param name="resourceAnchorId"> The corresponding resource anchor Azure ID. </param>
-        /// <param name="networkAnchorId"> The corresponding network anchor Azure ID. </param>
         /// <param name="technologyType"> The Kafka technology type. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="displayName"/>, <paramref name="resourceAnchorId"/> or <paramref name="networkAnchorId"/> is null. </exception>
-        public KafkaConnectionDetails(string displayName, ResourceIdentifier resourceAnchorId, ResourceIdentifier networkAnchorId, KafkaConnectionTechnologyType technologyType) : base(ConnectionType.Kafka, displayName, resourceAnchorId, networkAnchorId)
+        /// <exception cref="ArgumentNullException"> <paramref name="displayName"/> is null. </exception>
+        public KafkaConnectionDetails(string displayName, KafkaConnectionTechnologyType technologyType) : base(ConnectionType.Kafka, displayName)
         {
             Argument.AssertNotNull(displayName, nameof(displayName));
-            Argument.AssertNotNull(resourceAnchorId, nameof(resourceAnchorId));
-            Argument.AssertNotNull(networkAnchorId, nameof(networkAnchorId));
 
             TechnologyType = technologyType;
             BootstrapServers = new ChangeTrackingList<KafkaBootstrapServer>();
@@ -80,6 +76,21 @@ namespace Azure.ResourceManager.OracleDatabase.Models
             StreamPoolId = streamPoolId;
             ClusterId = clusterId;
             ShouldUseResourcePrincipal = shouldUseResourcePrincipal;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="KafkaConnectionDetails"/>. </summary>
+        /// <param name="displayName"> The connection display name. </param>
+        /// <param name="resourceAnchorId"> The corresponding resource anchor Azure ID. </param>
+        /// <param name="networkAnchorId"> The corresponding network anchor Azure ID. </param>
+        /// <param name="technologyType"> The Kafka technology type. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="resourceAnchorId"/> or <paramref name="networkAnchorId"/> is null. </exception>
+        public KafkaConnectionDetails(string displayName, ResourceIdentifier resourceAnchorId, ResourceIdentifier networkAnchorId, KafkaConnectionTechnologyType technologyType) : this(displayName, technologyType)
+        {
+            Argument.AssertNotNull(resourceAnchorId, nameof(resourceAnchorId));
+            Argument.AssertNotNull(networkAnchorId, nameof(networkAnchorId));
+
+            ResourceAnchorId = resourceAnchorId;
+            NetworkAnchorId = networkAnchorId;
         }
 
         /// <summary> The Kafka technology type. </summary>

@@ -19,8 +19,7 @@ namespace Azure.ResourceManager.NotificationHubs.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NotificationHubPatch"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public NotificationHubPatch(AzureLocation location) : base(location)
+        public NotificationHubPatch()
         {
         }
 
@@ -39,6 +38,13 @@ namespace Azure.ResourceManager.NotificationHubs.Models
             Properties = properties;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NotificationHubPatch"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public NotificationHubPatch(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> NotificationHub properties. </summary>

@@ -44,6 +44,8 @@ namespace Azure.ResourceManager.NetApp
         /// <summary> The ClientDiagnostics is used to provide tracing support for the client library. </summary>
         internal ClientDiagnostics ClientDiagnostics { get; }
 
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         internal HttpMessage CreateGetRequest(Guid subscriptionId, string resourceGroupName, string accountName, string poolName, string volumeName, string subvolumeName, RequestContext context)
         {
             RawRequestUriBuilder uri = new RawRequestUriBuilder();
@@ -72,7 +74,11 @@ namespace Azure.ResourceManager.NetApp
             request.Headers.SetValue("Accept", "application/json");
             return message;
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         internal HttpMessage CreateCreateRequest(Guid subscriptionId, string resourceGroupName, string accountName, string poolName, string volumeName, string subvolumeName, RequestContent content, RequestContext context)
         {
             RawRequestUriBuilder uri = new RawRequestUriBuilder();
@@ -103,7 +109,11 @@ namespace Azure.ResourceManager.NetApp
             request.Content = content;
             return message;
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         internal HttpMessage CreateUpdateRequest(Guid subscriptionId, string resourceGroupName, string accountName, string poolName, string volumeName, string subvolumeName, RequestContent content, RequestContext context)
         {
             RawRequestUriBuilder uri = new RawRequestUriBuilder();
@@ -134,6 +144,8 @@ namespace Azure.ResourceManager.NetApp
             request.Content = content;
             return message;
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         internal HttpMessage CreateDeleteRequest(Guid subscriptionId, string resourceGroupName, string accountName, string poolName, string volumeName, string subvolumeName, RequestContext context)
         {
@@ -163,6 +175,8 @@ namespace Azure.ResourceManager.NetApp
             return message;
         }
 
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         internal HttpMessage CreateGetByVolumeRequest(Guid subscriptionId, string resourceGroupName, string accountName, string poolName, string volumeName, RequestContext context)
         {
             RawRequestUriBuilder uri = new RawRequestUriBuilder();
@@ -190,7 +204,11 @@ namespace Azure.ResourceManager.NetApp
             request.Headers.SetValue("Accept", "application/json");
             return message;
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         internal HttpMessage CreateNextGetByVolumeRequest(Uri nextPage, Guid subscriptionId, string resourceGroupName, string accountName, string poolName, string volumeName, RequestContext context)
         {
             RawRequestUriBuilder uri = new RawRequestUriBuilder();
@@ -214,7 +232,11 @@ namespace Azure.ResourceManager.NetApp
             request.Headers.SetValue("Accept", "application/json");
             return message;
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         internal HttpMessage CreateGetMetadataRequest(Guid subscriptionId, string resourceGroupName, string accountName, string poolName, string volumeName, string subvolumeName, RequestContext context)
         {
             RawRequestUriBuilder uri = new RawRequestUriBuilder();
@@ -244,5 +266,7 @@ namespace Azure.ResourceManager.NetApp
             request.Headers.SetValue("Accept", "application/json");
             return message;
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
     }
 }

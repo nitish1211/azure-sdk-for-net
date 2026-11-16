@@ -21,16 +21,11 @@ namespace Azure.ResourceManager.NetworkCloud
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudVolumeData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="sizeInMiB"> The requested storage allocation for the volume in Mebibytes. </param>
-        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
-        public NetworkCloudVolumeData(AzureLocation location, long sizeInMiB, ExtendedLocation extendedLocation) : base(location)
+        public NetworkCloudVolumeData(long sizeInMiB)
         {
-            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
 
             Properties = new VolumeProperties(sizeInMiB);
-            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudVolumeData"/>. </summary>
@@ -50,6 +45,19 @@ namespace Azure.ResourceManager.NetworkCloud
             ETag = eTag;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkCloudVolumeData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="sizeInMiB"> The requested storage allocation for the volume in Mebibytes. </param>
+        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
+        public NetworkCloudVolumeData(AzureLocation location, long sizeInMiB, ExtendedLocation extendedLocation) : this(sizeInMiB)
+        {
+            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
+
+            Location = location;
+            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> The list of the resource properties. </summary>

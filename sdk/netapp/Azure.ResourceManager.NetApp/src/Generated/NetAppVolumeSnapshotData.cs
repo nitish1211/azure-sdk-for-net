@@ -20,10 +20,8 @@ namespace Azure.ResourceManager.NetApp
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetAppVolumeSnapshotData"/>. </summary>
-        /// <param name="location"> Resource location. </param>
-        public NetAppVolumeSnapshotData(AzureLocation location)
+        public NetAppVolumeSnapshotData()
         {
-            Location = location;
         }
 
         /// <summary> Initializes a new instance of <see cref="NetAppVolumeSnapshotData"/>. </summary>
@@ -39,6 +37,13 @@ namespace Azure.ResourceManager.NetApp
             Properties = properties;
             Location = location;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetAppVolumeSnapshotData"/>. </summary>
+        /// <param name="location"> Resource location. </param>
+        public NetAppVolumeSnapshotData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Snapshot Properties. </summary>

@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.NetworkCloud.Models
     /// <summary> L3NetworkProperties represents properties of the L3 network. </summary>
     internal partial class L3NetworkProperties : IJsonModel<L3NetworkProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="L3NetworkProperties"/> for deserialization. </summary>
-        internal L3NetworkProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual L3NetworkProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

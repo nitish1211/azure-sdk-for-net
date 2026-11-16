@@ -17,17 +17,13 @@ namespace Azure.ResourceManager.OracleDatabase.Models
     {
         /// <summary> Initializes a new instance of <see cref="MicrosoftFabricConnectionDetails"/>. </summary>
         /// <param name="displayName"> The connection display name. </param>
-        /// <param name="resourceAnchorId"> The corresponding resource anchor Azure ID. </param>
-        /// <param name="networkAnchorId"> The corresponding network anchor Azure ID. </param>
         /// <param name="technologyType"> The Microsoft Fabric technology type. </param>
         /// <param name="tenantId"> Azure tenant ID of the application. </param>
         /// <param name="clientId"> Azure client ID of the application. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="displayName"/>, <paramref name="resourceAnchorId"/>, <paramref name="networkAnchorId"/>, <paramref name="tenantId"/> or <paramref name="clientId"/> is null. </exception>
-        public MicrosoftFabricConnectionDetails(string displayName, ResourceIdentifier resourceAnchorId, ResourceIdentifier networkAnchorId, MicrosoftFabricConnectionTechnologyType technologyType, string tenantId, string clientId) : base(ConnectionType.MicrosoftFabric, displayName, resourceAnchorId, networkAnchorId)
+        /// <exception cref="ArgumentNullException"> <paramref name="displayName"/>, <paramref name="tenantId"/> or <paramref name="clientId"/> is null. </exception>
+        public MicrosoftFabricConnectionDetails(string displayName, MicrosoftFabricConnectionTechnologyType technologyType, string tenantId, string clientId) : base(ConnectionType.MicrosoftFabric, displayName)
         {
             Argument.AssertNotNull(displayName, nameof(displayName));
-            Argument.AssertNotNull(resourceAnchorId, nameof(resourceAnchorId));
-            Argument.AssertNotNull(networkAnchorId, nameof(networkAnchorId));
             Argument.AssertNotNull(tenantId, nameof(tenantId));
             Argument.AssertNotNull(clientId, nameof(clientId));
 
@@ -65,6 +61,23 @@ namespace Azure.ResourceManager.OracleDatabase.Models
             ClientId = clientId;
             ClientSecretSecretId = clientSecretSecretId;
             Endpoint = endpoint;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MicrosoftFabricConnectionDetails"/>. </summary>
+        /// <param name="displayName"> The connection display name. </param>
+        /// <param name="resourceAnchorId"> The corresponding resource anchor Azure ID. </param>
+        /// <param name="networkAnchorId"> The corresponding network anchor Azure ID. </param>
+        /// <param name="technologyType"> The Microsoft Fabric technology type. </param>
+        /// <param name="tenantId"> Azure tenant ID of the application. </param>
+        /// <param name="clientId"> Azure client ID of the application. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="resourceAnchorId"/> or <paramref name="networkAnchorId"/> is null. </exception>
+        public MicrosoftFabricConnectionDetails(string displayName, ResourceIdentifier resourceAnchorId, ResourceIdentifier networkAnchorId, MicrosoftFabricConnectionTechnologyType technologyType, string tenantId, string clientId) : this(displayName, technologyType, tenantId, clientId)
+        {
+            Argument.AssertNotNull(resourceAnchorId, nameof(resourceAnchorId));
+            Argument.AssertNotNull(networkAnchorId, nameof(networkAnchorId));
+
+            ResourceAnchorId = resourceAnchorId;
+            NetworkAnchorId = networkAnchorId;
         }
 
         /// <summary> The Microsoft Fabric technology type. </summary>

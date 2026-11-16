@@ -21,14 +21,13 @@ namespace Azure.ResourceManager.NetworkCloud
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudClusterManagerData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="fabricControllerId"> The resource ID of the fabric controller that has one to one mapping with the cluster manager. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="fabricControllerId"/> is null. </exception>
-        public NetworkCloudClusterManagerData(AzureLocation location, ResourceIdentifier fabricControllerId) : base(location)
+        public NetworkCloudClusterManagerData(ResourceIdentifier fabricControllerId)
         {
             Argument.AssertNotNull(fabricControllerId, nameof(fabricControllerId));
 
-            Properties = new ClusterManagerProperties(fabricControllerId);
+            Properties = new ClusterManagerProperties();
         }
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudClusterManagerData"/>. </summary>
@@ -50,6 +49,14 @@ namespace Azure.ResourceManager.NetworkCloud
             Identity = identity;
             Kind = kind;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkCloudClusterManagerData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="fabricControllerId"> The resource ID of the fabric controller that has one to one mapping with the cluster manager. </param>
+        public NetworkCloudClusterManagerData(AzureLocation location, ResourceIdentifier fabricControllerId) : this(fabricControllerId)
+        {
+            Location = location;
         }
 
         /// <summary> The list of the resource properties. </summary>

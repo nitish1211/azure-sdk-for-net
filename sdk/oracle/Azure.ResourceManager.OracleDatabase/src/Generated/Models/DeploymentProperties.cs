@@ -19,20 +19,9 @@ namespace Azure.ResourceManager.OracleDatabase.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DeploymentProperties"/>. </summary>
-        /// <param name="displayName"> Display name. </param>
-        /// <param name="networkAnchorId"> Azure network anchor ID. </param>
-        /// <param name="resourceAnchorId"> Corresponding Azure resource anchor ID. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="displayName"/>, <paramref name="networkAnchorId"/> or <paramref name="resourceAnchorId"/> is null. </exception>
-        public DeploymentProperties(string displayName, ResourceIdentifier networkAnchorId, ResourceIdentifier resourceAnchorId)
+        public DeploymentProperties()
         {
-            Argument.AssertNotNull(displayName, nameof(displayName));
-            Argument.AssertNotNull(networkAnchorId, nameof(networkAnchorId));
-            Argument.AssertNotNull(resourceAnchorId, nameof(resourceAnchorId));
-
-            DisplayName = displayName;
             IngressIps = new ChangeTrackingList<string>();
-            NetworkAnchorId = networkAnchorId;
-            ResourceAnchorId = resourceAnchorId;
         }
 
         /// <summary> Initializes a new instance of <see cref="DeploymentProperties"/>. </summary>
@@ -94,6 +83,22 @@ namespace Azure.ResourceManager.OracleDatabase.Models
             TimeZone = timeZone;
             Version = version;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DeploymentProperties"/>. </summary>
+        /// <param name="displayName"> Display name. </param>
+        /// <param name="networkAnchorId"> Azure network anchor ID. </param>
+        /// <param name="resourceAnchorId"> Corresponding Azure resource anchor ID. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="displayName"/>, <paramref name="networkAnchorId"/> or <paramref name="resourceAnchorId"/> is null. </exception>
+        public DeploymentProperties(string displayName, ResourceIdentifier networkAnchorId, ResourceIdentifier resourceAnchorId) : this()
+        {
+            Argument.AssertNotNull(displayName, nameof(displayName));
+            Argument.AssertNotNull(networkAnchorId, nameof(networkAnchorId));
+            Argument.AssertNotNull(resourceAnchorId, nameof(resourceAnchorId));
+
+            DisplayName = displayName;
+            NetworkAnchorId = networkAnchorId;
+            ResourceAnchorId = resourceAnchorId;
         }
 
         /// <summary> Backup schedule. </summary>

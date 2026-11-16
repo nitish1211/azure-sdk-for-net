@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.MySql.FlexibleServers
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="MySqlFlexibleServerData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public MySqlFlexibleServerData(AzureLocation location) : base(location)
+        public MySqlFlexibleServerData()
         {
         }
 
@@ -42,6 +41,13 @@ namespace Azure.ResourceManager.MySql.FlexibleServers
             Identity = identity;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MySqlFlexibleServerData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public MySqlFlexibleServerData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the server. </summary>

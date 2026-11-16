@@ -21,13 +21,8 @@ namespace Azure.ResourceManager.PaloAltoNetworks.Ngfw
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="LocalRulestackRuleData"/>. </summary>
-        /// <param name="ruleName"> rule name. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="ruleName"/> is null. </exception>
-        public LocalRulestackRuleData(string ruleName)
+        public LocalRulestackRuleData()
         {
-            Argument.AssertNotNull(ruleName, nameof(ruleName));
-
-            Properties = new RuleEntry(ruleName);
         }
 
         /// <summary> Initializes a new instance of <see cref="LocalRulestackRuleData"/>. </summary>
@@ -41,6 +36,16 @@ namespace Azure.ResourceManager.PaloAltoNetworks.Ngfw
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="LocalRulestackRuleData"/>. </summary>
+        /// <param name="ruleName"> rule name. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="ruleName"/> is null. </exception>
+        public LocalRulestackRuleData(string ruleName) : this()
+        {
+            Argument.AssertNotNull(ruleName, nameof(ruleName));
+
+            RuleName = ruleName;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

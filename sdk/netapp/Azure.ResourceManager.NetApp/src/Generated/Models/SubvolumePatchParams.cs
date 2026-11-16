@@ -11,6 +11,7 @@ using System.Collections.Generic;
 namespace Azure.ResourceManager.NetApp.Models
 {
     /// <summary> Parameters with which a subvolume can be updated. </summary>
+    [Obsolete("Deprecated. This model will be removed in a future API version.")]
     internal partial class SubvolumePatchParams
     {
         /// <summary> Keeps track of any properties unknown to the library. </summary>

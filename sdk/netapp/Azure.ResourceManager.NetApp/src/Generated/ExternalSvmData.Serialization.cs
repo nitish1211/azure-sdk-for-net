@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.NetApp
     /// <summary> External SVM (Storage Virtual Machine, Vserver) resource, representing an SVM on an external NetApp ONTAP system. </summary>
     public partial class ExternalSvmData : TrackedResourceData, IJsonModel<ExternalSvmData>
     {
-        /// <summary> Initializes a new instance of <see cref="ExternalSvmData"/> for deserialization. </summary>
-        internal ExternalSvmData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

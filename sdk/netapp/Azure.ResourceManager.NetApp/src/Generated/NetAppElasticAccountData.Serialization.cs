@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.NetApp
     /// <summary> NetApp elastic account resource. </summary>
     public partial class NetAppElasticAccountData : TrackedResourceData, IJsonModel<NetAppElasticAccountData>
     {
-        /// <summary> Initializes a new instance of <see cref="NetAppElasticAccountData"/> for deserialization. </summary>
-        internal NetAppElasticAccountData()
-        {
-        }
-
         /// <param name="netAppElasticAccountData"> The <see cref="NetAppElasticAccountData"/> to serialize into <see cref="RequestContent"/>. </param>
         internal static RequestContent ToRequestContent(NetAppElasticAccountData netAppElasticAccountData)
         {

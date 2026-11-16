@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.NotificationHubs
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NotificationHubAuthorizationRuleData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public NotificationHubAuthorizationRuleData(AzureLocation location) : base(location)
+        public NotificationHubAuthorizationRuleData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.NotificationHubs
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NotificationHubAuthorizationRuleData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public NotificationHubAuthorizationRuleData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> SharedAccessAuthorizationRule properties. </summary>

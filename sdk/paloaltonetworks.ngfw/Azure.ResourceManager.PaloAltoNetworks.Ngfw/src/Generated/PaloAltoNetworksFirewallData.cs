@@ -21,20 +21,8 @@ namespace Azure.ResourceManager.PaloAltoNetworks.Ngfw
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PaloAltoNetworksFirewallData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        /// <param name="networkProfile"> Network settings. </param>
-        /// <param name="dnsSettings"> DNS settings for Firewall. </param>
-        /// <param name="planData"> Billing plan information. </param>
-        /// <param name="marketplaceDetails"> Marketplace details. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="networkProfile"/>, <paramref name="dnsSettings"/>, <paramref name="planData"/> or <paramref name="marketplaceDetails"/> is null. </exception>
-        public PaloAltoNetworksFirewallData(AzureLocation location, FirewallNetworkProfile networkProfile, FirewallDnsSettings dnsSettings, FirewallBillingPlanInfo planData, PanFirewallMarketplaceDetails marketplaceDetails) : base(location)
+        public PaloAltoNetworksFirewallData()
         {
-            Argument.AssertNotNull(networkProfile, nameof(networkProfile));
-            Argument.AssertNotNull(dnsSettings, nameof(dnsSettings));
-            Argument.AssertNotNull(planData, nameof(planData));
-            Argument.AssertNotNull(marketplaceDetails, nameof(marketplaceDetails));
-
-            Properties = new FirewallDeploymentProperties(networkProfile, dnsSettings, planData, marketplaceDetails);
         }
 
         /// <summary> Initializes a new instance of <see cref="PaloAltoNetworksFirewallData"/>. </summary>
@@ -52,6 +40,27 @@ namespace Azure.ResourceManager.PaloAltoNetworks.Ngfw
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="PaloAltoNetworksFirewallData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="networkProfile"> Network settings. </param>
+        /// <param name="dnsSettings"> DNS settings for Firewall. </param>
+        /// <param name="planData"> Billing plan information. </param>
+        /// <param name="marketplaceDetails"> Marketplace details. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="networkProfile"/>, <paramref name="dnsSettings"/>, <paramref name="planData"/> or <paramref name="marketplaceDetails"/> is null. </exception>
+        public PaloAltoNetworksFirewallData(AzureLocation location, FirewallNetworkProfile networkProfile, FirewallDnsSettings dnsSettings, FirewallBillingPlanInfo planData, PanFirewallMarketplaceDetails marketplaceDetails) : this()
+        {
+            Argument.AssertNotNull(networkProfile, nameof(networkProfile));
+            Argument.AssertNotNull(dnsSettings, nameof(dnsSettings));
+            Argument.AssertNotNull(planData, nameof(planData));
+            Argument.AssertNotNull(marketplaceDetails, nameof(marketplaceDetails));
+
+            Location = location;
+            NetworkProfile = networkProfile;
+            DnsSettings = dnsSettings;
+            PlanData = planData;
+            MarketplaceDetails = marketplaceDetails;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

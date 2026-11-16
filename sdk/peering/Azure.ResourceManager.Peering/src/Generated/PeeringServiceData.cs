@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Peering
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PeeringServiceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public PeeringServiceData(AzureLocation location) : base(location)
+        public PeeringServiceData()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.Peering
             Properties = properties;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="PeeringServiceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public PeeringServiceData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The properties that define a peering service. </summary>

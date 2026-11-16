@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.NetworkFunction
     /// <summary> Azure Traffic Collector resource. </summary>
     public partial class AzureTrafficCollectorData : TrackedResourceData, IJsonModel<AzureTrafficCollectorData>
     {
-        /// <summary> Initializes a new instance of <see cref="AzureTrafficCollectorData"/> for deserialization. </summary>
-        internal AzureTrafficCollectorData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

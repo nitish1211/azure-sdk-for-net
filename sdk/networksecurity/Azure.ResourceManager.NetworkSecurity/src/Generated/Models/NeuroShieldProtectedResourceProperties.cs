@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.NetworkSecurity;
 
 namespace Azure.ResourceManager.NetworkSecurity.Models
 {
@@ -19,13 +18,8 @@ namespace Azure.ResourceManager.NetworkSecurity.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NeuroShieldProtectedResourceProperties"/>. </summary>
-        /// <param name="targetResourceId"> Azure Resource Manager resource ID of the target virtual machine or virtual machine scale set. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="targetResourceId"/> is null. </exception>
-        public NeuroShieldProtectedResourceProperties(ResourceIdentifier targetResourceId)
+        public NeuroShieldProtectedResourceProperties()
         {
-            Argument.AssertNotNull(targetResourceId, nameof(targetResourceId));
-
-            TargetResourceId = targetResourceId;
         }
 
         /// <summary> Initializes a new instance of <see cref="NeuroShieldProtectedResourceProperties"/>. </summary>

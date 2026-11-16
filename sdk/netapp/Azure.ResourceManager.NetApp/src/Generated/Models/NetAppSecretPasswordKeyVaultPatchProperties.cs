@@ -10,5 +10,9 @@ namespace Azure.ResourceManager.NetApp.Models
     /// <summary> Properties of key vault to get the secrets for password. </summary>
     public partial class NetAppSecretPasswordKeyVaultPatchProperties
     {
+        /// <summary> Initializes a new instance of <see cref="NetAppSecretPasswordKeyVaultPatchProperties"/>. </summary>
+        public NetAppSecretPasswordKeyVaultPatchProperties()
+        {
+        }
     }
 }

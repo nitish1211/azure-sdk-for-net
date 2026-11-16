@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.NetApp.Models
     /// <summary> External SVM properties. </summary>
     public partial class ExternalSvmProperties : IJsonModel<ExternalSvmProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="ExternalSvmProperties"/> for deserialization. </summary>
-        internal ExternalSvmProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ExternalSvmProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.NetApp.Models
     /// <summary> CMK Encryption Configuration. </summary>
     public partial class ElasticEncryptionConfiguration : IJsonModel<ElasticEncryptionConfiguration>
     {
-        /// <summary> Initializes a new instance of <see cref="ElasticEncryptionConfiguration"/> for deserialization. </summary>
-        internal ElasticEncryptionConfiguration()
-        {
-        }
-
         /// <param name="element"> The JSON element to deserialize. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         internal static ElasticEncryptionConfiguration DeserializeElasticEncryptionConfiguration(JsonElement element, ModelReaderWriterOptions options)

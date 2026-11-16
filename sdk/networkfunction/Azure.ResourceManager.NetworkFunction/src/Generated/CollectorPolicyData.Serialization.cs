@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.NetworkFunction
     /// <summary> Collector policy resource. </summary>
     public partial class CollectorPolicyData : TrackedResourceData, IJsonModel<CollectorPolicyData>
     {
-        /// <summary> Initializes a new instance of <see cref="CollectorPolicyData"/> for deserialization. </summary>
-        internal CollectorPolicyData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

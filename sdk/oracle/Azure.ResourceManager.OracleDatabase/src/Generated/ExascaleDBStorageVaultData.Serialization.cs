@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.OracleDatabase
     /// <summary> ExascaleDbStorageVault resource definition. </summary>
     public partial class ExascaleDBStorageVaultData : TrackedResourceData, IJsonModel<ExascaleDBStorageVaultData>
     {
-        /// <summary> Initializes a new instance of <see cref="ExascaleDBStorageVaultData"/> for deserialization. </summary>
-        internal ExascaleDBStorageVaultData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

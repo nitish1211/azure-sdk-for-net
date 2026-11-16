@@ -19,13 +19,8 @@ namespace Azure.ResourceManager.NetworkCloud.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AccessBridgeProperties"/>. </summary>
-        /// <param name="networkId"> The resource ID of the internal network in a layer 3 isolation domain containing the IP subnets to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="networkId"/> is null. </exception>
-        public AccessBridgeProperties(ResourceIdentifier networkId)
+        public AccessBridgeProperties()
         {
-            Argument.AssertNotNull(networkId, nameof(networkId));
-
-            NetworkId = networkId;
             SecurityRules = new ChangeTrackingList<NetworkCloudAccessBridgeSecurityRule>();
             Endpoints = new ChangeTrackingList<NetworkCloudAccessBridgeEndpoint>();
         }

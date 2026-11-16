@@ -22,7 +22,6 @@ namespace Azure.ResourceManager.NetworkCloud
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="NetworkCloudStorageApplianceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="administratorCredentials"> The credentials of the administrative interface on this storage appliance. </param>
         /// <param name="rackId"> The resource ID of the rack where this storage appliance resides. </param>
         /// <param name="rackSlot"> The slot the storage appliance is in the rack based on the BOM configuration. </param>
@@ -30,7 +29,7 @@ namespace Azure.ResourceManager.NetworkCloud
         /// <param name="storageApplianceSkuId"> The SKU for the storage appliance. </param>
         /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="administratorCredentials"/>, <paramref name="rackId"/>, <paramref name="serialNumber"/>, <paramref name="storageApplianceSkuId"/> or <paramref name="extendedLocation"/> is null. </exception>
-        public NetworkCloudStorageApplianceData(AzureLocation location, AdministrativeCredentials administratorCredentials, ResourceIdentifier rackId, long rackSlot, string serialNumber, string storageApplianceSkuId, ExtendedLocation extendedLocation) : base(location)
+        public NetworkCloudStorageApplianceData(AdministrativeCredentials administratorCredentials, ResourceIdentifier rackId, long rackSlot, string serialNumber, string storageApplianceSkuId, ExtendedLocation extendedLocation)
         {
             Argument.AssertNotNull(administratorCredentials, nameof(administratorCredentials));
             Argument.AssertNotNull(rackId, nameof(rackId));
@@ -59,6 +58,19 @@ namespace Azure.ResourceManager.NetworkCloud
             ETag = eTag;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NetworkCloudStorageApplianceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="administratorCredentials"> The credentials of the administrative interface on this storage appliance. </param>
+        /// <param name="rackId"> The resource ID of the rack where this storage appliance resides. </param>
+        /// <param name="rackSlot"> The slot the storage appliance is in the rack based on the BOM configuration. </param>
+        /// <param name="serialNumber"> The serial number for the storage appliance. </param>
+        /// <param name="storageApplianceSkuId"> The SKU for the storage appliance. </param>
+        /// <param name="extendedLocation"> The extended location of the resource. This property is required when creating the resource. </param>
+        public NetworkCloudStorageApplianceData(AzureLocation location, AdministrativeCredentials administratorCredentials, ResourceIdentifier rackId, long rackSlot, string serialNumber, string storageApplianceSkuId, ExtendedLocation extendedLocation) : this(administratorCredentials, rackId, rackSlot, serialNumber, storageApplianceSkuId, extendedLocation)
+        {
+            Location = location;
         }
 
         /// <summary> The list of the resource properties. </summary>

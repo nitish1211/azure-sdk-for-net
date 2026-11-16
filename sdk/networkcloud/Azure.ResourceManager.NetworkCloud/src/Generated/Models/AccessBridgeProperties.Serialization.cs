@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.NetworkCloud.Models
     /// <summary> AccessBridgeProperties captures the input and status for an access bridge. </summary>
     internal partial class AccessBridgeProperties : IJsonModel<AccessBridgeProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="AccessBridgeProperties"/> for deserialization. </summary>
-        internal AccessBridgeProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual AccessBridgeProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)
