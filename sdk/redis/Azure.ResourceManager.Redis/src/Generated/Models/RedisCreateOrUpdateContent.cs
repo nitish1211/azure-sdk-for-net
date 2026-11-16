@@ -22,15 +22,13 @@ namespace Azure.ResourceManager.Redis.Models
 
         /// <summary> Initializes a new instance of <see cref="RedisCreateOrUpdateContent"/>. </summary>
         /// <param name="sku"> The SKU of the Redis cache to deploy. </param>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sku"/> is null. </exception>
-        public RedisCreateOrUpdateContent(RedisSku sku, AzureLocation location)
+        public RedisCreateOrUpdateContent(RedisSku sku)
         {
             Argument.AssertNotNull(sku, nameof(sku));
 
             Properties = new RedisCreateProperties(sku);
             Zones = new ChangeTrackingList<string>();
-            Location = location;
             Tags = new ChangeTrackingDictionary<string, string>();
         }
 

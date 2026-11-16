@@ -437,7 +437,7 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp
                 else
                 {
                     HcpOpenShiftClusterNodePoolData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    HcpOpenShiftClusterNodePoolData patch = new HcpOpenShiftClusterNodePoolData(current.Location);
+                    HcpOpenShiftClusterNodePoolData patch = new HcpOpenShiftClusterNodePoolData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -485,7 +485,7 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp
                 else
                 {
                     HcpOpenShiftClusterNodePoolData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    HcpOpenShiftClusterNodePoolData patch = new HcpOpenShiftClusterNodePoolData(current.Location);
+                    HcpOpenShiftClusterNodePoolData patch = new HcpOpenShiftClusterNodePoolData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -531,7 +531,7 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp
                 else
                 {
                     HcpOpenShiftClusterNodePoolData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    HcpOpenShiftClusterNodePoolData patch = new HcpOpenShiftClusterNodePoolData(current.Location);
+                    HcpOpenShiftClusterNodePoolData patch = new HcpOpenShiftClusterNodePoolData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<HcpOpenShiftClusterNodePoolResource> result = await UpdateAsync(WaitUntil.Completed, patch, cancellationToken: cancellationToken).ConfigureAwait(false);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -573,7 +573,7 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp
                 else
                 {
                     HcpOpenShiftClusterNodePoolData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    HcpOpenShiftClusterNodePoolData patch = new HcpOpenShiftClusterNodePoolData(current.Location);
+                    HcpOpenShiftClusterNodePoolData patch = new HcpOpenShiftClusterNodePoolData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<HcpOpenShiftClusterNodePoolResource> result = Update(WaitUntil.Completed, patch, cancellationToken: cancellationToken);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -615,7 +615,7 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp
                 else
                 {
                     HcpOpenShiftClusterNodePoolData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    HcpOpenShiftClusterNodePoolData patch = new HcpOpenShiftClusterNodePoolData(current.Location);
+                    HcpOpenShiftClusterNodePoolData patch = new HcpOpenShiftClusterNodePoolData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -661,7 +661,7 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp
                 else
                 {
                     HcpOpenShiftClusterNodePoolData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    HcpOpenShiftClusterNodePoolData patch = new HcpOpenShiftClusterNodePoolData(current.Location);
+                    HcpOpenShiftClusterNodePoolData patch = new HcpOpenShiftClusterNodePoolData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);

@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.RedisEnterprise
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="RedisEnterpriseClusterData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="sku"> The SKU to create, which affects price, performance, and features. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sku"/> is null. </exception>
-        public RedisEnterpriseClusterData(AzureLocation location, RedisEnterpriseSku sku) : base(location)
+        public RedisEnterpriseClusterData(RedisEnterpriseSku sku)
         {
             Argument.AssertNotNull(sku, nameof(sku));
 
@@ -52,6 +51,14 @@ namespace Azure.ResourceManager.RedisEnterprise
             Zones = zones;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="RedisEnterpriseClusterData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="sku"> The SKU to create, which affects price, performance, and features. </param>
+        public RedisEnterpriseClusterData(AzureLocation location, RedisEnterpriseSku sku) : this(sku)
+        {
+            Location = location;
         }
 
         /// <summary> Other properties of the cluster. </summary>

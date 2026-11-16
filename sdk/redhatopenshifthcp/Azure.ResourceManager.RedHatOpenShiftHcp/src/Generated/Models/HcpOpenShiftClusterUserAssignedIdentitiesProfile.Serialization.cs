@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
     /// </summary>
     public partial class HcpOpenShiftClusterUserAssignedIdentitiesProfile : IJsonModel<HcpOpenShiftClusterUserAssignedIdentitiesProfile>
     {
-        /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterUserAssignedIdentitiesProfile"/> for deserialization. </summary>
-        internal HcpOpenShiftClusterUserAssignedIdentitiesProfile()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual HcpOpenShiftClusterUserAssignedIdentitiesProfile PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

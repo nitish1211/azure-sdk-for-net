@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
     /// <summary> The ETCD data encryption settings. </summary>
     public partial class HcpOpenShiftClusterEtcdDataEncryptionProfile : IJsonModel<HcpOpenShiftClusterEtcdDataEncryptionProfile>
     {
-        /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterEtcdDataEncryptionProfile"/> for deserialization. </summary>
-        internal HcpOpenShiftClusterEtcdDataEncryptionProfile()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual HcpOpenShiftClusterEtcdDataEncryptionProfile PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

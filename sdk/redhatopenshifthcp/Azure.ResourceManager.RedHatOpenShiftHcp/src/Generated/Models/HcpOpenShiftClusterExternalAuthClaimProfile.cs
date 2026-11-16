@@ -18,13 +18,8 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterExternalAuthClaimProfile"/>. </summary>
-        /// <param name="mappings"> The claim mappings. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="mappings"/> is null. </exception>
-        public HcpOpenShiftClusterExternalAuthClaimProfile(HcpOpenShiftClusterExternalAuthTokenClaimMappingsProfile mappings)
+        public HcpOpenShiftClusterExternalAuthClaimProfile()
         {
-            Argument.AssertNotNull(mappings, nameof(mappings));
-
-            Mappings = mappings;
             ValidationRules = new ChangeTrackingList<HcpOpenShiftClusterExternalAuthTokenClaimValidationRule>();
         }
 

@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.RecoveryServices.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="RecoveryServicesVaultPatch"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public RecoveryServicesVaultPatch(AzureLocation location) : base(location)
+        public RecoveryServicesVaultPatch()
         {
         }
 
@@ -44,6 +43,13 @@ namespace Azure.ResourceManager.RecoveryServices.Models
             Identity = identity;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="RecoveryServicesVaultPatch"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public RecoveryServicesVaultPatch(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the vault. </summary>

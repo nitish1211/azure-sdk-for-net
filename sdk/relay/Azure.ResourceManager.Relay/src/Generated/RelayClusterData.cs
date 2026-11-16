@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.Relay
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="RelayClusterData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="sku"> The Relay cluster SKU. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sku"/> is null. </exception>
-        public RelayClusterData(AzureLocation location, RelayClusterSku sku) : base(location)
+        public RelayClusterData(RelayClusterSku sku)
         {
             Argument.AssertNotNull(sku, nameof(sku));
 

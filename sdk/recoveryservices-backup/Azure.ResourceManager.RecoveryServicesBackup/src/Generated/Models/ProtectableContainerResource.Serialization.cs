@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.RecoveryServicesBackup.Models
     /// <summary> Protectable Container Class. </summary>
     public partial class ProtectableContainerResource : TrackedResourceData, IJsonModel<ProtectableContainerResource>
     {
-        /// <summary> Initializes a new instance of <see cref="ProtectableContainerResource"/> for deserialization. </summary>
-        internal ProtectableContainerResource()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

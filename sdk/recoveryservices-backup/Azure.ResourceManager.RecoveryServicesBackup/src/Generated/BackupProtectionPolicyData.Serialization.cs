@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.RecoveryServicesBackup
     /// <summary> Base class for backup policy. Workload-specific backup policies are derived from this class. </summary>
     public partial class BackupProtectionPolicyData : TrackedResourceData, IJsonModel<BackupProtectionPolicyData>
     {
-        /// <summary> Initializes a new instance of <see cref="BackupProtectionPolicyData"/> for deserialization. </summary>
-        internal BackupProtectionPolicyData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

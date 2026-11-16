@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.RecoveryServicesBackup.Models
     /// <summary> Parameters to Provision ILR API. </summary>
     public partial class ProvisionIlrConnectionContent : TrackedResourceData, IJsonModel<ProvisionIlrConnectionContent>
     {
-        /// <summary> Initializes a new instance of <see cref="ProvisionIlrConnectionContent"/> for deserialization. </summary>
-        internal ProvisionIlrConnectionContent()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

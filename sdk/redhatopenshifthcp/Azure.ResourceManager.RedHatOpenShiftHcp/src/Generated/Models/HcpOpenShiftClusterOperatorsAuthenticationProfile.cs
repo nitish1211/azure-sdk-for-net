@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.RedHatOpenShiftHcp;
 
 namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
 {
@@ -18,16 +17,8 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterOperatorsAuthenticationProfile"/>. </summary>
-        /// <param name="userAssignedIdentities">
-        /// Represents the information related to Azure User-Assigned managed identities needed
-        /// to perform Operators authentication based on Azure User-Assigned Managed Identities
-        /// </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="userAssignedIdentities"/> is null. </exception>
-        public HcpOpenShiftClusterOperatorsAuthenticationProfile(HcpOpenShiftClusterUserAssignedIdentitiesProfile userAssignedIdentities)
+        public HcpOpenShiftClusterOperatorsAuthenticationProfile()
         {
-            Argument.AssertNotNull(userAssignedIdentities, nameof(userAssignedIdentities));
-
-            UserAssignedIdentities = userAssignedIdentities;
         }
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterOperatorsAuthenticationProfile"/>. </summary>

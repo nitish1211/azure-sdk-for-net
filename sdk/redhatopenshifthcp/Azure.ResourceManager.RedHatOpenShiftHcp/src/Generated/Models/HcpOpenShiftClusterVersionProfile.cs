@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.RedHatOpenShiftHcp;
 
 namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
 {
@@ -18,13 +17,8 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterVersionProfile"/>. </summary>
-        /// <param name="id"> ID is the desired X.Y version of the cluster control plane. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="id"/> is null. </exception>
-        public HcpOpenShiftClusterVersionProfile(string id)
+        public HcpOpenShiftClusterVersionProfile()
         {
-            Argument.AssertNotNull(id, nameof(id));
-
-            Id = id;
         }
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterVersionProfile"/>. </summary>

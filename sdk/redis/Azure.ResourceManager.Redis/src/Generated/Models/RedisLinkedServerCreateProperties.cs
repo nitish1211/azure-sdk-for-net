@@ -20,15 +20,13 @@ namespace Azure.ResourceManager.Redis.Models
 
         /// <summary> Initializes a new instance of <see cref="RedisLinkedServerCreateProperties"/>. </summary>
         /// <param name="linkedRedisCacheId"> Fully qualified resourceId of the linked redis cache. </param>
-        /// <param name="linkedRedisCacheLocation"> Location of the linked redis cache. </param>
         /// <param name="serverRole"> Role of the linked server. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="linkedRedisCacheId"/> is null. </exception>
-        public RedisLinkedServerCreateProperties(ResourceIdentifier linkedRedisCacheId, AzureLocation linkedRedisCacheLocation, RedisLinkedServerRole serverRole)
+        public RedisLinkedServerCreateProperties(ResourceIdentifier linkedRedisCacheId, RedisLinkedServerRole serverRole)
         {
             Argument.AssertNotNull(linkedRedisCacheId, nameof(linkedRedisCacheId));
 
             LinkedRedisCacheId = linkedRedisCacheId;
-            LinkedRedisCacheLocation = linkedRedisCacheLocation;
             ServerRole = serverRole;
         }
 

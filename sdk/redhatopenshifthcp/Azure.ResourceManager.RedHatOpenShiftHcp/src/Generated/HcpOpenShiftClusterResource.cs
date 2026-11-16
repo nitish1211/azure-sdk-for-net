@@ -652,7 +652,7 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp
                 else
                 {
                     HcpOpenShiftClusterData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    HcpOpenShiftClusterData patch = new HcpOpenShiftClusterData(current.Location);
+                    HcpOpenShiftClusterData patch = new HcpOpenShiftClusterData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -700,7 +700,7 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp
                 else
                 {
                     HcpOpenShiftClusterData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    HcpOpenShiftClusterData patch = new HcpOpenShiftClusterData(current.Location);
+                    HcpOpenShiftClusterData patch = new HcpOpenShiftClusterData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -746,7 +746,7 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp
                 else
                 {
                     HcpOpenShiftClusterData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    HcpOpenShiftClusterData patch = new HcpOpenShiftClusterData(current.Location);
+                    HcpOpenShiftClusterData patch = new HcpOpenShiftClusterData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<HcpOpenShiftClusterResource> result = await UpdateAsync(WaitUntil.Completed, patch, cancellationToken: cancellationToken).ConfigureAwait(false);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -788,7 +788,7 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp
                 else
                 {
                     HcpOpenShiftClusterData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    HcpOpenShiftClusterData patch = new HcpOpenShiftClusterData(current.Location);
+                    HcpOpenShiftClusterData patch = new HcpOpenShiftClusterData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<HcpOpenShiftClusterResource> result = Update(WaitUntil.Completed, patch, cancellationToken: cancellationToken);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -830,7 +830,7 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp
                 else
                 {
                     HcpOpenShiftClusterData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    HcpOpenShiftClusterData patch = new HcpOpenShiftClusterData(current.Location);
+                    HcpOpenShiftClusterData patch = new HcpOpenShiftClusterData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -876,7 +876,7 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp
                 else
                 {
                     HcpOpenShiftClusterData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    HcpOpenShiftClusterData patch = new HcpOpenShiftClusterData(current.Location);
+                    HcpOpenShiftClusterData patch = new HcpOpenShiftClusterData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);

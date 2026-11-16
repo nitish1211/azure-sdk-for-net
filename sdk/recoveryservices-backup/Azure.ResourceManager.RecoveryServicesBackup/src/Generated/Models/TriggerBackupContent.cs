@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.RecoveryServicesBackup.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="TriggerBackupContent"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public TriggerBackupContent(AzureLocation location) : base(location)
+        public TriggerBackupContent()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.RecoveryServicesBackup.Models
             ETag = eTag;
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="TriggerBackupContent"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public TriggerBackupContent(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Optional ETag. </summary>

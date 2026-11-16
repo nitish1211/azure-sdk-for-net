@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Relay
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="RelayNamespaceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public RelayNamespaceData(AzureLocation location) : base(location)
+        public RelayNamespaceData()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.Relay
             Properties = properties;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="RelayNamespaceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public RelayNamespaceData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Description of Relay namespace. </summary>

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.RecoveryServicesBackup
     /// <summary> The resource storage details. </summary>
     public partial class BackupResourceConfigData : TrackedResourceData, IJsonModel<BackupResourceConfigData>
     {
-        /// <summary> Initializes a new instance of <see cref="BackupResourceConfigData"/> for deserialization. </summary>
-        internal BackupResourceConfigData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

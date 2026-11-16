@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
     /// </summary>
     public partial class HcpOpenShiftClusterKmsEncryptionProfile : IJsonModel<HcpOpenShiftClusterKmsEncryptionProfile>
     {
-        /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterKmsEncryptionProfile"/> for deserialization. </summary>
-        internal HcpOpenShiftClusterKmsEncryptionProfile()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual HcpOpenShiftClusterKmsEncryptionProfile PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

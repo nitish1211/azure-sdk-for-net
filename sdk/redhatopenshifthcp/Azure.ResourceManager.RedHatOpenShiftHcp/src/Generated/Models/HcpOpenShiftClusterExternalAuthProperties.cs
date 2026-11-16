@@ -18,20 +18,9 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterExternalAuthProperties"/>. </summary>
-        /// <param name="issuer"> Token Issuer profile. </param>
-        /// <param name="claim">
-        /// External Auth claim
-        /// This configures how claims are validated and applied.
-        /// </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="issuer"/> or <paramref name="claim"/> is null. </exception>
-        public HcpOpenShiftClusterExternalAuthProperties(HcpOpenShiftClusterExternalAuthTokenIssuerProfile issuer, HcpOpenShiftClusterExternalAuthClaimProfile claim)
+        public HcpOpenShiftClusterExternalAuthProperties()
         {
-            Argument.AssertNotNull(issuer, nameof(issuer));
-            Argument.AssertNotNull(claim, nameof(claim));
-
-            Issuer = issuer;
             Clients = new ChangeTrackingList<HcpOpenShiftClusterExternalAuthClientProfile>();
-            Claim = claim;
         }
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterExternalAuthProperties"/>. </summary>

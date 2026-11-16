@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.RedHatOpenShiftHcp;
 
 namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
 {
@@ -18,16 +17,8 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterKmsKey"/>. </summary>
-        /// <param name="name"> name is the name of the keyvault key used for encryption/decryption. </param>
-        /// <param name="version"> version contains the version of the key to use. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="name"/> or <paramref name="version"/> is null. </exception>
-        public HcpOpenShiftClusterKmsKey(string name, string version)
+        public HcpOpenShiftClusterKmsKey()
         {
-            Argument.AssertNotNull(name, nameof(name));
-            Argument.AssertNotNull(version, nameof(version));
-
-            Name = name;
-            Version = version;
         }
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterKmsKey"/>. </summary>

@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.RedHatOpenShiftHcp;
 
 namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
 {
@@ -25,13 +24,8 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterExternalAuthGroupClaimProfile"/>. </summary>
-        /// <param name="claim"> Claim name of the external profile. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="claim"/> is null. </exception>
-        public HcpOpenShiftClusterExternalAuthGroupClaimProfile(string claim)
+        public HcpOpenShiftClusterExternalAuthGroupClaimProfile()
         {
-            Argument.AssertNotNull(claim, nameof(claim));
-
-            Claim = claim;
         }
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterExternalAuthGroupClaimProfile"/>. </summary>

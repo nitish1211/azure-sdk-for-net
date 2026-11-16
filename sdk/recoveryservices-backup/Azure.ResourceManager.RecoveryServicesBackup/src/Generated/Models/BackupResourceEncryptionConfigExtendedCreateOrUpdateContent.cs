@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.RecoveryServicesBackup.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="BackupResourceEncryptionConfigExtendedCreateOrUpdateContent"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public BackupResourceEncryptionConfigExtendedCreateOrUpdateContent(AzureLocation location) : base(location)
+        public BackupResourceEncryptionConfigExtendedCreateOrUpdateContent()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.RecoveryServicesBackup.Models
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="BackupResourceEncryptionConfigExtendedCreateOrUpdateContent"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public BackupResourceEncryptionConfigExtendedCreateOrUpdateContent(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The properties of the backup resource encryption config. </summary>

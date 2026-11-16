@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.RecoveryServicesDataReplication
     /// <summary> Vault model. </summary>
     public partial class DataReplicationVaultData : TrackedResourceData, IJsonModel<DataReplicationVaultData>
     {
-        /// <summary> Initializes a new instance of <see cref="DataReplicationVaultData"/> for deserialization. </summary>
-        internal DataReplicationVaultData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -27,7 +27,7 @@ namespace Azure.ResourceManager.Redis.Models
         {
             Argument.AssertNotNull(linkedRedisCacheId, nameof(linkedRedisCacheId));
 
-            Properties = new RedisLinkedServerCreateProperties(linkedRedisCacheId, linkedRedisCacheLocation, serverRole);
+            Properties = new RedisLinkedServerCreateProperties(linkedRedisCacheId, serverRole);
         }
 
         /// <summary> Initializes a new instance of <see cref="RedisLinkedServerWithPropertyCreateOrUpdateContent"/>. </summary>

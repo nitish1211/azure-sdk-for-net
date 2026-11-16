@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
     /// <summary> The configuration that the operators of the cluster have to authenticate to Azure. </summary>
     internal partial class HcpOpenShiftClusterOperatorsAuthenticationProfile : IJsonModel<HcpOpenShiftClusterOperatorsAuthenticationProfile>
     {
-        /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterOperatorsAuthenticationProfile"/> for deserialization. </summary>
-        internal HcpOpenShiftClusterOperatorsAuthenticationProfile()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual HcpOpenShiftClusterOperatorsAuthenticationProfile PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

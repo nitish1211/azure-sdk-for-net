@@ -17,10 +17,8 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterEtcdDataEncryptionProfile"/>. </summary>
-        /// <param name="keyManagementMode"> Specify the key management strategy used for the encryption key that encrypts the ETCD data. </param>
-        public HcpOpenShiftClusterEtcdDataEncryptionProfile(HcpOpenShiftClusterEtcdDataEncryptionKeyManagementModeType keyManagementMode)
+        public HcpOpenShiftClusterEtcdDataEncryptionProfile()
         {
-            KeyManagementMode = keyManagementMode;
         }
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterEtcdDataEncryptionProfile"/>. </summary>

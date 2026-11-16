@@ -33,7 +33,11 @@ namespace Azure.ResourceManager.RedisEnterprise.Models
         internal AccessPolicyAssignmentProperties(RedisEnterpriseProvisioningStatus? provisioningState, string accessPolicyName, string accessString, AccessPolicyAssignmentProvisioningError provisioningError, AccessPolicyAssignmentPropertiesUser user, IDictionary<string, BinaryData> additionalBinaryDataProperties)
         {
             ProvisioningState = provisioningState;
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
             AccessPolicyName = accessPolicyName;
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
             AccessString = accessString;
             ProvisioningError = provisioningError;
             User = user;
@@ -45,6 +49,7 @@ namespace Azure.ResourceManager.RedisEnterprise.Models
         public RedisEnterpriseProvisioningStatus? ProvisioningState { get; }
 
         /// <summary> <b>Deprecated.</b> This property always returns "default". Use `accessString` to configure custom Redis ACL permissions instead. </summary>
+        [Obsolete("`accessPolicyName` is being deprecated. Use `accessString` to configure custom Redis ACL permissions instead.")]
         [WirePath("accessPolicyName")]
         public string AccessPolicyName { get; set; }
 

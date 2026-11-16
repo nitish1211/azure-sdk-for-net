@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.RecoveryServicesBackup.Models
     /// <summary> Base class for backup request. Workload-specific backup requests are derived from this class. </summary>
     public partial class TriggerBackupContent : TrackedResourceData, IJsonModel<TriggerBackupContent>
     {
-        /// <summary> Initializes a new instance of <see cref="TriggerBackupContent"/> for deserialization. </summary>
-        internal TriggerBackupContent()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

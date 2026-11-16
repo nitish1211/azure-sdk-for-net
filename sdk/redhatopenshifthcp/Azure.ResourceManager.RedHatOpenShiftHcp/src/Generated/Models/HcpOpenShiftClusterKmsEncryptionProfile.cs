@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.RedHatOpenShiftHcp;
 
 namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
 {
@@ -22,18 +21,8 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterKmsEncryptionProfile"/>. </summary>
-        /// <param name="vaultName"> vaultName is the name of the keyvault that contains the secret. </param>
-        /// <param name="visibility"> visibility of the keyvault that contains the secret. </param>
-        /// <param name="activeKey"> The details of the active key. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="vaultName"/> or <paramref name="activeKey"/> is null. </exception>
-        public HcpOpenShiftClusterKmsEncryptionProfile(string vaultName, HcpOpenShiftClusterKeyVaultVisibility visibility, HcpOpenShiftClusterKmsKey activeKey)
+        public HcpOpenShiftClusterKmsEncryptionProfile()
         {
-            Argument.AssertNotNull(vaultName, nameof(vaultName));
-            Argument.AssertNotNull(activeKey, nameof(activeKey));
-
-            VaultName = vaultName;
-            Visibility = visibility;
-            ActiveKey = activeKey;
         }
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterKmsEncryptionProfile"/>. </summary>

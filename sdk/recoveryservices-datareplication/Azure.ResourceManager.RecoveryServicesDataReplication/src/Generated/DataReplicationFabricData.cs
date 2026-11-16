@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.RecoveryServicesDataReplication
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DataReplicationFabricData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DataReplicationFabricData(AzureLocation location) : base(location)
+        public DataReplicationFabricData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.RecoveryServicesDataReplication
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DataReplicationFabricData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public DataReplicationFabricData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

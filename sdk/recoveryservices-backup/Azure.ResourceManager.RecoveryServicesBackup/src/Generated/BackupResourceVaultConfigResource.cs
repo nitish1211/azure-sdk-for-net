@@ -440,7 +440,7 @@ namespace Azure.ResourceManager.RecoveryServicesBackup
                 else
                 {
                     BackupResourceVaultConfigData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    BackupResourceVaultConfigData patch = new BackupResourceVaultConfigData(current.Location);
+                    BackupResourceVaultConfigData patch = new BackupResourceVaultConfigData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -488,7 +488,7 @@ namespace Azure.ResourceManager.RecoveryServicesBackup
                 else
                 {
                     BackupResourceVaultConfigData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    BackupResourceVaultConfigData patch = new BackupResourceVaultConfigData(current.Location);
+                    BackupResourceVaultConfigData patch = new BackupResourceVaultConfigData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -534,7 +534,7 @@ namespace Azure.ResourceManager.RecoveryServicesBackup
                 else
                 {
                     BackupResourceVaultConfigData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    BackupResourceVaultConfigData patch = new BackupResourceVaultConfigData(current.Location);
+                    BackupResourceVaultConfigData patch = new BackupResourceVaultConfigData();
                     patch.Tags.ReplaceWith(tags);
                     Response<BackupResourceVaultConfigResource> result = await UpdateAsync(patch, cancellationToken: cancellationToken).ConfigureAwait(false);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -576,7 +576,7 @@ namespace Azure.ResourceManager.RecoveryServicesBackup
                 else
                 {
                     BackupResourceVaultConfigData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    BackupResourceVaultConfigData patch = new BackupResourceVaultConfigData(current.Location);
+                    BackupResourceVaultConfigData patch = new BackupResourceVaultConfigData();
                     patch.Tags.ReplaceWith(tags);
                     Response<BackupResourceVaultConfigResource> result = Update(patch, cancellationToken: cancellationToken);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -618,7 +618,7 @@ namespace Azure.ResourceManager.RecoveryServicesBackup
                 else
                 {
                     BackupResourceVaultConfigData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    BackupResourceVaultConfigData patch = new BackupResourceVaultConfigData(current.Location);
+                    BackupResourceVaultConfigData patch = new BackupResourceVaultConfigData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -664,7 +664,7 @@ namespace Azure.ResourceManager.RecoveryServicesBackup
                 else
                 {
                     BackupResourceVaultConfigData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    BackupResourceVaultConfigData patch = new BackupResourceVaultConfigData(current.Location);
+                    BackupResourceVaultConfigData patch = new BackupResourceVaultConfigData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);

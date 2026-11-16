@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.RecoveryServicesBackup
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ResourceGuardProxyData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ResourceGuardProxyData(AzureLocation location) : base(location)
+        public ResourceGuardProxyData()
         {
         }
 
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.RecoveryServicesBackup
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ResourceGuardProxyData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ResourceGuardProxyData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> ResourceGuardProxyBaseResource properties. </summary>

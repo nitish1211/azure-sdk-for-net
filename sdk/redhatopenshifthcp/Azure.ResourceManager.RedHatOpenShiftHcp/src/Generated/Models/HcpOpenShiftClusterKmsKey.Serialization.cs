@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
     /// <summary> A representation of a KeyVault Secret. </summary>
     public partial class HcpOpenShiftClusterKmsKey : IJsonModel<HcpOpenShiftClusterKmsKey>
     {
-        /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterKmsKey"/> for deserialization. </summary>
-        internal HcpOpenShiftClusterKmsKey()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual HcpOpenShiftClusterKmsKey PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

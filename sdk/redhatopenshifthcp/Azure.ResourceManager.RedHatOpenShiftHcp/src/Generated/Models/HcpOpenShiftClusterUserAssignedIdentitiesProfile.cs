@@ -22,30 +22,10 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterUserAssignedIdentitiesProfile"/>. </summary>
-        /// <param name="controlPlaneOperators">
-        /// The set of Azure User-Assigned Managed Identities leveraged for the Control Plane
-        /// operators of the cluster. The set of required managed identities is dependent on the
-        /// Cluster's OpenShift version.
-        /// </param>
-        /// <param name="dataPlaneOperators">
-        /// The set of Azure User-Assigned Managed Identities leveraged for the Data Plane
-        /// operators of the cluster. The set of required managed identities is dependent on the
-        /// Cluster's OpenShift version.
-        /// </param>
-        /// <param name="serviceManagedIdentity">
-        /// Represents the information associated to an Azure User-Assigned Managed Identity whose
-        /// purpose is to perform service level actions.
-        /// </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="controlPlaneOperators"/>, <paramref name="dataPlaneOperators"/> or <paramref name="serviceManagedIdentity"/> is null. </exception>
-        public HcpOpenShiftClusterUserAssignedIdentitiesProfile(IDictionary<string, ResourceIdentifier> controlPlaneOperators, IDictionary<string, ResourceIdentifier> dataPlaneOperators, ResourceIdentifier serviceManagedIdentity)
+        public HcpOpenShiftClusterUserAssignedIdentitiesProfile()
         {
-            Argument.AssertNotNull(controlPlaneOperators, nameof(controlPlaneOperators));
-            Argument.AssertNotNull(dataPlaneOperators, nameof(dataPlaneOperators));
-            Argument.AssertNotNull(serviceManagedIdentity, nameof(serviceManagedIdentity));
-
-            ControlPlaneOperators = controlPlaneOperators;
-            DataPlaneOperators = dataPlaneOperators;
-            ServiceManagedIdentity = serviceManagedIdentity;
+            ControlPlaneOperators = new ChangeTrackingDictionary<string, ResourceIdentifier>();
+            DataPlaneOperators = new ChangeTrackingDictionary<string, ResourceIdentifier>();
         }
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterUserAssignedIdentitiesProfile"/>. </summary>

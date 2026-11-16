@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterNodePoolData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public HcpOpenShiftClusterNodePoolData(AzureLocation location) : base(location)
+        public HcpOpenShiftClusterNodePoolData()
         {
         }
 

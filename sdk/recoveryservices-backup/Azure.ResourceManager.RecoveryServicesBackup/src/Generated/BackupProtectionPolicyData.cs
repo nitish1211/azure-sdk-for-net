@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.RecoveryServicesBackup
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="BackupProtectionPolicyData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public BackupProtectionPolicyData(AzureLocation location) : base(location)
+        public BackupProtectionPolicyData()
         {
         }
 
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.RecoveryServicesBackup
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="BackupProtectionPolicyData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public BackupProtectionPolicyData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> ProtectionPolicyResource properties. </summary>

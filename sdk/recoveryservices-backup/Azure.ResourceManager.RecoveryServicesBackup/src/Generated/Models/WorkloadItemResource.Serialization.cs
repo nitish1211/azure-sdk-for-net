@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.RecoveryServicesBackup.Models
     /// <summary> Base class for backup item. Workload-specific backup items are derived from this class. </summary>
     public partial class WorkloadItemResource : TrackedResourceData, IJsonModel<WorkloadItemResource>
     {
-        /// <summary> Initializes a new instance of <see cref="WorkloadItemResource"/> for deserialization. </summary>
-        internal WorkloadItemResource()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

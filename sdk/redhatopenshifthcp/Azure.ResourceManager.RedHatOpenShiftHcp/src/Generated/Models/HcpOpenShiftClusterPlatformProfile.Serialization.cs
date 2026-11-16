@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
     /// <summary> Azure specific configuration. </summary>
     public partial class HcpOpenShiftClusterPlatformProfile : IJsonModel<HcpOpenShiftClusterPlatformProfile>
     {
-        /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterPlatformProfile"/> for deserialization. </summary>
-        internal HcpOpenShiftClusterPlatformProfile()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual HcpOpenShiftClusterPlatformProfile PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

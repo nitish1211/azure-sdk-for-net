@@ -461,21 +461,20 @@ namespace Azure.ResourceManager.RedisEnterprise.Models
         /// <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
         /// <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
         /// <param name="provisioningState"> Current provisioning status of the access policy assignment. </param>
-        /// <param name="accessPolicyName"> <b>Deprecated.</b> This property always returns "default". Use `accessString` to configure custom Redis ACL permissions instead. </param>
         /// <param name="accessString"> The Redis ACL permissions string applied to this assignment, for example `+@read ~cache:<i>`. Defaults to `+@all ~</i>` if not specified. </param>
         /// <param name="provisioningError"> Provisioning error details when the access string failed to apply (e.g., invalid ACL syntax). Null when provisioning succeeded. </param>
         /// <param name="userObjectId"> The object ID of the user. </param>
         /// <returns> A new <see cref="RedisEnterprise.AccessPolicyAssignmentData"/> instance for mocking. </returns>
-        public static AccessPolicyAssignmentData AccessPolicyAssignmentData(ResourceIdentifier id = default, string name = default, ResourceType resourceType = default, SystemData systemData = default, RedisEnterpriseProvisioningStatus? provisioningState = default, string accessPolicyName = default, string accessString = default, AccessPolicyAssignmentProvisioningError provisioningError = default, Guid? userObjectId = default)
+        public static AccessPolicyAssignmentData AccessPolicyAssignmentData(ResourceIdentifier id = default, string name = default, ResourceType resourceType = default, SystemData systemData = default, RedisEnterpriseProvisioningStatus? provisioningState = default, string accessString = default, AccessPolicyAssignmentProvisioningError provisioningError = default, Guid? userObjectId = default)
         {
             return new AccessPolicyAssignmentData(
                 id,
                 name,
                 resourceType,
                 systemData,
-                provisioningState is null && accessPolicyName is null && accessString is null && provisioningError is null && userObjectId is null ? default : new AccessPolicyAssignmentProperties(
+                provisioningState is null && accessString is null && provisioningError is null && userObjectId is null ? default : new AccessPolicyAssignmentProperties(
                     provisioningState,
-                    accessPolicyName,
+                    default,
                     accessString,
                     provisioningError,
                     new AccessPolicyAssignmentPropertiesUser(userObjectId, default),

@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
     /// <summary> Represents the node pool properties. </summary>
     public partial class HcpOpenShiftClusterNodePoolProperties : IJsonModel<HcpOpenShiftClusterNodePoolProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterNodePoolProperties"/> for deserialization. </summary>
-        internal HcpOpenShiftClusterNodePoolProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual HcpOpenShiftClusterNodePoolProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.RecoveryServicesBackup
     /// <summary> Base class for backup copies. Workload-specific backup copies are derived from this class. </summary>
     public partial class BackupRecoveryPointData : TrackedResourceData, IJsonModel<BackupRecoveryPointData>
     {
-        /// <summary> Initializes a new instance of <see cref="BackupRecoveryPointData"/> for deserialization. </summary>
-        internal BackupRecoveryPointData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

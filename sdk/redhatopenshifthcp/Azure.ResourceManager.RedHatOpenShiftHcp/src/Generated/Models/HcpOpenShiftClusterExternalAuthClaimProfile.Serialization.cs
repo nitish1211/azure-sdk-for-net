@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
     /// <summary> External Auth claim profile. </summary>
     public partial class HcpOpenShiftClusterExternalAuthClaimProfile : IJsonModel<HcpOpenShiftClusterExternalAuthClaimProfile>
     {
-        /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterExternalAuthClaimProfile"/> for deserialization. </summary>
-        internal HcpOpenShiftClusterExternalAuthClaimProfile()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual HcpOpenShiftClusterExternalAuthClaimProfile PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

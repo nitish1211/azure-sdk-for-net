@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.RecoveryServicesBackup
     /// <summary> Base class for backup items. </summary>
     public partial class BackupProtectedItemData : TrackedResourceData, IJsonModel<BackupProtectedItemData>
     {
-        /// <summary> Initializes a new instance of <see cref="BackupProtectedItemData"/> for deserialization. </summary>
-        internal BackupProtectedItemData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

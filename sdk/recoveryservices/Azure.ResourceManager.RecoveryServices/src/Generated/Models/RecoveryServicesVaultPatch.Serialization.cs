@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.RecoveryServices.Models
     /// <summary> Patch Resource information, as returned by the resource provider. </summary>
     public partial class RecoveryServicesVaultPatch : TrackedResourceData, IJsonModel<RecoveryServicesVaultPatch>
     {
-        /// <summary> Initializes a new instance of <see cref="RecoveryServicesVaultPatch"/> for deserialization. </summary>
-        internal RecoveryServicesVaultPatch()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

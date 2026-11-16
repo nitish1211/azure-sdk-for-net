@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.RedHatOpenShift
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="OpenShiftClusterData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public OpenShiftClusterData(AzureLocation location) : base(location)
+        public OpenShiftClusterData()
         {
         }
 

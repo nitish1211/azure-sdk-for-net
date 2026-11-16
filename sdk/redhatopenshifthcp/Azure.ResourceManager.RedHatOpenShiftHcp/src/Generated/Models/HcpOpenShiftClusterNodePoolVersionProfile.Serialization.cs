@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
     /// <summary> Versions represents an OpenShift version. </summary>
     public partial class HcpOpenShiftClusterNodePoolVersionProfile : IJsonModel<HcpOpenShiftClusterNodePoolVersionProfile>
     {
-        /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterNodePoolVersionProfile"/> for deserialization. </summary>
-        internal HcpOpenShiftClusterNodePoolVersionProfile()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual HcpOpenShiftClusterNodePoolVersionProfile PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.RedHatOpenShift
     /// <summary> OpenShiftCluster represents an Azure Red Hat OpenShift cluster. </summary>
     public partial class OpenShiftClusterData : TrackedResourceData, IJsonModel<OpenShiftClusterData>
     {
-        /// <summary> Initializes a new instance of <see cref="OpenShiftClusterData"/> for deserialization. </summary>
-        internal OpenShiftClusterData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

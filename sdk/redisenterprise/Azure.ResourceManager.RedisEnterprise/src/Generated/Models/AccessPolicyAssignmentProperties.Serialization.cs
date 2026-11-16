@@ -79,11 +79,15 @@ namespace Azure.ResourceManager.RedisEnterprise.Models
                 writer.WritePropertyName("provisioningState"u8);
                 writer.WriteStringValue(ProvisioningState.Value.ToString());
             }
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
             if (Optional.IsDefined(AccessPolicyName))
             {
                 writer.WritePropertyName("accessPolicyName"u8);
                 writer.WriteStringValue(AccessPolicyName);
             }
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
             if (Optional.IsDefined(AccessString))
             {
                 writer.WritePropertyName("accessString"u8);

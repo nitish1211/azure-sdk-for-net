@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp
     /// <summary> HCP cluster resource. </summary>
     public partial class HcpOpenShiftClusterData : TrackedResourceData, IJsonModel<HcpOpenShiftClusterData>
     {
-        /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterData"/> for deserialization. </summary>
-        internal HcpOpenShiftClusterData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

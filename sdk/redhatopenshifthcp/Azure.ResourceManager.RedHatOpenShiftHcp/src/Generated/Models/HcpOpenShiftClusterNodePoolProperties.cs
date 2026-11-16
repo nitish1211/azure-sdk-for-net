@@ -18,13 +18,8 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterNodePoolProperties"/>. </summary>
-        /// <param name="platform"> Azure node pool platform configuration. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="platform"/> is null. </exception>
-        public HcpOpenShiftClusterNodePoolProperties(HcpOpenShiftClusterNodePoolPlatformProfile platform)
+        public HcpOpenShiftClusterNodePoolProperties()
         {
-            Argument.AssertNotNull(platform, nameof(platform));
-
-            Platform = platform;
             Labels = new ChangeTrackingList<HcpOpenShiftClusterNodePoolLabel>();
             Taints = new ChangeTrackingList<HcpOpenShiftClusterNodePoolTaint>();
         }

@@ -51,24 +51,6 @@ namespace Azure.ResourceManager.RedisEnterprise
             }
         }
 
-        /// <summary> <b>Deprecated.</b> This property always returns "default". Use `accessString` to configure custom Redis ACL permissions instead. </summary>
-        [WirePath("properties.accessPolicyName")]
-        public string AccessPolicyName
-        {
-            get
-            {
-                return Properties is null ? default : Properties.AccessPolicyName;
-            }
-            set
-            {
-                if (Properties is null)
-                {
-                    Properties = new AccessPolicyAssignmentProperties();
-                }
-                Properties.AccessPolicyName = value;
-            }
-        }
-
         /// <summary> The Redis ACL permissions string applied to this assignment, for example `+@read ~cache:<i>`. Defaults to `+@all ~</i>` if not specified. </summary>
         [WirePath("properties.accessString")]
         public string AccessString

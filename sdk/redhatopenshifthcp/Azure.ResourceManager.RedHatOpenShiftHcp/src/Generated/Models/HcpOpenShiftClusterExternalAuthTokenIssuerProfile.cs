@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Azure.ResourceManager.RedHatOpenShiftHcp;
 
 namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
@@ -23,25 +22,9 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterExternalAuthTokenIssuerProfile"/>. </summary>
-        /// <param name="uri">
-        /// This configures the URL used to issue tokens by the identity provider.
-        /// The Kubernetes API server determines how authentication tokens should be handled
-        /// by matching the 'iss' claim in the JWT to the issuerURL of configured identity providers.
-        /// issuerURL must use the 'https' scheme.
-        /// </param>
-        /// <param name="audiences">
-        /// This configures the acceptable audiences for JWT tokens issued by the identity provider.
-        /// At least one of the entries must match the 'aud' claim in the JWT token.
-        /// Audiences must contain at least one entry and must not exceed ten entries.
-        /// </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="uri"/> or <paramref name="audiences"/> is null. </exception>
-        public HcpOpenShiftClusterExternalAuthTokenIssuerProfile(Uri uri, IEnumerable<string> audiences)
+        public HcpOpenShiftClusterExternalAuthTokenIssuerProfile()
         {
-            Argument.AssertNotNull(uri, nameof(uri));
-            Argument.AssertNotNull(audiences, nameof(audiences));
-
-            Uri = uri;
-            Audiences = audiences.ToList();
+            Audiences = new ChangeTrackingList<string>();
         }
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterExternalAuthTokenIssuerProfile"/>. </summary>

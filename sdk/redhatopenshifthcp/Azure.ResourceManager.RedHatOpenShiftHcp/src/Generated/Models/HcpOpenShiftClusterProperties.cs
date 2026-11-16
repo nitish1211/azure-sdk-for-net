@@ -18,16 +18,8 @@ namespace Azure.ResourceManager.RedHatOpenShiftHcp.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HcpOpenShiftClusterProperties"/>. </summary>
-        /// <param name="version"> Version of the control plane components. </param>
-        /// <param name="platform"> Azure platform configuration. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="version"/> or <paramref name="platform"/> is null. </exception>
-        public HcpOpenShiftClusterProperties(HcpOpenShiftClusterVersionProfile version, HcpOpenShiftClusterPlatformProfile platform)
+        public HcpOpenShiftClusterProperties()
         {
-            Argument.AssertNotNull(version, nameof(version));
-            Argument.AssertNotNull(platform, nameof(platform));
-
-            Version = version;
-            Platform = platform;
             ImageDigestMirrors = new ChangeTrackingList<HcpOpenShiftClusterImageDigestMirror>();
         }
 
