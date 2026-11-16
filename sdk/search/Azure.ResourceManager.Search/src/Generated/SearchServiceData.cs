@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.Search
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="SearchServiceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public SearchServiceData(AzureLocation location) : base(location)
+        public SearchServiceData()
         {
         }
 
@@ -43,6 +42,13 @@ namespace Azure.ResourceManager.Search
             Sku = sku;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="SearchServiceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public SearchServiceData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the search service. </summary>

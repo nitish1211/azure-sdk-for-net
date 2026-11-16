@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.SecurityCenter
     /// <summary> A private link resource that enables secure, private connectivity to Microsoft Defender for Cloud services. This resource manages the lifecycle of private endpoint connections and provides the necessary infrastructure for private connectivity. </summary>
     public partial class SecurityCenterPrivateLinkResourceData : TrackedResourceData, IJsonModel<SecurityCenterPrivateLinkResourceData>
     {
-        /// <summary> Initializes a new instance of <see cref="SecurityCenterPrivateLinkResourceData"/> for deserialization. </summary>
-        internal SecurityCenterPrivateLinkResourceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

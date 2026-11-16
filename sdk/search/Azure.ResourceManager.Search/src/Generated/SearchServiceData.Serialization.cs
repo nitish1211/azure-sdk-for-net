@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Search
     /// <summary> Describes an Azure AI Search service and its current state. </summary>
     public partial class SearchServiceData : TrackedResourceData, IJsonModel<SearchServiceData>
     {
-        /// <summary> Initializes a new instance of <see cref="SearchServiceData"/> for deserialization. </summary>
-        internal SearchServiceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

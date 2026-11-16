@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.SecurityCenter
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="IotSecuritySolutionData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public IotSecuritySolutionData(AzureLocation location) : base(location)
+        public IotSecuritySolutionData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.SecurityCenter
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="IotSecuritySolutionData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public IotSecuritySolutionData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Security Solution data. </summary>

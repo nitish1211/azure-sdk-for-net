@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.SecurityCenter
     /// <summary> The security connector resource. </summary>
     public partial class SecurityConnectorData : TrackedResourceData, IJsonModel<SecurityConnectorData>
     {
-        /// <summary> Initializes a new instance of <see cref="SecurityConnectorData"/> for deserialization. </summary>
-        internal SecurityConnectorData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ResourceConnector
     /// <summary> Appliances definition. </summary>
     public partial class ResourceConnectorApplianceData : TrackedResourceData, IJsonModel<ResourceConnectorApplianceData>
     {
-        /// <summary> Initializes a new instance of <see cref="ResourceConnectorApplianceData"/> for deserialization. </summary>
-        internal ResourceConnectorApplianceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.SecurityCenter
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="SecurityConnectorData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public SecurityConnectorData(AzureLocation location) : base(location)
+        public SecurityConnectorData()
         {
         }
 
@@ -43,6 +42,13 @@ namespace Azure.ResourceManager.SecurityCenter
             Kind = kind;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="SecurityConnectorData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public SecurityConnectorData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Security connector data. </summary>

@@ -21,10 +21,9 @@ namespace Azure.ResourceManager.SecretsStoreExtension.Models
         /// <summary> Initializes a new instance of <see cref="SecretSyncProperties"/>. </summary>
         /// <param name="secretProviderClassName"> SecretProviderClassName specifies the name of the SecretProviderClass resource, which contains the information needed to access the cloud provider secret store. </param>
         /// <param name="serviceAccountName"> ServiceAccountName specifies the name of the service account used to access the cloud provider secret store. The audience field in the service account token must be passed as parameter in the controller configuration. The audience is used when requesting a token from the API server for the service account; the supported audiences are defined by each provider. </param>
-        /// <param name="kubernetesSecretType"> Type specifies the type of the Kubernetes secret object, e.g. `Opaque` or `kubernetes.io/tls`. The controller must have permission to create secrets of the specified type. </param>
         /// <param name="objectSecretMapping"> An array of SecretObjectData that maps secret data from the external secret provider to the Kubernetes secret. Each entry specifies the source secret in the external provider and the corresponding key in the Kubernetes secret. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="secretProviderClassName"/>, <paramref name="serviceAccountName"/> or <paramref name="objectSecretMapping"/> is null. </exception>
-        public SecretSyncProperties(string secretProviderClassName, string serviceAccountName, KubernetesSecretType kubernetesSecretType, IEnumerable<KubernetesSecretObjectMapping> objectSecretMapping)
+        public SecretSyncProperties(string secretProviderClassName, string serviceAccountName, IEnumerable<KubernetesSecretObjectMapping> objectSecretMapping)
         {
             Argument.AssertNotNull(secretProviderClassName, nameof(secretProviderClassName));
             Argument.AssertNotNull(serviceAccountName, nameof(serviceAccountName));
@@ -32,7 +31,6 @@ namespace Azure.ResourceManager.SecretsStoreExtension.Models
 
             SecretProviderClassName = secretProviderClassName;
             ServiceAccountName = serviceAccountName;
-            KubernetesSecretType = kubernetesSecretType;
             ObjectSecretMapping = objectSecretMapping.ToList();
         }
 

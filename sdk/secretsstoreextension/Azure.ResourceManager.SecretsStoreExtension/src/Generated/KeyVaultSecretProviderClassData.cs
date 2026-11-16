@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.SecretsStoreExtension
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="KeyVaultSecretProviderClassData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public KeyVaultSecretProviderClassData(AzureLocation location) : base(location)
+        public KeyVaultSecretProviderClassData()
         {
         }
 

@@ -19,11 +19,6 @@ namespace Azure.ResourceManager.Search.Models
     /// <summary> The parameters used to update an Azure AI Search service. </summary>
     public partial class SearchServicePatch : TrackedResourceData, IJsonModel<SearchServicePatch>
     {
-        /// <summary> Initializes a new instance of <see cref="SearchServicePatch"/> for deserialization. </summary>
-        internal SearchServicePatch()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.SecurityCenter
     /// <summary> IoT Security solution configuration and resource information. </summary>
     public partial class IotSecuritySolutionData : TrackedResourceData, IJsonModel<IotSecuritySolutionData>
     {
-        /// <summary> Initializes a new instance of <see cref="IotSecuritySolutionData"/> for deserialization. </summary>
-        internal IotSecuritySolutionData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

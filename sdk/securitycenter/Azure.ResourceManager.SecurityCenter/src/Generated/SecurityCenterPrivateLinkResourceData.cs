@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.SecurityCenter
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="SecurityCenterPrivateLinkResourceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public SecurityCenterPrivateLinkResourceData(AzureLocation location) : base(location)
+        public SecurityCenterPrivateLinkResourceData()
         {
 
         }

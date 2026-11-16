@@ -21,11 +21,6 @@ namespace Azure.ResourceManager.SecretsStoreExtension
     /// <summary> The SecretSync resource. </summary>
     public partial class SecretSyncData : TrackedResourceData, IJsonModel<SecretSyncData>
     {
-        /// <summary> Initializes a new instance of <see cref="SecretSyncData"/> for deserialization. </summary>
-        internal SecretSyncData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

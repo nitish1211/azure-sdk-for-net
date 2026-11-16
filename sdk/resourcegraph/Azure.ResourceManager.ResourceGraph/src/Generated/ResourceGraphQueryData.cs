@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.ResourceGraph
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ResourceGraphQueryData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ResourceGraphQueryData(AzureLocation location) : base(location)
+        public ResourceGraphQueryData()
         {
         }
 
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.ResourceGraph
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ResourceGraphQueryData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ResourceGraphQueryData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Metadata describing a graph query for an Azure resource. </summary>
