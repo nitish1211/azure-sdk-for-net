@@ -23,8 +23,7 @@ namespace Azure.ResourceManager.LargeInstance
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="LargeInstanceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public LargeInstanceData(AzureLocation location) : base(location)
+        public LargeInstanceData()
         {
         }
 

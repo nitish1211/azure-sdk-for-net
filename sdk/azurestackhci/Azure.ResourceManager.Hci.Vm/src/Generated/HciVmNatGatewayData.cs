@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Hci.Vm
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HciVmNatGatewayData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public HciVmNatGatewayData(AzureLocation location) : base(location)
+        public HciVmNatGatewayData()
         {
         }
 

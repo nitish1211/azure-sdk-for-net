@@ -18,15 +18,12 @@ namespace Azure.ResourceManager.Hci.Vm.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HciVmInboundNatRule"/>. </summary>
-        /// <param name="name"> name of the inbound nat rule. </param>
         /// <param name="properties"> properties of the inbound nat rule. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="name"/> or <paramref name="properties"/> is null. </exception>
-        public HciVmInboundNatRule(string name, HciVmInboundNatRuleProperties properties)
+        /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
+        public HciVmInboundNatRule(HciVmInboundNatRuleProperties properties)
         {
-            Argument.AssertNotNull(name, nameof(name));
             Argument.AssertNotNull(properties, nameof(properties));
 
-            Name = name;
             Properties = properties;
         }
 

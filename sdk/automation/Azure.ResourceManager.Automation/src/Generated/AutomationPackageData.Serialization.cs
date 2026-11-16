@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Automation
     /// <summary> Definition of the Package type. </summary>
     public partial class AutomationPackageData : TrackedResourceData, IJsonModel<AutomationPackageData>
     {
-        /// <summary> Initializes a new instance of <see cref="AutomationPackageData"/> for deserialization. </summary>
-        internal AutomationPackageData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

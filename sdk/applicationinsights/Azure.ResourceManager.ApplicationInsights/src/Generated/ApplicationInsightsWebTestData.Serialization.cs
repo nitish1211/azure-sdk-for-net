@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ApplicationInsights
     /// <summary> An Application Insights WebTest definition. </summary>
     public partial class ApplicationInsightsWebTestData : TrackedResourceData, IJsonModel<ApplicationInsightsWebTestData>
     {
-        /// <summary> Initializes a new instance of <see cref="ApplicationInsightsWebTestData"/> for deserialization. </summary>
-        internal ApplicationInsightsWebTestData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

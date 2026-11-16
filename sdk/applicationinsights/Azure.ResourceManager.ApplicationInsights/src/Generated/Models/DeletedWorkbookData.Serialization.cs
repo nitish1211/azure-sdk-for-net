@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ApplicationInsights.Models
     /// <summary> An azure resource object. </summary>
     public partial class DeletedWorkbookData : TrackedResourceData, IJsonModel<DeletedWorkbookData>
     {
-        /// <summary> Initializes a new instance of <see cref="DeletedWorkbookData"/> for deserialization. </summary>
-        internal DeletedWorkbookData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

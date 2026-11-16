@@ -19,16 +19,9 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="SliMonitoringProperties"/>. </summary>
-        /// <param name="identity"> Identity that the Drill uses to read evaluated SLI results from each SLI's destination Azure Monitor Workspace. The Drill is granted Monitoring Reader on every destination AMW of every selected SLI for this identity. </param>
-        /// <param name="slis"> The SLIs selected for Drill monitoring. Maximum of two entries: at most one Availability and one Latency. Duplicate types or duplicate SLI Ids are rejected. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="identity"/> or <paramref name="slis"/> is null. </exception>
-        public SliMonitoringProperties(ResilienceManagementAssociatedIdentity identity, IEnumerable<SliSelection> slis)
+        public SliMonitoringProperties()
         {
-            Argument.AssertNotNull(identity, nameof(identity));
-            Argument.AssertNotNull(slis, nameof(slis));
-
-            Identity = identity;
-            Slis = slis.ToList();
+            Slis = new ChangeTrackingList<SliSelection>();
         }
 
         /// <summary> Initializes a new instance of <see cref="SliMonitoringProperties"/>. </summary>
@@ -40,6 +33,19 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
             Identity = identity;
             Slis = slis;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="SliMonitoringProperties"/>. </summary>
+        /// <param name="identity"> Identity that the Drill uses to read evaluated SLI results from each SLI's destination Azure Monitor Workspace. The Drill is granted Monitoring Reader on every destination AMW of every selected SLI for this identity. </param>
+        /// <param name="slis"> The SLIs selected for Drill monitoring. Maximum of two entries: at most one Availability and one Latency. Duplicate types or duplicate SLI Ids are rejected. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="identity"/> or <paramref name="slis"/> is null. </exception>
+        public SliMonitoringProperties(ResilienceManagementAssociatedIdentity identity, IEnumerable<SliSelection> slis) : this()
+        {
+            Argument.AssertNotNull(identity, nameof(identity));
+            Argument.AssertNotNull(slis, nameof(slis));
+
+            Identity = identity;
+            Slis = slis.ToList();
         }
 
         /// <summary> Identity that the Drill uses to read evaluated SLI results from each SLI's destination Azure Monitor Workspace. The Drill is granted Monitoring Reader on every destination AMW of every selected SLI for this identity. </summary>

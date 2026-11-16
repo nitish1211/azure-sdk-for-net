@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Hci.Vm
     /// <summary> The virtual network resource definition. </summary>
     public partial class HciVmVirtualNetworkData : TrackedResourceData, IJsonModel<HciVmVirtualNetworkData>
     {
-        /// <summary> Initializes a new instance of <see cref="HciVmVirtualNetworkData"/> for deserialization. </summary>
-        internal HciVmVirtualNetworkData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

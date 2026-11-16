@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Automation
     /// <summary> Definition of the runbook type. </summary>
     public partial class AutomationRunbookData : TrackedResourceData, IJsonModel<AutomationRunbookData>
     {
-        /// <summary> Initializes a new instance of <see cref="AutomationRunbookData"/> for deserialization. </summary>
-        internal AutomationRunbookData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

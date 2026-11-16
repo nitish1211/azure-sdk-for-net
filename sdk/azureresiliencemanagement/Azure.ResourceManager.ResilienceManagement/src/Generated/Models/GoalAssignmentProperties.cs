@@ -19,10 +19,8 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="GoalAssignmentProperties"/>. </summary>
-        /// <param name="isZonalResiliencyRequired"> Whether zonal resiliency is required for this goal assignment. </param>
-        public GoalAssignmentProperties(bool isZonalResiliencyRequired)
+        public GoalAssignmentProperties()
         {
-            IsZonalResiliencyRequired = isZonalResiliencyRequired;
             ServiceLevelResources = new ChangeTrackingList<ServiceLevelTarget>();
         }
 
@@ -39,6 +37,13 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
             ProvisioningState = provisioningState;
             ErrorDetails = errorDetails;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="GoalAssignmentProperties"/>. </summary>
+        /// <param name="isZonalResiliencyRequired"> Whether zonal resiliency is required for this goal assignment. </param>
+        public GoalAssignmentProperties(bool isZonalResiliencyRequired) : this()
+        {
+            IsZonalResiliencyRequired = isZonalResiliencyRequired;
         }
 
         /// <summary> Whether zonal resiliency is required for this goal assignment. </summary>

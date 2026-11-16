@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Hci.Vm
     /// <summary> The LoadBalancer resource definition. </summary>
     public partial class HciVmLoadBalancerData : TrackedResourceData, IJsonModel<HciVmLoadBalancerData>
     {
-        /// <summary> Initializes a new instance of <see cref="HciVmLoadBalancerData"/> for deserialization. </summary>
-        internal HciVmLoadBalancerData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

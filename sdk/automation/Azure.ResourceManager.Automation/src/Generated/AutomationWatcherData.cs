@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.Automation
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AutomationWatcherData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public AutomationWatcherData(AzureLocation location) : base(location)
+        public AutomationWatcherData()
         {
         }
 
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.Automation
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="AutomationWatcherData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public AutomationWatcherData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Gets or sets the watcher properties. </summary>

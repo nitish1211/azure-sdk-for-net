@@ -18,18 +18,8 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="RecoveryGroupProperties"/>. </summary>
-        /// <param name="groupUniqueId"> A unique id for the recovery orchestration group, which is a GUID. </param>
-        /// <param name="orderId"> The order ID of the recovery orchestration group. </param>
-        /// <param name="description"> A description of the recovery orchestration group. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="groupUniqueId"/> or <paramref name="description"/> is null. </exception>
-        public RecoveryGroupProperties(string groupUniqueId, int orderId, string description)
+        public RecoveryGroupProperties()
         {
-            Argument.AssertNotNull(groupUniqueId, nameof(groupUniqueId));
-            Argument.AssertNotNull(description, nameof(description));
-
-            GroupUniqueId = groupUniqueId;
-            OrderId = orderId;
-            Description = description;
             PreActions = new ChangeTrackingList<RecoveryGroupBaseAction>();
             PostActions = new ChangeTrackingList<RecoveryGroupBaseAction>();
         }
@@ -49,6 +39,21 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
             PreActions = preActions;
             PostActions = postActions;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="RecoveryGroupProperties"/>. </summary>
+        /// <param name="groupUniqueId"> A unique id for the recovery orchestration group, which is a GUID. </param>
+        /// <param name="orderId"> The order ID of the recovery orchestration group. </param>
+        /// <param name="description"> A description of the recovery orchestration group. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="groupUniqueId"/> or <paramref name="description"/> is null. </exception>
+        public RecoveryGroupProperties(string groupUniqueId, int orderId, string description) : this()
+        {
+            Argument.AssertNotNull(groupUniqueId, nameof(groupUniqueId));
+            Argument.AssertNotNull(description, nameof(description));
+
+            GroupUniqueId = groupUniqueId;
+            OrderId = orderId;
+            Description = description;
         }
 
         /// <summary> A unique id for the recovery orchestration group, which is a GUID. </summary>

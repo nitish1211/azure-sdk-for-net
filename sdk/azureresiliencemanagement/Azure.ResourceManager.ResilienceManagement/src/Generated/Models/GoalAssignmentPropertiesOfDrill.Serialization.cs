@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
     /// <summary> Goal assignment properties. </summary>
     public partial class GoalAssignmentPropertiesOfDrill : IJsonModel<GoalAssignmentPropertiesOfDrill>
     {
-        /// <summary> Initializes a new instance of <see cref="GoalAssignmentPropertiesOfDrill"/> for deserialization. </summary>
-        internal GoalAssignmentPropertiesOfDrill()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual GoalAssignmentPropertiesOfDrill PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

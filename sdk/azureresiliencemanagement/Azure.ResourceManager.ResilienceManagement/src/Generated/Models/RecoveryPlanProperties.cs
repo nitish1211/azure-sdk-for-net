@@ -19,18 +19,8 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="RecoveryPlanProperties"/>. </summary>
-        /// <param name="planType"> The type of the recovery orchestration plan, which can be set during creation but cannot be changed afterward. </param>
-        /// <param name="planDescription"> A description of the recovery orchestration plan. </param>
-        /// <param name="recoveryGroupsSetting"> Settings for the recovery orchestration groups associated with the recovery orchestration plan. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="planDescription"/> or <paramref name="recoveryGroupsSetting"/> is null. </exception>
-        public RecoveryPlanProperties(RecoveryPlanType planType, string planDescription, RecoveryGroupsSetting recoveryGroupsSetting)
+        public RecoveryPlanProperties()
         {
-            Argument.AssertNotNull(planDescription, nameof(planDescription));
-            Argument.AssertNotNull(recoveryGroupsSetting, nameof(recoveryGroupsSetting));
-
-            PlanType = planType;
-            PlanDescription = planDescription;
-            RecoveryGroupsSetting = recoveryGroupsSetting;
         }
 
         /// <summary> Initializes a new instance of <see cref="RecoveryPlanProperties"/>. </summary>
@@ -54,6 +44,21 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
             LatestValidationStatus = latestValidationStatus;
             ErrorDetails = errorDetails;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="RecoveryPlanProperties"/>. </summary>
+        /// <param name="planType"> The type of the recovery orchestration plan, which can be set during creation but cannot be changed afterward. </param>
+        /// <param name="planDescription"> A description of the recovery orchestration plan. </param>
+        /// <param name="recoveryGroupsSetting"> Settings for the recovery orchestration groups associated with the recovery orchestration plan. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="planDescription"/> or <paramref name="recoveryGroupsSetting"/> is null. </exception>
+        public RecoveryPlanProperties(RecoveryPlanType planType, string planDescription, RecoveryGroupsSetting recoveryGroupsSetting) : this()
+        {
+            Argument.AssertNotNull(planDescription, nameof(planDescription));
+            Argument.AssertNotNull(recoveryGroupsSetting, nameof(recoveryGroupsSetting));
+
+            PlanType = planType;
+            PlanDescription = planDescription;
+            RecoveryGroupsSetting = recoveryGroupsSetting;
         }
 
         /// <summary> The provisioning state of the recovery orchestration plan. </summary>

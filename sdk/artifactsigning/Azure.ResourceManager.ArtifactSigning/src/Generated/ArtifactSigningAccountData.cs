@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.ArtifactSigning
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ArtifactSigningAccountData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ArtifactSigningAccountData(AzureLocation location) : base(location)
+        public ArtifactSigningAccountData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.ArtifactSigning
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ArtifactSigningAccountData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ArtifactSigningAccountData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

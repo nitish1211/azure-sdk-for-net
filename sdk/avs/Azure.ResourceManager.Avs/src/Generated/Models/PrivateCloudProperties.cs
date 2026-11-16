@@ -93,8 +93,16 @@ namespace Azure.ResourceManager.Avs.Models
             ManagementNetwork = managementNetwork;
             ProvisioningNetwork = provisioningNetwork;
             VMotionNetwork = vMotionNetwork;
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
             VCenterPassword = vCenterPassword;
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
             NsxtPassword = nsxtPassword;
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
             VCenterCertificateThumbprint = vCenterCertificateThumbprint;
             NsxtCertificateThumbprint = nsxtCertificateThumbprint;
             ExternalCloudLinks = externalCloudLinks;
@@ -155,9 +163,11 @@ namespace Azure.ResourceManager.Avs.Models
         public string VMotionNetwork { get; }
 
         /// <summary> Optionally, set the vCenter admin password when the private cloud is created. </summary>
+        [Obsolete("It is recommended to let the system generate the password when the private cloud is created.")]
         public string VCenterPassword { get; set; }
 
         /// <summary> Optionally, set the NSX-T Manager password when the private cloud is created. </summary>
+        [Obsolete("It is recommended to let the system generate the password when the private cloud is created.")]
         public string NsxtPassword { get; set; }
 
         /// <summary> Thumbprint of the vCenter Server SSL certificate. </summary>

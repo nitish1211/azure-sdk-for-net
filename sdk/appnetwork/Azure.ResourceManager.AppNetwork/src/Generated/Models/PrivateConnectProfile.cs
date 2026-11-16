@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.AppNetwork;
 
 namespace Azure.ResourceManager.AppNetwork.Models
 {
@@ -19,13 +18,8 @@ namespace Azure.ResourceManager.AppNetwork.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PrivateConnectProfile"/>. </summary>
-        /// <param name="subnetResourceId"> Delegated Subnet to AppLink. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="subnetResourceId"/> is null. </exception>
-        public PrivateConnectProfile(ResourceIdentifier subnetResourceId)
+        public PrivateConnectProfile()
         {
-            Argument.AssertNotNull(subnetResourceId, nameof(subnetResourceId));
-
-            SubnetResourceId = subnetResourceId;
         }
 
         /// <summary> Initializes a new instance of <see cref="PrivateConnectProfile"/>. </summary>

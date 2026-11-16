@@ -18,8 +18,7 @@ namespace Azure.ResourceManager.ApplicationInsights.Models
     public partial class DeletedWorkbook : DeletedWorkbookData
     {
         /// <summary> Initializes a new instance of <see cref="DeletedWorkbook"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        internal DeletedWorkbook(AzureLocation location) : base(location)
+        internal DeletedWorkbook()
         {
         }
 

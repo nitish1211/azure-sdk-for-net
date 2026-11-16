@@ -66,7 +66,11 @@ namespace Azure.ResourceManager.AppNetwork.Models
             }
             set
             {
-                PrivateConnect = new PrivateConnectProfile(value);
+                if (PrivateConnect is null)
+                {
+                    PrivateConnect = new PrivateConnectProfile();
+                }
+                PrivateConnect.SubnetResourceId = value;
             }
         }
     }

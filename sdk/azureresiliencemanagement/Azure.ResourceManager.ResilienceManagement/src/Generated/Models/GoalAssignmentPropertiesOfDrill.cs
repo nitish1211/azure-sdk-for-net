@@ -19,13 +19,8 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="GoalAssignmentPropertiesOfDrill"/>. </summary>
-        /// <param name="identity"> Identity to use for goal assignment operations. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="identity"/> is null. </exception>
-        public GoalAssignmentPropertiesOfDrill(ResilienceManagementAssociatedIdentity identity)
+        public GoalAssignmentPropertiesOfDrill()
         {
-            Argument.AssertNotNull(identity, nameof(identity));
-
-            Identity = identity;
         }
 
         /// <summary> Initializes a new instance of <see cref="GoalAssignmentPropertiesOfDrill"/>. </summary>
@@ -37,6 +32,16 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
             Identity = identity;
             GoalAssignmentId = goalAssignmentId;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="GoalAssignmentPropertiesOfDrill"/>. </summary>
+        /// <param name="identity"> Identity to use for goal assignment operations. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="identity"/> is null. </exception>
+        public GoalAssignmentPropertiesOfDrill(ResilienceManagementAssociatedIdentity identity) : this()
+        {
+            Argument.AssertNotNull(identity, nameof(identity));
+
+            Identity = identity;
         }
 
         /// <summary> Identity to use for goal assignment operations. </summary>

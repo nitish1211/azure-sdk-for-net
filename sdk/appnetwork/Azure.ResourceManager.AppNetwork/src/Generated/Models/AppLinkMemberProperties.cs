@@ -25,7 +25,7 @@ namespace Azure.ResourceManager.AppNetwork.Models
         {
             Argument.AssertNotNull(metadataResourceId, nameof(metadataResourceId));
 
-            Metadata = new Metadata(metadataResourceId);
+            Metadata = new Metadata();
         }
 
         /// <summary> Initializes a new instance of <see cref="AppLinkMemberProperties"/>. </summary>
@@ -74,7 +74,11 @@ namespace Azure.ResourceManager.AppNetwork.Models
             }
             set
             {
-                Metadata = new Metadata(value);
+                if (Metadata is null)
+                {
+                    Metadata = new Metadata();
+                }
+                Metadata.ResourceId = value;
             }
         }
 

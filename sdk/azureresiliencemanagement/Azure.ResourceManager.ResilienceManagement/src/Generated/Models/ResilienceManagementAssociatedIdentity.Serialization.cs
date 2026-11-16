@@ -18,11 +18,6 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
     /// <summary> Definition of associated identity linked with the various resources. </summary>
     public partial class ResilienceManagementAssociatedIdentity : IJsonModel<ResilienceManagementAssociatedIdentity>
     {
-        /// <summary> Initializes a new instance of <see cref="ResilienceManagementAssociatedIdentity"/> for deserialization. </summary>
-        internal ResilienceManagementAssociatedIdentity()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResilienceManagementAssociatedIdentity PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

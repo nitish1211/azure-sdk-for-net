@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
     /// <summary> Properties of the recovery orchestration group. </summary>
     public partial class RecoveryGroupProperties : IJsonModel<RecoveryGroupProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="RecoveryGroupProperties"/> for deserialization. </summary>
-        internal RecoveryGroupProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual RecoveryGroupProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

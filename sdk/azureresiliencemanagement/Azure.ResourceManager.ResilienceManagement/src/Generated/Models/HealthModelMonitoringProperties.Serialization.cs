@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
     /// <summary> Azure Health Model monitoring properties of a Drill. Exactly one Health Model may be selected per Drill. </summary>
     public partial class HealthModelMonitoringProperties : IJsonModel<HealthModelMonitoringProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="HealthModelMonitoringProperties"/> for deserialization. </summary>
-        internal HealthModelMonitoringProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual HealthModelMonitoringProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

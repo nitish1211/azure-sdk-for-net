@@ -18,15 +18,12 @@ namespace Azure.ResourceManager.Hci.Vm.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HciVmBackendAddressPool"/>. </summary>
-        /// <param name="name"> name of the backend pool. </param>
         /// <param name="properties"> properties for the backend pool. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="name"/> or <paramref name="properties"/> is null. </exception>
-        public HciVmBackendAddressPool(string name, HciVmBackendAddressPoolProperties properties)
+        /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
+        public HciVmBackendAddressPool(HciVmBackendAddressPoolProperties properties)
         {
-            Argument.AssertNotNull(name, nameof(name));
             Argument.AssertNotNull(properties, nameof(properties));
 
-            Name = name;
             Properties = properties;
         }
 

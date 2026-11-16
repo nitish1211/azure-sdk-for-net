@@ -18,15 +18,12 @@ namespace Azure.ResourceManager.Hci.Vm.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HciVmLoadBalancerBackendAddress"/>. </summary>
-        /// <param name="name"> name of the backend address. </param>
         /// <param name="properties"> backend address properties. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="name"/> or <paramref name="properties"/> is null. </exception>
-        public HciVmLoadBalancerBackendAddress(string name, HciVmLoadBalancerBackendAddressProperties properties)
+        /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
+        public HciVmLoadBalancerBackendAddress(HciVmLoadBalancerBackendAddressProperties properties)
         {
-            Argument.AssertNotNull(name, nameof(name));
             Argument.AssertNotNull(properties, nameof(properties));
 
-            Name = name;
             Properties = properties;
         }
 

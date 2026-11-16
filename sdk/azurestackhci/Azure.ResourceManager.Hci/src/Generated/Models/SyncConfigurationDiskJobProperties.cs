@@ -16,10 +16,8 @@ namespace Azure.ResourceManager.Hci.Models
     public partial class SyncConfigurationDiskJobProperties : EdgeMachineDiskJobProperties
     {
         /// <summary> Initializes a new instance of <see cref="SyncConfigurationDiskJobProperties"/>. </summary>
-        /// <param name="resolutionStrategy"> The strategy to use for resolving the configuration drift. </param>
-        public SyncConfigurationDiskJobProperties(HciConfigurationDriftResolutionStrategy resolutionStrategy) : base(DiskJobType.SyncConfiguration)
+        public SyncConfigurationDiskJobProperties() : base(DiskJobType.SyncConfiguration)
         {
-            ResolutionStrategy = resolutionStrategy;
         }
 
         /// <summary> Initializes a new instance of <see cref="SyncConfigurationDiskJobProperties"/>. </summary>
@@ -35,6 +33,13 @@ namespace Azure.ResourceManager.Hci.Models
         /// <param name="additionalBinaryDataProperties"> Keeps track of any properties unknown to the library. </param>
         /// <param name="resolutionStrategy"> The strategy to use for resolving the configuration drift. </param>
         internal SyncConfigurationDiskJobProperties(DiskJobType jobType, EceDeploymentMode? deploymentMode, HciProvisioningState? provisioningState, string jobId, DateTimeOffset? startsOn, DateTimeOffset? endsOn, HciJobStatus? status, ResponseError error, DiskJobReportedProperties reportedProperties, IDictionary<string, BinaryData> additionalBinaryDataProperties, HciConfigurationDriftResolutionStrategy resolutionStrategy) : base(jobType, deploymentMode, provisioningState, jobId, startsOn, endsOn, status, error, reportedProperties, additionalBinaryDataProperties)
+        {
+            ResolutionStrategy = resolutionStrategy;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="SyncConfigurationDiskJobProperties"/>. </summary>
+        /// <param name="resolutionStrategy"> The strategy to use for resolving the configuration drift. </param>
+        public SyncConfigurationDiskJobProperties(HciConfigurationDriftResolutionStrategy resolutionStrategy) : this()
         {
             ResolutionStrategy = resolutionStrategy;
         }

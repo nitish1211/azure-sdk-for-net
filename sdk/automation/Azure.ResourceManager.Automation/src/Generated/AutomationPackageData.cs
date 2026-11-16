@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Automation
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AutomationPackageData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        internal AutomationPackageData(AzureLocation location) : base(location)
+        internal AutomationPackageData()
         {
         }
 

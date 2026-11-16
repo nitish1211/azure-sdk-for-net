@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.ApplicationInsights
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ApplicationInsightsWorkbookData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ApplicationInsightsWorkbookData(AzureLocation location) : base(location)
+        public ApplicationInsightsWorkbookData()
         {
         }
 
@@ -45,6 +44,13 @@ namespace Azure.ResourceManager.ApplicationInsights
             Kind = kind;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ApplicationInsightsWorkbookData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ApplicationInsightsWorkbookData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Metadata describing a workbook for an Azure resource. </summary>

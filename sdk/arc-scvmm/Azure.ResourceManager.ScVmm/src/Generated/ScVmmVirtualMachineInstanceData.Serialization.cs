@@ -21,11 +21,6 @@ namespace Azure.ResourceManager.ScVmm
     /// <summary> Define the virtualMachineInstance. </summary>
     public partial class ScVmmVirtualMachineInstanceData : ResourceData, IJsonModel<ScVmmVirtualMachineInstanceData>
     {
-        /// <summary> Initializes a new instance of <see cref="ScVmmVirtualMachineInstanceData"/> for deserialization. </summary>
-        internal ScVmmVirtualMachineInstanceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

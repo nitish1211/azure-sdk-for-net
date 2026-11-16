@@ -21,10 +21,9 @@ namespace Azure.ResourceManager.ApplicationInsights
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ApplicationInsightsComponentData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="kind"> The kind of application that this component refers to, used to customize UI. This value is a freeform string, values should typically be one of the following: web, ios, other, store, java, phone. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="kind"/> is null. </exception>
-        public ApplicationInsightsComponentData(AzureLocation location, string kind) : base(location)
+        public ApplicationInsightsComponentData(string kind)
         {
             Argument.AssertNotNull(kind, nameof(kind));
 
@@ -48,6 +47,14 @@ namespace Azure.ResourceManager.ApplicationInsights
             ETag = eTag;
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ApplicationInsightsComponentData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="kind"> The kind of application that this component refers to, used to customize UI. This value is a freeform string, values should typically be one of the following: web, ios, other, store, java, phone. </param>
+        public ApplicationInsightsComponentData(AzureLocation location, string kind) : this(kind)
+        {
+            Location = location;
         }
 
         /// <summary> The kind of application that this component refers to, used to customize UI. This value is a freeform string, values should typically be one of the following: web, ios, other, store, java, phone. </summary>

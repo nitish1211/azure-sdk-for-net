@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.AppNetwork.Models
     /// <summary> AppLinkMember metadata. </summary>
     internal partial class Metadata : IJsonModel<Metadata>
     {
-        /// <summary> Initializes a new instance of <see cref="Metadata"/> for deserialization. </summary>
-        internal Metadata()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual Metadata PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

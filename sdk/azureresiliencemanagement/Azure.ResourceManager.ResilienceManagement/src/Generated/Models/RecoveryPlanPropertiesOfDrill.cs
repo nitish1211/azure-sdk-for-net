@@ -19,13 +19,8 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="RecoveryPlanPropertiesOfDrill"/>. </summary>
-        /// <param name="identity"> Identity to use for RecoveryPlan operations. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="identity"/> is null. </exception>
-        public RecoveryPlanPropertiesOfDrill(ResilienceManagementAssociatedIdentity identity)
+        public RecoveryPlanPropertiesOfDrill()
         {
-            Argument.AssertNotNull(identity, nameof(identity));
-
-            Identity = identity;
         }
 
         /// <summary> Initializes a new instance of <see cref="RecoveryPlanPropertiesOfDrill"/>. </summary>
@@ -39,6 +34,16 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
             RecoveryPlanId = recoveryPlanId;
             RecoveryPlanResourceExcludedCount = recoveryPlanResourceExcludedCount;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="RecoveryPlanPropertiesOfDrill"/>. </summary>
+        /// <param name="identity"> Identity to use for RecoveryPlan operations. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="identity"/> is null. </exception>
+        public RecoveryPlanPropertiesOfDrill(ResilienceManagementAssociatedIdentity identity) : this()
+        {
+            Argument.AssertNotNull(identity, nameof(identity));
+
+            Identity = identity;
         }
 
         /// <summary> Identity to use for RecoveryPlan operations. </summary>

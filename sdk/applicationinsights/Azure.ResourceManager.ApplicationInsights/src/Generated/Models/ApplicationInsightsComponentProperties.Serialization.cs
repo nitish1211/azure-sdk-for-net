@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.ApplicationInsights.Models
     /// <summary> Properties that define an Application Insights component resource. </summary>
     internal partial class ApplicationInsightsComponentProperties : IJsonModel<ApplicationInsightsComponentProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="ApplicationInsightsComponentProperties"/> for deserialization. </summary>
-        internal ApplicationInsightsComponentProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ApplicationInsightsComponentProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

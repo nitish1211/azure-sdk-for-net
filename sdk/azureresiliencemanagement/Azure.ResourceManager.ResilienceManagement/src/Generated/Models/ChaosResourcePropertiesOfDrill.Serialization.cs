@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
     /// <summary> Chaos Resource properties. </summary>
     public partial class ChaosResourcePropertiesOfDrill : IJsonModel<ChaosResourcePropertiesOfDrill>
     {
-        /// <summary> Initializes a new instance of <see cref="ChaosResourcePropertiesOfDrill"/> for deserialization. </summary>
-        internal ChaosResourcePropertiesOfDrill()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ChaosResourcePropertiesOfDrill PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

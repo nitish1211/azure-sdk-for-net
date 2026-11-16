@@ -19,16 +19,8 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ChaosResourcePropertiesOfDrill"/>. </summary>
-        /// <param name="identity"> Identity to use for Chaos Resource operations. </param>
-        /// <param name="chaosResourceIdentityForFaults"> Identity to be used by the Chaos Resource for invoking faults on resources. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="identity"/> or <paramref name="chaosResourceIdentityForFaults"/> is null. </exception>
-        public ChaosResourcePropertiesOfDrill(ResilienceManagementAssociatedIdentity identity, ResilienceManagementAssociatedIdentity chaosResourceIdentityForFaults)
+        public ChaosResourcePropertiesOfDrill()
         {
-            Argument.AssertNotNull(identity, nameof(identity));
-            Argument.AssertNotNull(chaosResourceIdentityForFaults, nameof(chaosResourceIdentityForFaults));
-
-            Identity = identity;
-            ChaosResourceIdentityForFaults = chaosResourceIdentityForFaults;
         }
 
         /// <summary> Initializes a new instance of <see cref="ChaosResourcePropertiesOfDrill"/>. </summary>
@@ -44,6 +36,19 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
             ChaosResourceId = chaosResourceId;
             FaultDurationInMin = faultDurationInMin;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ChaosResourcePropertiesOfDrill"/>. </summary>
+        /// <param name="identity"> Identity to use for Chaos Resource operations. </param>
+        /// <param name="chaosResourceIdentityForFaults"> Identity to be used by the Chaos Resource for invoking faults on resources. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="identity"/> or <paramref name="chaosResourceIdentityForFaults"/> is null. </exception>
+        public ChaosResourcePropertiesOfDrill(ResilienceManagementAssociatedIdentity identity, ResilienceManagementAssociatedIdentity chaosResourceIdentityForFaults) : this()
+        {
+            Argument.AssertNotNull(identity, nameof(identity));
+            Argument.AssertNotNull(chaosResourceIdentityForFaults, nameof(chaosResourceIdentityForFaults));
+
+            Identity = identity;
+            ChaosResourceIdentityForFaults = chaosResourceIdentityForFaults;
         }
 
         /// <summary> Identity to use for Chaos Resource operations. </summary>

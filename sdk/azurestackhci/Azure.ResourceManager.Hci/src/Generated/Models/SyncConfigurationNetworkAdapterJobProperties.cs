@@ -16,10 +16,8 @@ namespace Azure.ResourceManager.Hci.Models
     public partial class SyncConfigurationNetworkAdapterJobProperties : EdgeMachineNetworkAdapterJobProperties
     {
         /// <summary> Initializes a new instance of <see cref="SyncConfigurationNetworkAdapterJobProperties"/>. </summary>
-        /// <param name="resolutionStrategy"> The strategy to use for resolving the configuration drift. </param>
-        public SyncConfigurationNetworkAdapterJobProperties(HciConfigurationDriftResolutionStrategy resolutionStrategy) : base(NetworkAdapterJobType.SyncConfiguration)
+        public SyncConfigurationNetworkAdapterJobProperties() : base(NetworkAdapterJobType.SyncConfiguration)
         {
-            ResolutionStrategy = resolutionStrategy;
         }
 
         /// <summary> Initializes a new instance of <see cref="SyncConfigurationNetworkAdapterJobProperties"/>. </summary>
@@ -35,6 +33,13 @@ namespace Azure.ResourceManager.Hci.Models
         /// <param name="additionalBinaryDataProperties"> Keeps track of any properties unknown to the library. </param>
         /// <param name="resolutionStrategy"> The strategy to use for resolving the configuration drift. </param>
         internal SyncConfigurationNetworkAdapterJobProperties(NetworkAdapterJobType jobType, EceDeploymentMode? deploymentMode, HciProvisioningState? provisioningState, string jobId, DateTimeOffset? startsOn, DateTimeOffset? endsOn, HciJobStatus? status, ResponseError error, NetworkAdapterJobReportedProperties reportedProperties, IDictionary<string, BinaryData> additionalBinaryDataProperties, HciConfigurationDriftResolutionStrategy resolutionStrategy) : base(jobType, deploymentMode, provisioningState, jobId, startsOn, endsOn, status, error, reportedProperties, additionalBinaryDataProperties)
+        {
+            ResolutionStrategy = resolutionStrategy;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="SyncConfigurationNetworkAdapterJobProperties"/>. </summary>
+        /// <param name="resolutionStrategy"> The strategy to use for resolving the configuration drift. </param>
+        public SyncConfigurationNetworkAdapterJobProperties(HciConfigurationDriftResolutionStrategy resolutionStrategy) : this()
         {
             ResolutionStrategy = resolutionStrategy;
         }

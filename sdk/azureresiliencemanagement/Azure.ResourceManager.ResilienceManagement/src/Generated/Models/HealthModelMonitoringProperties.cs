@@ -19,16 +19,8 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HealthModelMonitoringProperties"/>. </summary>
-        /// <param name="identity"> Identity that the Drill uses to read the Azure Health Model. The Drill is granted Reader on the Health Model for this identity. </param>
-        /// <param name="healthModelId"> Full ARM Id of the Azure Health Model selected for Drill monitoring. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="identity"/> or <paramref name="healthModelId"/> is null. </exception>
-        public HealthModelMonitoringProperties(ResilienceManagementAssociatedIdentity identity, ResourceIdentifier healthModelId)
+        public HealthModelMonitoringProperties()
         {
-            Argument.AssertNotNull(identity, nameof(identity));
-            Argument.AssertNotNull(healthModelId, nameof(healthModelId));
-
-            Identity = identity;
-            HealthModelId = healthModelId;
         }
 
         /// <summary> Initializes a new instance of <see cref="HealthModelMonitoringProperties"/>. </summary>
@@ -40,6 +32,19 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
             Identity = identity;
             HealthModelId = healthModelId;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="HealthModelMonitoringProperties"/>. </summary>
+        /// <param name="identity"> Identity that the Drill uses to read the Azure Health Model. The Drill is granted Reader on the Health Model for this identity. </param>
+        /// <param name="healthModelId"> Full ARM Id of the Azure Health Model selected for Drill monitoring. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="identity"/> or <paramref name="healthModelId"/> is null. </exception>
+        public HealthModelMonitoringProperties(ResilienceManagementAssociatedIdentity identity, ResourceIdentifier healthModelId) : this()
+        {
+            Argument.AssertNotNull(identity, nameof(identity));
+            Argument.AssertNotNull(healthModelId, nameof(healthModelId));
+
+            Identity = identity;
+            HealthModelId = healthModelId;
         }
 
         /// <summary> Identity that the Drill uses to read the Azure Health Model. The Drill is granted Reader on the Health Model for this identity. </summary>

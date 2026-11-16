@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Hci.Vm
     /// <summary> The virtual hard disk resource definition. </summary>
     public partial class HciVmVirtualHardDiskData : TrackedResourceData, IJsonModel<HciVmVirtualHardDiskData>
     {
-        /// <summary> Initializes a new instance of <see cref="HciVmVirtualHardDiskData"/> for deserialization. </summary>
-        internal HciVmVirtualHardDiskData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

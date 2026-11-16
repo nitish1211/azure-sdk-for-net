@@ -144,7 +144,7 @@ namespace Azure.ResourceManager.Avs.Models
         /// <param name="vsanDatastoreName"> Name of the vsan datastore associated with the cluster. </param>
         /// <param name="sku"> The SKU (Stock Keeping Unit) assigned to this resource. </param>
         /// <returns> A new <see cref="Avs.AvsPrivateCloudClusterData"/> instance for mocking. </returns>
-        public static AvsPrivateCloudClusterData AvsPrivateCloudClusterData(ResourceIdentifier id, string name, ResourceType resourceType, SystemData systemData, int? clusterSize, AvsPrivateCloudClusterProvisioningState? provisioningState = default, int? clusterId = default, IEnumerable<string> hosts = default, string vsanDatastoreName = default, AvsSku sku = default)
+        public static AvsPrivateCloudClusterData AvsPrivateCloudClusterData(ResourceIdentifier id = default, string name = default, ResourceType resourceType = default, SystemData systemData = default, int? clusterSize = default, AvsPrivateCloudClusterProvisioningState? provisioningState = default, int? clusterId = default, IEnumerable<string> hosts = default, string vsanDatastoreName = default, AvsSku sku = default)
         {
             return new AvsPrivateCloudClusterData(
                 id,
@@ -221,7 +221,7 @@ namespace Azure.ResourceManager.Avs.Models
         /// <param name="netAppVolumeId"> Azure resource ID of the NetApp volume. </param>
         /// <param name="elasticSanVolumeTargetId"> Azure resource ID of the Elastic SAN Volume. </param>
         /// <returns> A new <see cref="Avs.AvsPrivateCloudDatastoreData"/> instance for mocking. </returns>
-        public static AvsPrivateCloudDatastoreData AvsPrivateCloudDatastoreData(ResourceIdentifier id, string name, ResourceType resourceType, SystemData systemData, AvsPrivateCloudDatastoreProvisioningState? provisioningState, DiskPoolVolume diskPoolVolume, AvsPureStorageVolume pureStorageVolume, DatastoreStatus? status, ResourceIdentifier netAppVolumeId, ResourceIdentifier elasticSanVolumeTargetId)
+        public static AvsPrivateCloudDatastoreData AvsPrivateCloudDatastoreData(ResourceIdentifier id = default, string name = default, ResourceType resourceType = default, SystemData systemData = default, AvsPrivateCloudDatastoreProvisioningState? provisioningState = default, DiskPoolVolume diskPoolVolume = default, AvsPureStorageVolume pureStorageVolume = default, DatastoreStatus? status = default, ResourceIdentifier netAppVolumeId = default, ResourceIdentifier elasticSanVolumeTargetId = default)
         {
             return new AvsPrivateCloudDatastoreData(
                 id,
@@ -402,7 +402,7 @@ namespace Azure.ResourceManager.Avs.Models
         /// <param name="faultDomain"></param>
         /// <param name="licenses"> The licenses assigned to the host. </param>
         /// <returns> A new <see cref="Models.GeneralAvsHostProperties"/> instance for mocking. </returns>
-        public static GeneralAvsHostProperties GeneralAvsHostProperties(AvsHostProvisioningState? provisioningState, string displayName, string moRefId, string fqdn, AvsHostMaintenance? maintenance, string faultDomain, IEnumerable<HostLicense> licenses)
+        public static GeneralAvsHostProperties GeneralAvsHostProperties(AvsHostProvisioningState? provisioningState = default, string displayName = default, string moRefId = default, string fqdn = default, AvsHostMaintenance? maintenance = default, string faultDomain = default, IEnumerable<HostLicense> licenses = default)
         {
             licenses ??= new ChangeTrackingList<HostLicense>();
 
@@ -427,7 +427,7 @@ namespace Azure.ResourceManager.Avs.Models
         /// <param name="faultDomain"></param>
         /// <param name="licenses"> The licenses assigned to the host. </param>
         /// <returns> A new <see cref="Models.SpecializedAvsHostProperties"/> instance for mocking. </returns>
-        public static SpecializedAvsHostProperties SpecializedAvsHostProperties(AvsHostProvisioningState? provisioningState, string displayName, string moRefId, string fqdn, AvsHostMaintenance? maintenance, string faultDomain, IEnumerable<HostLicense> licenses)
+        public static SpecializedAvsHostProperties SpecializedAvsHostProperties(AvsHostProvisioningState? provisioningState = default, string displayName = default, string moRefId = default, string fqdn = default, AvsHostMaintenance? maintenance = default, string faultDomain = default, IEnumerable<HostLicense> licenses = default)
         {
             licenses ??= new ChangeTrackingList<HostLicense>();
 
@@ -587,7 +587,7 @@ namespace Azure.ResourceManager.Avs.Models
         /// <param name="operations"> Operations on  maintenance. </param>
         /// <param name="maintenanceReadiness"> Indicates whether the maintenance is ready to proceed. </param>
         /// <returns> A new <see cref="Models.AvsMaintenanceProperties"/> instance for mocking. </returns>
-        public static AvsMaintenanceProperties AvsMaintenanceProperties(AvsMaintenanceType? component, string displayName, int? clusterId, IEnumerable<MaintenanceActivity> activities, MaintenanceGroup @group, MaintenanceRelationships relationships, string infoLink, string impact, bool? isScheduledByMicrosoft, AvsMaintenanceState state, DateTimeOffset? scheduledStartOn, long? estimatedDurationInMinutes, AvsMaintenanceProvisioningState? provisioningState, IEnumerable<AvsMaintenanceManagementOperation> operations = default, AvsMaintenanceReadiness maintenanceReadiness = default)
+        public static AvsMaintenanceProperties AvsMaintenanceProperties(AvsMaintenanceType? component = default, string displayName = default, int? clusterId = default, IEnumerable<MaintenanceActivity> activities = default, MaintenanceGroup @group = default, MaintenanceRelationships relationships = default, string infoLink = default, string impact = default, bool? isScheduledByMicrosoft = default, AvsMaintenanceState state = default, DateTimeOffset? scheduledStartOn = default, long? estimatedDurationInMinutes = default, AvsMaintenanceProvisioningState? provisioningState = default, IEnumerable<AvsMaintenanceManagementOperation> operations = default, AvsMaintenanceReadiness maintenanceReadiness = default)
         {
             activities ??= new ChangeTrackingList<MaintenanceActivity>();
             operations ??= new ChangeTrackingList<AvsMaintenanceManagementOperation>();
@@ -678,7 +678,7 @@ namespace Azure.ResourceManager.Avs.Models
         /// <param name="constraints"> Constraints for scheduling maintenance. </param>
         /// <param name="recommendationMaintenanceWindows"> List of recommended maintenance windows. </param>
         /// <returns> A new <see cref="Models.AvsScheduleOperation"/> instance for mocking. </returns>
-        public static AvsScheduleOperation AvsScheduleOperation(bool? isDisabled, string disabledReason, IEnumerable<AvsScheduleOperationConstraint> constraints, IEnumerable<MaintenanceWindowRecommendation> recommendationMaintenanceWindows)
+        public static AvsScheduleOperation AvsScheduleOperation(bool? isDisabled = default, string disabledReason = default, IEnumerable<AvsScheduleOperationConstraint> constraints = default, IEnumerable<MaintenanceWindowRecommendation> recommendationMaintenanceWindows = default)
         {
             constraints ??= new ChangeTrackingList<AvsScheduleOperationConstraint>();
 
@@ -764,7 +764,7 @@ namespace Azure.ResourceManager.Avs.Models
         /// <param name="constraints"> Constraints for rescheduling maintenance. </param>
         /// <param name="recommendationMaintenanceWindows"> List of recommended maintenance windows. </param>
         /// <returns> A new <see cref="Models.AvsRescheduleOperation"/> instance for mocking. </returns>
-        public static AvsRescheduleOperation AvsRescheduleOperation(bool? isDisabled, string disabledReason, IEnumerable<AvsRescheduleOperationConstraint> constraints, IEnumerable<MaintenanceWindowRecommendation> recommendationMaintenanceWindows)
+        public static AvsRescheduleOperation AvsRescheduleOperation(bool? isDisabled = default, string disabledReason = default, IEnumerable<AvsRescheduleOperationConstraint> constraints = default, IEnumerable<MaintenanceWindowRecommendation> recommendationMaintenanceWindows = default)
         {
             constraints ??= new ChangeTrackingList<AvsRescheduleOperationConstraint>();
 
@@ -1051,8 +1051,6 @@ namespace Azure.ResourceManager.Avs.Models
         /// <param name="managementNetwork"> Network used to access vCenter Server and NSX-T Manager. </param>
         /// <param name="provisioningNetwork"> Used for virtual machine cold migration, cloning, and snapshot migration. </param>
         /// <param name="vMotionNetwork"> Used for live migration of virtual machines. </param>
-        /// <param name="vCenterPassword"> Optionally, set the vCenter admin password when the private cloud is created. </param>
-        /// <param name="nsxtPassword"> Optionally, set the NSX-T Manager password when the private cloud is created. </param>
         /// <param name="vCenterCertificateThumbprint"> Thumbprint of the vCenter Server SSL certificate. </param>
         /// <param name="nsxtCertificateThumbprint"> Thumbprint of the NSX-T Manager SSL certificate. </param>
         /// <param name="externalCloudLinks"> Array of cloud link IDs from other clouds that connect to this one. </param>
@@ -1071,7 +1069,7 @@ namespace Azure.ResourceManager.Avs.Models
         /// <param name="identity"> The managed service identities assigned to this resource. </param>
         /// <param name="zones"> The availability zones. </param>
         /// <returns> A new <see cref="Avs.AvsPrivateCloudData"/> instance for mocking. </returns>
-        public static AvsPrivateCloudData AvsPrivateCloudData(ResourceIdentifier id = default, string name = default, ResourceType resourceType = default, SystemData systemData = default, IDictionary<string, string> tags = default, AzureLocation location = default, AvsManagementCluster managementCluster = default, InternetConnectivityState? internet = default, IEnumerable<SingleSignOnIdentitySource> identitySources = default, PrivateCloudAvailabilityProperties availability = default, CustomerManagedEncryption encryption = default, IEnumerable<string> extendedNetworkBlocks = default, AvsPrivateCloudProvisioningState? provisioningState = default, ExpressRouteCircuit circuit = default, AvsPrivateCloudEndpoints endpoints = default, string networkBlock = default, string managementNetwork = default, string provisioningNetwork = default, string vMotionNetwork = default, string vCenterPassword = default, string nsxtPassword = default, string vCenterCertificateThumbprint = default, string nsxtCertificateThumbprint = default, IEnumerable<ResourceIdentifier> externalCloudLinks = default, ExpressRouteCircuit secondaryCircuit = default, NsxPublicIPQuotaRaisedEnum? nsxPublicIPQuotaRaised = default, ResourceIdentifier virtualNetworkId = default, AvsDnsZoneType? dnsZoneType = default, VcfLicense vcfLicense = default, AvsSku sku = default, ManagedServiceIdentity identity = default, IEnumerable<string> zones = default)
+        public static AvsPrivateCloudData AvsPrivateCloudData(ResourceIdentifier id = default, string name = default, ResourceType resourceType = default, SystemData systemData = default, IDictionary<string, string> tags = default, AzureLocation location = default, AvsManagementCluster managementCluster = default, InternetConnectivityState? internet = default, IEnumerable<SingleSignOnIdentitySource> identitySources = default, PrivateCloudAvailabilityProperties availability = default, CustomerManagedEncryption encryption = default, IEnumerable<string> extendedNetworkBlocks = default, AvsPrivateCloudProvisioningState? provisioningState = default, ExpressRouteCircuit circuit = default, AvsPrivateCloudEndpoints endpoints = default, string networkBlock = default, string managementNetwork = default, string provisioningNetwork = default, string vMotionNetwork = default, string vCenterCertificateThumbprint = default, string nsxtCertificateThumbprint = default, IEnumerable<ResourceIdentifier> externalCloudLinks = default, ExpressRouteCircuit secondaryCircuit = default, NsxPublicIPQuotaRaisedEnum? nsxPublicIPQuotaRaised = default, ResourceIdentifier virtualNetworkId = default, AvsDnsZoneType? dnsZoneType = default, VcfLicense vcfLicense = default, AvsSku sku = default, ManagedServiceIdentity identity = default, IEnumerable<string> zones = default)
         {
             tags ??= new ChangeTrackingDictionary<string, string>();
             zones ??= new ChangeTrackingList<string>();
@@ -1083,7 +1081,7 @@ namespace Azure.ResourceManager.Avs.Models
                 systemData,
                 tags ?? new ChangeTrackingDictionary<string, string>(),
                 location,
-                managementCluster is null && internet is null && identitySources is null && availability is null && encryption is null && extendedNetworkBlocks is null && provisioningState is null && circuit is null && endpoints is null && networkBlock is null && managementNetwork is null && provisioningNetwork is null && vMotionNetwork is null && vCenterPassword is null && nsxtPassword is null && vCenterCertificateThumbprint is null && nsxtCertificateThumbprint is null && externalCloudLinks is null && secondaryCircuit is null && nsxPublicIPQuotaRaised is null && virtualNetworkId is null && dnsZoneType is null && vcfLicense is null ? default : new PrivateCloudProperties(
+                managementCluster is null && internet is null && identitySources is null && availability is null && encryption is null && extendedNetworkBlocks is null && provisioningState is null && circuit is null && endpoints is null && networkBlock is null && managementNetwork is null && provisioningNetwork is null && vMotionNetwork is null && vCenterCertificateThumbprint is null && nsxtCertificateThumbprint is null && externalCloudLinks is null && secondaryCircuit is null && nsxPublicIPQuotaRaised is null && virtualNetworkId is null && dnsZoneType is null && vcfLicense is null ? default : new PrivateCloudProperties(
                     managementCluster,
                     internet,
                     (identitySources ?? new ChangeTrackingList<SingleSignOnIdentitySource>()).ToList(),
@@ -1097,8 +1095,8 @@ namespace Azure.ResourceManager.Avs.Models
                     managementNetwork,
                     provisioningNetwork,
                     vMotionNetwork,
-                    vCenterPassword,
-                    nsxtPassword,
+                    default,
+                    default,
                     vCenterCertificateThumbprint,
                     nsxtCertificateThumbprint,
                     (externalCloudLinks ?? new ChangeTrackingList<ResourceIdentifier>()).ToList(),
@@ -2214,6 +2212,96 @@ namespace Azure.ResourceManager.Avs.Models
                     default,
                     status,
                     default),
+                default);
+        }
+
+        /// <summary> A private cloud resource. </summary>
+        /// <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
+        /// <param name="name"> The name of the resource. </param>
+        /// <param name="resourceType"> The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts". </param>
+        /// <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
+        /// <param name="tags"> Resource tags. </param>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="managementCluster"> The default cluster used for management. </param>
+        /// <param name="internet"> Connectivity to internet is enabled or disabled. </param>
+        /// <param name="identitySources"> vCenter Single Sign On Identity Sources. </param>
+        /// <param name="availability"> Properties describing how the cloud is distributed across availability zones. </param>
+        /// <param name="encryption"> Customer managed key encryption, can be enabled or disabled. </param>
+        /// <param name="extendedNetworkBlocks">
+        /// Array of additional networks noncontiguous with networkBlock. Networks must be
+        /// unique and non-overlapping across VNet in your subscription, on-premise, and
+        /// this privateCloud networkBlock attribute. Make sure the CIDR format conforms to
+        /// (A.B.C.D/X).
+        /// </param>
+        /// <param name="provisioningState"> The provisioning state. </param>
+        /// <param name="circuit"> An ExpressRoute Circuit. </param>
+        /// <param name="endpoints"> The endpoints. </param>
+        /// <param name="networkBlock">
+        /// The block of addresses should be unique across VNet in your subscription as
+        /// well as on-premise. Make sure the CIDR format is conformed to (A.B.C.D/X) where
+        /// A,B,C,D are between 0 and 255, and X is between 0 and 22
+        /// </param>
+        /// <param name="managementNetwork"> Network used to access vCenter Server and NSX-T Manager. </param>
+        /// <param name="provisioningNetwork"> Used for virtual machine cold migration, cloning, and snapshot migration. </param>
+        /// <param name="vMotionNetwork"> Used for live migration of virtual machines. </param>
+        /// <param name="vCenterPassword"> Optionally, set the vCenter admin password when the private cloud is created. </param>
+        /// <param name="nsxtPassword"> Optionally, set the NSX-T Manager password when the private cloud is created. </param>
+        /// <param name="vCenterCertificateThumbprint"> Thumbprint of the vCenter Server SSL certificate. </param>
+        /// <param name="nsxtCertificateThumbprint"> Thumbprint of the NSX-T Manager SSL certificate. </param>
+        /// <param name="externalCloudLinks"> Array of cloud link IDs from other clouds that connect to this one. </param>
+        /// <param name="secondaryCircuit">
+        /// A secondary expressRoute circuit from a separate AZ. Only present in a
+        /// stretched private cloud
+        /// </param>
+        /// <param name="nsxPublicIPQuotaRaised">
+        /// Flag to indicate whether the private cloud has the quota for provisioned NSX
+        /// Public IP count raised from 64 to 1024
+        /// </param>
+        /// <param name="virtualNetworkId"> Azure resource ID of the virtual network. </param>
+        /// <param name="dnsZoneType"> The type of DNS zone to use. </param>
+        /// <param name="vcfLicense"> The private cloud license. </param>
+        /// <param name="sku"> The SKU (Stock Keeping Unit) assigned to this resource. </param>
+        /// <param name="identity"> The managed service identities assigned to this resource. </param>
+        /// <param name="zones"> The availability zones. </param>
+        /// <returns> A new <see cref="Avs.AvsPrivateCloudData"/> instance for mocking. </returns>
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public static AvsPrivateCloudData AvsPrivateCloudData(ResourceIdentifier id, string name, ResourceType resourceType, SystemData systemData, IDictionary<string, string> tags, AzureLocation location, AvsManagementCluster managementCluster, InternetConnectivityState? internet, IEnumerable<SingleSignOnIdentitySource> identitySources, PrivateCloudAvailabilityProperties availability, CustomerManagedEncryption encryption, IEnumerable<string> extendedNetworkBlocks, AvsPrivateCloudProvisioningState? provisioningState, ExpressRouteCircuit circuit, AvsPrivateCloudEndpoints endpoints, string networkBlock, string managementNetwork, string provisioningNetwork, string vMotionNetwork, string vCenterPassword, string nsxtPassword, string vCenterCertificateThumbprint, string nsxtCertificateThumbprint, IEnumerable<ResourceIdentifier> externalCloudLinks, ExpressRouteCircuit secondaryCircuit, NsxPublicIPQuotaRaisedEnum? nsxPublicIPQuotaRaised, ResourceIdentifier virtualNetworkId, AvsDnsZoneType? dnsZoneType, VcfLicense vcfLicense, AvsSku sku, ManagedServiceIdentity identity, IEnumerable<string> zones)
+        {
+            return new AvsPrivateCloudData(
+                id,
+                name,
+                resourceType,
+                systemData,
+                tags ?? new ChangeTrackingDictionary<string, string>(),
+                location,
+                managementCluster is null && internet is null && identitySources is null && availability is null && encryption is null && extendedNetworkBlocks is null && provisioningState is null && circuit is null && endpoints is null && networkBlock is null && managementNetwork is null && provisioningNetwork is null && vMotionNetwork is null && vCenterPassword is null && nsxtPassword is null && vCenterCertificateThumbprint is null && nsxtCertificateThumbprint is null && externalCloudLinks is null && secondaryCircuit is null && nsxPublicIPQuotaRaised is null && virtualNetworkId is null && dnsZoneType is null && vcfLicense is null ? default : new PrivateCloudProperties(
+                    managementCluster,
+                    internet,
+                    (identitySources ?? new ChangeTrackingList<SingleSignOnIdentitySource>()).ToList(),
+                    availability,
+                    encryption,
+                    (extendedNetworkBlocks ?? new ChangeTrackingList<string>()).ToList(),
+                    provisioningState,
+                    circuit,
+                    endpoints,
+                    networkBlock,
+                    managementNetwork,
+                    provisioningNetwork,
+                    vMotionNetwork,
+                    vCenterPassword,
+                    nsxtPassword,
+                    vCenterCertificateThumbprint,
+                    nsxtCertificateThumbprint,
+                    (externalCloudLinks ?? new ChangeTrackingList<ResourceIdentifier>()).ToList(),
+                    secondaryCircuit,
+                    nsxPublicIPQuotaRaised,
+                    virtualNetworkId,
+                    dnsZoneType,
+                    vcfLicense,
+                    default),
+                sku,
+                identity,
+                (zones ?? new ChangeTrackingList<string>()).ToList(),
                 default);
         }
 

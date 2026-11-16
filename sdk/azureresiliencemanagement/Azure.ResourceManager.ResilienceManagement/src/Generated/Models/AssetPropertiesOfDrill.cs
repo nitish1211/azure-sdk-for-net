@@ -18,16 +18,8 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AssetPropertiesOfDrill"/>. </summary>
-        /// <param name="subscription"> Subscription where Drill's internal resources will be created. </param>
-        /// <param name="region"> Region where Drill's internal resources will be created. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="subscription"/> or <paramref name="region"/> is null. </exception>
-        public AssetPropertiesOfDrill(string subscription, string region)
+        public AssetPropertiesOfDrill()
         {
-            Argument.AssertNotNull(subscription, nameof(subscription));
-            Argument.AssertNotNull(region, nameof(region));
-
-            Subscription = subscription;
-            Region = region;
         }
 
         /// <summary> Initializes a new instance of <see cref="AssetPropertiesOfDrill"/>. </summary>
@@ -41,6 +33,19 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
             Region = region;
             ResourceGroup = resourceGroup;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="AssetPropertiesOfDrill"/>. </summary>
+        /// <param name="subscription"> Subscription where Drill's internal resources will be created. </param>
+        /// <param name="region"> Region where Drill's internal resources will be created. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="subscription"/> or <paramref name="region"/> is null. </exception>
+        public AssetPropertiesOfDrill(string subscription, string region) : this()
+        {
+            Argument.AssertNotNull(subscription, nameof(subscription));
+            Argument.AssertNotNull(region, nameof(region));
+
+            Subscription = subscription;
+            Region = region;
         }
 
         /// <summary> Subscription where Drill's internal resources will be created. </summary>

@@ -18,14 +18,12 @@ namespace Azure.ResourceManager.Hci.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="EdgeMachineOSProvisionContent"/>. </summary>
-        /// <param name="target"> Target operating system to support polymorphic resource. </param>
         /// <param name="osProfile"> Operating system profile. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="osProfile"/> is null. </exception>
-        public EdgeMachineOSProvisionContent(ProvisioningOSType target, OSProvisionProfile osProfile)
+        public EdgeMachineOSProvisionContent(OSProvisionProfile osProfile)
         {
             Argument.AssertNotNull(osProfile, nameof(osProfile));
 
-            Target = target;
             OSProfile = osProfile;
             UserDetails = new ChangeTrackingList<HciUserDetails>();
         }
@@ -47,6 +45,14 @@ namespace Azure.ResourceManager.Hci.Models
             DeviceConfiguration = deviceConfiguration;
             CustomConfiguration = customConfiguration;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="EdgeMachineOSProvisionContent"/>. </summary>
+        /// <param name="target"> Target operating system to support polymorphic resource. </param>
+        /// <param name="osProfile"> Operating system profile. </param>
+        public EdgeMachineOSProvisionContent(ProvisioningOSType target, OSProvisionProfile osProfile) : this(osProfile)
+        {
+            Target = target;
         }
 
         /// <summary> Target operating system to support polymorphic resource. </summary>

@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.ApplicationInsights
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ApplicationInsightsWebTestData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ApplicationInsightsWebTestData(AzureLocation location) : base(location)
+        public ApplicationInsightsWebTestData()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.ApplicationInsights
             Kind = kind;
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ApplicationInsightsWebTestData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ApplicationInsightsWebTestData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The kind of WebTest that this web test watches. Choices are ping, multistep and standard. </summary>

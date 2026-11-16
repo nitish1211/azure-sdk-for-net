@@ -19,10 +19,8 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ResilienceManagementAssociatedIdentity"/>. </summary>
-        /// <param name="type"> Identity type linked with the resource. </param>
-        public ResilienceManagementAssociatedIdentity(ManagedServiceIdentityType @type)
+        public ResilienceManagementAssociatedIdentity()
         {
-            Type = @type;
         }
 
         /// <summary> Initializes a new instance of <see cref="ResilienceManagementAssociatedIdentity"/>. </summary>
@@ -34,6 +32,13 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
             Type = @type;
             UserAssignedIdentity = userAssignedIdentity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ResilienceManagementAssociatedIdentity"/>. </summary>
+        /// <param name="type"> Identity type linked with the resource. </param>
+        public ResilienceManagementAssociatedIdentity(ManagedServiceIdentityType @type) : this()
+        {
+            Type = @type;
         }
 
         /// <summary> Identity type linked with the resource. </summary>

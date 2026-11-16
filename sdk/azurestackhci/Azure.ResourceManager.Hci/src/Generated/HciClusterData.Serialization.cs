@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Hci
     /// <summary> Cluster details. </summary>
     public partial class HciClusterData : TrackedResourceData, IJsonModel<HciClusterData>
     {
-        /// <summary> Initializes a new instance of <see cref="HciClusterData"/> for deserialization. </summary>
-        internal HciClusterData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

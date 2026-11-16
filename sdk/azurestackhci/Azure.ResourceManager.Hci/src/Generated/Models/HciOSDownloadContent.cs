@@ -18,14 +18,12 @@ namespace Azure.ResourceManager.Hci.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HciOSDownloadContent"/>. </summary>
-        /// <param name="target"> Target operating system to support polymorphic resource. </param>
         /// <param name="osProfile"> Operating system profile. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="osProfile"/> is null. </exception>
-        public HciOSDownloadContent(ProvisioningOSType target, DownloadOSProfile osProfile)
+        public HciOSDownloadContent(DownloadOSProfile osProfile)
         {
             Argument.AssertNotNull(osProfile, nameof(osProfile));
 
-            Target = target;
             OSProfile = osProfile;
         }
 
@@ -38,6 +36,14 @@ namespace Azure.ResourceManager.Hci.Models
             Target = target;
             OSProfile = osProfile;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="HciOSDownloadContent"/>. </summary>
+        /// <param name="target"> Target operating system to support polymorphic resource. </param>
+        /// <param name="osProfile"> Operating system profile. </param>
+        public HciOSDownloadContent(ProvisioningOSType target, DownloadOSProfile osProfile) : this(osProfile)
+        {
+            Target = target;
         }
 
         /// <summary> Target operating system to support polymorphic resource. </summary>

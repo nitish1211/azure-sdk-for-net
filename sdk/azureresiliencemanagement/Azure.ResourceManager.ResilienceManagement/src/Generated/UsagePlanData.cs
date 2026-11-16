@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.ResilienceManagement
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="UsagePlanData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public UsagePlanData(AzureLocation location) : base(location)
+        public UsagePlanData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.ResilienceManagement
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="UsagePlanData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public UsagePlanData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.Automation
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AutomationAccountData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public AutomationAccountData(AzureLocation location) : base(location)
+        public AutomationAccountData()
         {
         }
 
@@ -43,6 +42,13 @@ namespace Azure.ResourceManager.Automation
             ETag = eTag;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="AutomationAccountData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public AutomationAccountData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Gets or sets the automation account properties. </summary>

@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.AppNetwork
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AppLinkData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public AppLinkData(AzureLocation location) : base(location)
+        public AppLinkData()
         {
         }
 

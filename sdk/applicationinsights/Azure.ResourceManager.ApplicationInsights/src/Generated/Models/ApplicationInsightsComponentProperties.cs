@@ -19,10 +19,8 @@ namespace Azure.ResourceManager.ApplicationInsights.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ApplicationInsightsComponentProperties"/>. </summary>
-        /// <param name="applicationType"> Type of application being monitored. </param>
-        public ApplicationInsightsComponentProperties(ApplicationInsightsApplicationType applicationType)
+        public ApplicationInsightsComponentProperties()
         {
-            ApplicationType = applicationType;
             PrivateLinkScopedResources = new ChangeTrackingList<PrivateLinkScopedResourceReference>();
         }
 

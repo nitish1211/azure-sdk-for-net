@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ApplicationInsights.Models
     /// <summary> A workbook definition. </summary>
     public partial class DeletedWorkbook : DeletedWorkbookData, IJsonModel<DeletedWorkbook>
     {
-        /// <summary> Initializes a new instance of <see cref="DeletedWorkbook"/> for deserialization. </summary>
-        internal DeletedWorkbook()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected override ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

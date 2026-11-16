@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
     /// <summary> Settings for the recovery orchestration groups. </summary>
     public partial class RecoveryGroupsSetting : IJsonModel<RecoveryGroupsSetting>
     {
-        /// <summary> Initializes a new instance of <see cref="RecoveryGroupsSetting"/> for deserialization. </summary>
-        internal RecoveryGroupsSetting()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual RecoveryGroupsSetting PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

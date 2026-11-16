@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.AppNetwork.Models
     /// <summary> AppLinkMember private connect profile. </summary>
     internal partial class PrivateConnectProfile : IJsonModel<PrivateConnectProfile>
     {
-        /// <summary> Initializes a new instance of <see cref="PrivateConnectProfile"/> for deserialization. </summary>
-        internal PrivateConnectProfile()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual PrivateConnectProfile PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

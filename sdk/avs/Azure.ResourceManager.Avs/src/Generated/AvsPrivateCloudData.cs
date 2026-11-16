@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.Avs
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AvsPrivateCloudData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="sku"> The SKU (Stock Keeping Unit) assigned to this resource. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sku"/> is null. </exception>
-        public AvsPrivateCloudData(AzureLocation location, AvsSku sku) : base(location)
+        public AvsPrivateCloudData(AvsSku sku)
         {
             Argument.AssertNotNull(sku, nameof(sku));
 
@@ -50,6 +49,14 @@ namespace Azure.ResourceManager.Avs
             Identity = identity;
             Zones = zones;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="AvsPrivateCloudData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="sku"> The SKU (Stock Keeping Unit) assigned to this resource. </param>
+        public AvsPrivateCloudData(AzureLocation location, AvsSku sku) : this(sku)
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>
@@ -243,40 +250,6 @@ namespace Azure.ResourceManager.Avs
             get
             {
                 return Properties is null ? default : Properties.VMotionNetwork;
-            }
-        }
-
-        /// <summary> Optionally, set the vCenter admin password when the private cloud is created. </summary>
-        public string VCenterPassword
-        {
-            get
-            {
-                return Properties is null ? default : Properties.VCenterPassword;
-            }
-            set
-            {
-                if (Properties is null)
-                {
-                    Properties = new PrivateCloudProperties();
-                }
-                Properties.VCenterPassword = value;
-            }
-        }
-
-        /// <summary> Optionally, set the NSX-T Manager password when the private cloud is created. </summary>
-        public string NsxtPassword
-        {
-            get
-            {
-                return Properties is null ? default : Properties.NsxtPassword;
-            }
-            set
-            {
-                if (Properties is null)
-                {
-                    Properties = new PrivateCloudProperties();
-                }
-                Properties.NsxtPassword = value;
             }
         }
 

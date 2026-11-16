@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Hci.Vm
     /// <summary> The publicIP resource definition. </summary>
     public partial class HciVmPublicIPAddressData : TrackedResourceData, IJsonModel<HciVmPublicIPAddressData>
     {
-        /// <summary> Initializes a new instance of <see cref="HciVmPublicIPAddressData"/> for deserialization. </summary>
-        internal HciVmPublicIPAddressData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

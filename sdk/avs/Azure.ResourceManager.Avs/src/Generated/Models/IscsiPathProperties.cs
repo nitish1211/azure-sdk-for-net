@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.Avs;
 
 namespace Azure.ResourceManager.Avs.Models
 {
@@ -18,13 +17,8 @@ namespace Azure.ResourceManager.Avs.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="IscsiPathProperties"/>. </summary>
-        /// <param name="networkBlock"> CIDR Block for iSCSI path. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="networkBlock"/> is null. </exception>
-        public IscsiPathProperties(string networkBlock)
+        public IscsiPathProperties()
         {
-            Argument.AssertNotNull(networkBlock, nameof(networkBlock));
-
-            NetworkBlock = networkBlock;
         }
 
         /// <summary> Initializes a new instance of <see cref="IscsiPathProperties"/>. </summary>

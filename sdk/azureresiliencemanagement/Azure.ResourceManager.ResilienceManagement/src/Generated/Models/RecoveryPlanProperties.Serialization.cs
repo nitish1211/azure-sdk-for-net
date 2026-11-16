@@ -18,11 +18,6 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
     /// <summary> Properties of the recovery orchestration plan. </summary>
     public partial class RecoveryPlanProperties : IJsonModel<RecoveryPlanProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="RecoveryPlanProperties"/> for deserialization. </summary>
-        internal RecoveryPlanProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual RecoveryPlanProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

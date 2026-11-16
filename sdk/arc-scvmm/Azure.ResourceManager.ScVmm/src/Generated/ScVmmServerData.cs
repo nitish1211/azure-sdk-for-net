@@ -21,10 +21,9 @@ namespace Azure.ResourceManager.ScVmm
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ScVmmServerData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="extendedLocation"> The extended location. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
-        public ScVmmServerData(AzureLocation location, ExtendedLocation extendedLocation) : base(location)
+        public ScVmmServerData(ExtendedLocation extendedLocation)
         {
             Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
 
@@ -52,8 +51,12 @@ namespace Azure.ResourceManager.ScVmm
         /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="extendedLocation"> The extended location. </param>
         /// <param name="fqdn"> Fqdn is the hostname/ip of the vmmServer. </param>
-        public ScVmmServerData(AzureLocation location, ExtendedLocation extendedLocation, string fqdn) : this(location, extendedLocation)
+        /// <exception cref="ArgumentNullException"> <paramref name="fqdn"/> is null. </exception>
+        public ScVmmServerData(AzureLocation location, ExtendedLocation extendedLocation, string fqdn) : this(extendedLocation)
         {
+            Argument.AssertNotNull(fqdn, nameof(fqdn));
+
+            Location = location;
             Fqdn = fqdn;
         }
 

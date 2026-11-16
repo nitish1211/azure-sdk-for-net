@@ -18,15 +18,12 @@ namespace Azure.ResourceManager.Hci.Vm.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HciVmFrontendIPConfiguration"/>. </summary>
-        /// <param name="name"> name for the frontend IP configuration. </param>
         /// <param name="properties"> properties for this frontendIPConfiguration. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="name"/> or <paramref name="properties"/> is null. </exception>
-        public HciVmFrontendIPConfiguration(string name, HciVmFrontendIPConfigurationProperties properties)
+        /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
+        public HciVmFrontendIPConfiguration(HciVmFrontendIPConfigurationProperties properties)
         {
-            Argument.AssertNotNull(name, nameof(name));
             Argument.AssertNotNull(properties, nameof(properties));
 
-            Name = name;
             Properties = properties;
         }
 

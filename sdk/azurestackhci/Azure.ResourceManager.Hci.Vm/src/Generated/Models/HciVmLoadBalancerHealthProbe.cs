@@ -18,15 +18,12 @@ namespace Azure.ResourceManager.Hci.Vm.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HciVmLoadBalancerHealthProbe"/>. </summary>
-        /// <param name="name"> name of the load balancer health probe. </param>
         /// <param name="properties"> load balancer rule properties. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="name"/> or <paramref name="properties"/> is null. </exception>
-        public HciVmLoadBalancerHealthProbe(string name, HciVmLoadBalancerHealthProbeProperties properties)
+        /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
+        public HciVmLoadBalancerHealthProbe(HciVmLoadBalancerHealthProbeProperties properties)
         {
-            Argument.AssertNotNull(name, nameof(name));
             Argument.AssertNotNull(properties, nameof(properties));
 
-            Name = name;
             Properties = properties;
         }
 

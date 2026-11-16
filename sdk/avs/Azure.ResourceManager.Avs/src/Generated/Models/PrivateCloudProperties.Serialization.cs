@@ -154,16 +154,24 @@ namespace Azure.ResourceManager.Avs.Models
                 writer.WritePropertyName("vmotionNetwork"u8);
                 writer.WriteStringValue(VMotionNetwork);
             }
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
             if (Optional.IsDefined(VCenterPassword))
             {
                 writer.WritePropertyName("vcenterPassword"u8);
                 writer.WriteStringValue(VCenterPassword);
             }
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
             if (Optional.IsDefined(NsxtPassword))
             {
                 writer.WritePropertyName("nsxtPassword"u8);
                 writer.WriteStringValue(NsxtPassword);
             }
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
             if (options.Format != "W" && Optional.IsDefined(VCenterCertificateThumbprint))
             {
                 writer.WritePropertyName("vcenterCertificateThumbprint"u8);

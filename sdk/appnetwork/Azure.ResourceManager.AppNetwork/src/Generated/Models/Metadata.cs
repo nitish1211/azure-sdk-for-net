@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.AppNetwork;
 
 namespace Azure.ResourceManager.AppNetwork.Models
 {
@@ -19,13 +18,8 @@ namespace Azure.ResourceManager.AppNetwork.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="Metadata"/>. </summary>
-        /// <param name="resourceId"> Resource ID. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="resourceId"/> is null. </exception>
-        public Metadata(ResourceIdentifier resourceId)
+        public Metadata()
         {
-            Argument.AssertNotNull(resourceId, nameof(resourceId));
-
-            ResourceId = resourceId;
         }
 
         /// <summary> Initializes a new instance of <see cref="Metadata"/>. </summary>

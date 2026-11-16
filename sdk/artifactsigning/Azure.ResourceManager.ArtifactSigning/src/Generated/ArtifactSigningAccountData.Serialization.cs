@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ArtifactSigning
     /// <summary> Artifact signing account resource. </summary>
     public partial class ArtifactSigningAccountData : TrackedResourceData, IJsonModel<ArtifactSigningAccountData>
     {
-        /// <summary> Initializes a new instance of <see cref="ArtifactSigningAccountData"/> for deserialization. </summary>
-        internal ArtifactSigningAccountData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

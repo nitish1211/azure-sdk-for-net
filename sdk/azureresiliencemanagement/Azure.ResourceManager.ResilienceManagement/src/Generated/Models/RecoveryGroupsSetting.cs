@@ -18,13 +18,8 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="RecoveryGroupsSetting"/>. </summary>
-        /// <param name="defaultGroup"> The default recovery orchestration group setting. Every recovery orchestration plan has a default recovery orchestration group. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="defaultGroup"/> is null. </exception>
-        public RecoveryGroupsSetting(RecoveryGroup defaultGroup)
+        public RecoveryGroupsSetting()
         {
-            Argument.AssertNotNull(defaultGroup, nameof(defaultGroup));
-
-            DefaultGroup = defaultGroup;
             AdditionalGroups = new ChangeTrackingList<RecoveryGroup>();
         }
 
@@ -37,6 +32,16 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
             DefaultGroup = defaultGroup;
             AdditionalGroups = additionalGroups;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="RecoveryGroupsSetting"/>. </summary>
+        /// <param name="defaultGroup"> The default recovery orchestration group setting. Every recovery orchestration plan has a default recovery orchestration group. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="defaultGroup"/> is null. </exception>
+        public RecoveryGroupsSetting(RecoveryGroup defaultGroup) : this()
+        {
+            Argument.AssertNotNull(defaultGroup, nameof(defaultGroup));
+
+            DefaultGroup = defaultGroup;
         }
 
         /// <summary> The default recovery orchestration group setting. Every recovery orchestration plan has a default recovery orchestration group. </summary>

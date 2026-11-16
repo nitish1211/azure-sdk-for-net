@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
     /// <summary> Drill asset properties. </summary>
     public partial class AssetPropertiesOfDrill : IJsonModel<AssetPropertiesOfDrill>
     {
-        /// <summary> Initializes a new instance of <see cref="AssetPropertiesOfDrill"/> for deserialization. </summary>
-        internal AssetPropertiesOfDrill()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual AssetPropertiesOfDrill PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

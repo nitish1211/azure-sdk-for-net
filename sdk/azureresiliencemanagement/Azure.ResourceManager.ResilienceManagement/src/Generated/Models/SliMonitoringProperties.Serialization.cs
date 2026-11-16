@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.ResilienceManagement.Models
     /// <summary> SLI monitoring properties of a Drill. At most two SLIs may be selected: at most one Availability and one Latency. </summary>
     public partial class SliMonitoringProperties : IJsonModel<SliMonitoringProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="SliMonitoringProperties"/> for deserialization. </summary>
-        internal SliMonitoringProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual SliMonitoringProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

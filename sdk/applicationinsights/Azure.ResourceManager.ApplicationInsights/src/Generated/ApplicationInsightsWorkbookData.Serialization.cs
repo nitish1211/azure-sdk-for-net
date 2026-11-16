@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ApplicationInsights
     /// <summary> A workbook definition. </summary>
     public partial class ApplicationInsightsWorkbookData : TrackedResourceData, IJsonModel<ApplicationInsightsWorkbookData>
     {
-        /// <summary> Initializes a new instance of <see cref="ApplicationInsightsWorkbookData"/> for deserialization. </summary>
-        internal ApplicationInsightsWorkbookData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

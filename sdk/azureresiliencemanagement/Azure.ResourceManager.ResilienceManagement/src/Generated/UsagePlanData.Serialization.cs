@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ResilienceManagement
     /// <summary> A usage plan resource for Resiliency feature billing. </summary>
     public partial class UsagePlanData : TrackedResourceData, IJsonModel<UsagePlanData>
     {
-        /// <summary> Initializes a new instance of <see cref="UsagePlanData"/> for deserialization. </summary>
-        internal UsagePlanData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

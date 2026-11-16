@@ -21,13 +21,8 @@ namespace Azure.ResourceManager.ScVmm
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ScVmmVirtualMachineInstanceData"/>. </summary>
-        /// <param name="extendedLocation"> Gets or sets the extended location. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
-        public ScVmmVirtualMachineInstanceData(ExtendedLocation extendedLocation)
+        public ScVmmVirtualMachineInstanceData()
         {
-            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
-
-            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> Initializes a new instance of <see cref="ScVmmVirtualMachineInstanceData"/>. </summary>
@@ -43,6 +38,16 @@ namespace Azure.ResourceManager.ScVmm
             Properties = properties;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ScVmmVirtualMachineInstanceData"/>. </summary>
+        /// <param name="extendedLocation"> Gets or sets the extended location. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
+        public ScVmmVirtualMachineInstanceData(ExtendedLocation extendedLocation) : this()
+        {
+            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
+
+            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

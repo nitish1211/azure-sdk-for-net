@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Hci
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HciClusterData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public HciClusterData(AzureLocation location) : base(location)
+        public HciClusterData()
         {
         }
 
@@ -42,6 +41,13 @@ namespace Azure.ResourceManager.Hci
             Identity = identity;
             Kind = kind;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="HciClusterData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public HciClusterData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Cluster properties. </summary>

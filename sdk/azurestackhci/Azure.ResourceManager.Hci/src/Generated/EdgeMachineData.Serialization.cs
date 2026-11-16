@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Hci
     /// <summary> EdgeMachine details. </summary>
     public partial class EdgeMachineData : TrackedResourceData, IJsonModel<EdgeMachineData>
     {
-        /// <summary> Initializes a new instance of <see cref="EdgeMachineData"/> for deserialization. </summary>
-        internal EdgeMachineData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

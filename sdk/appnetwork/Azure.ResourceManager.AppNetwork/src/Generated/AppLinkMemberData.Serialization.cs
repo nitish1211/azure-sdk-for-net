@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.AppNetwork
     /// <summary> A member of an Azure Kubernetes Application Network resource. </summary>
     public partial class AppLinkMemberData : TrackedResourceData, IJsonModel<AppLinkMemberData>
     {
-        /// <summary> Initializes a new instance of <see cref="AppLinkMemberData"/> for deserialization. </summary>
-        internal AppLinkMemberData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

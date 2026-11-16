@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Hci.Vm
     /// <summary> NetworkSecurityGroup resource. </summary>
     public partial class HciVmNetworkSecurityGroupData : TrackedResourceData, IJsonModel<HciVmNetworkSecurityGroupData>
     {
-        /// <summary> Initializes a new instance of <see cref="HciVmNetworkSecurityGroupData"/> for deserialization. </summary>
-        internal HciVmNetworkSecurityGroupData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

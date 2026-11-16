@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Avs.Models
     /// <summary> The properties of an iSCSI path resource. </summary>
     internal partial class IscsiPathProperties : IJsonModel<IscsiPathProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="IscsiPathProperties"/> for deserialization. </summary>
-        internal IscsiPathProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual IscsiPathProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

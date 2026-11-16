@@ -18,11 +18,6 @@ namespace Azure.ResourceManager.Hci.Models
     /// <summary> Properties for resolving configuration drift. </summary>
     public partial class SyncConfigurationDiskJobProperties : EdgeMachineDiskJobProperties, IJsonModel<SyncConfigurationDiskJobProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="SyncConfigurationDiskJobProperties"/> for deserialization. </summary>
-        internal SyncConfigurationDiskJobProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected override EdgeMachineDiskJobProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

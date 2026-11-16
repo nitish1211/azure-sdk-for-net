@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Hci.Vm
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HciVmLoadBalancerData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public HciVmLoadBalancerData(AzureLocation location) : base(location)
+        public HciVmLoadBalancerData()
         {
         }
 

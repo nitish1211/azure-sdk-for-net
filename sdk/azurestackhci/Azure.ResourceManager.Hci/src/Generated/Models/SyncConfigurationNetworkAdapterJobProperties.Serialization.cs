@@ -18,11 +18,6 @@ namespace Azure.ResourceManager.Hci.Models
     /// <summary> Properties for resolving network adapter configuration drift. </summary>
     public partial class SyncConfigurationNetworkAdapterJobProperties : EdgeMachineNetworkAdapterJobProperties, IJsonModel<SyncConfigurationNetworkAdapterJobProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="SyncConfigurationNetworkAdapterJobProperties"/> for deserialization. </summary>
-        internal SyncConfigurationNetworkAdapterJobProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected override EdgeMachineNetworkAdapterJobProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)
