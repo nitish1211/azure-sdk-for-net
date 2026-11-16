@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Sql
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="SqlServerData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public SqlServerData(AzureLocation location) : base(location)
+        public SqlServerData()
         {
         }
 
@@ -42,6 +41,13 @@ namespace Azure.ResourceManager.Sql
             Identity = identity;
             Kind = kind;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="SqlServerData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public SqlServerData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Resource properties. </summary>

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Sql
     /// <summary> An Azure SQL virtual cluster. </summary>
     public partial class VirtualClusterData : TrackedResourceData, IJsonModel<VirtualClusterData>
     {
-        /// <summary> Initializes a new instance of <see cref="VirtualClusterData"/> for deserialization. </summary>
-        internal VirtualClusterData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

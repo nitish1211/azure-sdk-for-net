@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Sql
     /// <summary> An Azure SQL managed instance. </summary>
     public partial class ManagedInstanceData : TrackedResourceData, IJsonModel<ManagedInstanceData>
     {
-        /// <summary> Initializes a new instance of <see cref="ManagedInstanceData"/> for deserialization. </summary>
-        internal ManagedInstanceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

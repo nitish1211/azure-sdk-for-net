@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.AppService.SreAgent
     /// <summary> Site Reliability Engineer (SRE) Agent resource. </summary>
     public partial class SreAgentData : TrackedResourceData, IJsonModel<SreAgentData>
     {
-        /// <summary> Initializes a new instance of <see cref="SreAgentData"/> for deserialization. </summary>
-        internal SreAgentData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

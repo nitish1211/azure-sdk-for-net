@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.StorageDiscovery
     /// <summary> A Storage Discovery Workspace resource. This resource configures the collection of storage account metrics. </summary>
     public partial class StorageDiscoveryWorkspaceData : TrackedResourceData, IJsonModel<StorageDiscoveryWorkspaceData>
     {
-        /// <summary> Initializes a new instance of <see cref="StorageDiscoveryWorkspaceData"/> for deserialization. </summary>
-        internal StorageDiscoveryWorkspaceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

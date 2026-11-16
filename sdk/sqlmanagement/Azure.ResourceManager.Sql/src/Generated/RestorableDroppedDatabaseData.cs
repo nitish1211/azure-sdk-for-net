@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Sql
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="RestorableDroppedDatabaseData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public RestorableDroppedDatabaseData(AzureLocation location) : base(location)
+        public RestorableDroppedDatabaseData()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.Sql
             Properties = properties;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="RestorableDroppedDatabaseData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public RestorableDroppedDatabaseData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Resource properties. </summary>

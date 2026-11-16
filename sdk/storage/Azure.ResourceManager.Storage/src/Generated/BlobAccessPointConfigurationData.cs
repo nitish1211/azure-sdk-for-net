@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.Storage
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="BlobAccessPointConfigurationData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> The resource-specific properties for this resource. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
-        public BlobAccessPointConfigurationData(AzureLocation location, BlobAccessPointConfigurationProperties properties) : base(location)
+        public BlobAccessPointConfigurationData(BlobAccessPointConfigurationProperties properties)
         {
             Argument.AssertNotNull(properties, nameof(properties));
 
@@ -43,6 +42,14 @@ namespace Azure.ResourceManager.Storage
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="BlobAccessPointConfigurationData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="properties"> The resource-specific properties for this resource. </param>
+        public BlobAccessPointConfigurationData(AzureLocation location, BlobAccessPointConfigurationProperties properties) : this(properties)
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

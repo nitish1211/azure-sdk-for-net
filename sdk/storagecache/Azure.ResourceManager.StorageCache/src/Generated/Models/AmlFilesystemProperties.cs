@@ -18,17 +18,12 @@ namespace Azure.ResourceManager.StorageCache.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AmlFilesystemProperties"/>. </summary>
-        /// <param name="storageCapacityTiB"> The size of the AML file system, in TiB. This might be rounded up. </param>
-        /// <param name="filesystemSubnet"> Subnet used for managing the AML file system and for client-facing operations. This subnet should have at least a /24 subnet mask within the VNET's address space. </param>
         /// <param name="maintenanceWindow"> Start time of a 30-minute weekly maintenance window. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="filesystemSubnet"/> or <paramref name="maintenanceWindow"/> is null. </exception>
-        public AmlFilesystemProperties(float storageCapacityTiB, string filesystemSubnet, AmlFileSystemPropertiesMaintenanceWindow maintenanceWindow)
+        /// <exception cref="ArgumentNullException"> <paramref name="maintenanceWindow"/> is null. </exception>
+        public AmlFilesystemProperties(AmlFileSystemPropertiesMaintenanceWindow maintenanceWindow)
         {
-            Argument.AssertNotNull(filesystemSubnet, nameof(filesystemSubnet));
             Argument.AssertNotNull(maintenanceWindow, nameof(maintenanceWindow));
 
-            StorageCapacityTiB = storageCapacityTiB;
-            FilesystemSubnet = filesystemSubnet;
             MaintenanceWindow = maintenanceWindow;
         }
 

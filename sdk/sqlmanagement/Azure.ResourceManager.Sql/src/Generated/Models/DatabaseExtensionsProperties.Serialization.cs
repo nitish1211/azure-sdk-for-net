@@ -15,11 +15,6 @@ namespace Azure.ResourceManager.Sql.Models
 {
     internal partial class DatabaseExtensionsProperties : IJsonModel<DatabaseExtensionsProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="DatabaseExtensionsProperties"/> for deserialization. </summary>
-        internal DatabaseExtensionsProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DatabaseExtensionsProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

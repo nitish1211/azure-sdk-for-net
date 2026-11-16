@@ -18,10 +18,8 @@ namespace Azure.ResourceManager.Sql.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ServerKeyProperties"/>. </summary>
-        /// <param name="serverKeyType"> The server key type like 'ServiceManaged', 'AzureKeyVault'. </param>
-        public ServerKeyProperties(SqlServerKeyType serverKeyType)
+        public ServerKeyProperties()
         {
-            ServerKeyType = serverKeyType;
         }
 
         /// <summary> Initializes a new instance of <see cref="ServerKeyProperties"/>. </summary>

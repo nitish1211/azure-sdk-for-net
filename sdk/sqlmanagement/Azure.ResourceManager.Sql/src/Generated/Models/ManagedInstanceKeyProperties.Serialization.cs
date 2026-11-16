@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Sql.Models
     /// <summary> Properties for a key execution. </summary>
     internal partial class ManagedInstanceKeyProperties : IJsonModel<ManagedInstanceKeyProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="ManagedInstanceKeyProperties"/> for deserialization. </summary>
-        internal ManagedInstanceKeyProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ManagedInstanceKeyProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

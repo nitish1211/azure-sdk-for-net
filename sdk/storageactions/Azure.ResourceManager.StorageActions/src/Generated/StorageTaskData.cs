@@ -20,11 +20,10 @@ namespace Azure.ResourceManager.StorageActions
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="StorageTaskData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="identity"> The managed service identity of the resource. </param>
         /// <param name="properties"> Properties of the storage task. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="identity"/> or <paramref name="properties"/> is null. </exception>
-        public StorageTaskData(AzureLocation location, ManagedServiceIdentity identity, StorageTaskProperties properties) : base(location)
+        public StorageTaskData(ManagedServiceIdentity identity, StorageTaskProperties properties)
         {
             Argument.AssertNotNull(identity, nameof(identity));
             Argument.AssertNotNull(properties, nameof(properties));
@@ -48,6 +47,15 @@ namespace Azure.ResourceManager.StorageActions
             Identity = identity;
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="StorageTaskData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="identity"> The managed service identity of the resource. </param>
+        /// <param name="properties"> Properties of the storage task. </param>
+        public StorageTaskData(AzureLocation location, ManagedServiceIdentity identity, StorageTaskProperties properties) : this(identity, properties)
+        {
+            Location = location;
         }
 
         /// <summary> The managed service identity of the resource. </summary>

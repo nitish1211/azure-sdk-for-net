@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.Storage.Models
     /// <summary> A connection established through Azure Private Link. </summary>
     public partial class BlobAccessPointPrivateLinkConnectionProperties : BlobAccessPointConnectionProperties, IJsonModel<BlobAccessPointPrivateLinkConnectionProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="BlobAccessPointPrivateLinkConnectionProperties"/> for deserialization. </summary>
-        internal BlobAccessPointPrivateLinkConnectionProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected override BlobAccessPointConnectionProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

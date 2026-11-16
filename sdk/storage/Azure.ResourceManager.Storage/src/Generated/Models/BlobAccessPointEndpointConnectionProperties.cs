@@ -15,13 +15,8 @@ namespace Azure.ResourceManager.Storage.Models
     public partial class BlobAccessPointEndpointConnectionProperties : BlobAccessPointConnectionProperties
     {
         /// <summary> Initializes a new instance of <see cref="BlobAccessPointEndpointConnectionProperties"/>. </summary>
-        /// <param name="endpoint"> The backing endpoint, including its protocol, host, optional port, and optional path. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="endpoint"/> is null. </exception>
-        public BlobAccessPointEndpointConnectionProperties(Uri endpoint) : base(BlobAccessPointConnectionType.Endpoint)
+        public BlobAccessPointEndpointConnectionProperties() : base(BlobAccessPointConnectionType.Endpoint)
         {
-            Argument.AssertNotNull(endpoint, nameof(endpoint));
-
-            Endpoint = endpoint;
         }
 
         /// <summary> Initializes a new instance of <see cref="BlobAccessPointEndpointConnectionProperties"/>. </summary>
@@ -33,6 +28,16 @@ namespace Azure.ResourceManager.Storage.Models
         {
             Endpoint = endpoint;
             TlsVerification = tlsVerification;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="BlobAccessPointEndpointConnectionProperties"/>. </summary>
+        /// <param name="endpoint"> The backing endpoint, including its protocol, host, optional port, and optional path. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="endpoint"/> is null. </exception>
+        public BlobAccessPointEndpointConnectionProperties(Uri endpoint) : this()
+        {
+            Argument.AssertNotNull(endpoint, nameof(endpoint));
+
+            Endpoint = endpoint;
         }
 
         /// <summary> The backing endpoint, including its protocol, host, optional port, and optional path. </summary>

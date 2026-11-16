@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Sql.Models
     /// <summary> Properties for a server key execution. </summary>
     internal partial class ServerKeyProperties : IJsonModel<ServerKeyProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="ServerKeyProperties"/> for deserialization. </summary>
-        internal ServerKeyProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ServerKeyProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

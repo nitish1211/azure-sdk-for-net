@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.Sql.Models
     /// <summary> Properties of a job agent. </summary>
     internal partial class JobAgentProperties : IJsonModel<JobAgentProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="JobAgentProperties"/> for deserialization. </summary>
-        internal JobAgentProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual JobAgentProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

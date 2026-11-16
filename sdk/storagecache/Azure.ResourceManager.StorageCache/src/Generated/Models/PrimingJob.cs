@@ -18,16 +18,8 @@ namespace Azure.ResourceManager.StorageCache.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PrimingJob"/>. </summary>
-        /// <param name="primingJobName"> The priming job name. </param>
-        /// <param name="primingManifestUri"> The URL for the priming manifest file to download. This file must be readable from the HPC Cache. When the file is in Azure blob storage the URL should include a Shared Access Signature (SAS) granting read permissions on the blob. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="primingJobName"/> or <paramref name="primingManifestUri"/> is null. </exception>
-        public PrimingJob(string primingJobName, Uri primingManifestUri)
+        public PrimingJob()
         {
-            Argument.AssertNotNull(primingJobName, nameof(primingJobName));
-            Argument.AssertNotNull(primingManifestUri, nameof(primingManifestUri));
-
-            PrimingJobName = primingJobName;
-            PrimingManifestUri = primingManifestUri;
         }
 
         /// <summary> Initializes a new instance of <see cref="PrimingJob"/>. </summary>
@@ -49,6 +41,19 @@ namespace Azure.ResourceManager.StorageCache.Models
             PrimingJobDetails = primingJobDetails;
             PrimingJobPercentComplete = primingJobPercentComplete;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="PrimingJob"/>. </summary>
+        /// <param name="primingJobName"> The priming job name. </param>
+        /// <param name="primingManifestUri"> The URL for the priming manifest file to download. This file must be readable from the HPC Cache. When the file is in Azure blob storage the URL should include a Shared Access Signature (SAS) granting read permissions on the blob. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="primingJobName"/> or <paramref name="primingManifestUri"/> is null. </exception>
+        public PrimingJob(string primingJobName, Uri primingManifestUri) : this()
+        {
+            Argument.AssertNotNull(primingJobName, nameof(primingJobName));
+            Argument.AssertNotNull(primingManifestUri, nameof(primingManifestUri));
+
+            PrimingJobName = primingJobName;
+            PrimingManifestUri = primingManifestUri;
         }
 
         /// <summary> The priming job name. </summary>

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.StorageCache
     /// <summary> A cache instance. Follows Azure Resource Manager standards: https://github.com/Azure/azure-resource-manager-rpc/blob/master/v1.0/resource-api-reference.md. </summary>
     public partial class StorageCacheData : TrackedResourceData, IJsonModel<StorageCacheData>
     {
-        /// <summary> Initializes a new instance of <see cref="StorageCacheData"/> for deserialization. </summary>
-        internal StorageCacheData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Sql
     /// <summary> An Azure SQL job agent. </summary>
     public partial class SqlServerJobAgentData : TrackedResourceData, IJsonModel<SqlServerJobAgentData>
     {
-        /// <summary> Initializes a new instance of <see cref="SqlServerJobAgentData"/> for deserialization. </summary>
-        internal SqlServerJobAgentData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

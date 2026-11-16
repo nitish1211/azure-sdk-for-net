@@ -21,11 +21,6 @@ namespace Azure.ResourceManager.Storage
     /// <summary> The storage account. </summary>
     public partial class StorageAccountData : TrackedResourceData, IJsonModel<StorageAccountData>
     {
-        /// <summary> Initializes a new instance of <see cref="StorageAccountData"/> for deserialization. </summary>
-        internal StorageAccountData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.SqlVirtualMachine
     /// <summary> A SQL virtual machine. </summary>
     public partial class SqlVmData : TrackedResourceData, IJsonModel<SqlVmData>
     {
-        /// <summary> Initializes a new instance of <see cref="SqlVmData"/> for deserialization. </summary>
-        internal SqlVmData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)
@@ -160,7 +155,6 @@ namespace Azure.ResourceManager.SqlVirtualMachine
             IDictionary<string, string> tags = default;
             AzureLocation location = default;
             SqlVirtualMachineProperties properties = default;
-            string sqlVmName = default;
             ManagedServiceIdentity identity = default;
             IDictionary<string, BinaryData> additionalBinaryDataProperties = new ChangeTrackingDictionary<string, BinaryData>();
             foreach (var prop in element.EnumerateObject())
@@ -254,7 +248,6 @@ namespace Azure.ResourceManager.SqlVirtualMachine
                 tags ?? new ChangeTrackingDictionary<string, string>(),
                 location,
                 properties,
-                sqlVmName,
                 identity,
                 additionalBinaryDataProperties);
         }

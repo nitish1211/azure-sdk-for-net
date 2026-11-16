@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Sql
     /// <summary> A restorable dropped managed database resource. </summary>
     public partial class RestorableDroppedManagedDatabaseData : TrackedResourceData, IJsonModel<RestorableDroppedManagedDatabaseData>
     {
-        /// <summary> Initializes a new instance of <see cref="RestorableDroppedManagedDatabaseData"/> for deserialization. </summary>
-        internal RestorableDroppedManagedDatabaseData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

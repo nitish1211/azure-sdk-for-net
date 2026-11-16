@@ -18,10 +18,8 @@ namespace Azure.ResourceManager.Sql.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ServerConfigurationOptionProperties"/>. </summary>
-        /// <param name="serverConfigurationOptionValue"> Value of the server configuration option. </param>
-        public ServerConfigurationOptionProperties(int serverConfigurationOptionValue)
+        public ServerConfigurationOptionProperties()
         {
-            ServerConfigurationOptionValue = serverConfigurationOptionValue;
         }
 
         /// <summary> Initializes a new instance of <see cref="ServerConfigurationOptionProperties"/>. </summary>

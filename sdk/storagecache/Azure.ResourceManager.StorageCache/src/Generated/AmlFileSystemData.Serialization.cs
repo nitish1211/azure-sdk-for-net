@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.StorageCache
     /// <summary> An AML file system instance. Follows Azure Resource Manager standards: https://github.com/Azure/azure-resource-manager-rpc/blob/master/v1.0/resource-api-reference.md. </summary>
     public partial class AmlFileSystemData : TrackedResourceData, IJsonModel<AmlFileSystemData>
     {
-        /// <summary> Initializes a new instance of <see cref="AmlFileSystemData"/> for deserialization. </summary>
-        internal AmlFileSystemData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

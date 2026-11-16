@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Azure.ResourceManager.Sovereign;
 
 namespace Azure.ResourceManager.Sovereign.Models
@@ -19,16 +18,9 @@ namespace Azure.ResourceManager.Sovereign.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="SovereignViewProperties"/>. </summary>
-        /// <param name="scope"> The scope to apply for configuration. </param>
-        /// <param name="policyInitiatives"> The policy initiatives selected for the sovereign view. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="scope"/> or <paramref name="policyInitiatives"/> is null. </exception>
-        public SovereignViewProperties(SovereignViewScope scope, IEnumerable<SovereignViewPolicyInitiativeDetail> policyInitiatives)
+        public SovereignViewProperties()
         {
-            Argument.AssertNotNull(scope, nameof(scope));
-            Argument.AssertNotNull(policyInitiatives, nameof(policyInitiatives));
-
-            Scope = scope;
-            PolicyInitiatives = policyInitiatives.ToList();
+            PolicyInitiatives = new ChangeTrackingList<SovereignViewPolicyInitiativeDetail>();
         }
 
         /// <summary> Initializes a new instance of <see cref="SovereignViewProperties"/>. </summary>

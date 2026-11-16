@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.Storage
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ContextCacheData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> The resource-specific properties for this resource. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
-        public ContextCacheData(AzureLocation location, ContextCacheProperties properties) : base(location)
+        public ContextCacheData(ContextCacheProperties properties)
         {
             Argument.AssertNotNull(properties, nameof(properties));
 
@@ -45,6 +44,14 @@ namespace Azure.ResourceManager.Storage
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ContextCacheData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="properties"> The resource-specific properties for this resource. </param>
+        public ContextCacheData(AzureLocation location, ContextCacheProperties properties) : this(properties)
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

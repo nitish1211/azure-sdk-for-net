@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Sql
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ElasticPoolData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ElasticPoolData(AzureLocation location) : base(location)
+        public ElasticPoolData()
         {
         }
 
@@ -48,6 +47,13 @@ namespace Azure.ResourceManager.Sql
             Sku = sku;
             Kind = kind;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ElasticPoolData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ElasticPoolData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Resource properties. </summary>

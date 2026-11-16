@@ -18,15 +18,8 @@ namespace Azure.ResourceManager.Storage.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ContextCacheContainerProperties"/>. </summary>
-        /// <param name="modelName"> The model name associated with this container (e.g., gpt-4, claude-3). </param>
-        /// <param name="provider"> The AI provider associated with this container. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="modelName"/> is null. </exception>
-        public ContextCacheContainerProperties(string modelName, AIProvider provider)
+        public ContextCacheContainerProperties()
         {
-            Argument.AssertNotNull(modelName, nameof(modelName));
-
-            ModelName = modelName;
-            Provider = provider;
         }
 
         /// <summary> Initializes a new instance of <see cref="ContextCacheContainerProperties"/>. </summary>
@@ -44,6 +37,18 @@ namespace Azure.ResourceManager.Storage.Models
             TimeToLiveInDays = timeToLiveInDays;
             ProvisioningState = provisioningState;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ContextCacheContainerProperties"/>. </summary>
+        /// <param name="modelName"> The model name associated with this container (e.g., gpt-4, claude-3). </param>
+        /// <param name="provider"> The AI provider associated with this container. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="modelName"/> is null. </exception>
+        public ContextCacheContainerProperties(string modelName, AIProvider provider) : this()
+        {
+            Argument.AssertNotNull(modelName, nameof(modelName));
+
+            ModelName = modelName;
+            Provider = provider;
         }
 
         /// <summary> Container description. </summary>

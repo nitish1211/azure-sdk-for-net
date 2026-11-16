@@ -16,23 +16,8 @@ namespace Azure.ResourceManager.Storage.Models
     public partial class BlobAccessPointPrivateLinkConnectionProperties : BlobAccessPointConnectionProperties
     {
         /// <summary> Initializes a new instance of <see cref="BlobAccessPointPrivateLinkConnectionProperties"/>. </summary>
-        /// <param name="privateLinkIdType"> Indicates that privateLinkId contains an Azure resource ID. </param>
-        /// <param name="privateLinkId"> The Azure resource ID of the backing Private Link service. </param>
-        /// <param name="privateLinkLocation"> The Azure region in which the private endpoint is provisioned. </param>
-        /// <param name="requestMessage"> The connection request message sent to the Private Link owner. </param>
-        /// <param name="endpoint"> The backing endpoint as seen by the target of the Private Link. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="privateLinkId"/>, <paramref name="requestMessage"/> or <paramref name="endpoint"/> is null. </exception>
-        public BlobAccessPointPrivateLinkConnectionProperties(BlobAccessPointPrivateLinkIdType privateLinkIdType, ResourceIdentifier privateLinkId, AzureLocation privateLinkLocation, string requestMessage, Uri endpoint) : base(BlobAccessPointConnectionType.PrivateLink)
+        public BlobAccessPointPrivateLinkConnectionProperties() : base(BlobAccessPointConnectionType.PrivateLink)
         {
-            Argument.AssertNotNull(privateLinkId, nameof(privateLinkId));
-            Argument.AssertNotNull(requestMessage, nameof(requestMessage));
-            Argument.AssertNotNull(endpoint, nameof(endpoint));
-
-            PrivateLinkIdType = privateLinkIdType;
-            PrivateLinkId = privateLinkId;
-            PrivateLinkLocation = privateLinkLocation;
-            RequestMessage = requestMessage;
-            Endpoint = endpoint;
         }
 
         /// <summary> Initializes a new instance of <see cref="BlobAccessPointPrivateLinkConnectionProperties"/>. </summary>
@@ -56,6 +41,26 @@ namespace Azure.ResourceManager.Storage.Models
             Endpoint = endpoint;
             TlsVerification = tlsVerification;
             PrivateEndpointName = privateEndpointName;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="BlobAccessPointPrivateLinkConnectionProperties"/>. </summary>
+        /// <param name="privateLinkIdType"> Indicates that privateLinkId contains an Azure resource ID. </param>
+        /// <param name="privateLinkId"> The Azure resource ID of the backing Private Link service. </param>
+        /// <param name="privateLinkLocation"> The Azure region in which the private endpoint is provisioned. </param>
+        /// <param name="requestMessage"> The connection request message sent to the Private Link owner. </param>
+        /// <param name="endpoint"> The backing endpoint as seen by the target of the Private Link. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="privateLinkId"/>, <paramref name="requestMessage"/> or <paramref name="endpoint"/> is null. </exception>
+        public BlobAccessPointPrivateLinkConnectionProperties(BlobAccessPointPrivateLinkIdType privateLinkIdType, ResourceIdentifier privateLinkId, AzureLocation privateLinkLocation, string requestMessage, Uri endpoint) : this()
+        {
+            Argument.AssertNotNull(privateLinkId, nameof(privateLinkId));
+            Argument.AssertNotNull(requestMessage, nameof(requestMessage));
+            Argument.AssertNotNull(endpoint, nameof(endpoint));
+
+            PrivateLinkIdType = privateLinkIdType;
+            PrivateLinkId = privateLinkId;
+            PrivateLinkLocation = privateLinkLocation;
+            RequestMessage = requestMessage;
+            Endpoint = endpoint;
         }
 
         /// <summary> Indicates that privateLinkId contains an Azure resource ID. </summary>

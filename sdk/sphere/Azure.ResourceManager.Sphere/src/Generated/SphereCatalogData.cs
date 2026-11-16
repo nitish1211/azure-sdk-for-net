@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Sphere
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="SphereCatalogData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public SphereCatalogData(AzureLocation location) : base(location)
+        public SphereCatalogData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.Sphere
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="SphereCatalogData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public SphereCatalogData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

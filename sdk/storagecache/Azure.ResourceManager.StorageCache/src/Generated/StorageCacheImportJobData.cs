@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.StorageCache
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="StorageCacheImportJobData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public StorageCacheImportJobData(AzureLocation location) : base(location)
+        public StorageCacheImportJobData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.StorageCache
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="StorageCacheImportJobData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public StorageCacheImportJobData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the import job. </summary>

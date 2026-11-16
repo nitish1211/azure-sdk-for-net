@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.StorageDiscovery
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="StorageDiscoveryWorkspaceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public StorageDiscoveryWorkspaceData(AzureLocation location) : base(location)
+        public StorageDiscoveryWorkspaceData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.StorageDiscovery
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="StorageDiscoveryWorkspaceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public StorageDiscoveryWorkspaceData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

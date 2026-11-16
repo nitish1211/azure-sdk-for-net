@@ -17,16 +17,8 @@ namespace Azure.ResourceManager.Sql.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DatabaseExtensionsProperties"/>. </summary>
-        /// <param name="operationMode"> Operation mode of the operation: Import, Export, or PolybaseImport. </param>
-        /// <param name="storageKeyType"> Storage key type: StorageAccessKey, SharedAccessKey or ManagedIdentity. </param>
-        /// <param name="storageKey"> Storage key for the storage account. If StorageKeyType is ManagedIdentity, this field should specify the Managed Identity's resource ID. </param>
-        /// <param name="storageUri"> Storage Uri for the storage account. </param>
-        public DatabaseExtensionsProperties(DatabaseExtensionOperationMode operationMode, StorageKeyType storageKeyType, string storageKey, Uri storageUri)
+        public DatabaseExtensionsProperties()
         {
-            OperationMode = operationMode;
-            StorageKeyType = storageKeyType;
-            StorageKey = storageKey;
-            StorageUri = storageUri;
         }
 
         /// <summary> Initializes a new instance of <see cref="DatabaseExtensionsProperties"/>. </summary>

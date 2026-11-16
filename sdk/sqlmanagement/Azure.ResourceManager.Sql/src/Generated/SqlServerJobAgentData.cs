@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Sql
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="SqlServerJobAgentData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public SqlServerJobAgentData(AzureLocation location) : base(location)
+        public SqlServerJobAgentData()
         {
         }
 
@@ -42,6 +41,13 @@ namespace Azure.ResourceManager.Sql
             Sku = sku;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="SqlServerJobAgentData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public SqlServerJobAgentData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Resource properties. </summary>

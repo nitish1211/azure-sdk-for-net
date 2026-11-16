@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.StorageCache
     /// <summary> An auto export job instance. Follows Azure Resource Manager standards: https://github.com/Azure/azure-resource-manager-rpc/blob/master/v1.0/resource-api-reference.md. </summary>
     public partial class AutoExportJobData : TrackedResourceData, IJsonModel<AutoExportJobData>
     {
-        /// <summary> Initializes a new instance of <see cref="AutoExportJobData"/> for deserialization. </summary>
-        internal AutoExportJobData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

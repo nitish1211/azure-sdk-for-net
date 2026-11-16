@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.StorageCache.Models
     /// <summary> A priming job instance. </summary>
     public partial class PrimingJob : IJsonModel<PrimingJob>
     {
-        /// <summary> Initializes a new instance of <see cref="PrimingJob"/> for deserialization. </summary>
-        internal PrimingJob()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual PrimingJob PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

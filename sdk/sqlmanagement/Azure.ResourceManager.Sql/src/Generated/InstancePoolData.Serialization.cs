@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Sql
     /// <summary> An Azure SQL instance pool. </summary>
     public partial class InstancePoolData : TrackedResourceData, IJsonModel<InstancePoolData>
     {
-        /// <summary> Initializes a new instance of <see cref="InstancePoolData"/> for deserialization. </summary>
-        internal InstancePoolData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

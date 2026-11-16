@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.StandbyPool
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="StandbyContainerGroupPoolData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public StandbyContainerGroupPoolData(AzureLocation location) : base(location)
+        public StandbyContainerGroupPoolData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.StandbyPool
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="StandbyContainerGroupPoolData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public StandbyContainerGroupPoolData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

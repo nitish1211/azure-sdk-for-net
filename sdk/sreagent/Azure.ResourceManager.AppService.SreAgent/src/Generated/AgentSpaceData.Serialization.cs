@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.AppService.SreAgent
     /// <summary> SRE Agent Space resource. </summary>
     public partial class AgentSpaceData : TrackedResourceData, IJsonModel<AgentSpaceData>
     {
-        /// <summary> Initializes a new instance of <see cref="AgentSpaceData"/> for deserialization. </summary>
-        internal AgentSpaceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

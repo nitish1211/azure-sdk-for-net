@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Sovereign.Models
     /// <summary> The properties of the sovereign view resource type. </summary>
     public partial class SovereignViewProperties : IJsonModel<SovereignViewProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="SovereignViewProperties"/> for deserialization. </summary>
-        internal SovereignViewProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual SovereignViewProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

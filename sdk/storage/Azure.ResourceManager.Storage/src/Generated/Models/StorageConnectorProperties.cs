@@ -18,14 +18,12 @@ namespace Azure.ResourceManager.Storage.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="StorageConnectorProperties"/>. </summary>
-        /// <param name="dataSourceType"> The type of backing data source for this Storage Connector. </param>
         /// <param name="source"> Information about how to communicate with and authenticate to the backing data store. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="source"/> is null. </exception>
-        public StorageConnectorProperties(StorageConnectorDataSourceType dataSourceType, StorageConnectorSource source)
+        public StorageConnectorProperties(StorageConnectorSource source)
         {
             Argument.AssertNotNull(source, nameof(source));
 
-            DataSourceType = dataSourceType;
             Source = source;
         }
 
@@ -56,6 +54,14 @@ namespace Azure.ResourceManager.Storage.Models
             Source = source;
             ProvisioningState = provisioningState;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="StorageConnectorProperties"/>. </summary>
+        /// <param name="dataSourceType"> The type of backing data source for this Storage Connector. </param>
+        /// <param name="source"> Information about how to communicate with and authenticate to the backing data store. </param>
+        public StorageConnectorProperties(StorageConnectorDataSourceType dataSourceType, StorageConnectorSource source) : this(source)
+        {
+            DataSourceType = dataSourceType;
         }
 
         /// <summary> System-generated GUID identifier for the Storage Connector. Not a valid input parameter when creating. </summary>

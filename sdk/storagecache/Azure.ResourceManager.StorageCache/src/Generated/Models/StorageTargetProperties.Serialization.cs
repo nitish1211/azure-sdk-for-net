@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.StorageCache.Models
     /// <summary> Properties of the Storage Target. </summary>
     internal partial class StorageTargetProperties : IJsonModel<StorageTargetProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="StorageTargetProperties"/> for deserialization. </summary>
-        internal StorageTargetProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual StorageTargetProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

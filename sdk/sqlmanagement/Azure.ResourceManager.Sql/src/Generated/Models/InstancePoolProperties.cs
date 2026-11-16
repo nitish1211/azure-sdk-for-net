@@ -19,15 +19,10 @@ namespace Azure.ResourceManager.Sql.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="InstancePoolProperties"/>. </summary>
-        /// <param name="subnetId"> Resource ID of the subnet to place this instance pool in. </param>
         /// <param name="vCores"> Count of vCores belonging to this instance pool. </param>
         /// <param name="licenseType"> The license type. Possible values are 'LicenseIncluded' (price for SQL license is included) and 'BasePrice' (without SQL license price). </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="subnetId"/> is null. </exception>
-        public InstancePoolProperties(ResourceIdentifier subnetId, int vCores, InstancePoolLicenseType licenseType)
+        public InstancePoolProperties(int vCores, InstancePoolLicenseType licenseType)
         {
-            Argument.AssertNotNull(subnetId, nameof(subnetId));
-
-            SubnetId = subnetId;
             VCores = vCores;
             LicenseType = licenseType;
         }

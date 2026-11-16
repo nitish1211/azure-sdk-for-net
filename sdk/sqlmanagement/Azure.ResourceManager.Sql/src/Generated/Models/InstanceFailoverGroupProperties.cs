@@ -20,17 +20,15 @@ namespace Azure.ResourceManager.Sql.Models
 
         /// <summary> Initializes a new instance of <see cref="InstanceFailoverGroupProperties"/>. </summary>
         /// <param name="readWriteEndpoint"> Read-write endpoint of the failover group instance. </param>
-        /// <param name="partnerRegions"> Partner region information for the failover group. </param>
         /// <param name="managedInstancePairs"> List of managed instance pairs in the failover group. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="readWriteEndpoint"/>, <paramref name="partnerRegions"/> or <paramref name="managedInstancePairs"/> is null. </exception>
-        public InstanceFailoverGroupProperties(InstanceFailoverGroupReadWriteEndpoint readWriteEndpoint, IEnumerable<PartnerRegionInfo> partnerRegions, IEnumerable<ManagedInstancePairInfo> managedInstancePairs)
+        /// <exception cref="ArgumentNullException"> <paramref name="readWriteEndpoint"/> or <paramref name="managedInstancePairs"/> is null. </exception>
+        public InstanceFailoverGroupProperties(InstanceFailoverGroupReadWriteEndpoint readWriteEndpoint, IEnumerable<ManagedInstancePairInfo> managedInstancePairs)
         {
             Argument.AssertNotNull(readWriteEndpoint, nameof(readWriteEndpoint));
-            Argument.AssertNotNull(partnerRegions, nameof(partnerRegions));
             Argument.AssertNotNull(managedInstancePairs, nameof(managedInstancePairs));
 
             ReadWriteEndpoint = readWriteEndpoint;
-            PartnerRegions = partnerRegions.ToList();
+            PartnerRegions = new ChangeTrackingList<PartnerRegionInfo>();
             ManagedInstancePairs = managedInstancePairs.ToList();
         }
 

@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.Storage
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="StorageAccountData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public StorageAccountData(AzureLocation location) : base(location)
+        public StorageAccountData()
         {
             Zones = new ChangeTrackingList<string>();
         }
@@ -52,6 +51,13 @@ namespace Azure.ResourceManager.Storage
             Zones = zones;
             Placement = placement;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="StorageAccountData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public StorageAccountData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the storage account. </summary>

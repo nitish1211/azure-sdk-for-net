@@ -19,13 +19,8 @@ namespace Azure.ResourceManager.Sql.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="JobAgentProperties"/>. </summary>
-        /// <param name="databaseId"> Resource ID of the database to store job metadata in. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="databaseId"/> is null. </exception>
-        public JobAgentProperties(ResourceIdentifier databaseId)
+        public JobAgentProperties()
         {
-            Argument.AssertNotNull(databaseId, nameof(databaseId));
-
-            DatabaseId = databaseId;
         }
 
         /// <summary> Initializes a new instance of <see cref="JobAgentProperties"/>. </summary>

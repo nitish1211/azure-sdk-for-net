@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.StorageCache
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="StorageCacheData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public StorageCacheData(AzureLocation location) : base(location)
+        public StorageCacheData()
         {
         }
 
@@ -43,6 +42,13 @@ namespace Azure.ResourceManager.StorageCache
             Identity = identity;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="StorageCacheData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public StorageCacheData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the cache. </summary>

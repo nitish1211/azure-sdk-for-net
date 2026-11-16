@@ -19,11 +19,9 @@ namespace Azure.ResourceManager.StorageCache.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="StorageTargetProperties"/>. </summary>
-        /// <param name="targetType"> Type of the Storage Target. </param>
-        public StorageTargetProperties(StorageTargetType targetType)
+        public StorageTargetProperties()
         {
             Junctions = new ChangeTrackingList<NamespaceJunction>();
-            TargetType = targetType;
         }
 
         /// <summary> Initializes a new instance of <see cref="StorageTargetProperties"/>. </summary>

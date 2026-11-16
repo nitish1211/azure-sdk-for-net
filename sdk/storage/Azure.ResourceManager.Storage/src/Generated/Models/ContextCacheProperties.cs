@@ -18,10 +18,8 @@ namespace Azure.ResourceManager.Storage.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ContextCacheProperties"/>. </summary>
-        /// <param name="accountKind"> The kind of account determining storage topology. </param>
-        public ContextCacheProperties(ContextCacheAccountKind accountKind)
+        public ContextCacheProperties()
         {
-            AccountKind = accountKind;
         }
 
         /// <summary> Initializes a new instance of <see cref="ContextCacheProperties"/>. </summary>
@@ -37,6 +35,13 @@ namespace Azure.ResourceManager.Storage.Models
             ProvisioningState = provisioningState;
             Encryption = encryption;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ContextCacheProperties"/>. </summary>
+        /// <param name="accountKind"> The kind of account determining storage topology. </param>
+        public ContextCacheProperties(ContextCacheAccountKind accountKind) : this()
+        {
+            AccountKind = accountKind;
         }
 
         /// <summary> The kind of account determining storage topology. </summary>

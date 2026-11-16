@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Storage.Models
     /// <summary> Details of a container within a Context Cache. </summary>
     public partial class ContextCacheContainerProperties : IJsonModel<ContextCacheContainerProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="ContextCacheContainerProperties"/> for deserialization. </summary>
-        internal ContextCacheContainerProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ContextCacheContainerProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

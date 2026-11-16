@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.Storage
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="StorageConnectorData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> The properties of the Storage Connector. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
-        public StorageConnectorData(AzureLocation location, StorageConnectorProperties properties) : base(location)
+        public StorageConnectorData(StorageConnectorProperties properties)
         {
             Argument.AssertNotNull(properties, nameof(properties));
 
@@ -43,6 +42,14 @@ namespace Azure.ResourceManager.Storage
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="StorageConnectorData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="properties"> The properties of the Storage Connector. </param>
+        public StorageConnectorData(AzureLocation location, StorageConnectorProperties properties) : this(properties)
+        {
+            Location = location;
         }
 
         /// <summary> The properties of the Storage Connector. </summary>

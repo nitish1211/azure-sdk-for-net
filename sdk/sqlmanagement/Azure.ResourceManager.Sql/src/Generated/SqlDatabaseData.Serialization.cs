@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Sql
     /// <summary> A database resource. </summary>
     public partial class SqlDatabaseData : TrackedResourceData, IJsonModel<SqlDatabaseData>
     {
-        /// <summary> Initializes a new instance of <see cref="SqlDatabaseData"/> for deserialization. </summary>
-        internal SqlDatabaseData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

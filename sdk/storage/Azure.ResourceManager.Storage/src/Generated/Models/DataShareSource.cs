@@ -15,15 +15,12 @@ namespace Azure.ResourceManager.Storage.Models
     public partial class DataShareSource : StorageConnectorSource
     {
         /// <summary> Initializes a new instance of <see cref="DataShareSource"/>. </summary>
-        /// <param name="connection"> Details for how to connect to the backing data store. </param>
         /// <param name="authProperties"> Details for how to authenticate to the backing data store. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="connection"/> or <paramref name="authProperties"/> is null. </exception>
-        public DataShareSource(StorageConnectorConnection connection, StorageConnectorAuthProperties authProperties) : base(StorageConnectorSourceType.DataShare)
+        /// <exception cref="ArgumentNullException"> <paramref name="authProperties"/> is null. </exception>
+        public DataShareSource(StorageConnectorAuthProperties authProperties) : base(StorageConnectorSourceType.DataShare)
         {
-            Argument.AssertNotNull(connection, nameof(connection));
             Argument.AssertNotNull(authProperties, nameof(authProperties));
 
-            Connection = connection;
             AuthProperties = authProperties;
         }
 
@@ -36,6 +33,17 @@ namespace Azure.ResourceManager.Storage.Models
         {
             Connection = connection;
             AuthProperties = authProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DataShareSource"/>. </summary>
+        /// <param name="connection"> Details for how to connect to the backing data store. </param>
+        /// <param name="authProperties"> Details for how to authenticate to the backing data store. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="connection"/> is null. </exception>
+        public DataShareSource(StorageConnectorConnection connection, StorageConnectorAuthProperties authProperties) : this(authProperties)
+        {
+            Argument.AssertNotNull(connection, nameof(connection));
+
+            Connection = connection;
         }
 
         /// <summary> Details for how to connect to the backing data store. </summary>

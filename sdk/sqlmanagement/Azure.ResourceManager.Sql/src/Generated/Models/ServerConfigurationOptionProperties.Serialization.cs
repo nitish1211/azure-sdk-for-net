@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Sql.Models
     /// <summary> The properties of server configuration option. </summary>
     internal partial class ServerConfigurationOptionProperties : IJsonModel<ServerConfigurationOptionProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="ServerConfigurationOptionProperties"/> for deserialization. </summary>
-        internal ServerConfigurationOptionProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ServerConfigurationOptionProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)
