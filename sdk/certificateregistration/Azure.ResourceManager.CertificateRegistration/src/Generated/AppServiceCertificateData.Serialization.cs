@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.CertificateRegistration
     /// <summary> Key Vault container ARM resource for a certificate that is purchased through Azure. </summary>
     public partial class AppServiceCertificateData : TrackedResourceData, IJsonModel<AppServiceCertificateData>
     {
-        /// <summary> Initializes a new instance of <see cref="AppServiceCertificateData"/> for deserialization. </summary>
-        internal AppServiceCertificateData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.CognitiveServices.Models
     /// <summary> Properties of a Cognitive Services managed compute deployment. </summary>
     public partial class CognitiveServicesManagedComputeDeploymentProperties : IJsonModel<CognitiveServicesManagedComputeDeploymentProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="CognitiveServicesManagedComputeDeploymentProperties"/> for deserialization. </summary>
-        internal CognitiveServicesManagedComputeDeploymentProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual CognitiveServicesManagedComputeDeploymentProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

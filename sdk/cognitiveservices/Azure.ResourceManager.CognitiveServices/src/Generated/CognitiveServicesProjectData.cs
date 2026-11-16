@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.CognitiveServices
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CognitiveServicesProjectData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public CognitiveServicesProjectData(AzureLocation location) : base(location)
+        public CognitiveServicesProjectData()
         {
         }
 
@@ -43,6 +42,13 @@ namespace Azure.ResourceManager.CognitiveServices
             ETag = eTag;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CognitiveServicesProjectData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public CognitiveServicesProjectData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of Cognitive Services project. </summary>

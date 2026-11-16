@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Communication
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CommunicationServiceResourceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public CommunicationServiceResourceData(AzureLocation location) : base(location)
+        public CommunicationServiceResourceData()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.Communication
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CommunicationServiceResourceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public CommunicationServiceResourceData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The properties of the service. </summary>

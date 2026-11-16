@@ -19,13 +19,8 @@ namespace Azure.ResourceManager.Communication.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CommunicationServiceProperties"/>. </summary>
-        /// <param name="dataLocation"> The location where the communication service stores its data at rest. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="dataLocation"/> is null. </exception>
-        public CommunicationServiceProperties(string dataLocation)
+        public CommunicationServiceProperties()
         {
-            Argument.AssertNotNull(dataLocation, nameof(dataLocation));
-
-            DataLocation = dataLocation;
             LinkedDomains = new ChangeTrackingList<string>();
         }
 

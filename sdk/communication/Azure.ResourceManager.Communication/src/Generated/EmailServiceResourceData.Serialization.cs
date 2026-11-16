@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Communication
     /// <summary> A class representing an EmailService resource. </summary>
     public partial class EmailServiceResourceData : TrackedResourceData, IJsonModel<EmailServiceResourceData>
     {
-        /// <summary> Initializes a new instance of <see cref="EmailServiceResourceData"/> for deserialization. </summary>
-        internal EmailServiceResourceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

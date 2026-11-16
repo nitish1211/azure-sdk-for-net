@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.CognitiveServices
     /// <summary> Cognitive Services account is an Azure resource representing the provisioned account, it's type, location and SKU. </summary>
     public partial class CognitiveServicesAccountData : TrackedResourceData, IJsonModel<CognitiveServicesAccountData>
     {
-        /// <summary> Initializes a new instance of <see cref="CognitiveServicesAccountData"/> for deserialization. </summary>
-        internal CognitiveServicesAccountData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

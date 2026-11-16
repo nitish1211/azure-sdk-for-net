@@ -20,15 +20,12 @@ namespace Azure.ResourceManager.CognitiveServices.Models
 
         /// <summary> Initializes a new instance of <see cref="CognitiveServicesWorkbenchProperties"/>. </summary>
         /// <param name="targetClusterId"> Resource ID of the Foundry Compute or virtual cluster that hosts this workbench. Changing the cluster requires the workbench to be stopped. </param>
-        /// <param name="imageLink"> Container image URI (e.g., MCR or ACR image path) for the workbench. Immutable after creation. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="targetClusterId"/> or <paramref name="imageLink"/> is null. </exception>
-        public CognitiveServicesWorkbenchProperties(string targetClusterId, string imageLink)
+        /// <exception cref="ArgumentNullException"> <paramref name="targetClusterId"/> is null. </exception>
+        public CognitiveServicesWorkbenchProperties(string targetClusterId)
         {
             Argument.AssertNotNull(targetClusterId, nameof(targetClusterId));
-            Argument.AssertNotNull(imageLink, nameof(imageLink));
 
             TargetClusterId = targetClusterId;
-            ImageLink = imageLink;
             Errors = new ChangeTrackingList<ResponseError>();
         }
 

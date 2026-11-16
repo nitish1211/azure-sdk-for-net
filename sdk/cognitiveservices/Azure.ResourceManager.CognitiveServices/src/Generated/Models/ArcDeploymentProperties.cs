@@ -19,23 +19,13 @@ namespace Azure.ResourceManager.CognitiveServices.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ArcDeploymentProperties"/>. </summary>
-        /// <param name="model"> Model reference. Required on creation and immutable after creation. </param>
-        /// <param name="extensionId"> Full Azure resource ID of the Foundry inference extension on the target Arc-enabled Kubernetes cluster. Required on creation and immutable after creation. </param>
-        /// <param name="runtime"> Inference runtime. Required on creation and immutable after creation. </param>
-        /// <param name="compute"> Compute type for the deployment. Required on creation and immutable after creation. </param>
         /// <param name="replicas"> Physical replica count on the Arc cluster. </param>
         /// <param name="resources"> Per-replica Kubernetes resource requests and limits. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="model"/>, <paramref name="extensionId"/> or <paramref name="resources"/> is null. </exception>
-        public ArcDeploymentProperties(ArcDeploymentModel model, ResourceIdentifier extensionId, ArcDeploymentRuntime runtime, ArcDeploymentComputeType compute, int replicas, ArcDeploymentKubernetesResources resources)
+        /// <exception cref="ArgumentNullException"> <paramref name="resources"/> is null. </exception>
+        public ArcDeploymentProperties(int replicas, ArcDeploymentKubernetesResources resources)
         {
-            Argument.AssertNotNull(model, nameof(model));
-            Argument.AssertNotNull(extensionId, nameof(extensionId));
             Argument.AssertNotNull(resources, nameof(resources));
 
-            Model = model;
-            ExtensionId = extensionId;
-            Runtime = runtime;
-            Compute = compute;
             Replicas = replicas;
             Resources = resources;
             NodeSelector = new ChangeTrackingDictionary<string, string>();

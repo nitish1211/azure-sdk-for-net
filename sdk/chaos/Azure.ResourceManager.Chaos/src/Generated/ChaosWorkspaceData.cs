@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.Chaos
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ChaosWorkspaceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> The properties of the Workspace resource. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
-        public ChaosWorkspaceData(AzureLocation location, WorkspaceProperties properties) : base(location)
+        public ChaosWorkspaceData(WorkspaceProperties properties)
         {
             Argument.AssertNotNull(properties, nameof(properties));
 

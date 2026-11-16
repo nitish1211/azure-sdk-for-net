@@ -19,10 +19,8 @@ namespace Azure.ResourceManager.Billing.Trust.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="BillingTrustAssessmentProperties"/>. </summary>
-        /// <param name="assessmentType"> The name of the assessment template whose rules will be evaluated (e.g. 'Edu'). Immutable after creation. </param>
-        public BillingTrustAssessmentProperties(BillingTrustAssessmentType assessmentType)
+        public BillingTrustAssessmentProperties()
         {
-            AssessmentType = assessmentType;
             InitialValues = new ChangeTrackingList<BillingTrustInitialRuleValueBase>();
         }
 

@@ -124,6 +124,17 @@ namespace Azure.ResourceManager.CertificateRegistration.Models
             {
                 return Properties is null ? (CertificateProductType?)default : Properties.CertificateProductType;
             }
+            set
+            {
+                if (value.HasValue)
+                {
+                    if (Properties is null)
+                    {
+                        Properties = new AppServiceCertificateOrderPatchResourceProperties();
+                    }
+                    Properties.CertificateProductType = value.Value;
+                }
+            }
         }
 
         /// <summary> &lt;code&gt;true&lt;/code&gt; if the certificate should be automatically renewed when it expires; otherwise, &lt;code&gt;false&lt;/code&gt;. </summary>

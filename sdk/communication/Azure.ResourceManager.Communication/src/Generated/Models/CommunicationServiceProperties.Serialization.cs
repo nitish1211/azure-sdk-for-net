@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.Communication.Models
     /// <summary> A class that describes the properties of the CommunicationService. </summary>
     internal partial class CommunicationServiceProperties : IJsonModel<CommunicationServiceProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="CommunicationServiceProperties"/> for deserialization. </summary>
-        internal CommunicationServiceProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual CommunicationServiceProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.CognitiveServices
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CognitiveServicesAccountData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public CognitiveServicesAccountData(AzureLocation location) : base(location)
+        public CognitiveServicesAccountData()
         {
         }
 
@@ -47,6 +46,13 @@ namespace Azure.ResourceManager.CognitiveServices
             Sku = sku;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CognitiveServicesAccountData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public CognitiveServicesAccountData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of Cognitive Services account. </summary>

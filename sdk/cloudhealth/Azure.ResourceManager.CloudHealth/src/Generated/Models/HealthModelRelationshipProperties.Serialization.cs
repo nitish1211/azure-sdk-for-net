@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.CloudHealth.Models
     /// <summary> Relationship properties. </summary>
     public partial class HealthModelRelationshipProperties : IJsonModel<HealthModelRelationshipProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="HealthModelRelationshipProperties"/> for deserialization. </summary>
-        internal HealthModelRelationshipProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual HealthModelRelationshipProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

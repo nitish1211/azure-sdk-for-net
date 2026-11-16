@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.BillingBenefits
     /// <summary> Microsoft Azure Consumption Commitment. </summary>
     public partial class MaccData : TrackedResourceData, IJsonModel<MaccData>
     {
-        /// <summary> Initializes a new instance of <see cref="MaccData"/> for deserialization. </summary>
-        internal MaccData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

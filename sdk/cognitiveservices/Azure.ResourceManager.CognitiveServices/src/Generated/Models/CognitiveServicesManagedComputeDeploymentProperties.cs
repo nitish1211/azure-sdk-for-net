@@ -19,16 +19,8 @@ namespace Azure.ResourceManager.CognitiveServices.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CognitiveServicesManagedComputeDeploymentProperties"/>. </summary>
-        /// <param name="model">
-        /// AzureML Registry model asset URI. Required on creation; immutable after creation.
-        /// Example: azureml://registries/{registry}/models/{model}/versions/{version}
-        /// </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="model"/> is null. </exception>
-        public CognitiveServicesManagedComputeDeploymentProperties(Uri model)
+        public CognitiveServicesManagedComputeDeploymentProperties()
         {
-            Argument.AssertNotNull(model, nameof(model));
-
-            Model = model;
             Capabilities = new ChangeTrackingDictionary<string, string>();
         }
 

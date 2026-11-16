@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Cdn
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="FrontDoorEndpointData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public FrontDoorEndpointData(AzureLocation location) : base(location)
+        public FrontDoorEndpointData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.Cdn
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="FrontDoorEndpointData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public FrontDoorEndpointData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The JSON object that contains the properties required to create an endpoint. </summary>

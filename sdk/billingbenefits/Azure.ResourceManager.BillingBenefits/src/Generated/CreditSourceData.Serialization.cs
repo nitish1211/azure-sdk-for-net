@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.BillingBenefits
     /// <summary> Credit source resource definition. </summary>
     public partial class CreditSourceData : TrackedResourceData, IJsonModel<CreditSourceData>
     {
-        /// <summary> Initializes a new instance of <see cref="CreditSourceData"/> for deserialization. </summary>
-        internal CreditSourceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

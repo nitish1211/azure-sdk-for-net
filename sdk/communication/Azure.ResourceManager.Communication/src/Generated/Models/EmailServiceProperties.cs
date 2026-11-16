@@ -18,13 +18,8 @@ namespace Azure.ResourceManager.Communication.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="EmailServiceProperties"/>. </summary>
-        /// <param name="dataLocation"> The location where the email service stores its data at rest. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="dataLocation"/> is null. </exception>
-        public EmailServiceProperties(string dataLocation)
+        public EmailServiceProperties()
         {
-            Argument.AssertNotNull(dataLocation, nameof(dataLocation));
-
-            DataLocation = dataLocation;
         }
 
         /// <summary> Initializes a new instance of <see cref="EmailServiceProperties"/>. </summary>

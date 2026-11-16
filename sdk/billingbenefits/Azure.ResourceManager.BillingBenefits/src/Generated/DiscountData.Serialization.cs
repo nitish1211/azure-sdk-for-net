@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.BillingBenefits
     /// <summary> Resource definition for Discounts. </summary>
     public partial class DiscountData : TrackedResourceData, IJsonModel<DiscountData>
     {
-        /// <summary> Initializes a new instance of <see cref="DiscountData"/> for deserialization. </summary>
-        internal DiscountData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

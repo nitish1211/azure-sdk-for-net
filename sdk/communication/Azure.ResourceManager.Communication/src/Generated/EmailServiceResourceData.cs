@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Communication
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="EmailServiceResourceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public EmailServiceResourceData(AzureLocation location) : base(location)
+        public EmailServiceResourceData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.Communication
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="EmailServiceResourceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public EmailServiceResourceData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The properties of the service. </summary>

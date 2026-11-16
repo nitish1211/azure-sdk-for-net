@@ -19,9 +19,8 @@ namespace Azure.ResourceManager.Chaos.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ChaosPrivateLinkResource"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> The resource-specific properties for this resource. </param>
-        internal ChaosPrivateLinkResource(AzureLocation location, ChaosPrivateLinkResourceProperties properties) : base(location)
+        internal ChaosPrivateLinkResource(ChaosPrivateLinkResourceProperties properties)
         {
             Properties = properties;
         }

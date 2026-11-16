@@ -18,16 +18,8 @@ namespace Azure.ResourceManager.CloudHealth.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HealthModelRelationshipProperties"/>. </summary>
-        /// <param name="parentEntityName"> Resource name of the parent entity. </param>
-        /// <param name="childEntityName"> Resource name of the child entity. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="parentEntityName"/> or <paramref name="childEntityName"/> is null. </exception>
-        public HealthModelRelationshipProperties(string parentEntityName, string childEntityName)
+        public HealthModelRelationshipProperties()
         {
-            Argument.AssertNotNull(parentEntityName, nameof(parentEntityName));
-            Argument.AssertNotNull(childEntityName, nameof(childEntityName));
-
-            ParentEntityName = parentEntityName;
-            ChildEntityName = childEntityName;
             Tags = new ChangeTrackingDictionary<string, string>();
         }
 
@@ -48,6 +40,19 @@ namespace Azure.ResourceManager.CloudHealth.Models
             Tags = tags;
             DiscoveredBy = discoveredBy;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="HealthModelRelationshipProperties"/>. </summary>
+        /// <param name="parentEntityName"> Resource name of the parent entity. </param>
+        /// <param name="childEntityName"> Resource name of the child entity. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="parentEntityName"/> or <paramref name="childEntityName"/> is null. </exception>
+        public HealthModelRelationshipProperties(string parentEntityName, string childEntityName) : this()
+        {
+            Argument.AssertNotNull(parentEntityName, nameof(parentEntityName));
+            Argument.AssertNotNull(childEntityName, nameof(childEntityName));
+
+            ParentEntityName = parentEntityName;
+            ChildEntityName = childEntityName;
         }
 
         /// <summary> The status of the last operation. </summary>

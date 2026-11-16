@@ -17,11 +17,10 @@ namespace Azure.ResourceManager.CognitiveServices.Models
     public partial class ContainerInstanceComputeProperties : CognitiveServicesComputeProperties
     {
         /// <summary> Initializes a new instance of <see cref="ContainerInstanceComputeProperties"/>. </summary>
-        /// <param name="location"> The location of the compute resource. </param>
         /// <param name="targetClusterId"> ARM resource ID of the parent cluster that hosts this container instance. </param>
         /// <param name="imageLink"> Container image URI (e.g., MCR or ACR image path) for the container instance. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="targetClusterId"/> or <paramref name="imageLink"/> is null. </exception>
-        public ContainerInstanceComputeProperties(AzureLocation location, string targetClusterId, string imageLink) : base(ComputeType.ContainerInstance, location)
+        public ContainerInstanceComputeProperties(string targetClusterId, string imageLink) : base(ComputeType.ContainerInstance)
         {
             Argument.AssertNotNull(targetClusterId, nameof(targetClusterId));
             Argument.AssertNotNull(imageLink, nameof(imageLink));

@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.CertificateRegistration.Models
     /// <summary> AppServiceCertificateOrder resource specific properties. </summary>
     internal partial class AppServiceCertificateOrderProperties : IJsonModel<AppServiceCertificateOrderProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="AppServiceCertificateOrderProperties"/> for deserialization. </summary>
-        internal AppServiceCertificateOrderProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual AppServiceCertificateOrderProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

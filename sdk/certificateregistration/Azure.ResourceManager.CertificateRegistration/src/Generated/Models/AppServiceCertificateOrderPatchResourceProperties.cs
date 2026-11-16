@@ -18,11 +18,9 @@ namespace Azure.ResourceManager.CertificateRegistration.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AppServiceCertificateOrderPatchResourceProperties"/>. </summary>
-        /// <param name="certificateProductType"> Certificate product type. </param>
-        public AppServiceCertificateOrderPatchResourceProperties(CertificateProductType certificateProductType)
+        public AppServiceCertificateOrderPatchResourceProperties()
         {
             Certificates = new ChangeTrackingDictionary<string, AppServiceCertificateProperties>();
-            CertificateProductType = certificateProductType;
             AppServiceCertificateNotRenewableReasons = new ChangeTrackingList<AppServiceCertificateNotRenewableReason>();
         }
 
@@ -89,7 +87,7 @@ namespace Azure.ResourceManager.CertificateRegistration.Models
         public int? KeySize { get; set; }
 
         /// <summary> Certificate product type. </summary>
-        public CertificateProductType CertificateProductType { get; }
+        public CertificateProductType CertificateProductType { get; set; }
 
         /// <summary> &lt;code&gt;true&lt;/code&gt; if the certificate should be automatically renewed when it expires; otherwise, &lt;code&gt;false&lt;/code&gt;. </summary>
         public bool? IsAutoRenew { get; set; }

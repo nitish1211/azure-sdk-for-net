@@ -18,11 +18,6 @@ namespace Azure.ResourceManager.Billing.Trust.Models
     /// <summary> A domain entry within an education qualification rule. `domainNames` and `tenantId` are supplied on creation; `state` and `error` are returned by the service. </summary>
     public partial class BillingTrustDomainEntry : IJsonModel<BillingTrustDomainEntry>
     {
-        /// <summary> Initializes a new instance of <see cref="BillingTrustDomainEntry"/> for deserialization. </summary>
-        internal BillingTrustDomainEntry()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual BillingTrustDomainEntry PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Communication.Models
     /// <summary> A class that describes the properties of the EmailService. </summary>
     internal partial class EmailServiceProperties : IJsonModel<EmailServiceProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="EmailServiceProperties"/> for deserialization. </summary>
-        internal EmailServiceProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual EmailServiceProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

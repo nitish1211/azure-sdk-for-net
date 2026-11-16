@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.BillingBenefits
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="FreeServicesData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public FreeServicesData(AzureLocation location) : base(location)
+        public FreeServicesData()
         {
         }
 

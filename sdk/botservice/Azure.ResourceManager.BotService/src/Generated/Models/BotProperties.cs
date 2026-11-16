@@ -23,19 +23,16 @@ namespace Azure.ResourceManager.BotService.Models
         /// <summary> Initializes a new instance of <see cref="BotProperties"/>. </summary>
         /// <param name="displayName"> The Name of the bot. </param>
         /// <param name="endpoint"> The bot's endpoint. </param>
-        /// <param name="msaAppId"> Microsoft App Id for the bot. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="displayName"/>, <paramref name="endpoint"/> or <paramref name="msaAppId"/> is null. </exception>
-        public BotProperties(string displayName, Uri endpoint, string msaAppId)
+        /// <exception cref="ArgumentNullException"> <paramref name="displayName"/> or <paramref name="endpoint"/> is null. </exception>
+        public BotProperties(string displayName, Uri endpoint)
         {
             Argument.AssertNotNull(displayName, nameof(displayName));
             Argument.AssertNotNull(endpoint, nameof(endpoint));
-            Argument.AssertNotNull(msaAppId, nameof(msaAppId));
 
             DisplayName = displayName;
             Endpoint = endpoint;
             AllSettings = new ChangeTrackingDictionary<string, string>();
             Parameters = new ChangeTrackingDictionary<string, string>();
-            MsaAppId = msaAppId;
             ConfiguredChannels = new ChangeTrackingList<string>();
             EnabledChannels = new ChangeTrackingList<string>();
             LuisAppIds = new ChangeTrackingList<string>();
@@ -120,6 +117,18 @@ namespace Azure.ResourceManager.BotService.Models
             ProvisioningState = provisioningState;
             PublishingCredentials = publishingCredentials;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="BotProperties"/>. </summary>
+        /// <param name="displayName"> The Name of the bot. </param>
+        /// <param name="endpoint"> The bot's endpoint. </param>
+        /// <param name="msaAppId"> Microsoft App Id for the bot. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="msaAppId"/> is null. </exception>
+        public BotProperties(string displayName, Uri endpoint, string msaAppId) : this(displayName, endpoint)
+        {
+            Argument.AssertNotNull(msaAppId, nameof(msaAppId));
+
+            MsaAppId = msaAppId;
         }
 
         /// <summary> The Name of the bot. </summary>

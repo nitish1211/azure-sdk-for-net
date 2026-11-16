@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Azure;
 using Azure.ResourceManager.Billing.Trust;
 
@@ -20,13 +19,9 @@ namespace Azure.ResourceManager.Billing.Trust.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="BillingTrustDomainEntry"/>. </summary>
-        /// <param name="domainNames"> Domain names associated with a tenant. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="domainNames"/> is null. </exception>
-        public BillingTrustDomainEntry(IEnumerable<string> domainNames)
+        public BillingTrustDomainEntry()
         {
-            Argument.AssertNotNull(domainNames, nameof(domainNames));
-
-            DomainNames = domainNames.ToList();
+            DomainNames = new ChangeTrackingList<string>();
         }
 
         /// <summary> Initializes a new instance of <see cref="BillingTrustDomainEntry"/>. </summary>

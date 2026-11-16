@@ -25,11 +25,9 @@ namespace Azure.ResourceManager.CognitiveServices.Models
 
         /// <summary> Initializes a new instance of <see cref="CognitiveServicesComputeProperties"/>. </summary>
         /// <param name="computeType"> The type of compute resource. </param>
-        /// <param name="location"> The location of the compute resource. </param>
-        private protected CognitiveServicesComputeProperties(ComputeType computeType, AzureLocation location)
+        private protected CognitiveServicesComputeProperties(ComputeType computeType)
         {
             ComputeType = computeType;
-            Location = location;
             Errors = new ChangeTrackingList<ResponseError>();
         }
 

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Cdn
     /// <summary> CDN endpoint is the entity within a CDN profile containing configuration information such as origin, protocol, content caching and delivery behavior. The CDN endpoint uses the URL format &lt;endpointname&gt;.azureedge.net. </summary>
     public partial class CdnEndpointData : TrackedResourceData, IJsonModel<CdnEndpointData>
     {
-        /// <summary> Initializes a new instance of <see cref="CdnEndpointData"/> for deserialization. </summary>
-        internal CdnEndpointData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

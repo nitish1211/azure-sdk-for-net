@@ -18,10 +18,9 @@ namespace Azure.ResourceManager.CognitiveServices.Models
     public partial class CognitiveServicesClusterComputeProperties : CognitiveServicesComputeProperties
     {
         /// <summary> Initializes a new instance of <see cref="CognitiveServicesClusterComputeProperties"/>. </summary>
-        /// <param name="location"> The location of the compute resource. </param>
         /// <param name="pools"> Pools attached to this compute cluster. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="pools"/> is null. </exception>
-        public CognitiveServicesClusterComputeProperties(AzureLocation location, IEnumerable<CognitiveServicesComputePool> pools) : base(ComputeType.Cluster, location)
+        public CognitiveServicesClusterComputeProperties(IEnumerable<CognitiveServicesComputePool> pools) : base(ComputeType.Cluster)
         {
             Argument.AssertNotNull(pools, nameof(pools));
 

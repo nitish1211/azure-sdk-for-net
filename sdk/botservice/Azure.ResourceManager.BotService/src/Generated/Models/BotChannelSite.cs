@@ -21,14 +21,9 @@ namespace Azure.ResourceManager.BotService.Models
         private protected bool _isBlockUserUploadEnabledIsDefined;
 
         /// <summary> Initializes a new instance of <see cref="BotChannelSite"/>. </summary>
-        /// <param name="siteName"> Site name. </param>
         /// <param name="isEnabled"> Whether this site is enabled for DirectLine channel. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="siteName"/> is null. </exception>
-        public BotChannelSite(string siteName, bool isEnabled)
+        public BotChannelSite(bool isEnabled)
         {
-            Argument.AssertNotNull(siteName, nameof(siteName));
-
-            SiteName = siteName;
             IsEnabled = isEnabled;
             TrustedOrigins = new ChangeTrackingList<string>();
         }
@@ -76,6 +71,17 @@ namespace Azure.ResourceManager.BotService.Models
             IsWebChatSpeechEnabled = isWebChatSpeechEnabled;
             IsWebchatPreviewEnabled = isWebchatPreviewEnabled;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="BotChannelSite"/>. </summary>
+        /// <param name="siteName"> Site name. </param>
+        /// <param name="isEnabled"> Whether this site is enabled for DirectLine channel. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="siteName"/> is null. </exception>
+        public BotChannelSite(string siteName, bool isEnabled) : this(isEnabled)
+        {
+            Argument.AssertNotNull(siteName, nameof(siteName));
+
+            SiteName = siteName;
         }
 
         /// <summary> Tenant Id. </summary>

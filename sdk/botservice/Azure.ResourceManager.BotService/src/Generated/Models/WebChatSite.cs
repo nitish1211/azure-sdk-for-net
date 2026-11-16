@@ -16,13 +16,9 @@ namespace Azure.ResourceManager.BotService.Models
     public partial class WebChatSite : BotChannelSite
     {
         /// <summary> Initializes a new instance of <see cref="WebChatSite"/>. </summary>
-        /// <param name="siteName"> Site name. </param>
         /// <param name="isEnabled"> Whether this site is enabled for DirectLine channel. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="siteName"/> is null. </exception>
-        public WebChatSite(string siteName, bool isEnabled) : base(siteName, isEnabled)
+        public WebChatSite(bool isEnabled) : base(isEnabled)
         {
-            Argument.AssertNotNull(siteName, nameof(siteName));
-
         }
 
         /// <summary> Initializes a new instance of <see cref="WebChatSite"/>. </summary>
@@ -48,6 +44,17 @@ namespace Azure.ResourceManager.BotService.Models
         /// <param name="additionalBinaryDataProperties"> Keeps track of any properties unknown to the library. </param>
         internal WebChatSite(Guid? tenantId, string siteId, string siteName, string key, string key2, bool isEnabled, bool? isTokenEnabled, bool? isEndpointParametersEnabled, bool? isDetailedLoggingEnabled, bool? isBlockUserUploadEnabled, bool? isNoStorageEnabled, ETag? eTag, string appId, bool? isV1Enabled, bool? isV3Enabled, bool? isSecureSiteEnabled, IList<string> trustedOrigins, bool? isWebChatSpeechEnabled, bool? isWebchatPreviewEnabled, IDictionary<string, BinaryData> additionalBinaryDataProperties) : base(tenantId, siteId, siteName, key, key2, isEnabled, isTokenEnabled, isEndpointParametersEnabled, isDetailedLoggingEnabled, isBlockUserUploadEnabled, isNoStorageEnabled, eTag, appId, isV1Enabled, isV3Enabled, isSecureSiteEnabled, trustedOrigins, isWebChatSpeechEnabled, isWebchatPreviewEnabled, additionalBinaryDataProperties)
         {
+        }
+
+        /// <summary> Initializes a new instance of <see cref="WebChatSite"/>. </summary>
+        /// <param name="siteName"> Site name. </param>
+        /// <param name="isEnabled"> Whether this site is enabled for DirectLine channel. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="siteName"/> is null. </exception>
+        public WebChatSite(string siteName, bool isEnabled) : this(isEnabled)
+        {
+            Argument.AssertNotNull(siteName, nameof(siteName));
+
+            SiteName = siteName;
         }
     }
 }

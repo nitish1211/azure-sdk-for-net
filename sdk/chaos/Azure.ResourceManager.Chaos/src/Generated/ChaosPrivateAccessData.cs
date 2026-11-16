@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.Chaos
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ChaosPrivateAccessData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> The resource-specific properties for this resource. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
-        public ChaosPrivateAccessData(AzureLocation location, ChaosPrivateAccessProperties properties) : base(location)
+        public ChaosPrivateAccessData(ChaosPrivateAccessProperties properties)
         {
             Argument.AssertNotNull(properties, nameof(properties));
 

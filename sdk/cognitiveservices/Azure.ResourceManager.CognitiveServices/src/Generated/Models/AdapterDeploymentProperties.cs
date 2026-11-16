@@ -18,13 +18,6 @@ namespace Azure.ResourceManager.CognitiveServices.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AdapterDeploymentProperties"/>. </summary>
-        /// <param name="sourceModelId">
-        /// The immutable Project Models version produced by Foundry fine-tuning.
-        /// The identifier uses the Azure AI project model URI format.
-        /// Model and version segments use ASCII letters, digits, periods, underscores, and hyphens.
-        /// The service validates LoRA weight type, protected status, provenance,
-        /// compatibility metadata, and registration state.
-        /// </param>
         /// <param name="targetDeploymentName">
         /// The name of the compatible managed compute parent deployment.
         /// The service resolves this name within the adapter's owning account; full
@@ -32,13 +25,11 @@ namespace Azure.ResourceManager.CognitiveServices.Models
         /// equal the adapter deployment's resource name. Updating this value
         /// re-targets the adapter while its source model remains unchanged.
         /// </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="sourceModelId"/> or <paramref name="targetDeploymentName"/> is null. </exception>
-        public AdapterDeploymentProperties(string sourceModelId, string targetDeploymentName)
+        /// <exception cref="ArgumentNullException"> <paramref name="targetDeploymentName"/> is null. </exception>
+        public AdapterDeploymentProperties(string targetDeploymentName)
         {
-            Argument.AssertNotNull(sourceModelId, nameof(sourceModelId));
             Argument.AssertNotNull(targetDeploymentName, nameof(targetDeploymentName));
 
-            SourceModelId = sourceModelId;
             TargetDeploymentName = targetDeploymentName;
         }
 

@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Cdn.Models
     /// <summary> The JSON object that contains a rule with its name for batch mode operations. </summary>
     public partial class BatchRuleProperties : IJsonModel<BatchRuleProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="BatchRuleProperties"/> for deserialization. </summary>
-        internal BatchRuleProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual BatchRuleProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -19,10 +19,8 @@ namespace Azure.ResourceManager.BillingBenefits.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="MaccModelProperties"/>. </summary>
-        /// <param name="maccEntityType"> Represents type of the object being operated on. Possible values are primary or contributor. </param>
-        public MaccModelProperties(MaccEntityType maccEntityType)
+        public MaccModelProperties()
         {
-            MaccEntityType = maccEntityType;
             Milestones = new ChangeTrackingList<MaccMilestone>();
         }
 

@@ -20,11 +20,10 @@ namespace Azure.ResourceManager.Chaos
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ChaosExperimentData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="steps"> List of steps. </param>
         /// <param name="selectors"> List of selectors. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="steps"/> or <paramref name="selectors"/> is null. </exception>
-        public ChaosExperimentData(AzureLocation location, IEnumerable<ChaosExperimentStep> steps, IEnumerable<ChaosTargetSelector> selectors) : base(location)
+        public ChaosExperimentData(IEnumerable<ChaosExperimentStep> steps, IEnumerable<ChaosTargetSelector> selectors)
         {
             Argument.AssertNotNull(steps, nameof(steps));
             Argument.AssertNotNull(selectors, nameof(selectors));
@@ -47,6 +46,15 @@ namespace Azure.ResourceManager.Chaos
             Identity = identity;
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ChaosExperimentData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="steps"> List of steps. </param>
+        /// <param name="selectors"> List of selectors. </param>
+        public ChaosExperimentData(AzureLocation location, IEnumerable<ChaosExperimentStep> steps, IEnumerable<ChaosTargetSelector> selectors) : this(steps, selectors)
+        {
+            Location = location;
         }
 
         /// <summary> The managed service identities assigned to this resource. </summary>

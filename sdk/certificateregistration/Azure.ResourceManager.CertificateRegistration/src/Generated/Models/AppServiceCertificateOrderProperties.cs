@@ -18,11 +18,9 @@ namespace Azure.ResourceManager.CertificateRegistration.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AppServiceCertificateOrderProperties"/>. </summary>
-        /// <param name="certificateProductType"> Certificate product type. </param>
-        public AppServiceCertificateOrderProperties(CertificateProductType certificateProductType)
+        public AppServiceCertificateOrderProperties()
         {
             Certificates = new ChangeTrackingDictionary<string, AppServiceCertificateProperties>();
-            CertificateProductType = certificateProductType;
             AppServiceCertificateNotRenewableReasons = new ChangeTrackingList<AppServiceCertificateNotRenewableReason>();
         }
 

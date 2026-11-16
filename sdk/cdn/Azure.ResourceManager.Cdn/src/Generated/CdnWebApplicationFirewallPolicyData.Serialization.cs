@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Cdn
     /// <summary> Defines web application firewall policy for Azure CDN. </summary>
     public partial class CdnWebApplicationFirewallPolicyData : TrackedResourceData, IJsonModel<CdnWebApplicationFirewallPolicyData>
     {
-        /// <summary> Initializes a new instance of <see cref="CdnWebApplicationFirewallPolicyData"/> for deserialization. </summary>
-        internal CdnWebApplicationFirewallPolicyData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

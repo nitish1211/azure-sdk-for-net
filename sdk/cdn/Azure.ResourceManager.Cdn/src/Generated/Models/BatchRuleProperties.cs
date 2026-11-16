@@ -18,13 +18,8 @@ namespace Azure.ResourceManager.Cdn.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="BatchRuleProperties"/>. </summary>
-        /// <param name="ruleName"> Name of the rule. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="ruleName"/> is null. </exception>
-        public BatchRuleProperties(string ruleName)
+        public BatchRuleProperties()
         {
-            Argument.AssertNotNull(ruleName, nameof(ruleName));
-
-            RuleName = ruleName;
             Conditions = new ChangeTrackingList<DeliveryRuleCondition>();
             Actions = new ChangeTrackingList<DeliveryRuleAction>();
         }
@@ -46,6 +41,16 @@ namespace Azure.ResourceManager.Cdn.Models
             Actions = actions;
             MatchProcessingBehavior = matchProcessingBehavior;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="BatchRuleProperties"/>. </summary>
+        /// <param name="ruleName"> Name of the rule. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="ruleName"/> is null. </exception>
+        public BatchRuleProperties(string ruleName) : this()
+        {
+            Argument.AssertNotNull(ruleName, nameof(ruleName));
+
+            RuleName = ruleName;
         }
 
         /// <summary> Name of the rule. </summary>

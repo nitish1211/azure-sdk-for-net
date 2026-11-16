@@ -18,11 +18,6 @@ namespace Azure.ResourceManager.Billing.Trust.Models
     /// <summary> The properties of an Assessment resource. </summary>
     public partial class BillingTrustAssessmentProperties : IJsonModel<BillingTrustAssessmentProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="BillingTrustAssessmentProperties"/> for deserialization. </summary>
-        internal BillingTrustAssessmentProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual BillingTrustAssessmentProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)
