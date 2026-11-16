@@ -2653,6 +2653,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <returns> A collection of <see cref="PortalSettingsContractData"/> that may take multiple service requests to iterate over. </returns>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual AsyncPageable<PortalSettingsContractData> GetPortalSettingsAsync(CancellationToken cancellationToken = default)
         {
             RequestContext context = new RequestContext
@@ -2667,6 +2669,8 @@ namespace Azure.ResourceManager.ApiManagement
                 context,
                 "ApiManagementServiceResource.GetPortalSettings");
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Lists a collection of portalsettings defined within a service instance..
@@ -2691,6 +2695,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <returns> A collection of <see cref="PortalSettingsContractData"/> that may take multiple service requests to iterate over. </returns>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual Pageable<PortalSettingsContractData> GetPortalSettings(CancellationToken cancellationToken = default)
         {
             RequestContext context = new RequestContext
@@ -2705,6 +2711,8 @@ namespace Azure.ResourceManager.ApiManagement
                 context,
                 "ApiManagementServiceResource.GetPortalSettings");
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Lists a collection of products associated with tags.

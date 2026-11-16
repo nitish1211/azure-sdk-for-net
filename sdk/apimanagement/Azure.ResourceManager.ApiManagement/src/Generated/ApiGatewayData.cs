@@ -21,10 +21,9 @@ namespace Azure.ResourceManager.ApiManagement
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ApiGatewayData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="sku"> SKU properties of the API Management gateway. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sku"/> is null. </exception>
-        public ApiGatewayData(AzureLocation location, ApiManagementGatewaySkuProperties sku) : base(location)
+        public ApiGatewayData(ApiManagementGatewaySkuProperties sku)
         {
             Argument.AssertNotNull(sku, nameof(sku));
 
@@ -48,6 +47,14 @@ namespace Azure.ResourceManager.ApiManagement
             Sku = sku;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ApiGatewayData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="sku"> SKU properties of the API Management gateway. </param>
+        public ApiGatewayData(AzureLocation location, ApiManagementGatewaySkuProperties sku) : this(sku)
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the API Management gateway. </summary>

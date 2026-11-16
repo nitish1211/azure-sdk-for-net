@@ -117,6 +117,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// <param name="ifMatch"> ETag of the Entity. Not required when creating an entity, but required when updating an entity. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="data"/> is null. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<ArmOperation<ApiManagementPortalDelegationSettingResource>> CreateOrUpdateAsync(WaitUntil waitUntil, ApiManagementPortalDelegationSettingData data, ETag? ifMatch = default, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNull(data, nameof(data));
@@ -147,6 +149,8 @@ namespace Azure.ResourceManager.ApiManagement
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Create or Update Delegation settings.
@@ -174,6 +178,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// <param name="ifMatch"> ETag of the Entity. Not required when creating an entity, but required when updating an entity. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="data"/> is null. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual ArmOperation<ApiManagementPortalDelegationSettingResource> CreateOrUpdate(WaitUntil waitUntil, ApiManagementPortalDelegationSettingData data, ETag? ifMatch = default, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNull(data, nameof(data));
@@ -204,6 +210,8 @@ namespace Azure.ResourceManager.ApiManagement
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Get Delegation Settings for the Portal.
@@ -227,6 +235,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// </list>
         /// </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<Response<ApiManagementPortalDelegationSettingResource>> GetAsync(CancellationToken cancellationToken = default)
         {
             using DiagnosticScope scope = _delegationSettingsClientDiagnostics.CreateScope("ApiManagementPortalDelegationSettingResource.Get");
@@ -252,6 +262,8 @@ namespace Azure.ResourceManager.ApiManagement
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Get Delegation Settings for the Portal.
@@ -275,6 +287,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// </list>
         /// </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual Response<ApiManagementPortalDelegationSettingResource> Get(CancellationToken cancellationToken = default)
         {
             using DiagnosticScope scope = _delegationSettingsClientDiagnostics.CreateScope("ApiManagementPortalDelegationSettingResource.Get");
@@ -300,6 +314,8 @@ namespace Azure.ResourceManager.ApiManagement
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Update Delegation settings.
@@ -327,6 +343,7 @@ namespace Azure.ResourceManager.ApiManagement
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="ifMatch"/> or <paramref name="data"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="ifMatch"/> is an empty string, and was expected to be non-empty. </exception>
+        [Obsolete("deprecated")]
         public virtual async Task<Response> UpdateAsync(string ifMatch, ApiManagementPortalDelegationSettingData data, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(ifMatch, nameof(ifMatch));
@@ -377,6 +394,7 @@ namespace Azure.ResourceManager.ApiManagement
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="ifMatch"/> or <paramref name="data"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="ifMatch"/> is an empty string, and was expected to be non-empty. </exception>
+        [Obsolete("deprecated")]
         public virtual Response Update(string ifMatch, ApiManagementPortalDelegationSettingData data, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(ifMatch, nameof(ifMatch));
@@ -423,6 +441,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// </list>
         /// </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<Response<PortalSettingValidationKeyContract>> GetSecretsAsync(CancellationToken cancellationToken = default)
         {
             using DiagnosticScope scope = _delegationSettingsClientDiagnostics.CreateScope("ApiManagementPortalDelegationSettingResource.GetSecrets");
@@ -448,6 +468,8 @@ namespace Azure.ResourceManager.ApiManagement
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Gets the secret validation key of the DelegationSettings.
@@ -471,6 +493,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// </list>
         /// </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual Response<PortalSettingValidationKeyContract> GetSecrets(CancellationToken cancellationToken = default)
         {
             using DiagnosticScope scope = _delegationSettingsClientDiagnostics.CreateScope("ApiManagementPortalDelegationSettingResource.GetSecrets");
@@ -496,5 +520,7 @@ namespace Azure.ResourceManager.ApiManagement
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
     }
 }

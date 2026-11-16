@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ApiCenter
     /// <summary> The service entity. </summary>
     public partial class ApiCenterServiceData : TrackedResourceData, IJsonModel<ApiCenterServiceData>
     {
-        /// <summary> Initializes a new instance of <see cref="ApiCenterServiceData"/> for deserialization. </summary>
-        internal ApiCenterServiceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ContainerServiceAIManager
     /// <summary> The AI Manager resource. For more information, see https://aka.ms/aks/aimanager. </summary>
     public partial class AIManagerData : TrackedResourceData, IJsonModel<AIManagerData>
     {
-        /// <summary> Initializes a new instance of <see cref="AIManagerData"/> for deserialization. </summary>
-        internal AIManagerData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

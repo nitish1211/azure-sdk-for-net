@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.AlertProcessingRules
     /// <summary> Alert processing rule object containing target scopes, conditions and scheduling logic. </summary>
     public partial class AlertProcessingRuleData : TrackedResourceData, IJsonModel<AlertProcessingRuleData>
     {
-        /// <summary> Initializes a new instance of <see cref="AlertProcessingRuleData"/> for deserialization. </summary>
-        internal AlertProcessingRuleData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

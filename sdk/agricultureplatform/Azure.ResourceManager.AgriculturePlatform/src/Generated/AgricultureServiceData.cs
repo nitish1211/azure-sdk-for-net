@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.AgriculturePlatform
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AgricultureServiceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public AgricultureServiceData(AzureLocation location) : base(location)
+        public AgricultureServiceData()
         {
         }
 

@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.ContainerServiceAIManager;
 
 namespace Azure.ResourceManager.ContainerServiceAIManager.Models
 {
@@ -19,24 +18,8 @@ namespace Azure.ResourceManager.ContainerServiceAIManager.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CustomAIModelProperties"/>. </summary>
-        /// <param name="modelId">
-        /// The model identifier, interpreted per the referenced ModelSource type.
-        /// For `HuggingFace` sources this is the upstream `&lt;org&gt;/&lt;repo&gt;` id, e.g.
-        /// `meta-llama/Llama-2-7b-chat`. For `MicrosoftFoundry` sources this is
-        /// `modelName/version`, e.g. `private-llama/1`. Immutable after creation.
-        /// </param>
-        /// <param name="baseModel"> The base model this custom model was trained from (id + config.json). Immutable after creation. </param>
-        /// <param name="modelSourceResourceId"> Azure resource id of the ModelSource to use when pulling artifacts. Used to determine model location and access. Immutable after creation. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="modelId"/>, <paramref name="baseModel"/> or <paramref name="modelSourceResourceId"/> is null. </exception>
-        public CustomAIModelProperties(string modelId, BaseModelReference baseModel, ResourceIdentifier modelSourceResourceId)
+        public CustomAIModelProperties()
         {
-            Argument.AssertNotNull(modelId, nameof(modelId));
-            Argument.AssertNotNull(baseModel, nameof(baseModel));
-            Argument.AssertNotNull(modelSourceResourceId, nameof(modelSourceResourceId));
-
-            ModelId = modelId;
-            BaseModel = baseModel;
-            ModelSourceResourceId = modelSourceResourceId;
         }
 
         /// <summary> Initializes a new instance of <see cref="CustomAIModelProperties"/>. </summary>

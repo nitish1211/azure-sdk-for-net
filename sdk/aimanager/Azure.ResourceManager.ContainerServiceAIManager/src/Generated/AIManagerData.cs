@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.ContainerServiceAIManager
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AIManagerData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public AIManagerData(AzureLocation location) : base(location)
+        public AIManagerData()
         {
         }
 

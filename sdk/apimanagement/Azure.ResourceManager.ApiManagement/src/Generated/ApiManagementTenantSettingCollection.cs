@@ -74,6 +74,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// </summary>
         /// <param name="settingsType"> The identifier of the settings. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<Response<ApiManagementTenantSettingResource>> GetAsync(SettingsType settingsType, CancellationToken cancellationToken = default)
         {
             using DiagnosticScope scope = _tenantSettingsClientDiagnostics.CreateScope("ApiManagementTenantSettingCollection.Get");
@@ -99,6 +101,8 @@ namespace Azure.ResourceManager.ApiManagement
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Get tenant settings.
@@ -119,6 +123,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// </summary>
         /// <param name="settingsType"> The identifier of the settings. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual Response<ApiManagementTenantSettingResource> Get(SettingsType settingsType, CancellationToken cancellationToken = default)
         {
             using DiagnosticScope scope = _tenantSettingsClientDiagnostics.CreateScope("ApiManagementTenantSettingCollection.Get");
@@ -144,6 +150,8 @@ namespace Azure.ResourceManager.ApiManagement
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Public settings.
@@ -165,6 +173,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// <param name="filter"> Not used. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <returns> A collection of <see cref="ApiManagementTenantSettingResource"/> that may take multiple service requests to iterate over. </returns>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual AsyncPageable<ApiManagementTenantSettingResource> GetAllAsync(string filter = default, CancellationToken cancellationToken = default)
         {
             RequestContext context = new RequestContext
@@ -180,6 +190,8 @@ namespace Azure.ResourceManager.ApiManagement
                 context,
                 "ApiManagementTenantSettingCollection.GetAll"), data => new ApiManagementTenantSettingResource(Client, data));
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Public settings.
@@ -201,6 +213,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// <param name="filter"> Not used. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <returns> A collection of <see cref="ApiManagementTenantSettingResource"/> that may take multiple service requests to iterate over. </returns>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual Pageable<ApiManagementTenantSettingResource> GetAll(string filter = default, CancellationToken cancellationToken = default)
         {
             RequestContext context = new RequestContext
@@ -216,6 +230,8 @@ namespace Azure.ResourceManager.ApiManagement
                 context,
                 "ApiManagementTenantSettingCollection.GetAll"), data => new ApiManagementTenantSettingResource(Client, data));
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Checks to see if the resource exists in azure.
@@ -236,6 +252,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// </summary>
         /// <param name="settingsType"> The identifier of the settings. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<Response<bool>> ExistsAsync(SettingsType settingsType, CancellationToken cancellationToken = default)
         {
             using DiagnosticScope scope = _tenantSettingsClientDiagnostics.CreateScope("ApiManagementTenantSettingCollection.Exists");
@@ -269,6 +287,8 @@ namespace Azure.ResourceManager.ApiManagement
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Checks to see if the resource exists in azure.
@@ -289,6 +309,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// </summary>
         /// <param name="settingsType"> The identifier of the settings. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual Response<bool> Exists(SettingsType settingsType, CancellationToken cancellationToken = default)
         {
             using DiagnosticScope scope = _tenantSettingsClientDiagnostics.CreateScope("ApiManagementTenantSettingCollection.Exists");
@@ -322,6 +344,8 @@ namespace Azure.ResourceManager.ApiManagement
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Tries to get details for this resource from the service.
@@ -342,6 +366,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// </summary>
         /// <param name="settingsType"> The identifier of the settings. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<NullableResponse<ApiManagementTenantSettingResource>> GetIfExistsAsync(SettingsType settingsType, CancellationToken cancellationToken = default)
         {
             using DiagnosticScope scope = _tenantSettingsClientDiagnostics.CreateScope("ApiManagementTenantSettingCollection.GetIfExists");
@@ -379,6 +405,8 @@ namespace Azure.ResourceManager.ApiManagement
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Tries to get details for this resource from the service.
@@ -399,6 +427,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// </summary>
         /// <param name="settingsType"> The identifier of the settings. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual NullableResponse<ApiManagementTenantSettingResource> GetIfExists(SettingsType settingsType, CancellationToken cancellationToken = default)
         {
             using DiagnosticScope scope = _tenantSettingsClientDiagnostics.CreateScope("ApiManagementTenantSettingCollection.GetIfExists");
@@ -436,6 +466,8 @@ namespace Azure.ResourceManager.ApiManagement
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         IEnumerator<ApiManagementTenantSettingResource> IEnumerable<ApiManagementTenantSettingResource>.GetEnumerator()
         {

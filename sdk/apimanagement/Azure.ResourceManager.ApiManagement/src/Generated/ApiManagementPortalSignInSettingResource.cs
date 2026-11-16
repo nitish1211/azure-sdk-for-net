@@ -116,6 +116,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// <param name="ifMatch"> ETag of the Entity. Not required when creating an entity, but required when updating an entity. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="data"/> is null. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<ArmOperation<ApiManagementPortalSignInSettingResource>> CreateOrUpdateAsync(WaitUntil waitUntil, ApiManagementPortalSignInSettingData data, ETag? ifMatch = default, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNull(data, nameof(data));
@@ -146,6 +148,8 @@ namespace Azure.ResourceManager.ApiManagement
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Create or Update Sign-In settings.
@@ -173,6 +177,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// <param name="ifMatch"> ETag of the Entity. Not required when creating an entity, but required when updating an entity. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="data"/> is null. </exception>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual ArmOperation<ApiManagementPortalSignInSettingResource> CreateOrUpdate(WaitUntil waitUntil, ApiManagementPortalSignInSettingData data, ETag? ifMatch = default, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNull(data, nameof(data));
@@ -203,6 +209,8 @@ namespace Azure.ResourceManager.ApiManagement
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Get Sign In Settings for the Portal
@@ -226,6 +234,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// </list>
         /// </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual async Task<Response<ApiManagementPortalSignInSettingResource>> GetAsync(CancellationToken cancellationToken = default)
         {
             using DiagnosticScope scope = _signInSettingsClientDiagnostics.CreateScope("ApiManagementPortalSignInSettingResource.Get");
@@ -251,6 +261,8 @@ namespace Azure.ResourceManager.ApiManagement
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Get Sign In Settings for the Portal
@@ -274,6 +286,8 @@ namespace Azure.ResourceManager.ApiManagement
         /// </list>
         /// </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
+#pragma warning disable CS0612 // This generated code references obsolete functionality.
+#pragma warning disable CS0618 // This generated code references obsolete functionality.
         public virtual Response<ApiManagementPortalSignInSettingResource> Get(CancellationToken cancellationToken = default)
         {
             using DiagnosticScope scope = _signInSettingsClientDiagnostics.CreateScope("ApiManagementPortalSignInSettingResource.Get");
@@ -299,6 +313,8 @@ namespace Azure.ResourceManager.ApiManagement
                 throw;
             }
         }
+#pragma warning restore CS0612 // This generated code references obsolete functionality.
+#pragma warning restore CS0618 // This generated code references obsolete functionality.
 
         /// <summary>
         /// Update Sign-In settings.
@@ -326,6 +342,7 @@ namespace Azure.ResourceManager.ApiManagement
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="ifMatch"/> or <paramref name="data"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="ifMatch"/> is an empty string, and was expected to be non-empty. </exception>
+        [Obsolete("deprecated")]
         public virtual async Task<Response> UpdateAsync(string ifMatch, ApiManagementPortalSignInSettingData data, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(ifMatch, nameof(ifMatch));
@@ -376,6 +393,7 @@ namespace Azure.ResourceManager.ApiManagement
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="ifMatch"/> or <paramref name="data"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="ifMatch"/> is an empty string, and was expected to be non-empty. </exception>
+        [Obsolete("deprecated")]
         public virtual Response Update(string ifMatch, ApiManagementPortalSignInSettingData data, CancellationToken cancellationToken = default)
         {
             Argument.AssertNotNullOrEmpty(ifMatch, nameof(ifMatch));

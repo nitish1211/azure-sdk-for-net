@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.AgriculturePlatform.Models
     /// <summary> The resource model definition representing SKU. </summary>
     public partial class AgriculturePlatformSku : IJsonModel<AgriculturePlatformSku>
     {
-        /// <summary> Initializes a new instance of <see cref="AgriculturePlatformSku"/> for deserialization. </summary>
-        internal AgriculturePlatformSku()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual AgriculturePlatformSku PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

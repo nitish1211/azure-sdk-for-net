@@ -22,12 +22,11 @@ namespace Azure.ResourceManager.ApiManagement
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ApiManagementServiceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="publisherEmail"> Publisher email. </param>
         /// <param name="publisherName"> Publisher name. </param>
         /// <param name="sku"> SKU properties of the API Management service. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="publisherEmail"/>, <paramref name="publisherName"/> or <paramref name="sku"/> is null. </exception>
-        public ApiManagementServiceData(AzureLocation location, string publisherEmail, string publisherName, ApiManagementServiceSkuProperties sku) : base(location)
+        public ApiManagementServiceData(string publisherEmail, string publisherName, ApiManagementServiceSkuProperties sku)
         {
             Argument.AssertNotNull(publisherEmail, nameof(publisherEmail));
             Argument.AssertNotNull(publisherName, nameof(publisherName));

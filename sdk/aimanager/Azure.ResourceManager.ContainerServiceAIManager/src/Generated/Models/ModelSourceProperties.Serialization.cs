@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.ContainerServiceAIManager.Models
     /// <summary> Model source properties. </summary>
     public partial class ModelSourceProperties : IJsonModel<ModelSourceProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="ModelSourceProperties"/> for deserialization. </summary>
-        internal ModelSourceProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ModelSourceProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

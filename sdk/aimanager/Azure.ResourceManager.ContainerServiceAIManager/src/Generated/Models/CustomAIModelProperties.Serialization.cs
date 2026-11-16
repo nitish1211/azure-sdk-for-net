@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.ContainerServiceAIManager.Models
     /// <summary> Custom AI model properties. </summary>
     public partial class CustomAIModelProperties : IJsonModel<CustomAIModelProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="CustomAIModelProperties"/> for deserialization. </summary>
-        internal CustomAIModelProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual CustomAIModelProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

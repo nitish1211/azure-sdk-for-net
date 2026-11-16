@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.AgriculturePlatform
     /// <summary> Schema of the AgriService resource from Microsoft.AgriculturePlatform resource provider. </summary>
     public partial class AgricultureServiceData : TrackedResourceData, IJsonModel<AgricultureServiceData>
     {
-        /// <summary> Initializes a new instance of <see cref="AgricultureServiceData"/> for deserialization. </summary>
-        internal AgricultureServiceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -18,10 +18,8 @@ namespace Azure.ResourceManager.ContainerServiceAIManager.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ModelSourceProperties"/>. </summary>
-        /// <param name="sourceType"> Model source type. Constrains the legal authentication kinds. Immutable after creation. </param>
-        public ModelSourceProperties(ModelSourceType sourceType)
+        public ModelSourceProperties()
         {
-            SourceType = sourceType;
         }
 
         /// <summary> Initializes a new instance of <see cref="ModelSourceProperties"/>. </summary>

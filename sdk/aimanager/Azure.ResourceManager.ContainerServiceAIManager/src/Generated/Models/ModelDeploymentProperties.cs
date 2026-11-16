@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.ContainerServiceAIManager;
 
 namespace Azure.ResourceManager.ContainerServiceAIManager.Models
 {
@@ -19,16 +18,8 @@ namespace Azure.ResourceManager.ContainerServiceAIManager.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ModelDeploymentProperties"/>. </summary>
-        /// <param name="modelResourceId"> Full Azure resource ID of the model to deploy. Immutable after creation. </param>
-        /// <param name="vmSize"> Azure VM SKU used to host the deployment, e.g. "Standard_NC96ads_A100_v4". Immutable after creation. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="modelResourceId"/> or <paramref name="vmSize"/> is null. </exception>
-        public ModelDeploymentProperties(ResourceIdentifier modelResourceId, string vmSize)
+        public ModelDeploymentProperties()
         {
-            Argument.AssertNotNull(modelResourceId, nameof(modelResourceId));
-            Argument.AssertNotNull(vmSize, nameof(vmSize));
-
-            ModelResourceId = modelResourceId;
-            VmSize = vmSize;
         }
 
         /// <summary> Initializes a new instance of <see cref="ModelDeploymentProperties"/>. </summary>

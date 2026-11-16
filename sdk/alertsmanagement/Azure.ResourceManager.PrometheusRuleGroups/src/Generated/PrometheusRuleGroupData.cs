@@ -20,11 +20,10 @@ namespace Azure.ResourceManager.PrometheusRuleGroups
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PrometheusRuleGroupData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="scopes"> Target Azure Monitor workspaces resource ids. This api-version is currently limited to creating with one scope. This may change in future. </param>
         /// <param name="rules"> Defines the rules in the Prometheus rule group. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="scopes"/> or <paramref name="rules"/> is null. </exception>
-        public PrometheusRuleGroupData(AzureLocation location, IEnumerable<ResourceIdentifier> scopes, IEnumerable<PrometheusRule> rules) : base(location)
+        public PrometheusRuleGroupData(IEnumerable<ResourceIdentifier> scopes, IEnumerable<PrometheusRule> rules)
         {
             Argument.AssertNotNull(scopes, nameof(scopes));
             Argument.AssertNotNull(rules, nameof(rules));

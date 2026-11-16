@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.ContainerServiceAIManager.Models
     /// <summary> Model deployment properties. </summary>
     public partial class ModelDeploymentProperties : IJsonModel<ModelDeploymentProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="ModelDeploymentProperties"/> for deserialization. </summary>
-        internal ModelDeploymentProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ModelDeploymentProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)
