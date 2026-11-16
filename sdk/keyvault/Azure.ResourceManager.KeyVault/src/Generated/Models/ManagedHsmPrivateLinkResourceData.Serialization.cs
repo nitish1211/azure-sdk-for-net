@@ -19,11 +19,6 @@ namespace Azure.ResourceManager.KeyVault.Models
     /// <summary> A private link resource. </summary>
     public partial class ManagedHsmPrivateLinkResourceData : TrackedResourceData, IJsonModel<ManagedHsmPrivateLinkResourceData>
     {
-        /// <summary> Initializes a new instance of <see cref="ManagedHsmPrivateLinkResourceData"/> for deserialization. </summary>
-        internal ManagedHsmPrivateLinkResourceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

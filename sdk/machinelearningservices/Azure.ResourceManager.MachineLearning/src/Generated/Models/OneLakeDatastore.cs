@@ -19,17 +19,11 @@ namespace Azure.ResourceManager.MachineLearning.Models
 
         /// <summary> Initializes a new instance of <see cref="OneLakeDatastore"/>. </summary>
         /// <param name="credentials"> [Required] Account credentials. </param>
-        /// <param name="artifact"> [Required] OneLake artifact backing the datastore. </param>
-        /// <param name="oneLakeWorkspaceName"> [Required] OneLake workspace name. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="credentials"/>, <paramref name="artifact"/> or <paramref name="oneLakeWorkspaceName"/> is null. </exception>
-        public OneLakeDatastore(MachineLearningDatastoreCredentials credentials, OneLakeArtifact artifact, string oneLakeWorkspaceName) : base(credentials, DatastoreType.OneLake)
+        /// <exception cref="ArgumentNullException"> <paramref name="credentials"/> is null. </exception>
+        public OneLakeDatastore(MachineLearningDatastoreCredentials credentials) : base(credentials, DatastoreType.OneLake)
         {
             Argument.AssertNotNull(credentials, nameof(credentials));
-            Argument.AssertNotNull(artifact, nameof(artifact));
-            Argument.AssertNotNull(oneLakeWorkspaceName, nameof(oneLakeWorkspaceName));
 
-            Artifact = artifact;
-            OneLakeWorkspaceName = oneLakeWorkspaceName;
         }
 
         /// <summary> Initializes a new instance of <see cref="OneLakeDatastore"/>. </summary>
@@ -50,6 +44,20 @@ namespace Azure.ResourceManager.MachineLearning.Models
             _endpoint = endpoint;
             OneLakeWorkspaceName = oneLakeWorkspaceName;
             ServiceDataAccessAuthIdentity = serviceDataAccessAuthIdentity;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="OneLakeDatastore"/>. </summary>
+        /// <param name="credentials"> [Required] Account credentials. </param>
+        /// <param name="artifact"> [Required] OneLake artifact backing the datastore. </param>
+        /// <param name="oneLakeWorkspaceName"> [Required] OneLake workspace name. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="artifact"/> or <paramref name="oneLakeWorkspaceName"/> is null. </exception>
+        public OneLakeDatastore(MachineLearningDatastoreCredentials credentials, OneLakeArtifact artifact, string oneLakeWorkspaceName) : this(credentials)
+        {
+            Argument.AssertNotNull(artifact, nameof(artifact));
+            Argument.AssertNotNull(oneLakeWorkspaceName, nameof(oneLakeWorkspaceName));
+
+            Artifact = artifact;
+            OneLakeWorkspaceName = oneLakeWorkspaceName;
         }
 
         /// <summary> [Required] OneLake artifact backing the datastore. </summary>

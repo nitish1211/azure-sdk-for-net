@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.MachineLearning
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="MachineLearningRegistryData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public MachineLearningRegistryData(AzureLocation location) : base(location)
+        public MachineLearningRegistryData()
         {
 
         }
@@ -45,6 +44,13 @@ namespace Azure.ResourceManager.MachineLearning
             Kind = kind;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MachineLearningRegistryData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public MachineLearningRegistryData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> [Required] Additional attributes of the entity. </summary>

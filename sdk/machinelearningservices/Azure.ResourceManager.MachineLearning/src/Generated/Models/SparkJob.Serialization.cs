@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.MachineLearning.Models
     /// <summary> Spark job definition. </summary>
     public partial class SparkJob : MachineLearningJobProperties, IJsonModel<SparkJob>
     {
-        /// <summary> Initializes a new instance of <see cref="SparkJob"/> for deserialization. </summary>
-        internal SparkJob()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected override MachineLearningResourceBase PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

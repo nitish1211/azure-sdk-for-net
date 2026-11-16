@@ -19,14 +19,9 @@ namespace Azure.ResourceManager.MachineLearning.Models
     {
         /// <summary> Initializes a new instance of <see cref="MachineLearningDataVersionProperties"/>. </summary>
         /// <param name="dataType"> [Required] Specifies the type of data. </param>
-        /// <param name="dataUri"> [Required] Uri of the data. Example: https://go.microsoft.com/fwlink/?linkid=2202330. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="dataUri"/> is null. </exception>
-        public MachineLearningDataVersionProperties(MachineLearningDataType dataType, Uri dataUri)
+        public MachineLearningDataVersionProperties(MachineLearningDataType dataType)
         {
-            Argument.AssertNotNull(dataUri, nameof(dataUri));
-
             DataType = dataType;
-            DataUri = dataUri;
         }
 
         /// <summary> Initializes a new instance of <see cref="MachineLearningDataVersionProperties"/>. </summary>
@@ -41,6 +36,17 @@ namespace Azure.ResourceManager.MachineLearning.Models
         internal MachineLearningDataVersionProperties(string description, IDictionary<string, string> properties, IDictionary<string, string> tags, IDictionary<string, BinaryData> additionalBinaryDataProperties, bool? isAnonymous, bool? isArchived, MachineLearningDataType dataType, Uri dataUri) : base(description, properties, tags, additionalBinaryDataProperties, isAnonymous, isArchived)
         {
             DataType = dataType;
+            DataUri = dataUri;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MachineLearningDataVersionProperties"/>. </summary>
+        /// <param name="dataType"> [Required] Specifies the type of data. </param>
+        /// <param name="dataUri"> [Required] Uri of the data. Example: https://go.microsoft.com/fwlink/?linkid=2202330. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="dataUri"/> is null. </exception>
+        public MachineLearningDataVersionProperties(MachineLearningDataType dataType, Uri dataUri) : this(dataType)
+        {
+            Argument.AssertNotNull(dataUri, nameof(dataUri));
+
             DataUri = dataUri;
         }
 

@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Kusto.Models
     /// <summary> A class that contains virtual network definition. </summary>
     public partial class KustoClusterVirtualNetworkConfiguration : IJsonModel<KustoClusterVirtualNetworkConfiguration>
     {
-        /// <summary> Initializes a new instance of <see cref="KustoClusterVirtualNetworkConfiguration"/> for deserialization. </summary>
-        internal KustoClusterVirtualNetworkConfiguration()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual KustoClusterVirtualNetworkConfiguration PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

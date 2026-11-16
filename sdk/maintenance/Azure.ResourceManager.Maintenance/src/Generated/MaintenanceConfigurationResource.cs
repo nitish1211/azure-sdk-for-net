@@ -323,7 +323,7 @@ namespace Azure.ResourceManager.Maintenance
                 else
                 {
                     MaintenanceConfigurationData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    MaintenanceConfigurationData patch = new MaintenanceConfigurationData(current.Location);
+                    MaintenanceConfigurationData patch = new MaintenanceConfigurationData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -371,7 +371,7 @@ namespace Azure.ResourceManager.Maintenance
                 else
                 {
                     MaintenanceConfigurationData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    MaintenanceConfigurationData patch = new MaintenanceConfigurationData(current.Location);
+                    MaintenanceConfigurationData patch = new MaintenanceConfigurationData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -417,7 +417,7 @@ namespace Azure.ResourceManager.Maintenance
                 else
                 {
                     MaintenanceConfigurationData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    MaintenanceConfigurationData patch = new MaintenanceConfigurationData(current.Location);
+                    MaintenanceConfigurationData patch = new MaintenanceConfigurationData();
                     patch.Tags.ReplaceWith(tags);
                     Response<MaintenanceConfigurationResource> result = await UpdateAsync(patch, cancellationToken: cancellationToken).ConfigureAwait(false);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -459,7 +459,7 @@ namespace Azure.ResourceManager.Maintenance
                 else
                 {
                     MaintenanceConfigurationData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    MaintenanceConfigurationData patch = new MaintenanceConfigurationData(current.Location);
+                    MaintenanceConfigurationData patch = new MaintenanceConfigurationData();
                     patch.Tags.ReplaceWith(tags);
                     Response<MaintenanceConfigurationResource> result = Update(patch, cancellationToken: cancellationToken);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -501,7 +501,7 @@ namespace Azure.ResourceManager.Maintenance
                 else
                 {
                     MaintenanceConfigurationData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    MaintenanceConfigurationData patch = new MaintenanceConfigurationData(current.Location);
+                    MaintenanceConfigurationData patch = new MaintenanceConfigurationData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -547,7 +547,7 @@ namespace Azure.ResourceManager.Maintenance
                 else
                 {
                     MaintenanceConfigurationData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    MaintenanceConfigurationData patch = new MaintenanceConfigurationData(current.Location);
+                    MaintenanceConfigurationData patch = new MaintenanceConfigurationData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);

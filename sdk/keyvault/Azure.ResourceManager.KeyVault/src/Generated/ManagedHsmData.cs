@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.KeyVault
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ManagedHsmData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ManagedHsmData(AzureLocation location) : base(location)
+        public ManagedHsmData()
         {
         }
 
@@ -42,6 +41,13 @@ namespace Azure.ResourceManager.KeyVault
             Sku = sku;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ManagedHsmData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ManagedHsmData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the managed HSM. </summary>

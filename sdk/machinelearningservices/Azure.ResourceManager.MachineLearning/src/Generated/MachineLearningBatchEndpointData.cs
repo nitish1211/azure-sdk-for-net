@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.MachineLearning
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="MachineLearningBatchEndpointData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> [Required] Additional attributes of the entity. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="properties"/> is null. </exception>
-        public MachineLearningBatchEndpointData(AzureLocation location, MachineLearningBatchEndpointProperties properties) : base(location)
+        public MachineLearningBatchEndpointData(MachineLearningBatchEndpointProperties properties)
         {
             Argument.AssertNotNull(properties, nameof(properties));
 
@@ -49,6 +48,14 @@ namespace Azure.ResourceManager.MachineLearning
             Kind = kind;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MachineLearningBatchEndpointData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="properties"> [Required] Additional attributes of the entity. </param>
+        public MachineLearningBatchEndpointData(AzureLocation location, MachineLearningBatchEndpointProperties properties) : this(properties)
+        {
+            Location = location;
         }
 
         /// <summary> [Required] Additional attributes of the entity. </summary>

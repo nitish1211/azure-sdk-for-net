@@ -25,18 +25,10 @@ namespace Azure.ResourceManager.MachineLearning.Models
         private bool _resourcesIsDefined;
 
         /// <summary> Initializes a new instance of <see cref="SparkJob"/>. </summary>
-        /// <param name="codeId"> [Required] arm-id of the code asset. </param>
-        /// <param name="entry"> [Required] The entry to execute on startup of the job. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="codeId"/> or <paramref name="entry"/> is null. </exception>
-        public SparkJob(ResourceIdentifier codeId, SparkJobEntry entry) : base(JobType.Spark)
+        public SparkJob() : base(JobType.Spark)
         {
-            Argument.AssertNotNull(codeId, nameof(codeId));
-            Argument.AssertNotNull(entry, nameof(entry));
-
             Archives = new ChangeTrackingList<string>();
-            CodeId = codeId;
             Conf = new ChangeTrackingDictionary<string, string>();
-            Entry = entry;
             EnvironmentVariables = new ChangeTrackingDictionary<string, string>();
             Files = new ChangeTrackingList<string>();
             Inputs = new ChangeTrackingDictionary<string, MachineLearningJobInput>();
@@ -96,6 +88,19 @@ namespace Azure.ResourceManager.MachineLearning.Models
             PyFiles = pyFiles;
             _queueSettings = queueSettings;
             _resources = resources;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="SparkJob"/>. </summary>
+        /// <param name="codeId"> [Required] arm-id of the code asset. </param>
+        /// <param name="entry"> [Required] The entry to execute on startup of the job. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="codeId"/> or <paramref name="entry"/> is null. </exception>
+        public SparkJob(ResourceIdentifier codeId, SparkJobEntry entry) : this()
+        {
+            Argument.AssertNotNull(codeId, nameof(codeId));
+            Argument.AssertNotNull(entry, nameof(entry));
+
+            CodeId = codeId;
+            Entry = entry;
         }
 
         /// <summary> Archive files used in the job. </summary>

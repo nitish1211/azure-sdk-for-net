@@ -21,14 +21,11 @@ namespace Azure.ResourceManager.MachineLearning.Models
 
         /// <summary> Initializes a new instance of <see cref="MachineLearningAzureDataLakeGen1Datastore"/>. </summary>
         /// <param name="credentials"> [Required] Account credentials. </param>
-        /// <param name="storeName"> [Required] Azure Data Lake store name. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="credentials"/> or <paramref name="storeName"/> is null. </exception>
-        public MachineLearningAzureDataLakeGen1Datastore(MachineLearningDatastoreCredentials credentials, string storeName) : base(credentials, DatastoreType.AzureDataLakeGen1)
+        /// <exception cref="ArgumentNullException"> <paramref name="credentials"/> is null. </exception>
+        public MachineLearningAzureDataLakeGen1Datastore(MachineLearningDatastoreCredentials credentials) : base(credentials, DatastoreType.AzureDataLakeGen1)
         {
             Argument.AssertNotNull(credentials, nameof(credentials));
-            Argument.AssertNotNull(storeName, nameof(storeName));
 
-            StoreName = storeName;
         }
 
         /// <summary> Initializes a new instance of <see cref="MachineLearningAzureDataLakeGen1Datastore"/>. </summary>
@@ -48,6 +45,17 @@ namespace Azure.ResourceManager.MachineLearning.Models
             _resourceGroup = resourceGroup;
             _subscriptionId = subscriptionId;
             ServiceDataAccessAuthIdentity = serviceDataAccessAuthIdentity;
+            StoreName = storeName;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MachineLearningAzureDataLakeGen1Datastore"/>. </summary>
+        /// <param name="credentials"> [Required] Account credentials. </param>
+        /// <param name="storeName"> [Required] Azure Data Lake store name. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="storeName"/> is null. </exception>
+        public MachineLearningAzureDataLakeGen1Datastore(MachineLearningDatastoreCredentials credentials, string storeName) : this(credentials)
+        {
+            Argument.AssertNotNull(storeName, nameof(storeName));
+
             StoreName = storeName;
         }
 

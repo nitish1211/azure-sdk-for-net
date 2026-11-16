@@ -18,19 +18,8 @@ namespace Azure.ResourceManager.Kusto.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="KustoClusterVirtualNetworkConfiguration"/>. </summary>
-        /// <param name="subnetId"> The subnet resource id. </param>
-        /// <param name="enginePublicIPId"> Engine service's public IP address resource id. </param>
-        /// <param name="dataManagementPublicIPId"> Data management's service public IP address resource id. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="subnetId"/>, <paramref name="enginePublicIPId"/> or <paramref name="dataManagementPublicIPId"/> is null. </exception>
-        public KustoClusterVirtualNetworkConfiguration(string subnetId, string enginePublicIPId, string dataManagementPublicIPId)
+        public KustoClusterVirtualNetworkConfiguration()
         {
-            Argument.AssertNotNull(subnetId, nameof(subnetId));
-            Argument.AssertNotNull(enginePublicIPId, nameof(enginePublicIPId));
-            Argument.AssertNotNull(dataManagementPublicIPId, nameof(dataManagementPublicIPId));
-
-            SubnetId = subnetId;
-            EnginePublicIPId = enginePublicIPId;
-            DataManagementPublicIPId = dataManagementPublicIPId;
         }
 
         /// <summary> Initializes a new instance of <see cref="KustoClusterVirtualNetworkConfiguration"/>. </summary>
@@ -46,6 +35,22 @@ namespace Azure.ResourceManager.Kusto.Models
             DataManagementPublicIPId = dataManagementPublicIPId;
             State = state;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="KustoClusterVirtualNetworkConfiguration"/>. </summary>
+        /// <param name="subnetId"> The subnet resource id. </param>
+        /// <param name="enginePublicIPId"> Engine service's public IP address resource id. </param>
+        /// <param name="dataManagementPublicIPId"> Data management's service public IP address resource id. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="subnetId"/>, <paramref name="enginePublicIPId"/> or <paramref name="dataManagementPublicIPId"/> is null. </exception>
+        public KustoClusterVirtualNetworkConfiguration(string subnetId, string enginePublicIPId, string dataManagementPublicIPId) : this()
+        {
+            Argument.AssertNotNull(subnetId, nameof(subnetId));
+            Argument.AssertNotNull(enginePublicIPId, nameof(enginePublicIPId));
+            Argument.AssertNotNull(dataManagementPublicIPId, nameof(dataManagementPublicIPId));
+
+            SubnetId = subnetId;
+            EnginePublicIPId = enginePublicIPId;
+            DataManagementPublicIPId = dataManagementPublicIPId;
         }
 
         /// <summary> The subnet resource id. </summary>

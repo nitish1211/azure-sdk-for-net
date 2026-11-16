@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.MachineLearning.Models
     /// <summary> uri-file data version entity. </summary>
     public partial class MachineLearningUriFileDataVersion : MachineLearningDataVersionProperties, IJsonModel<MachineLearningUriFileDataVersion>
     {
-        /// <summary> Initializes a new instance of <see cref="MachineLearningUriFileDataVersion"/> for deserialization. </summary>
-        internal MachineLearningUriFileDataVersion()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected override MachineLearningResourceBase PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

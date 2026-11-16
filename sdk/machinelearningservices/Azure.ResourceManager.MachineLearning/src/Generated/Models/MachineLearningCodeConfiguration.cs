@@ -19,13 +19,8 @@ namespace Azure.ResourceManager.MachineLearning.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="MachineLearningCodeConfiguration"/>. </summary>
-        /// <param name="scoringScript"> [Required] The script to execute on startup. eg. "score.py". </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="scoringScript"/> is null. </exception>
-        public MachineLearningCodeConfiguration(string scoringScript)
+        public MachineLearningCodeConfiguration()
         {
-            Argument.AssertNotNull(scoringScript, nameof(scoringScript));
-
-            ScoringScript = scoringScript;
         }
 
         /// <summary> Initializes a new instance of <see cref="MachineLearningCodeConfiguration"/>. </summary>
@@ -37,6 +32,16 @@ namespace Azure.ResourceManager.MachineLearning.Models
             CodeId = codeId;
             ScoringScript = scoringScript;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MachineLearningCodeConfiguration"/>. </summary>
+        /// <param name="scoringScript"> [Required] The script to execute on startup. eg. "score.py". </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="scoringScript"/> is null. </exception>
+        public MachineLearningCodeConfiguration(string scoringScript) : this()
+        {
+            Argument.AssertNotNull(scoringScript, nameof(scoringScript));
+
+            ScoringScript = scoringScript;
         }
 
         /// <summary> ARM resource ID of the code asset. </summary>

@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.MachineLearning.Models
     /// <summary> Container for data asset versions. </summary>
     public partial class MachineLearningDataContainerProperties : MachineLearningAssetContainer, IJsonModel<MachineLearningDataContainerProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="MachineLearningDataContainerProperties"/> for deserialization. </summary>
-        internal MachineLearningDataContainerProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected override MachineLearningResourceBase PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

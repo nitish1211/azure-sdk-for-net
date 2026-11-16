@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.MachineLearning.Models
     /// <summary> MLTable data definition. </summary>
     public partial class MachineLearningTable : MachineLearningDataVersionProperties, IJsonModel<MachineLearningTable>
     {
-        /// <summary> Initializes a new instance of <see cref="MachineLearningTable"/> for deserialization. </summary>
-        internal MachineLearningTable()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected override MachineLearningResourceBase PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

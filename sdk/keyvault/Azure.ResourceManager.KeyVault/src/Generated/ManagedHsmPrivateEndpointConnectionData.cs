@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.KeyVault
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ManagedHsmPrivateEndpointConnectionData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ManagedHsmPrivateEndpointConnectionData(AzureLocation location) : base(location)
+        public ManagedHsmPrivateEndpointConnectionData()
         {
         }
 
@@ -45,6 +44,13 @@ namespace Azure.ResourceManager.KeyVault
             Identity = identity;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ManagedHsmPrivateEndpointConnectionData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ManagedHsmPrivateEndpointConnectionData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Resource properties. </summary>

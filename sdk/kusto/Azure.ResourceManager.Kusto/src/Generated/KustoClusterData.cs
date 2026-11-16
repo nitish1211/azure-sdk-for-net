@@ -21,10 +21,9 @@ namespace Azure.ResourceManager.Kusto
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="KustoClusterData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="sku"> The SKU of the cluster. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sku"/> is null. </exception>
-        public KustoClusterData(AzureLocation location, KustoSku sku) : base(location)
+        public KustoClusterData(KustoSku sku)
         {
             Argument.AssertNotNull(sku, nameof(sku));
 
@@ -53,6 +52,14 @@ namespace Azure.ResourceManager.Kusto
             Identity = identity;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="KustoClusterData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="sku"> The SKU of the cluster. </param>
+        public KustoClusterData(AzureLocation location, KustoSku sku) : this(sku)
+        {
+            Location = location;
         }
 
         /// <summary> The cluster properties. </summary>

@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.KubernetesConfiguration.PrivateLinkScopes
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="KubernetesConfigurationPrivateLinkScopeData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public KubernetesConfigurationPrivateLinkScopeData(AzureLocation location) : base(location)
+        public KubernetesConfigurationPrivateLinkScopeData()
         {
         }
 

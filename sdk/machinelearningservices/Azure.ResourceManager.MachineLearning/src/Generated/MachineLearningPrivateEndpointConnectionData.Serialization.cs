@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.MachineLearning
     /// <summary> The Private Endpoint Connection resource. </summary>
     public partial class MachineLearningPrivateEndpointConnectionData : TrackedResourceData, IJsonModel<MachineLearningPrivateEndpointConnectionData>
     {
-        /// <summary> Initializes a new instance of <see cref="MachineLearningPrivateEndpointConnectionData"/> for deserialization. </summary>
-        internal MachineLearningPrivateEndpointConnectionData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

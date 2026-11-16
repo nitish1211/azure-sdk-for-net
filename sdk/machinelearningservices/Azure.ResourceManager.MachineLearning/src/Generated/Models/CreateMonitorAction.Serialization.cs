@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.MachineLearning.Models
     /// <summary> The CreateMonitorAction. </summary>
     public partial class CreateMonitorAction : MachineLearningScheduleAction, IJsonModel<CreateMonitorAction>
     {
-        /// <summary> Initializes a new instance of <see cref="CreateMonitorAction"/> for deserialization. </summary>
-        internal CreateMonitorAction()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected override MachineLearningScheduleAction PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

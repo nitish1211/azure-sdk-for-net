@@ -24,16 +24,8 @@ namespace Azure.ResourceManager.MachineLearning.Models
         private bool _queueSettingsIsDefined;
 
         /// <summary> Initializes a new instance of <see cref="MachineLearningCommandJob"/>. </summary>
-        /// <param name="command"> [Required] The command to execute on startup of the job. eg. "python train.py". </param>
-        /// <param name="environmentId"> [Required] The ARM resource ID of the Environment specification for the job. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="command"/> or <paramref name="environmentId"/> is null. </exception>
-        public MachineLearningCommandJob(string command, ResourceIdentifier environmentId) : base(JobType.Command)
+        public MachineLearningCommandJob() : base(JobType.Command)
         {
-            Argument.AssertNotNull(command, nameof(command));
-            Argument.AssertNotNull(environmentId, nameof(environmentId));
-
-            Command = command;
-            EnvironmentId = environmentId;
             EnvironmentVariables = new ChangeTrackingDictionary<string, string>();
             Inputs = new ChangeTrackingDictionary<string, MachineLearningJobInput>();
             Outputs = new ChangeTrackingDictionary<string, MachineLearningJobOutput>();
@@ -84,6 +76,19 @@ namespace Azure.ResourceManager.MachineLearning.Models
             _parameters = parameters;
             _queueSettings = queueSettings;
             Resources = resources;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MachineLearningCommandJob"/>. </summary>
+        /// <param name="command"> [Required] The command to execute on startup of the job. eg. "python train.py". </param>
+        /// <param name="environmentId"> [Required] The ARM resource ID of the Environment specification for the job. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="command"/> or <paramref name="environmentId"/> is null. </exception>
+        public MachineLearningCommandJob(string command, ResourceIdentifier environmentId) : this()
+        {
+            Argument.AssertNotNull(command, nameof(command));
+            Argument.AssertNotNull(environmentId, nameof(environmentId));
+
+            Command = command;
+            EnvironmentId = environmentId;
         }
 
         /// <summary> ARM resource ID of the code asset. </summary>

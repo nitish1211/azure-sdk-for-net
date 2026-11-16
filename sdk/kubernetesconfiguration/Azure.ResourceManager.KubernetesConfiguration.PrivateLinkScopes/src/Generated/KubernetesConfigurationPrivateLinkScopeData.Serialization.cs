@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.KubernetesConfiguration.PrivateLinkScopes
     /// <summary> An Azure Arc PrivateLinkScope definition. </summary>
     public partial class KubernetesConfigurationPrivateLinkScopeData : TrackedResourceData, IJsonModel<KubernetesConfigurationPrivateLinkScopeData>
     {
-        /// <summary> Initializes a new instance of <see cref="KubernetesConfigurationPrivateLinkScopeData"/> for deserialization. </summary>
-        internal KubernetesConfigurationPrivateLinkScopeData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

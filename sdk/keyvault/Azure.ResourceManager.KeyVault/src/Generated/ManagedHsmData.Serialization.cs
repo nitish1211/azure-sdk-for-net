@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.KeyVault
     /// <summary> Resource information with extended details. </summary>
     public partial class ManagedHsmData : TrackedResourceData, IJsonModel<ManagedHsmData>
     {
-        /// <summary> Initializes a new instance of <see cref="ManagedHsmData"/> for deserialization. </summary>
-        internal ManagedHsmData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

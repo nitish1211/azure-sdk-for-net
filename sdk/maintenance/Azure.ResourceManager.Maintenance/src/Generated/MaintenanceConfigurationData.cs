@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Maintenance
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="MaintenanceConfigurationData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public MaintenanceConfigurationData(AzureLocation location) : base(location)
+        public MaintenanceConfigurationData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.Maintenance
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MaintenanceConfigurationData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public MaintenanceConfigurationData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Gets or sets properties of the resource. </summary>

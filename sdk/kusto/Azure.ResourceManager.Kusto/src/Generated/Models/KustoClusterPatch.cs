@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Kusto.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="KustoClusterPatch"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public KustoClusterPatch(AzureLocation location) : base(location)
+        public KustoClusterPatch()
         {
             Zones = new ChangeTrackingList<string>();
         }
@@ -45,6 +44,13 @@ namespace Azure.ResourceManager.Kusto.Models
             Identity = identity;
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="KustoClusterPatch"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public KustoClusterPatch(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The SKU of the cluster. </summary>

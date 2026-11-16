@@ -25,17 +25,11 @@ namespace Azure.ResourceManager.MachineLearning.Models
 
         /// <summary> Initializes a new instance of <see cref="MachineLearningAzureFileDatastore"/>. </summary>
         /// <param name="credentials"> [Required] Account credentials. </param>
-        /// <param name="accountName"> [Required] Storage account name. </param>
-        /// <param name="fileShareName"> [Required] The name of the Azure file share that the datastore points to. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="credentials"/>, <paramref name="accountName"/> or <paramref name="fileShareName"/> is null. </exception>
-        public MachineLearningAzureFileDatastore(MachineLearningDatastoreCredentials credentials, string accountName, string fileShareName) : base(credentials, DatastoreType.AzureFile)
+        /// <exception cref="ArgumentNullException"> <paramref name="credentials"/> is null. </exception>
+        public MachineLearningAzureFileDatastore(MachineLearningDatastoreCredentials credentials) : base(credentials, DatastoreType.AzureFile)
         {
             Argument.AssertNotNull(credentials, nameof(credentials));
-            Argument.AssertNotNull(accountName, nameof(accountName));
-            Argument.AssertNotNull(fileShareName, nameof(fileShareName));
 
-            AccountName = accountName;
-            FileShareName = fileShareName;
         }
 
         /// <summary> Initializes a new instance of <see cref="MachineLearningAzureFileDatastore"/>. </summary>
@@ -62,6 +56,20 @@ namespace Azure.ResourceManager.MachineLearning.Models
             FileShareName = fileShareName;
             _protocol = protocol;
             ServiceDataAccessAuthIdentity = serviceDataAccessAuthIdentity;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MachineLearningAzureFileDatastore"/>. </summary>
+        /// <param name="credentials"> [Required] Account credentials. </param>
+        /// <param name="accountName"> [Required] Storage account name. </param>
+        /// <param name="fileShareName"> [Required] The name of the Azure file share that the datastore points to. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="accountName"/> or <paramref name="fileShareName"/> is null. </exception>
+        public MachineLearningAzureFileDatastore(MachineLearningDatastoreCredentials credentials, string accountName, string fileShareName) : this(credentials)
+        {
+            Argument.AssertNotNull(accountName, nameof(accountName));
+            Argument.AssertNotNull(fileShareName, nameof(fileShareName));
+
+            AccountName = accountName;
+            FileShareName = fileShareName;
         }
 
         /// <summary> Azure Resource Group name. </summary>

@@ -14,6 +14,11 @@ namespace Azure.ResourceManager.MachineLearning.Models
     public partial class MachineLearningUriFileDataVersion : MachineLearningDataVersionProperties
     {
         /// <summary> Initializes a new instance of <see cref="MachineLearningUriFileDataVersion"/>. </summary>
+        public MachineLearningUriFileDataVersion() : base(MachineLearningDataType.UriFile)
+        {
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MachineLearningUriFileDataVersion"/>. </summary>
         /// <param name="description"> The asset description text. </param>
         /// <param name="properties"> The asset property dictionary. </param>
         /// <param name="tags"> Tag dictionary. Tags can be added, removed, and updated. </param>

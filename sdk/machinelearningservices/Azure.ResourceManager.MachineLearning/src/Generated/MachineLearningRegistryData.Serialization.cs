@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.MachineLearning
     /// <summary> Concrete tracked resource types can be created by aliasing this type using a specific property type. </summary>
     public partial class MachineLearningRegistryData : TrackedResourceData, IJsonModel<MachineLearningRegistryData>
     {
-        /// <summary> Initializes a new instance of <see cref="MachineLearningRegistryData"/> for deserialization. </summary>
-        internal MachineLearningRegistryData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

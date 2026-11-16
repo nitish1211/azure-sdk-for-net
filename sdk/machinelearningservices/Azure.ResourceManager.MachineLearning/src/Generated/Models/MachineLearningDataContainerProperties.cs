@@ -15,10 +15,8 @@ namespace Azure.ResourceManager.MachineLearning.Models
     public partial class MachineLearningDataContainerProperties : MachineLearningAssetContainer
     {
         /// <summary> Initializes a new instance of <see cref="MachineLearningDataContainerProperties"/>. </summary>
-        /// <param name="dataType"> [Required] Specifies the type of data. </param>
-        public MachineLearningDataContainerProperties(MachineLearningDataType dataType)
+        public MachineLearningDataContainerProperties()
         {
-            DataType = dataType;
         }
 
         /// <summary> Initializes a new instance of <see cref="MachineLearningDataContainerProperties"/>. </summary>
@@ -31,6 +29,13 @@ namespace Azure.ResourceManager.MachineLearning.Models
         /// <param name="nextVersion"> The next auto incremental version. </param>
         /// <param name="dataType"> [Required] Specifies the type of data. </param>
         internal MachineLearningDataContainerProperties(string description, IDictionary<string, string> properties, IDictionary<string, string> tags, IDictionary<string, BinaryData> additionalBinaryDataProperties, bool? isArchived, string latestVersion, string nextVersion, MachineLearningDataType dataType) : base(description, properties, tags, additionalBinaryDataProperties, isArchived, latestVersion, nextVersion)
+        {
+            DataType = dataType;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="MachineLearningDataContainerProperties"/>. </summary>
+        /// <param name="dataType"> [Required] Specifies the type of data. </param>
+        public MachineLearningDataContainerProperties(MachineLearningDataType dataType) : this()
         {
             DataType = dataType;
         }

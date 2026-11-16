@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.MachineLearning.Models
     /// <summary> Configuration for a scoring code asset. </summary>
     public partial class MachineLearningCodeConfiguration : IJsonModel<MachineLearningCodeConfiguration>
     {
-        /// <summary> Initializes a new instance of <see cref="MachineLearningCodeConfiguration"/> for deserialization. </summary>
-        internal MachineLearningCodeConfiguration()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual MachineLearningCodeConfiguration PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

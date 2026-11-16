@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.MachineLearning.Models
     /// <summary> Command job definition. </summary>
     public partial class MachineLearningCommandJob : MachineLearningJobProperties, IJsonModel<MachineLearningCommandJob>
     {
-        /// <summary> Initializes a new instance of <see cref="MachineLearningCommandJob"/> for deserialization. </summary>
-        internal MachineLearningCommandJob()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected override MachineLearningResourceBase PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

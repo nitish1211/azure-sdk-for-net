@@ -15,13 +15,8 @@ namespace Azure.ResourceManager.MachineLearning.Models
     public partial class CreateMonitorAction : MachineLearningScheduleAction
     {
         /// <summary> Initializes a new instance of <see cref="CreateMonitorAction"/>. </summary>
-        /// <param name="monitorDefinition"> [Required] Defines the monitor. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="monitorDefinition"/> is null. </exception>
-        public CreateMonitorAction(MonitorDefinition monitorDefinition) : base(ScheduleActionType.CreateMonitor)
+        public CreateMonitorAction() : base(ScheduleActionType.CreateMonitor)
         {
-            Argument.AssertNotNull(monitorDefinition, nameof(monitorDefinition));
-
-            MonitorDefinition = monitorDefinition;
         }
 
         /// <summary> Initializes a new instance of <see cref="CreateMonitorAction"/>. </summary>
@@ -30,6 +25,16 @@ namespace Azure.ResourceManager.MachineLearning.Models
         /// <param name="monitorDefinition"> [Required] Defines the monitor. </param>
         internal CreateMonitorAction(ScheduleActionType actionType, IDictionary<string, BinaryData> additionalBinaryDataProperties, MonitorDefinition monitorDefinition) : base(actionType, additionalBinaryDataProperties)
         {
+            MonitorDefinition = monitorDefinition;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="CreateMonitorAction"/>. </summary>
+        /// <param name="monitorDefinition"> [Required] Defines the monitor. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="monitorDefinition"/> is null. </exception>
+        public CreateMonitorAction(MonitorDefinition monitorDefinition) : this()
+        {
+            Argument.AssertNotNull(monitorDefinition, nameof(monitorDefinition));
+
             MonitorDefinition = monitorDefinition;
         }
 

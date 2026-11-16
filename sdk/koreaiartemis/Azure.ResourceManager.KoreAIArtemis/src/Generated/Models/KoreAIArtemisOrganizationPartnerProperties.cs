@@ -21,24 +21,16 @@ namespace Azure.ResourceManager.KoreAIArtemis.Models
         /// <param name="organizationName"> Display name of the Organization on the partner side. </param>
         /// <param name="billingEmail"> Billing contact email address for the Organization. </param>
         /// <param name="ownerEmail"> Initial owner email for the Organization. JIT-provisioned by the partner if the user does not already exist. </param>
-        /// <param name="defaultWorkspace">
-        /// Default Workspace created atomically with the Organization.
-        /// Required at create time and immutable thereafter.
-        /// After create, manage workspaces (including this default) via the standard
-        /// Workspace child resource operations.
-        /// </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="organizationName"/>, <paramref name="billingEmail"/>, <paramref name="ownerEmail"/> or <paramref name="defaultWorkspace"/> is null. </exception>
-        public KoreAIArtemisOrganizationPartnerProperties(string organizationName, string billingEmail, string ownerEmail, KoreAIArtemisDefaultWorkspaceProperties defaultWorkspace)
+        /// <exception cref="ArgumentNullException"> <paramref name="organizationName"/>, <paramref name="billingEmail"/> or <paramref name="ownerEmail"/> is null. </exception>
+        public KoreAIArtemisOrganizationPartnerProperties(string organizationName, string billingEmail, string ownerEmail)
         {
             Argument.AssertNotNull(organizationName, nameof(organizationName));
             Argument.AssertNotNull(billingEmail, nameof(billingEmail));
             Argument.AssertNotNull(ownerEmail, nameof(ownerEmail));
-            Argument.AssertNotNull(defaultWorkspace, nameof(defaultWorkspace));
 
             OrganizationName = organizationName;
             BillingEmail = billingEmail;
             OwnerEmail = ownerEmail;
-            DefaultWorkspace = defaultWorkspace;
         }
 
         /// <summary> Initializes a new instance of <see cref="KoreAIArtemisOrganizationPartnerProperties"/>. </summary>

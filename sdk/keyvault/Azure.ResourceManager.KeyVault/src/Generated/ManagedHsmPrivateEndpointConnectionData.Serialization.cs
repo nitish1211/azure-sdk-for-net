@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.KeyVault
     /// <summary> Private endpoint connection resource. </summary>
     public partial class ManagedHsmPrivateEndpointConnectionData : TrackedResourceData, IJsonModel<ManagedHsmPrivateEndpointConnectionData>
     {
-        /// <summary> Initializes a new instance of <see cref="ManagedHsmPrivateEndpointConnectionData"/> for deserialization. </summary>
-        internal ManagedHsmPrivateEndpointConnectionData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

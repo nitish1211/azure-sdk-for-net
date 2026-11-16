@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Maintenance
     /// <summary> Maintenance configuration record type. </summary>
     public partial class MaintenanceConfigurationData : TrackedResourceData, IJsonModel<MaintenanceConfigurationData>
     {
-        /// <summary> Initializes a new instance of <see cref="MaintenanceConfigurationData"/> for deserialization. </summary>
-        internal MaintenanceConfigurationData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)
