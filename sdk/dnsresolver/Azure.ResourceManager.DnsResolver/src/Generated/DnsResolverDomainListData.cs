@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.DnsResolver
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DnsResolverDomainListData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DnsResolverDomainListData(AzureLocation location) : base(location)
+        public DnsResolverDomainListData()
         {
         }
 
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.DnsResolver
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DnsResolverDomainListData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public DnsResolverDomainListData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the DNS resolver domain list. </summary>

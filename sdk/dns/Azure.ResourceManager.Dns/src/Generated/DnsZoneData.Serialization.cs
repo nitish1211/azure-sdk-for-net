@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Dns
     /// <summary> Describes a DNS zone. </summary>
     public partial class DnsZoneData : TrackedResourceData, IJsonModel<DnsZoneData>
     {
-        /// <summary> Initializes a new instance of <see cref="DnsZoneData"/> for deserialization. </summary>
-        internal DnsZoneData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

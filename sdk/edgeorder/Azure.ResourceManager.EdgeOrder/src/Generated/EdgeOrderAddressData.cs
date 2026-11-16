@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.EdgeOrder
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="EdgeOrderAddressData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public EdgeOrderAddressData(AzureLocation location) : base(location)
+        public EdgeOrderAddressData()
         {
 
         }
@@ -44,9 +43,20 @@ namespace Azure.ResourceManager.EdgeOrder
         /// <summary> Initializes a new instance of <see cref="EdgeOrderAddressData"/>. </summary>
         /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="contactDetails"> Contact details for the address. </param>
-        public EdgeOrderAddressData(AzureLocation location, EdgeOrderAddressContactDetails contactDetails) : this(location)
+        /// <exception cref="ArgumentNullException"> <paramref name="contactDetails"/> is null. </exception>
+        public EdgeOrderAddressData(AzureLocation location, EdgeOrderAddressContactDetails contactDetails) : this()
         {
+            Argument.AssertNotNull(contactDetails, nameof(contactDetails));
+
+            Location = location;
             ContactDetails = contactDetails;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="EdgeOrderAddressData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public EdgeOrderAddressData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of an address. </summary>

@@ -437,7 +437,7 @@ namespace Azure.ResourceManager.Discovery
                 else
                 {
                     DiscoveryNodePoolData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    DiscoveryNodePoolData patch = new DiscoveryNodePoolData(current.Location);
+                    DiscoveryNodePoolData patch = new DiscoveryNodePoolData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -485,7 +485,7 @@ namespace Azure.ResourceManager.Discovery
                 else
                 {
                     DiscoveryNodePoolData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    DiscoveryNodePoolData patch = new DiscoveryNodePoolData(current.Location);
+                    DiscoveryNodePoolData patch = new DiscoveryNodePoolData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -531,7 +531,7 @@ namespace Azure.ResourceManager.Discovery
                 else
                 {
                     DiscoveryNodePoolData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    DiscoveryNodePoolData patch = new DiscoveryNodePoolData(current.Location);
+                    DiscoveryNodePoolData patch = new DiscoveryNodePoolData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<DiscoveryNodePoolResource> result = await UpdateAsync(WaitUntil.Completed, patch, cancellationToken: cancellationToken).ConfigureAwait(false);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -573,7 +573,7 @@ namespace Azure.ResourceManager.Discovery
                 else
                 {
                     DiscoveryNodePoolData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    DiscoveryNodePoolData patch = new DiscoveryNodePoolData(current.Location);
+                    DiscoveryNodePoolData patch = new DiscoveryNodePoolData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<DiscoveryNodePoolResource> result = Update(WaitUntil.Completed, patch, cancellationToken: cancellationToken);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -615,7 +615,7 @@ namespace Azure.ResourceManager.Discovery
                 else
                 {
                     DiscoveryNodePoolData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    DiscoveryNodePoolData patch = new DiscoveryNodePoolData(current.Location);
+                    DiscoveryNodePoolData patch = new DiscoveryNodePoolData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -661,7 +661,7 @@ namespace Azure.ResourceManager.Discovery
                 else
                 {
                     DiscoveryNodePoolData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    DiscoveryNodePoolData patch = new DiscoveryNodePoolData(current.Location);
+                    DiscoveryNodePoolData patch = new DiscoveryNodePoolData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);

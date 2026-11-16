@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.Discovery;
 
 namespace Azure.ResourceManager.Discovery.Models
 {
@@ -18,16 +17,8 @@ namespace Azure.ResourceManager.Discovery.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DiscoveryChatModelDeploymentProperties"/>. </summary>
-        /// <param name="modelFormat"> Model format as published by the provider. Verify supported formats per region using the Model Catalog API. </param>
-        /// <param name="modelName"> Canonical provider model name available in the selected region. Verify supported values per region using the Model Catalog API. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="modelFormat"/> or <paramref name="modelName"/> is null. </exception>
-        public DiscoveryChatModelDeploymentProperties(string modelFormat, string modelName)
+        public DiscoveryChatModelDeploymentProperties()
         {
-            Argument.AssertNotNull(modelFormat, nameof(modelFormat));
-            Argument.AssertNotNull(modelName, nameof(modelName));
-
-            ModelFormat = modelFormat;
-            ModelName = modelName;
         }
 
         /// <summary> Initializes a new instance of <see cref="DiscoveryChatModelDeploymentProperties"/>. </summary>

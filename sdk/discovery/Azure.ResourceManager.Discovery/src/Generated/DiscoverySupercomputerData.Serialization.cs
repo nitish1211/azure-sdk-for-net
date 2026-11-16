@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Discovery
     /// <summary> Supercomputer tracked resource. </summary>
     public partial class DiscoverySupercomputerData : TrackedResourceData, IJsonModel<DiscoverySupercomputerData>
     {
-        /// <summary> Initializes a new instance of <see cref="DiscoverySupercomputerData"/> for deserialization. </summary>
-        internal DiscoverySupercomputerData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

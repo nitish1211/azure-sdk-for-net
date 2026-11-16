@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.Discovery;
 
 namespace Azure.ResourceManager.Discovery.Models
 {
@@ -18,19 +17,8 @@ namespace Azure.ResourceManager.Discovery.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="BookshelfKeyVaultProperties"/>. </summary>
-        /// <param name="keyVaultUri"> The Key Vault URI. </param>
-        /// <param name="keyName"> The Key Name in Key Vault. </param>
-        /// <param name="identityClientId"> The client ID of the identity to use for accessing the Key Vault. Must be a workload identity assigned to the Bookshelf resource. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="keyVaultUri"/>, <paramref name="keyName"/> or <paramref name="identityClientId"/> is null. </exception>
-        public BookshelfKeyVaultProperties(Uri keyVaultUri, string keyName, string identityClientId)
+        public BookshelfKeyVaultProperties()
         {
-            Argument.AssertNotNull(keyVaultUri, nameof(keyVaultUri));
-            Argument.AssertNotNull(keyName, nameof(keyName));
-            Argument.AssertNotNull(identityClientId, nameof(identityClientId));
-
-            KeyVaultUri = keyVaultUri;
-            KeyName = keyName;
-            IdentityClientId = identityClientId;
         }
 
         /// <summary> Initializes a new instance of <see cref="BookshelfKeyVaultProperties"/>. </summary>

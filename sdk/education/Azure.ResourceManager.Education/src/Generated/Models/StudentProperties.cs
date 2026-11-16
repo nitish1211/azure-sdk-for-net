@@ -20,21 +20,18 @@ namespace Azure.ResourceManager.Education.Models
         /// <summary> Initializes a new instance of <see cref="StudentProperties"/>. </summary>
         /// <param name="firstName"> First Name. </param>
         /// <param name="lastName"> Last Name. </param>
-        /// <param name="email"> Student Email. </param>
         /// <param name="role"> Student Role. </param>
         /// <param name="budget"> Student Budget. </param>
         /// <param name="expiresOn"> Date this student is set to expire from the lab. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="firstName"/>, <paramref name="lastName"/>, <paramref name="email"/> or <paramref name="budget"/> is null. </exception>
-        public StudentProperties(string firstName, string lastName, string email, StudentRole role, EducationAmount budget, DateTimeOffset expiresOn)
+        /// <exception cref="ArgumentNullException"> <paramref name="firstName"/>, <paramref name="lastName"/> or <paramref name="budget"/> is null. </exception>
+        public StudentProperties(string firstName, string lastName, StudentRole role, EducationAmount budget, DateTimeOffset expiresOn)
         {
             Argument.AssertNotNull(firstName, nameof(firstName));
             Argument.AssertNotNull(lastName, nameof(lastName));
-            Argument.AssertNotNull(email, nameof(email));
             Argument.AssertNotNull(budget, nameof(budget));
 
             FirstName = firstName;
             LastName = lastName;
-            Email = email;
             Role = role;
             Budget = budget;
             ExpiresOn = expiresOn;

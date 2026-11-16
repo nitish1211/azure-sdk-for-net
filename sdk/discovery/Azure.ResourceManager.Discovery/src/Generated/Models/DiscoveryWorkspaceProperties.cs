@@ -19,14 +19,9 @@ namespace Azure.ResourceManager.Discovery.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DiscoveryWorkspaceProperties"/>. </summary>
-        /// <param name="workspaceIdentity"> Identity IDs used for leveraging Workspace resources. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="workspaceIdentity"/> is null. </exception>
-        public DiscoveryWorkspaceProperties(DiscoveryManagedIdentityReference workspaceIdentity)
+        public DiscoveryWorkspaceProperties()
         {
-            Argument.AssertNotNull(workspaceIdentity, nameof(workspaceIdentity));
-
             SupercomputerIds = new ChangeTrackingList<ResourceIdentifier>();
-            WorkspaceIdentity = workspaceIdentity;
             PrivateEndpointConnections = new ChangeTrackingList<DiscoveryPrivateEndpointConnection>();
         }
 

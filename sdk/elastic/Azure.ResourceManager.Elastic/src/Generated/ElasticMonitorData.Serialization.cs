@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Elastic
     /// <summary> Monitor resource. </summary>
     public partial class ElasticMonitorData : TrackedResourceData, IJsonModel<ElasticMonitorData>
     {
-        /// <summary> Initializes a new instance of <see cref="ElasticMonitorData"/> for deserialization. </summary>
-        internal ElasticMonitorData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

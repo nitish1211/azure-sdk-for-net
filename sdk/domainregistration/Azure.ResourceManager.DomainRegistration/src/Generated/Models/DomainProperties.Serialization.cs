@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.DomainRegistration.Models
     /// <summary> Domain resource specific properties. </summary>
     internal partial class DomainProperties : IJsonModel<DomainProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="DomainProperties"/> for deserialization. </summary>
-        internal DomainProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DomainProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

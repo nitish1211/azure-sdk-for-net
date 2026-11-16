@@ -19,18 +19,15 @@ namespace Azure.ResourceManager.Education.Models
 
         /// <summary> Initializes a new instance of <see cref="LabProperties"/>. </summary>
         /// <param name="displayName"> Lab Display Name. </param>
-        /// <param name="budgetPerStudent"> Default monetary cap for each student in this lab. </param>
         /// <param name="description"> Detail description of this lab. </param>
         /// <param name="expiresOn"> Default expiration date for each student in this lab. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="displayName"/>, <paramref name="budgetPerStudent"/> or <paramref name="description"/> is null. </exception>
-        public LabProperties(string displayName, EducationAmount budgetPerStudent, string description, DateTimeOffset expiresOn)
+        /// <exception cref="ArgumentNullException"> <paramref name="displayName"/> or <paramref name="description"/> is null. </exception>
+        public LabProperties(string displayName, string description, DateTimeOffset expiresOn)
         {
             Argument.AssertNotNull(displayName, nameof(displayName));
-            Argument.AssertNotNull(budgetPerStudent, nameof(budgetPerStudent));
             Argument.AssertNotNull(description, nameof(description));
 
             DisplayName = displayName;
-            BudgetPerStudent = budgetPerStudent;
             Description = description;
             ExpiresOn = expiresOn;
         }

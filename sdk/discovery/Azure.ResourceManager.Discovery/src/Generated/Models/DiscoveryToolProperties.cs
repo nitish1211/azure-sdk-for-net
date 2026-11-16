@@ -19,17 +19,10 @@ namespace Azure.ResourceManager.Discovery.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DiscoveryToolProperties"/>. </summary>
-        /// <param name="version"> The version of a resource definition. </param>
-        /// <param name="definitionContent"> The JSON content for defining a resource. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="version"/> or <paramref name="definitionContent"/> is null. </exception>
-        public DiscoveryToolProperties(string version, IDictionary<string, BinaryData> definitionContent)
+        public DiscoveryToolProperties()
         {
-            Argument.AssertNotNull(version, nameof(version));
-            Argument.AssertNotNull(definitionContent, nameof(definitionContent));
-
-            Version = version;
             EnvironmentVariables = new ChangeTrackingDictionary<string, string>();
-            DefinitionContent = definitionContent;
+            DefinitionContent = new ChangeTrackingDictionary<string, BinaryData>();
         }
 
         /// <summary> Initializes a new instance of <see cref="DiscoveryToolProperties"/>. </summary>

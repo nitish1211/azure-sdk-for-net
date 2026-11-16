@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.Discovery;
 
 namespace Azure.ResourceManager.Discovery.Models
 {
@@ -19,17 +18,8 @@ namespace Azure.ResourceManager.Discovery.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DiscoveryNodePoolProperties"/>. </summary>
-        /// <param name="subnetId"> The node pool subnet. </param>
-        /// <param name="vmSize"> The size of the underlying Azure VM. </param>
-        /// <param name="maxNodeCount"> The maximum number of nodes. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="subnetId"/> is null. </exception>
-        public DiscoveryNodePoolProperties(ResourceIdentifier subnetId, DiscoveryVmSize vmSize, int maxNodeCount)
+        public DiscoveryNodePoolProperties()
         {
-            Argument.AssertNotNull(subnetId, nameof(subnetId));
-
-            SubnetId = subnetId;
-            VmSize = vmSize;
-            MaxNodeCount = maxNodeCount;
         }
 
         /// <summary> Initializes a new instance of <see cref="DiscoveryNodePoolProperties"/>. </summary>

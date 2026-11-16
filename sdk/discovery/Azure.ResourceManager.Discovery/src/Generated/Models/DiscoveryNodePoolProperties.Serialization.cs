@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.Discovery.Models
     /// <summary> NodePool properties. </summary>
     public partial class DiscoveryNodePoolProperties : IJsonModel<DiscoveryNodePoolProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="DiscoveryNodePoolProperties"/> for deserialization. </summary>
-        internal DiscoveryNodePoolProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DiscoveryNodePoolProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

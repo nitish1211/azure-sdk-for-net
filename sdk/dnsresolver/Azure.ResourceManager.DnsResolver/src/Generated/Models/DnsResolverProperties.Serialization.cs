@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.DnsResolver.Models
     /// <summary> Represents the properties of a DNS resolver. </summary>
     internal partial class DnsResolverProperties : IJsonModel<DnsResolverProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="DnsResolverProperties"/> for deserialization. </summary>
-        internal DnsResolverProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DnsResolverProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

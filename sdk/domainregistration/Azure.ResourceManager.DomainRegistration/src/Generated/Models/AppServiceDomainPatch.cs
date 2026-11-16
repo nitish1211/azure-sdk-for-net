@@ -58,6 +58,14 @@ namespace Azure.ResourceManager.DomainRegistration.Models
             {
                 return Properties is null ? default : Properties.ContactAdmin;
             }
+            set
+            {
+                if (Properties is null)
+                {
+                    Properties = new DomainPatchResourceProperties();
+                }
+                Properties.ContactAdmin = value;
+            }
         }
 
         /// <summary> Billing contact. </summary>
@@ -66,6 +74,14 @@ namespace Azure.ResourceManager.DomainRegistration.Models
             get
             {
                 return Properties is null ? default : Properties.ContactBilling;
+            }
+            set
+            {
+                if (Properties is null)
+                {
+                    Properties = new DomainPatchResourceProperties();
+                }
+                Properties.ContactBilling = value;
             }
         }
 
@@ -76,6 +92,14 @@ namespace Azure.ResourceManager.DomainRegistration.Models
             {
                 return Properties is null ? default : Properties.ContactRegistrant;
             }
+            set
+            {
+                if (Properties is null)
+                {
+                    Properties = new DomainPatchResourceProperties();
+                }
+                Properties.ContactRegistrant = value;
+            }
         }
 
         /// <summary> Technical contact. </summary>
@@ -84,6 +108,14 @@ namespace Azure.ResourceManager.DomainRegistration.Models
             get
             {
                 return Properties is null ? default : Properties.ContactTech;
+            }
+            set
+            {
+                if (Properties is null)
+                {
+                    Properties = new DomainPatchResourceProperties();
+                }
+                Properties.ContactTech = value;
             }
         }
 
@@ -207,6 +239,14 @@ namespace Azure.ResourceManager.DomainRegistration.Models
             get
             {
                 return Properties is null ? default : Properties.Consent;
+            }
+            set
+            {
+                if (Properties is null)
+                {
+                    Properties = new DomainPatchResourceProperties();
+                }
+                Properties.Consent = value;
             }
         }
 

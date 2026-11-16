@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.Discovery;
 
 namespace Azure.ResourceManager.Discovery.Models
 {
@@ -19,19 +18,8 @@ namespace Azure.ResourceManager.Discovery.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DiscoverySupercomputerProperties"/>. </summary>
-        /// <param name="subnetId">
-        /// System Subnet ID associated with managed NodePool for system resources.
-        ///     It should have connectivity to the child NodePool subnets.
-        /// </param>
-        /// <param name="identities"> Dictionary of identity properties. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="subnetId"/> or <paramref name="identities"/> is null. </exception>
-        public DiscoverySupercomputerProperties(ResourceIdentifier subnetId, DiscoverySupercomputerIdentities identities)
+        public DiscoverySupercomputerProperties()
         {
-            Argument.AssertNotNull(subnetId, nameof(subnetId));
-            Argument.AssertNotNull(identities, nameof(identities));
-
-            SubnetId = subnetId;
-            Identities = identities;
         }
 
         /// <summary> Initializes a new instance of <see cref="DiscoverySupercomputerProperties"/>. </summary>

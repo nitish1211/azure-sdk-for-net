@@ -435,7 +435,7 @@ namespace Azure.ResourceManager.Discovery
                 else
                 {
                     DiscoveryWorkspaceData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    DiscoveryWorkspaceData patch = new DiscoveryWorkspaceData(current.Location);
+                    DiscoveryWorkspaceData patch = new DiscoveryWorkspaceData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -483,7 +483,7 @@ namespace Azure.ResourceManager.Discovery
                 else
                 {
                     DiscoveryWorkspaceData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    DiscoveryWorkspaceData patch = new DiscoveryWorkspaceData(current.Location);
+                    DiscoveryWorkspaceData patch = new DiscoveryWorkspaceData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -529,7 +529,7 @@ namespace Azure.ResourceManager.Discovery
                 else
                 {
                     DiscoveryWorkspaceData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    DiscoveryWorkspaceData patch = new DiscoveryWorkspaceData(current.Location);
+                    DiscoveryWorkspaceData patch = new DiscoveryWorkspaceData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<DiscoveryWorkspaceResource> result = await UpdateAsync(WaitUntil.Completed, patch, cancellationToken: cancellationToken).ConfigureAwait(false);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -571,7 +571,7 @@ namespace Azure.ResourceManager.Discovery
                 else
                 {
                     DiscoveryWorkspaceData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    DiscoveryWorkspaceData patch = new DiscoveryWorkspaceData(current.Location);
+                    DiscoveryWorkspaceData patch = new DiscoveryWorkspaceData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<DiscoveryWorkspaceResource> result = Update(WaitUntil.Completed, patch, cancellationToken: cancellationToken);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -613,7 +613,7 @@ namespace Azure.ResourceManager.Discovery
                 else
                 {
                     DiscoveryWorkspaceData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    DiscoveryWorkspaceData patch = new DiscoveryWorkspaceData(current.Location);
+                    DiscoveryWorkspaceData patch = new DiscoveryWorkspaceData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -659,7 +659,7 @@ namespace Azure.ResourceManager.Discovery
                 else
                 {
                     DiscoveryWorkspaceData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    DiscoveryWorkspaceData patch = new DiscoveryWorkspaceData(current.Location);
+                    DiscoveryWorkspaceData patch = new DiscoveryWorkspaceData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);

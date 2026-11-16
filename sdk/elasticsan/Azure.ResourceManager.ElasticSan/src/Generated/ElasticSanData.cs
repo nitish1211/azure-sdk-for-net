@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.ElasticSan
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ElasticSanData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="sku"> resource sku. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sku"/> is null. </exception>
-        public ElasticSanData(AzureLocation location, ElasticSanSku sku) : base(location)
+        public ElasticSanData(ElasticSanSku sku)
         {
             Argument.AssertNotNull(sku, nameof(sku));
 
@@ -50,8 +49,9 @@ namespace Azure.ResourceManager.ElasticSan
         /// <param name="sku"> resource sku. </param>
         /// <param name="baseSizeTiB"> Base size of the Elastic San appliance in TiB. </param>
         /// <param name="extendedCapacitySizeTiB"> Extended size of the Elastic San appliance in TiB. </param>
-        public ElasticSanData(AzureLocation location, ElasticSanSku sku, long baseSizeTiB, long extendedCapacitySizeTiB) : this(location, sku)
+        public ElasticSanData(AzureLocation location, ElasticSanSku sku, long baseSizeTiB, long extendedCapacitySizeTiB) : this(sku)
         {
+            Location = location;
             BaseSizeTiB = baseSizeTiB;
             ExtendedCapacitySizeTiB = extendedCapacitySizeTiB;
         }

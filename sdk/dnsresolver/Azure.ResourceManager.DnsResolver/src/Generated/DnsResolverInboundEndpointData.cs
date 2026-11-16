@@ -21,10 +21,9 @@ namespace Azure.ResourceManager.DnsResolver
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DnsResolverInboundEndpointData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="ipConfigurations"> IP configurations for the inbound endpoint. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="ipConfigurations"/> is null. </exception>
-        public DnsResolverInboundEndpointData(AzureLocation location, IEnumerable<InboundEndpointIPConfiguration> ipConfigurations) : base(location)
+        public DnsResolverInboundEndpointData(IEnumerable<InboundEndpointIPConfiguration> ipConfigurations)
         {
             Argument.AssertNotNull(ipConfigurations, nameof(ipConfigurations));
 
@@ -46,6 +45,14 @@ namespace Azure.ResourceManager.DnsResolver
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DnsResolverInboundEndpointData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="ipConfigurations"> IP configurations for the inbound endpoint. </param>
+        public DnsResolverInboundEndpointData(AzureLocation location, IEnumerable<InboundEndpointIPConfiguration> ipConfigurations) : this(ipConfigurations)
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the inbound endpoint. </summary>

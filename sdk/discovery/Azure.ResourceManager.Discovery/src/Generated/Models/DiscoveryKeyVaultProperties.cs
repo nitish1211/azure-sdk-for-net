@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.Discovery;
 
 namespace Azure.ResourceManager.Discovery.Models
 {
@@ -18,16 +17,8 @@ namespace Azure.ResourceManager.Discovery.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DiscoveryKeyVaultProperties"/>. </summary>
-        /// <param name="keyVaultUri"> The Key Vault URI. </param>
-        /// <param name="keyName"> The Key Name in Key Vault. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="keyVaultUri"/> or <paramref name="keyName"/> is null. </exception>
-        public DiscoveryKeyVaultProperties(Uri keyVaultUri, string keyName)
+        public DiscoveryKeyVaultProperties()
         {
-            Argument.AssertNotNull(keyVaultUri, nameof(keyVaultUri));
-            Argument.AssertNotNull(keyName, nameof(keyName));
-
-            KeyVaultUri = keyVaultUri;
-            KeyName = keyName;
         }
 
         /// <summary> Initializes a new instance of <see cref="DiscoveryKeyVaultProperties"/>. </summary>

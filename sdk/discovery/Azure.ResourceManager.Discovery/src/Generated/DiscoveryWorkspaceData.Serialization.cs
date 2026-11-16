@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Discovery
     /// <summary> Workspace tracked resource. </summary>
     public partial class DiscoveryWorkspaceData : TrackedResourceData, IJsonModel<DiscoveryWorkspaceData>
     {
-        /// <summary> Initializes a new instance of <see cref="DiscoveryWorkspaceData"/> for deserialization. </summary>
-        internal DiscoveryWorkspaceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

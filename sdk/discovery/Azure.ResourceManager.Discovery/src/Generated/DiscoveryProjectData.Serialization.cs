@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Discovery
     /// <summary> Project tracked resource. </summary>
     public partial class DiscoveryProjectData : TrackedResourceData, IJsonModel<DiscoveryProjectData>
     {
-        /// <summary> Initializes a new instance of <see cref="DiscoveryProjectData"/> for deserialization. </summary>
-        internal DiscoveryProjectData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

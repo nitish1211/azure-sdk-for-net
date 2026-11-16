@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.DomainRegistration.Models
     /// <summary> DomainPatchResource resource specific properties. </summary>
     internal partial class DomainPatchResourceProperties : IJsonModel<DomainPatchResourceProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="DomainPatchResourceProperties"/> for deserialization. </summary>
-        internal DomainPatchResourceProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DomainPatchResourceProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

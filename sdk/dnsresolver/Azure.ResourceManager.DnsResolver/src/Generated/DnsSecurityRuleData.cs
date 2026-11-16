@@ -22,9 +22,8 @@ namespace Azure.ResourceManager.DnsResolver
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DnsSecurityRuleData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="priority"> The priority of the DNS security rule. </param>
-        public DnsSecurityRuleData(AzureLocation location, int priority) : base(location)
+        public DnsSecurityRuleData(int priority)
         {
 
             Properties = new DnsSecurityRuleProperties(priority);

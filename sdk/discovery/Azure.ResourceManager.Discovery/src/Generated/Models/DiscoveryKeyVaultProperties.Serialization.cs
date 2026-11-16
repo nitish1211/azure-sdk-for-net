@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Discovery.Models
     /// <summary> For Key Vault Key references. </summary>
     public partial class DiscoveryKeyVaultProperties : IJsonModel<DiscoveryKeyVaultProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="DiscoveryKeyVaultProperties"/> for deserialization. </summary>
-        internal DiscoveryKeyVaultProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DiscoveryKeyVaultProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

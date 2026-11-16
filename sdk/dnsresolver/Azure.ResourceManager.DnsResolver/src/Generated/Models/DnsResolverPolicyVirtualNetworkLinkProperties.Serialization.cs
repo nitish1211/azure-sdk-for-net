@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.DnsResolver.Models
     /// <summary> Represents the properties of a DNS resolver policy virtual network link. </summary>
     internal partial class DnsResolverPolicyVirtualNetworkLinkProperties : IJsonModel<DnsResolverPolicyVirtualNetworkLinkProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="DnsResolverPolicyVirtualNetworkLinkProperties"/> for deserialization. </summary>
-        internal DnsResolverPolicyVirtualNetworkLinkProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DnsResolverPolicyVirtualNetworkLinkProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

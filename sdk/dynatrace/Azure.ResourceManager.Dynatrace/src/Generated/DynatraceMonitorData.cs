@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Dynatrace
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DynatraceMonitorData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DynatraceMonitorData(AzureLocation location) : base(location)
+        public DynatraceMonitorData()
         {
 
         }
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.Dynatrace
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DynatraceMonitorData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public DynatraceMonitorData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

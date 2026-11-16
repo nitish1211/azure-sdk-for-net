@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Discovery.Models
     /// <summary> Discovery Tool list item properties. </summary>
     public partial class DiscoveryToolProperties : IJsonModel<DiscoveryToolProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="DiscoveryToolProperties"/> for deserialization. </summary>
-        internal DiscoveryToolProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DiscoveryToolProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

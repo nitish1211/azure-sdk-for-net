@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DomainRegistration
     /// <summary> Information about a domain. </summary>
     public partial class AppServiceDomainData : TrackedResourceData, IJsonModel<AppServiceDomainData>
     {
-        /// <summary> Initializes a new instance of <see cref="AppServiceDomainData"/> for deserialization. </summary>
-        internal AppServiceDomainData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

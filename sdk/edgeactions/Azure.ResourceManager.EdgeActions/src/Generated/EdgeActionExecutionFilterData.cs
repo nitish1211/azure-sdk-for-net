@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.EdgeActions
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="EdgeActionExecutionFilterData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public EdgeActionExecutionFilterData(AzureLocation location) : base(location)
+        public EdgeActionExecutionFilterData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.EdgeActions
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="EdgeActionExecutionFilterData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public EdgeActionExecutionFilterData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

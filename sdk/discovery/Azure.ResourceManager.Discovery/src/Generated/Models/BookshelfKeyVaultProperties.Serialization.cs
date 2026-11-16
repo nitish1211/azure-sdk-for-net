@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Discovery.Models
     /// <summary> Key Vault Properties with clientId selection. </summary>
     public partial class BookshelfKeyVaultProperties : IJsonModel<BookshelfKeyVaultProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="BookshelfKeyVaultProperties"/> for deserialization. </summary>
-        internal BookshelfKeyVaultProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual BookshelfKeyVaultProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

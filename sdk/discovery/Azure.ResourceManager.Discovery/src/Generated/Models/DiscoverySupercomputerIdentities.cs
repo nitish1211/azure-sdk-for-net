@@ -19,20 +19,8 @@ namespace Azure.ResourceManager.Discovery.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DiscoverySupercomputerIdentities"/>. </summary>
-        /// <param name="clusterIdentity"> Cluster identity ID. </param>
-        /// <param name="kubeletIdentity">
-        /// Kubelet identity ID used by the supercomputer.
-        ///       This identity is used by the supercomputer at node level to access Azure resources.
-        ///       This identity must have ManagedIdentityOperator role on the clusterIdentity.
-        /// </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="clusterIdentity"/> or <paramref name="kubeletIdentity"/> is null. </exception>
-        public DiscoverySupercomputerIdentities(DiscoveryManagedIdentityReference clusterIdentity, DiscoveryManagedIdentityReference kubeletIdentity)
+        public DiscoverySupercomputerIdentities()
         {
-            Argument.AssertNotNull(clusterIdentity, nameof(clusterIdentity));
-            Argument.AssertNotNull(kubeletIdentity, nameof(kubeletIdentity));
-
-            ClusterIdentity = clusterIdentity;
-            KubeletIdentity = kubeletIdentity;
             WorkloadIdentities = new ChangeTrackingDictionary<string, UserAssignedIdentity>();
         }
 

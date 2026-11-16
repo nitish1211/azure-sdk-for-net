@@ -19,27 +19,10 @@ namespace Azure.ResourceManager.DomainRegistration.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DomainPatchResourceProperties"/>. </summary>
-        /// <param name="contactAdmin"> Administrative contact. </param>
-        /// <param name="contactBilling"> Billing contact. </param>
-        /// <param name="contactRegistrant"> Registrant contact. </param>
-        /// <param name="contactTech"> Technical contact. </param>
-        /// <param name="consent"> Legal agreement consent. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="contactAdmin"/>, <paramref name="contactBilling"/>, <paramref name="contactRegistrant"/>, <paramref name="contactTech"/> or <paramref name="consent"/> is null. </exception>
-        public DomainPatchResourceProperties(RegistrationContactInfo contactAdmin, RegistrationContactInfo contactBilling, RegistrationContactInfo contactRegistrant, RegistrationContactInfo contactTech, DomainPurchaseConsent consent)
+        public DomainPatchResourceProperties()
         {
-            Argument.AssertNotNull(contactAdmin, nameof(contactAdmin));
-            Argument.AssertNotNull(contactBilling, nameof(contactBilling));
-            Argument.AssertNotNull(contactRegistrant, nameof(contactRegistrant));
-            Argument.AssertNotNull(contactTech, nameof(contactTech));
-            Argument.AssertNotNull(consent, nameof(consent));
-
-            ContactAdmin = contactAdmin;
-            ContactBilling = contactBilling;
-            ContactRegistrant = contactRegistrant;
-            ContactTech = contactTech;
             NameServers = new ChangeTrackingList<string>();
             ManagedHostNames = new ChangeTrackingList<AppServiceHostName>();
-            Consent = consent;
             DomainNotRenewableReasons = new ChangeTrackingList<DomainNotRenewableReason>();
         }
 
@@ -91,16 +74,16 @@ namespace Azure.ResourceManager.DomainRegistration.Models
         }
 
         /// <summary> Administrative contact. </summary>
-        public RegistrationContactInfo ContactAdmin { get; }
+        public RegistrationContactInfo ContactAdmin { get; set; }
 
         /// <summary> Billing contact. </summary>
-        public RegistrationContactInfo ContactBilling { get; }
+        public RegistrationContactInfo ContactBilling { get; set; }
 
         /// <summary> Registrant contact. </summary>
-        public RegistrationContactInfo ContactRegistrant { get; }
+        public RegistrationContactInfo ContactRegistrant { get; set; }
 
         /// <summary> Technical contact. </summary>
-        public RegistrationContactInfo ContactTech { get; }
+        public RegistrationContactInfo ContactTech { get; set; }
 
         /// <summary> Domain registration status. </summary>
         public AppServiceDomainStatus? RegistrationStatus { get; }
@@ -133,7 +116,7 @@ namespace Azure.ResourceManager.DomainRegistration.Models
         public IReadOnlyList<AppServiceHostName> ManagedHostNames { get; } = new ChangeTrackingList<AppServiceHostName>();
 
         /// <summary> Legal agreement consent. </summary>
-        public DomainPurchaseConsent Consent { get; }
+        public DomainPurchaseConsent Consent { get; set; }
 
         /// <summary> Reasons why domain is not renewable. </summary>
         public IReadOnlyList<DomainNotRenewableReason> DomainNotRenewableReasons { get; } = new ChangeTrackingList<DomainNotRenewableReason>();

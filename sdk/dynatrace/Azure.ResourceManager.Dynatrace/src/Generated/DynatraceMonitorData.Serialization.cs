@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Dynatrace
     /// <summary> Dynatrace Monitor Resource. </summary>
     public partial class DynatraceMonitorData : TrackedResourceData, IJsonModel<DynatraceMonitorData>
     {
-        /// <summary> Initializes a new instance of <see cref="DynatraceMonitorData"/> for deserialization. </summary>
-        internal DynatraceMonitorData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

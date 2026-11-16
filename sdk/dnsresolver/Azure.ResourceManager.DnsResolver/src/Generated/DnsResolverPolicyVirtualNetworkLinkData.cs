@@ -21,14 +21,13 @@ namespace Azure.ResourceManager.DnsResolver
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DnsResolverPolicyVirtualNetworkLinkData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="virtualNetworkId"> Resource ID. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="virtualNetworkId"/> is null. </exception>
-        public DnsResolverPolicyVirtualNetworkLinkData(AzureLocation location, ResourceIdentifier virtualNetworkId) : base(location)
+        public DnsResolverPolicyVirtualNetworkLinkData(ResourceIdentifier virtualNetworkId)
         {
             Argument.AssertNotNull(virtualNetworkId, nameof(virtualNetworkId));
 
-            Properties = new DnsResolverPolicyVirtualNetworkLinkProperties(virtualNetworkId);
+            Properties = new DnsResolverPolicyVirtualNetworkLinkProperties();
         }
 
         /// <summary> Initializes a new instance of <see cref="DnsResolverPolicyVirtualNetworkLinkData"/>. </summary>

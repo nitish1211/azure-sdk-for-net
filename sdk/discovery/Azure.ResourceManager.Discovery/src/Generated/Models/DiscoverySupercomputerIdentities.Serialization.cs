@@ -18,11 +18,6 @@ namespace Azure.ResourceManager.Discovery.Models
     /// <summary> Dictionary of identity properties for the Supercomputer. </summary>
     public partial class DiscoverySupercomputerIdentities : IJsonModel<DiscoverySupercomputerIdentities>
     {
-        /// <summary> Initializes a new instance of <see cref="DiscoverySupercomputerIdentities"/> for deserialization. </summary>
-        internal DiscoverySupercomputerIdentities()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DiscoverySupercomputerIdentities PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

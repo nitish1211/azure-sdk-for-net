@@ -17,10 +17,8 @@ namespace Azure.ResourceManager.Discovery.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DiscoverySystemAssignedServiceIdentity"/>. </summary>
-        /// <param name="type"> The type of managed identity assigned to this resource. </param>
-        public DiscoverySystemAssignedServiceIdentity(DiscoverySystemAssignedServiceIdentityType @type)
+        public DiscoverySystemAssignedServiceIdentity()
         {
-            Type = @type;
         }
 
         /// <summary> Initializes a new instance of <see cref="DiscoverySystemAssignedServiceIdentity"/>. </summary>

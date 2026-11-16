@@ -21,10 +21,9 @@ namespace Azure.ResourceManager.DnsResolver
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DnsResolverOutboundEndpointData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="subnetId"> Resource ID. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="subnetId"/> is null. </exception>
-        public DnsResolverOutboundEndpointData(AzureLocation location, ResourceIdentifier subnetId) : base(location)
+        public DnsResolverOutboundEndpointData(ResourceIdentifier subnetId)
         {
             Argument.AssertNotNull(subnetId, nameof(subnetId));
 

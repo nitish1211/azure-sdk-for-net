@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Discovery
     /// <summary> NodePool tracked resource. </summary>
     public partial class DiscoveryNodePoolData : TrackedResourceData, IJsonModel<DiscoveryNodePoolData>
     {
-        /// <summary> Initializes a new instance of <see cref="DiscoveryNodePoolData"/> for deserialization. </summary>
-        internal DiscoveryNodePoolData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

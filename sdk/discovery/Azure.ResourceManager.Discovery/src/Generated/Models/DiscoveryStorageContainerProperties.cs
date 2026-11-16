@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.Discovery;
 
 namespace Azure.ResourceManager.Discovery.Models
 {
@@ -18,13 +17,8 @@ namespace Azure.ResourceManager.Discovery.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DiscoveryStorageContainerProperties"/>. </summary>
-        /// <param name="storageStore"> Storage store properties. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="storageStore"/> is null. </exception>
-        public DiscoveryStorageContainerProperties(DiscoveryStorageStore storageStore)
+        public DiscoveryStorageContainerProperties()
         {
-            Argument.AssertNotNull(storageStore, nameof(storageStore));
-
-            StorageStore = storageStore;
         }
 
         /// <summary> Initializes a new instance of <see cref="DiscoveryStorageContainerProperties"/>. </summary>

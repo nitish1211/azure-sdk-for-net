@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Discovery
     /// <summary> Represents a deployment that ties a specific model family to a user defined deployment name used when invoking the chat model. </summary>
     public partial class DiscoveryChatModelDeploymentData : TrackedResourceData, IJsonModel<DiscoveryChatModelDeploymentData>
     {
-        /// <summary> Initializes a new instance of <see cref="DiscoveryChatModelDeploymentData"/> for deserialization. </summary>
-        internal DiscoveryChatModelDeploymentData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

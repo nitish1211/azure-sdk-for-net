@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.EdgeActions
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="EdgeActionData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="sku"> The sku type of the edge action. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sku"/> is null. </exception>
-        public EdgeActionData(AzureLocation location, EdgeActionSkuType sku) : base(location)
+        public EdgeActionData(EdgeActionSkuType sku)
         {
             Argument.AssertNotNull(sku, nameof(sku));
 
@@ -45,6 +44,14 @@ namespace Azure.ResourceManager.EdgeActions
             Properties = properties;
             Sku = sku;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="EdgeActionData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="sku"> The sku type of the edge action. </param>
+        public EdgeActionData(AzureLocation location, EdgeActionSkuType sku) : this(sku)
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

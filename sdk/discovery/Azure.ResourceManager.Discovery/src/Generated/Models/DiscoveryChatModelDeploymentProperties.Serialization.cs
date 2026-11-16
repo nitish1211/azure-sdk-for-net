@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Discovery.Models
     /// <summary> Defines a deployment binding a specific model family to a user-defined deployment name for chat inference. </summary>
     public partial class DiscoveryChatModelDeploymentProperties : IJsonModel<DiscoveryChatModelDeploymentProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="DiscoveryChatModelDeploymentProperties"/> for deserialization. </summary>
-        internal DiscoveryChatModelDeploymentProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DiscoveryChatModelDeploymentProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

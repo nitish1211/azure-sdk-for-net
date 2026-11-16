@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.DnsResolver;
 
 namespace Azure.ResourceManager.DnsResolver.Models
 {
@@ -19,13 +18,8 @@ namespace Azure.ResourceManager.DnsResolver.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DnsResolverProperties"/>. </summary>
-        /// <param name="virtualNetworkId"> Resource ID. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="virtualNetworkId"/> is null. </exception>
-        public DnsResolverProperties(ResourceIdentifier virtualNetworkId)
+        public DnsResolverProperties()
         {
-            Argument.AssertNotNull(virtualNetworkId, nameof(virtualNetworkId));
-
-            VirtualNetwork = new SubResource(virtualNetworkId);
         }
 
         /// <summary> Initializes a new instance of <see cref="DnsResolverProperties"/>. </summary>

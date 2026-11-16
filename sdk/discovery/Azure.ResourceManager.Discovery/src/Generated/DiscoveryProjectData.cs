@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Discovery
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DiscoveryProjectData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DiscoveryProjectData(AzureLocation location) : base(location)
+        public DiscoveryProjectData()
         {
         }
 

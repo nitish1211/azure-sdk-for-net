@@ -20,11 +20,10 @@ namespace Azure.ResourceManager.EdgeOrder
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="EdgeOrderItemData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="orderItemDetails"> Represents order item details. </param>
         /// <param name="orderId"> Id of the order to which order item belongs to. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="orderItemDetails"/> or <paramref name="orderId"/> is null. </exception>
-        public EdgeOrderItemData(AzureLocation location, EdgeOrderItemDetails orderItemDetails, ResourceIdentifier orderId) : base(location)
+        public EdgeOrderItemData(EdgeOrderItemDetails orderItemDetails, ResourceIdentifier orderId)
         {
             Argument.AssertNotNull(orderItemDetails, nameof(orderItemDetails));
             Argument.AssertNotNull(orderId, nameof(orderId));
@@ -54,9 +53,22 @@ namespace Azure.ResourceManager.EdgeOrder
         /// <param name="orderItemDetails"> Represents order item details. </param>
         /// <param name="addressDetails"> Represents shipping and return address for order item. </param>
         /// <param name="orderId"> Id of the order to which order item belongs to. </param>
-        public EdgeOrderItemData(AzureLocation location, EdgeOrderItemDetails orderItemDetails, EdgeOrderItemAddressDetails addressDetails, ResourceIdentifier orderId) : this(location, orderItemDetails, orderId)
+        /// <exception cref="ArgumentNullException"> <paramref name="addressDetails"/> is null. </exception>
+        public EdgeOrderItemData(AzureLocation location, EdgeOrderItemDetails orderItemDetails, EdgeOrderItemAddressDetails addressDetails, ResourceIdentifier orderId) : this(orderItemDetails, orderId)
         {
+            Argument.AssertNotNull(addressDetails, nameof(addressDetails));
+
+            Location = location;
             AddressDetails = addressDetails;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="EdgeOrderItemData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="orderItemDetails"> Represents order item details. </param>
+        /// <param name="orderId"> Id of the order to which order item belongs to. </param>
+        public EdgeOrderItemData(AzureLocation location, EdgeOrderItemDetails orderItemDetails, ResourceIdentifier orderId) : this(orderItemDetails, orderId)
+        {
+            Location = location;
         }
 
         /// <summary> Order item properties. </summary>

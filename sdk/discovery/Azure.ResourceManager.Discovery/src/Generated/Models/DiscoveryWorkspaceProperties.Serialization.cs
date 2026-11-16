@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.Discovery.Models
     /// <summary> Workspace properties. </summary>
     public partial class DiscoveryWorkspaceProperties : IJsonModel<DiscoveryWorkspaceProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="DiscoveryWorkspaceProperties"/> for deserialization. </summary>
-        internal DiscoveryWorkspaceProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DiscoveryWorkspaceProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

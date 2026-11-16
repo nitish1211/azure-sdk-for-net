@@ -19,27 +19,10 @@ namespace Azure.ResourceManager.DomainRegistration.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DomainProperties"/>. </summary>
-        /// <param name="contactAdmin"> Administrative contact. </param>
-        /// <param name="contactBilling"> Billing contact. </param>
-        /// <param name="contactRegistrant"> Registrant contact. </param>
-        /// <param name="contactTech"> Technical contact. </param>
-        /// <param name="consent"> Legal agreement consent. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="contactAdmin"/>, <paramref name="contactBilling"/>, <paramref name="contactRegistrant"/>, <paramref name="contactTech"/> or <paramref name="consent"/> is null. </exception>
-        public DomainProperties(RegistrationContactInfo contactAdmin, RegistrationContactInfo contactBilling, RegistrationContactInfo contactRegistrant, RegistrationContactInfo contactTech, DomainPurchaseConsent consent)
+        public DomainProperties()
         {
-            Argument.AssertNotNull(contactAdmin, nameof(contactAdmin));
-            Argument.AssertNotNull(contactBilling, nameof(contactBilling));
-            Argument.AssertNotNull(contactRegistrant, nameof(contactRegistrant));
-            Argument.AssertNotNull(contactTech, nameof(contactTech));
-            Argument.AssertNotNull(consent, nameof(consent));
-
-            ContactAdmin = contactAdmin;
-            ContactBilling = contactBilling;
-            ContactRegistrant = contactRegistrant;
-            ContactTech = contactTech;
             NameServers = new ChangeTrackingList<string>();
             ManagedHostNames = new ChangeTrackingList<AppServiceHostName>();
-            Consent = consent;
             DomainNotRenewableReasons = new ChangeTrackingList<DomainNotRenewableReason>();
         }
 

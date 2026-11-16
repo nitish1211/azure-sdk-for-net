@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.DnsResolver
     /// <summary> Describes a DNS resolver policy. </summary>
     public partial class DnsResolverPolicyData : TrackedResourceData, IJsonModel<DnsResolverPolicyData>
     {
-        /// <summary> Initializes a new instance of <see cref="DnsResolverPolicyData"/> for deserialization. </summary>
-        internal DnsResolverPolicyData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

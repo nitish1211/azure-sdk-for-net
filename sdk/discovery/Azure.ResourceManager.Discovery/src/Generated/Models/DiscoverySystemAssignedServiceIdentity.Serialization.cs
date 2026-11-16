@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Discovery.Models
     /// <summary> Managed service identity (either system assigned, or none). </summary>
     public partial class DiscoverySystemAssignedServiceIdentity : IJsonModel<DiscoverySystemAssignedServiceIdentity>
     {
-        /// <summary> Initializes a new instance of <see cref="DiscoverySystemAssignedServiceIdentity"/> for deserialization. </summary>
-        internal DiscoverySystemAssignedServiceIdentity()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DiscoverySystemAssignedServiceIdentity PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

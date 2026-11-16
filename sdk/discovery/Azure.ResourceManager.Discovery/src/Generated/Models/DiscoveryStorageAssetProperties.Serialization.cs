@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.Discovery.Models
     /// <summary> Storage Asset properties. </summary>
     public partial class DiscoveryStorageAssetProperties : IJsonModel<DiscoveryStorageAssetProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="DiscoveryStorageAssetProperties"/> for deserialization. </summary>
-        internal DiscoveryStorageAssetProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual DiscoveryStorageAssetProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

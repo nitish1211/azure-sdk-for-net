@@ -435,7 +435,7 @@ namespace Azure.ResourceManager.Discovery
                 else
                 {
                     DiscoverySupercomputerData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    DiscoverySupercomputerData patch = new DiscoverySupercomputerData(current.Location);
+                    DiscoverySupercomputerData patch = new DiscoverySupercomputerData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -483,7 +483,7 @@ namespace Azure.ResourceManager.Discovery
                 else
                 {
                     DiscoverySupercomputerData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    DiscoverySupercomputerData patch = new DiscoverySupercomputerData(current.Location);
+                    DiscoverySupercomputerData patch = new DiscoverySupercomputerData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -529,7 +529,7 @@ namespace Azure.ResourceManager.Discovery
                 else
                 {
                     DiscoverySupercomputerData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    DiscoverySupercomputerData patch = new DiscoverySupercomputerData(current.Location);
+                    DiscoverySupercomputerData patch = new DiscoverySupercomputerData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<DiscoverySupercomputerResource> result = await UpdateAsync(WaitUntil.Completed, patch, cancellationToken: cancellationToken).ConfigureAwait(false);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -571,7 +571,7 @@ namespace Azure.ResourceManager.Discovery
                 else
                 {
                     DiscoverySupercomputerData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    DiscoverySupercomputerData patch = new DiscoverySupercomputerData(current.Location);
+                    DiscoverySupercomputerData patch = new DiscoverySupercomputerData();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<DiscoverySupercomputerResource> result = Update(WaitUntil.Completed, patch, cancellationToken: cancellationToken);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -613,7 +613,7 @@ namespace Azure.ResourceManager.Discovery
                 else
                 {
                     DiscoverySupercomputerData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    DiscoverySupercomputerData patch = new DiscoverySupercomputerData(current.Location);
+                    DiscoverySupercomputerData patch = new DiscoverySupercomputerData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -659,7 +659,7 @@ namespace Azure.ResourceManager.Discovery
                 else
                 {
                     DiscoverySupercomputerData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    DiscoverySupercomputerData patch = new DiscoverySupercomputerData(current.Location);
+                    DiscoverySupercomputerData patch = new DiscoverySupercomputerData();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);

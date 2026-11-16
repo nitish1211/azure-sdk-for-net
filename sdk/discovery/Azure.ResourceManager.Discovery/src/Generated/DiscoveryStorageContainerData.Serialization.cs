@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Discovery
     /// <summary> Storage Container tracked resource. </summary>
     public partial class DiscoveryStorageContainerData : TrackedResourceData, IJsonModel<DiscoveryStorageContainerData>
     {
-        /// <summary> Initializes a new instance of <see cref="DiscoveryStorageContainerData"/> for deserialization. </summary>
-        internal DiscoveryStorageContainerData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

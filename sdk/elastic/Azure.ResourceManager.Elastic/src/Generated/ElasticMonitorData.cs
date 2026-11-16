@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.Elastic
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ElasticMonitorData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ElasticMonitorData(AzureLocation location) : base(location)
+        public ElasticMonitorData()
         {
         }
 
@@ -44,6 +43,13 @@ namespace Azure.ResourceManager.Elastic
             Sku = sku;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ElasticMonitorData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ElasticMonitorData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Properties of the monitor resource. </summary>

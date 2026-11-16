@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.Discovery
     /// <summary> Bookshelf tracked resource. </summary>
     public partial class DiscoveryBookshelfData : TrackedResourceData, IJsonModel<DiscoveryBookshelfData>
     {
-        /// <summary> Initializes a new instance of <see cref="DiscoveryBookshelfData"/> for deserialization. </summary>
-        internal DiscoveryBookshelfData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)
