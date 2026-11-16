@@ -18,16 +18,12 @@ namespace Azure.ResourceManager.WorkloadsSapVirtualInstance.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="SapVirtualInstanceProperties"/>. </summary>
-        /// <param name="environment"> Defines the environment type - Production/Non Production. </param>
-        /// <param name="sapProduct"> Defines the SAP Product type. </param>
         /// <param name="configuration"> Defines if the SAP system is being created using Azure Center for SAP solutions (ACSS) or if an existing SAP system is being registered with ACSS. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="configuration"/> is null. </exception>
-        public SapVirtualInstanceProperties(SapEnvironmentType environment, SapProductType sapProduct, SapConfiguration configuration)
+        public SapVirtualInstanceProperties(SapConfiguration configuration)
         {
             Argument.AssertNotNull(configuration, nameof(configuration));
 
-            Environment = environment;
-            SapProduct = sapProduct;
             Configuration = configuration;
         }
 

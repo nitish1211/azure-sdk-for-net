@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.StorageMover.Models
     /// <summary> The AgentProperties. </summary>
     internal partial class AgentProperties : IJsonModel<AgentProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="AgentProperties"/> for deserialization. </summary>
-        internal AgentProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual AgentProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

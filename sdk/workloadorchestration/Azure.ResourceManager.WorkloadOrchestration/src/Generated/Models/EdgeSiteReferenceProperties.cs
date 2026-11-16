@@ -18,13 +18,8 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="EdgeSiteReferenceProperties"/>. </summary>
-        /// <param name="siteId"> Azure Resource ID for Site. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="siteId"/> is null. </exception>
-        public EdgeSiteReferenceProperties(string siteId)
+        public EdgeSiteReferenceProperties()
         {
-            Argument.AssertNotNull(siteId, nameof(siteId));
-
-            SiteId = siteId;
         }
 
         /// <summary> Initializes a new instance of <see cref="EdgeSiteReferenceProperties"/>. </summary>
@@ -36,6 +31,16 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
             SiteId = siteId;
             ProvisioningState = provisioningState;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="EdgeSiteReferenceProperties"/>. </summary>
+        /// <param name="siteId"> Azure Resource ID for Site. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="siteId"/> is null. </exception>
+        public EdgeSiteReferenceProperties(string siteId) : this()
+        {
+            Argument.AssertNotNull(siteId, nameof(siteId));
+
+            SiteId = siteId;
         }
 
         /// <summary> Azure Resource ID for Site. </summary>

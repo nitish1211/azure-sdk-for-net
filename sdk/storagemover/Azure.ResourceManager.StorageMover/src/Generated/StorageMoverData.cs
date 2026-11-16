@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.StorageMover
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="StorageMoverData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public StorageMoverData(AzureLocation location) : base(location)
+        public StorageMoverData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.StorageMover
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="StorageMoverData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public StorageMoverData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource specific properties for the Storage Mover resource. </summary>

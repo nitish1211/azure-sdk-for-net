@@ -19,11 +19,6 @@ namespace Azure.ResourceManager.AppService.Models
     /// <summary> The workflow type. </summary>
     public partial class WorkflowData : TrackedResourceData, IJsonModel<WorkflowData>
     {
-        /// <summary> Initializes a new instance of <see cref="WorkflowData"/> for deserialization. </summary>
-        internal WorkflowData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

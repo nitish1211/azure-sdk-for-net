@@ -21,11 +21,6 @@ namespace Azure.ResourceManager.WorkloadOrchestration
     /// <summary> Target Resource. Represents a resource to be deployed on the edge. </summary>
     public partial class EdgeTargetData : TrackedResourceData, IJsonModel<EdgeTargetData>
     {
-        /// <summary> Initializes a new instance of <see cref="EdgeTargetData"/> for deserialization. </summary>
-        internal EdgeTargetData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

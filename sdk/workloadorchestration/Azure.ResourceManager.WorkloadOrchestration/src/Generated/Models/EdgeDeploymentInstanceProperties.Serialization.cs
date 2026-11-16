@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
     /// <summary> Instance Properties. </summary>
     public partial class EdgeDeploymentInstanceProperties : IJsonModel<EdgeDeploymentInstanceProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="EdgeDeploymentInstanceProperties"/> for deserialization. </summary>
-        internal EdgeDeploymentInstanceProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual EdgeDeploymentInstanceProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

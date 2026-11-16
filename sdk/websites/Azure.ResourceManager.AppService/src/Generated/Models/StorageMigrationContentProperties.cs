@@ -18,16 +18,8 @@ namespace Azure.ResourceManager.AppService.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="StorageMigrationContentProperties"/>. </summary>
-        /// <param name="azurefilesConnectionString"> AzureFiles connection string. </param>
-        /// <param name="azurefilesShare"> AzureFiles share. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="azurefilesConnectionString"/> or <paramref name="azurefilesShare"/> is null. </exception>
-        public StorageMigrationContentProperties(string azurefilesConnectionString, string azurefilesShare)
+        public StorageMigrationContentProperties()
         {
-            Argument.AssertNotNull(azurefilesConnectionString, nameof(azurefilesConnectionString));
-            Argument.AssertNotNull(azurefilesShare, nameof(azurefilesShare));
-
-            AzurefilesConnectionString = azurefilesConnectionString;
-            AzurefilesShare = azurefilesShare;
         }
 
         /// <summary> Initializes a new instance of <see cref="StorageMigrationContentProperties"/>. </summary>

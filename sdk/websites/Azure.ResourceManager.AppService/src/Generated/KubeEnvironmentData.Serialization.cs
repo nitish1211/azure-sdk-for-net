@@ -21,11 +21,6 @@ namespace Azure.ResourceManager.AppService
     /// <summary> A Kubernetes cluster specialized for web workloads by Azure App Service. </summary>
     public partial class KubeEnvironmentData : TrackedResourceData, IJsonModel<KubeEnvironmentData>
     {
-        /// <summary> Initializes a new instance of <see cref="KubeEnvironmentData"/> for deserialization. </summary>
-        internal KubeEnvironmentData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

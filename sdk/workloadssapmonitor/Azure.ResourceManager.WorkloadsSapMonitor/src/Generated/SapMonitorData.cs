@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.WorkloadsSapMonitor
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="SapMonitorData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public SapMonitorData(AzureLocation location) : base(location)
+        public SapMonitorData()
         {
         }
 

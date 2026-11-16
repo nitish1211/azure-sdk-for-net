@@ -19,13 +19,8 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="EdgeExecutionProperties"/>. </summary>
-        /// <param name="workflowVersionId"> Workflow version of execution. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="workflowVersionId"/> is null. </exception>
-        public EdgeExecutionProperties(string workflowVersionId)
+        public EdgeExecutionProperties()
         {
-            Argument.AssertNotNull(workflowVersionId, nameof(workflowVersionId));
-
-            WorkflowVersionId = workflowVersionId;
             Specification = new ChangeTrackingDictionary<string, BinaryData>();
         }
 
@@ -42,6 +37,16 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
             Status = status;
             ProvisioningState = provisioningState;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="EdgeExecutionProperties"/>. </summary>
+        /// <param name="workflowVersionId"> Workflow version of execution. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="workflowVersionId"/> is null. </exception>
+        public EdgeExecutionProperties(string workflowVersionId) : this()
+        {
+            Argument.AssertNotNull(workflowVersionId, nameof(workflowVersionId));
+
+            WorkflowVersionId = workflowVersionId;
         }
 
         /// <summary> Workflow version of execution. </summary>

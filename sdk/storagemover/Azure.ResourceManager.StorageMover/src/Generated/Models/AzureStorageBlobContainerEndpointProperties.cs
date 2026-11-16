@@ -15,16 +15,8 @@ namespace Azure.ResourceManager.StorageMover.Models
     public partial class AzureStorageBlobContainerEndpointProperties : EndpointBaseProperties
     {
         /// <summary> Initializes a new instance of <see cref="AzureStorageBlobContainerEndpointProperties"/>. </summary>
-        /// <param name="storageAccountResourceId"> The Azure Resource ID of the storage account that is the target destination. </param>
-        /// <param name="blobContainerName"> The name of the Storage blob container that is the target destination. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="storageAccountResourceId"/> or <paramref name="blobContainerName"/> is null. </exception>
-        public AzureStorageBlobContainerEndpointProperties(string storageAccountResourceId, string blobContainerName) : base(EndpointType.AzureStorageBlobContainer)
+        public AzureStorageBlobContainerEndpointProperties() : base(EndpointType.AzureStorageBlobContainer)
         {
-            Argument.AssertNotNull(storageAccountResourceId, nameof(storageAccountResourceId));
-            Argument.AssertNotNull(blobContainerName, nameof(blobContainerName));
-
-            StorageAccountResourceId = storageAccountResourceId;
-            BlobContainerName = blobContainerName;
             AllowedStorageAccounts = new ChangeTrackingList<string>();
         }
 
@@ -59,6 +51,19 @@ namespace Azure.ResourceManager.StorageMover.Models
             BlobContainerName = blobContainerName;
             EnableCrossTenantTransfer = enableCrossTenantTransfer;
             AllowedStorageAccounts = allowedStorageAccounts;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="AzureStorageBlobContainerEndpointProperties"/>. </summary>
+        /// <param name="storageAccountResourceId"> The Azure Resource ID of the storage account that is the target destination. </param>
+        /// <param name="blobContainerName"> The name of the Storage blob container that is the target destination. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="storageAccountResourceId"/> or <paramref name="blobContainerName"/> is null. </exception>
+        public AzureStorageBlobContainerEndpointProperties(string storageAccountResourceId, string blobContainerName) : this()
+        {
+            Argument.AssertNotNull(storageAccountResourceId, nameof(storageAccountResourceId));
+            Argument.AssertNotNull(blobContainerName, nameof(blobContainerName));
+
+            StorageAccountResourceId = storageAccountResourceId;
+            BlobContainerName = blobContainerName;
         }
 
         /// <summary> The Azure Resource ID of the storage account that is the target destination. </summary>

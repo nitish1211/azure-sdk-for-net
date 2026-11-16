@@ -19,8 +19,7 @@ namespace Azure.ResourceManager.StorageSync.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="StorageSyncServiceCreateOrUpdateContent"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public StorageSyncServiceCreateOrUpdateContent(AzureLocation location) : base(location)
+        public StorageSyncServiceCreateOrUpdateContent()
         {
         }
 
@@ -39,6 +38,13 @@ namespace Azure.ResourceManager.StorageSync.Models
             Identity = identity;
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="StorageSyncServiceCreateOrUpdateContent"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public StorageSyncServiceCreateOrUpdateContent(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> managed identities for the Storage Sync to interact with other Azure services without maintaining any secrets or credentials in code. </summary>

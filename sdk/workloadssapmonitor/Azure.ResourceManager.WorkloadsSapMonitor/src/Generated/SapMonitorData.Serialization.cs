@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.WorkloadsSapMonitor
     /// <summary> SAP monitor info on Azure (ARM properties and SAP monitor properties). </summary>
     public partial class SapMonitorData : TrackedResourceData, IJsonModel<SapMonitorData>
     {
-        /// <summary> Initializes a new instance of <see cref="SapMonitorData"/> for deserialization. </summary>
-        internal SapMonitorData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

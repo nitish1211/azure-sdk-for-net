@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.AppService
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="WorkflowVersionData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public WorkflowVersionData(AzureLocation location) : base(location)
+        public WorkflowVersionData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.AppService
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="WorkflowVersionData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public WorkflowVersionData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The workflow version properties. </summary>

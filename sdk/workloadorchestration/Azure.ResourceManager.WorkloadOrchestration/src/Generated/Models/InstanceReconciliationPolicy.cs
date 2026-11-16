@@ -18,15 +18,8 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="InstanceReconciliationPolicy"/>. </summary>
-        /// <param name="state"> The state of the ReconciliationPolicy. </param>
-        /// <param name="interval"> Policy interval. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="interval"/> is null. </exception>
-        public InstanceReconciliationPolicy(InstanceReconciliationState state, string interval)
+        public InstanceReconciliationPolicy()
         {
-            Argument.AssertNotNull(interval, nameof(interval));
-
-            State = state;
-            Interval = interval;
         }
 
         /// <summary> Initializes a new instance of <see cref="InstanceReconciliationPolicy"/>. </summary>
@@ -38,6 +31,18 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
             State = state;
             Interval = interval;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="InstanceReconciliationPolicy"/>. </summary>
+        /// <param name="state"> The state of the ReconciliationPolicy. </param>
+        /// <param name="interval"> Policy interval. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="interval"/> is null. </exception>
+        public InstanceReconciliationPolicy(InstanceReconciliationState state, string interval) : this()
+        {
+            Argument.AssertNotNull(interval, nameof(interval));
+
+            State = state;
+            Interval = interval;
         }
 
         /// <summary> The state of the ReconciliationPolicy. </summary>

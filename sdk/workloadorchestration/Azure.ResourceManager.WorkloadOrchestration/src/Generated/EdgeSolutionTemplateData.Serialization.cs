@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.WorkloadOrchestration
     /// <summary> Solution Template Resource. Contains capabilities and operations for creating versions. </summary>
     public partial class EdgeSolutionTemplateData : TrackedResourceData, IJsonModel<EdgeSolutionTemplateData>
     {
-        /// <summary> Initializes a new instance of <see cref="EdgeSolutionTemplateData"/> for deserialization. </summary>
-        internal EdgeSolutionTemplateData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

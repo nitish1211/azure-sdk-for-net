@@ -15,16 +15,8 @@ namespace Azure.ResourceManager.StorageMover.Models
     public partial class SmbMountEndpointProperties : EndpointBaseProperties
     {
         /// <summary> Initializes a new instance of <see cref="SmbMountEndpointProperties"/>. </summary>
-        /// <param name="host"> The host name or IP address of the server exporting the file system. </param>
-        /// <param name="shareName"> The name of the SMB share being exported from the server. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="host"/> or <paramref name="shareName"/> is null. </exception>
-        public SmbMountEndpointProperties(string host, string shareName) : base(EndpointType.SmbMount)
+        public SmbMountEndpointProperties() : base(EndpointType.SmbMount)
         {
-            Argument.AssertNotNull(host, nameof(host));
-            Argument.AssertNotNull(shareName, nameof(shareName));
-
-            Host = host;
-            ShareName = shareName;
         }
 
         /// <summary> Initializes a new instance of <see cref="SmbMountEndpointProperties"/>. </summary>
@@ -43,6 +35,19 @@ namespace Azure.ResourceManager.StorageMover.Models
             ShareName = shareName;
             Credentials = credentials;
             SourceType = sourceType;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="SmbMountEndpointProperties"/>. </summary>
+        /// <param name="host"> The host name or IP address of the server exporting the file system. </param>
+        /// <param name="shareName"> The name of the SMB share being exported from the server. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="host"/> or <paramref name="shareName"/> is null. </exception>
+        public SmbMountEndpointProperties(string host, string shareName) : this()
+        {
+            Argument.AssertNotNull(host, nameof(host));
+            Argument.AssertNotNull(shareName, nameof(shareName));
+
+            Host = host;
+            ShareName = shareName;
         }
 
         /// <summary> The host name or IP address of the server exporting the file system. </summary>

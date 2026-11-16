@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.AppService
     /// <summary> SSL certificate for an app. </summary>
     public partial class AppCertificateData : TrackedResourceData, IJsonModel<AppCertificateData>
     {
-        /// <summary> Initializes a new instance of <see cref="AppCertificateData"/> for deserialization. </summary>
-        internal AppCertificateData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

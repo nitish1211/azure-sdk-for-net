@@ -21,11 +21,6 @@ namespace Azure.ResourceManager.AppService
     /// <summary> App Service plan. </summary>
     public partial class AppServicePlanData : TrackedResourceData, IJsonModel<AppServicePlanData>
     {
-        /// <summary> Initializes a new instance of <see cref="AppServicePlanData"/> for deserialization. </summary>
-        internal AppServicePlanData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

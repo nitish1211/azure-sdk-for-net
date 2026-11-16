@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.WebPubSub
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="WebPubSubData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public WebPubSubData(AzureLocation location) : base(location)
+        public WebPubSubData()
         {
         }
 
@@ -44,6 +43,13 @@ namespace Azure.ResourceManager.WebPubSub
             Kind = kind;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="WebPubSubData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public WebPubSubData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> A class that describes the properties of the resource. </summary>

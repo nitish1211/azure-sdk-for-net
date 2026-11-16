@@ -16,16 +16,8 @@ namespace Azure.ResourceManager.StorageMover.Models
     public partial class AzureStorageSmbFileShareEndpointProperties : EndpointBaseProperties
     {
         /// <summary> Initializes a new instance of <see cref="AzureStorageSmbFileShareEndpointProperties"/>. </summary>
-        /// <param name="storageAccountResourceId"> The Azure Resource ID of the storage account. </param>
-        /// <param name="fileShareName"> The name of the Azure Storage file share. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="storageAccountResourceId"/> or <paramref name="fileShareName"/> is null. </exception>
-        public AzureStorageSmbFileShareEndpointProperties(ResourceIdentifier storageAccountResourceId, string fileShareName) : base(EndpointType.AzureStorageSmbFileShare)
+        public AzureStorageSmbFileShareEndpointProperties() : base(EndpointType.AzureStorageSmbFileShare)
         {
-            Argument.AssertNotNull(storageAccountResourceId, nameof(storageAccountResourceId));
-            Argument.AssertNotNull(fileShareName, nameof(fileShareName));
-
-            StorageAccountResourceId = storageAccountResourceId;
-            FileShareName = fileShareName;
             AllowedStorageAccounts = new ChangeTrackingList<string>();
         }
 
@@ -60,6 +52,19 @@ namespace Azure.ResourceManager.StorageMover.Models
             FileShareName = fileShareName;
             EnableCrossTenantTransfer = enableCrossTenantTransfer;
             AllowedStorageAccounts = allowedStorageAccounts;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="AzureStorageSmbFileShareEndpointProperties"/>. </summary>
+        /// <param name="storageAccountResourceId"> The Azure Resource ID of the storage account. </param>
+        /// <param name="fileShareName"> The name of the Azure Storage file share. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="storageAccountResourceId"/> or <paramref name="fileShareName"/> is null. </exception>
+        public AzureStorageSmbFileShareEndpointProperties(ResourceIdentifier storageAccountResourceId, string fileShareName) : this()
+        {
+            Argument.AssertNotNull(storageAccountResourceId, nameof(storageAccountResourceId));
+            Argument.AssertNotNull(fileShareName, nameof(fileShareName));
+
+            StorageAccountResourceId = storageAccountResourceId;
+            FileShareName = fileShareName;
         }
 
         /// <summary> The Azure Resource ID of the storage account. </summary>

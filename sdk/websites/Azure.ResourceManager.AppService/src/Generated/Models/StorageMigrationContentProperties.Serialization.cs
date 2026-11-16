@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.AppService.Models
     /// <summary> StorageMigrationOptions resource specific properties. </summary>
     internal partial class StorageMigrationContentProperties : IJsonModel<StorageMigrationContentProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="StorageMigrationContentProperties"/> for deserialization. </summary>
-        internal StorageMigrationContentProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual StorageMigrationContentProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

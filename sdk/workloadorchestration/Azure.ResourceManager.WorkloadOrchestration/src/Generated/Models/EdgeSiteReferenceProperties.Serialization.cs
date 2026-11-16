@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
     /// <summary> Site Reference Properties. </summary>
     public partial class EdgeSiteReferenceProperties : IJsonModel<EdgeSiteReferenceProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="EdgeSiteReferenceProperties"/> for deserialization. </summary>
-        internal EdgeSiteReferenceProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual EdgeSiteReferenceProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

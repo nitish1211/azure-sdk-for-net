@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
     /// <summary> Schema Version Properties. </summary>
     public partial class EdgeSchemaVersionProperties : IJsonModel<EdgeSchemaVersionProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="EdgeSchemaVersionProperties"/> for deserialization. </summary>
-        internal EdgeSchemaVersionProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual EdgeSchemaVersionProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

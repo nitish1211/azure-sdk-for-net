@@ -18,13 +18,8 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="EdgeSchemaReferenceProperties"/>. </summary>
-        /// <param name="schemaId"> Schema Id of schema reference. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="schemaId"/> is null. </exception>
-        public EdgeSchemaReferenceProperties(string schemaId)
+        public EdgeSchemaReferenceProperties()
         {
-            Argument.AssertNotNull(schemaId, nameof(schemaId));
-
-            SchemaId = schemaId;
         }
 
         /// <summary> Initializes a new instance of <see cref="EdgeSchemaReferenceProperties"/>. </summary>
@@ -36,6 +31,16 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
             SchemaId = schemaId;
             ProvisioningState = provisioningState;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="EdgeSchemaReferenceProperties"/>. </summary>
+        /// <param name="schemaId"> Schema Id of schema reference. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="schemaId"/> is null. </exception>
+        public EdgeSchemaReferenceProperties(string schemaId) : this()
+        {
+            Argument.AssertNotNull(schemaId, nameof(schemaId));
+
+            SchemaId = schemaId;
         }
 
         /// <summary> Schema Id of schema reference. </summary>

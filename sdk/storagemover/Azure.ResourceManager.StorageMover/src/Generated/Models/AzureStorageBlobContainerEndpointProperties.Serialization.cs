@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.StorageMover.Models
     /// <summary> The properties of Azure Storage blob container endpoint. </summary>
     public partial class AzureStorageBlobContainerEndpointProperties : EndpointBaseProperties, IJsonModel<AzureStorageBlobContainerEndpointProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="AzureStorageBlobContainerEndpointProperties"/> for deserialization. </summary>
-        internal AzureStorageBlobContainerEndpointProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected override EndpointBaseProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

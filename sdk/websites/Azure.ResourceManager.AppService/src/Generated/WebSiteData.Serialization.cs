@@ -21,11 +21,6 @@ namespace Azure.ResourceManager.AppService
     /// <summary> A web app, a mobile app backend, or an API app. </summary>
     public partial class WebSiteData : TrackedResourceData, IJsonModel<WebSiteData>
     {
-        /// <summary> Initializes a new instance of <see cref="WebSiteData"/> for deserialization. </summary>
-        internal WebSiteData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

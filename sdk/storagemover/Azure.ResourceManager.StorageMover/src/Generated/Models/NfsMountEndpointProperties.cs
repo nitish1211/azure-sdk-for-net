@@ -15,16 +15,8 @@ namespace Azure.ResourceManager.StorageMover.Models
     public partial class NfsMountEndpointProperties : EndpointBaseProperties
     {
         /// <summary> Initializes a new instance of <see cref="NfsMountEndpointProperties"/>. </summary>
-        /// <param name="host"> The host name or IP address of the server exporting the file system. </param>
-        /// <param name="export"> The directory being exported from the server. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="host"/> or <paramref name="export"/> is null. </exception>
-        public NfsMountEndpointProperties(string host, string export) : base(EndpointType.NfsMount)
+        public NfsMountEndpointProperties() : base(EndpointType.NfsMount)
         {
-            Argument.AssertNotNull(host, nameof(host));
-            Argument.AssertNotNull(export, nameof(export));
-
-            Host = host;
-            Export = export;
         }
 
         /// <summary> Initializes a new instance of <see cref="NfsMountEndpointProperties"/>. </summary>
@@ -43,6 +35,19 @@ namespace Azure.ResourceManager.StorageMover.Models
             NfsVersion = nfsVersion;
             Export = export;
             SourceType = sourceType;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="NfsMountEndpointProperties"/>. </summary>
+        /// <param name="host"> The host name or IP address of the server exporting the file system. </param>
+        /// <param name="export"> The directory being exported from the server. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="host"/> or <paramref name="export"/> is null. </exception>
+        public NfsMountEndpointProperties(string host, string export) : this()
+        {
+            Argument.AssertNotNull(host, nameof(host));
+            Argument.AssertNotNull(export, nameof(export));
+
+            Host = host;
+            Export = export;
         }
 
         /// <summary> The host name or IP address of the server exporting the file system. </summary>

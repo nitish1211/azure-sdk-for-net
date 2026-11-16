@@ -20,13 +20,9 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="EdgeWorkflowVersionProperties"/>. </summary>
-        /// <param name="stageSpec"> A list of stage specs. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="stageSpec"/> is null. </exception>
-        public EdgeWorkflowVersionProperties(IEnumerable<EdgeWorkflowStageSpec> stageSpec)
+        public EdgeWorkflowVersionProperties()
         {
-            Argument.AssertNotNull(stageSpec, nameof(stageSpec));
-
-            StageSpec = stageSpec.ToList();
+            StageSpec = new ChangeTrackingList<EdgeWorkflowStageSpec>();
             Specification = new ChangeTrackingDictionary<string, BinaryData>();
         }
 
@@ -49,6 +45,16 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
             Specification = specification;
             ProvisioningState = provisioningState;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="EdgeWorkflowVersionProperties"/>. </summary>
+        /// <param name="stageSpec"> A list of stage specs. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="stageSpec"/> is null. </exception>
+        public EdgeWorkflowVersionProperties(IEnumerable<EdgeWorkflowStageSpec> stageSpec) : this()
+        {
+            Argument.AssertNotNull(stageSpec, nameof(stageSpec));
+
+            StageSpec = stageSpec.ToList();
         }
 
         /// <summary> Revision number of resolved config for this workflow version. </summary>

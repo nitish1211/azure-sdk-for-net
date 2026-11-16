@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
     /// <summary> Workflow Version Properties. </summary>
     public partial class EdgeWorkflowVersionProperties : IJsonModel<EdgeWorkflowVersionProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="EdgeWorkflowVersionProperties"/> for deserialization. </summary>
-        internal EdgeWorkflowVersionProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual EdgeWorkflowVersionProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

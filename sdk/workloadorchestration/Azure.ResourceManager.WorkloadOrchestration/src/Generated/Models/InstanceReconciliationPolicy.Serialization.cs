@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
     /// <summary> Defines a ReconciliationPolicy. </summary>
     public partial class InstanceReconciliationPolicy : IJsonModel<InstanceReconciliationPolicy>
     {
-        /// <summary> Initializes a new instance of <see cref="InstanceReconciliationPolicy"/> for deserialization. </summary>
-        internal InstanceReconciliationPolicy()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual InstanceReconciliationPolicy PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

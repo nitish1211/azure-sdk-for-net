@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.WebPubSub
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="WebPubSubReplicaData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public WebPubSubReplicaData(AzureLocation location) : base(location)
+        public WebPubSubReplicaData()
         {
         }
 

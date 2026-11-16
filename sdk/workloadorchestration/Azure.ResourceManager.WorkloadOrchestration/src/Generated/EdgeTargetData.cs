@@ -22,8 +22,7 @@ namespace Azure.ResourceManager.WorkloadOrchestration
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="EdgeTargetData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public EdgeTargetData(AzureLocation location) : base(location)
+        public EdgeTargetData()
         {
         }
 
@@ -44,6 +43,13 @@ namespace Azure.ResourceManager.WorkloadOrchestration
             ETag = eTag;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="EdgeTargetData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public EdgeTargetData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

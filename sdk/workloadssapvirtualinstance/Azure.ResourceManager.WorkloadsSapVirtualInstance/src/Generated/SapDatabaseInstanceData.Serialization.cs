@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.WorkloadsSapVirtualInstance
     /// <summary> Define the Database resource. </summary>
     public partial class SapDatabaseInstanceData : TrackedResourceData, IJsonModel<SapDatabaseInstanceData>
     {
-        /// <summary> Initializes a new instance of <see cref="SapDatabaseInstanceData"/> for deserialization. </summary>
-        internal SapDatabaseInstanceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

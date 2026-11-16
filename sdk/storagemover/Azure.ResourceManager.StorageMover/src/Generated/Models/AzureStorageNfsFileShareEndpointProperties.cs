@@ -16,16 +16,8 @@ namespace Azure.ResourceManager.StorageMover.Models
     public partial class AzureStorageNfsFileShareEndpointProperties : EndpointBaseProperties
     {
         /// <summary> Initializes a new instance of <see cref="AzureStorageNfsFileShareEndpointProperties"/>. </summary>
-        /// <param name="storageAccountResourceId"> The Azure Resource ID of the storage account. </param>
-        /// <param name="fileShareName"> The name of the Azure Storage NFS file share. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="storageAccountResourceId"/> or <paramref name="fileShareName"/> is null. </exception>
-        public AzureStorageNfsFileShareEndpointProperties(ResourceIdentifier storageAccountResourceId, string fileShareName) : base(EndpointType.AzureStorageNfsFileShare)
+        public AzureStorageNfsFileShareEndpointProperties() : base(EndpointType.AzureStorageNfsFileShare)
         {
-            Argument.AssertNotNull(storageAccountResourceId, nameof(storageAccountResourceId));
-            Argument.AssertNotNull(fileShareName, nameof(fileShareName));
-
-            StorageAccountResourceId = storageAccountResourceId;
-            FileShareName = fileShareName;
         }
 
         /// <summary> Initializes a new instance of <see cref="AzureStorageNfsFileShareEndpointProperties"/>. </summary>
@@ -38,6 +30,19 @@ namespace Azure.ResourceManager.StorageMover.Models
         /// <param name="fileShareName"> The name of the Azure Storage NFS file share. </param>
         internal AzureStorageNfsFileShareEndpointProperties(EndpointType endpointType, string description, StorageMoverEndpointKind? endpointKind, StorageMoverProvisioningState? provisioningState, IDictionary<string, BinaryData> additionalBinaryDataProperties, ResourceIdentifier storageAccountResourceId, string fileShareName) : base(endpointType, description, endpointKind, provisioningState, additionalBinaryDataProperties)
         {
+            StorageAccountResourceId = storageAccountResourceId;
+            FileShareName = fileShareName;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="AzureStorageNfsFileShareEndpointProperties"/>. </summary>
+        /// <param name="storageAccountResourceId"> The Azure Resource ID of the storage account. </param>
+        /// <param name="fileShareName"> The name of the Azure Storage NFS file share. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="storageAccountResourceId"/> or <paramref name="fileShareName"/> is null. </exception>
+        public AzureStorageNfsFileShareEndpointProperties(ResourceIdentifier storageAccountResourceId, string fileShareName) : this()
+        {
+            Argument.AssertNotNull(storageAccountResourceId, nameof(storageAccountResourceId));
+            Argument.AssertNotNull(fileShareName, nameof(fileShareName));
+
             StorageAccountResourceId = storageAccountResourceId;
             FileShareName = fileShareName;
         }

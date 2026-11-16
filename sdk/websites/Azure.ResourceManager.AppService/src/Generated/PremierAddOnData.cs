@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.AppService
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PremierAddOnData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public PremierAddOnData(AzureLocation location) : base(location)
+        public PremierAddOnData()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.AppService
             Properties = properties;
             Kind = kind;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="PremierAddOnData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public PremierAddOnData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> PremierAddOn resource specific properties. </summary>

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.WorkloadOrchestration
     /// <summary> Config Template Resource. Contains configuration expressions using the predefined expression language. </summary>
     public partial class EdgeConfigTemplateData : TrackedResourceData, IJsonModel<EdgeConfigTemplateData>
     {
-        /// <summary> Initializes a new instance of <see cref="EdgeConfigTemplateData"/> for deserialization. </summary>
-        internal EdgeConfigTemplateData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

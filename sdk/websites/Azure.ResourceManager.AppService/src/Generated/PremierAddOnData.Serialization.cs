@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.AppService
     /// <summary> Premier add-on. </summary>
     public partial class PremierAddOnData : TrackedResourceData, IJsonModel<PremierAddOnData>
     {
-        /// <summary> Initializes a new instance of <see cref="PremierAddOnData"/> for deserialization. </summary>
-        internal PremierAddOnData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

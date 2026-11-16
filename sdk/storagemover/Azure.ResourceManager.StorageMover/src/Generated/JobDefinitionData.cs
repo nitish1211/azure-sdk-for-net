@@ -29,7 +29,7 @@ namespace Azure.ResourceManager.StorageMover
             Argument.AssertNotNull(sourceName, nameof(sourceName));
             Argument.AssertNotNull(targetName, nameof(targetName));
 
-            Properties = new JobDefinitionProperties(copyMode, sourceName, targetName);
+            Properties = new JobDefinitionProperties(copyMode);
         }
 
         /// <summary> Initializes a new instance of <see cref="JobDefinitionData"/>. </summary>

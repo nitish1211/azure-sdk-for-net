@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.StorageMover.Models
     /// <summary> The properties of Azure Storage SMB file share endpoint. </summary>
     public partial class AzureStorageSmbFileShareEndpointProperties : EndpointBaseProperties, IJsonModel<AzureStorageSmbFileShareEndpointProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="AzureStorageSmbFileShareEndpointProperties"/> for deserialization. </summary>
-        internal AzureStorageSmbFileShareEndpointProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected override EndpointBaseProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

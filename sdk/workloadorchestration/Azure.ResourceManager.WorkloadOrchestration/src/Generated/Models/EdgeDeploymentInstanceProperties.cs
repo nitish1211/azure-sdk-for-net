@@ -18,16 +18,8 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="EdgeDeploymentInstanceProperties"/>. </summary>
-        /// <param name="solutionVersionId"> Solution version of instance. </param>
-        /// <param name="targetId"> Target of instance. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="solutionVersionId"/> or <paramref name="targetId"/> is null. </exception>
-        public EdgeDeploymentInstanceProperties(string solutionVersionId, string targetId)
+        public EdgeDeploymentInstanceProperties()
         {
-            Argument.AssertNotNull(solutionVersionId, nameof(solutionVersionId));
-            Argument.AssertNotNull(targetId, nameof(targetId));
-
-            SolutionVersionId = solutionVersionId;
-            TargetId = targetId;
         }
 
         /// <summary> Initializes a new instance of <see cref="EdgeDeploymentInstanceProperties"/>. </summary>
@@ -51,6 +43,19 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
             DeploymentTimestampEpoch = deploymentTimestampEpoch;
             ProvisioningState = provisioningState;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="EdgeDeploymentInstanceProperties"/>. </summary>
+        /// <param name="solutionVersionId"> Solution version of instance. </param>
+        /// <param name="targetId"> Target of instance. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="solutionVersionId"/> or <paramref name="targetId"/> is null. </exception>
+        public EdgeDeploymentInstanceProperties(string solutionVersionId, string targetId) : this()
+        {
+            Argument.AssertNotNull(solutionVersionId, nameof(solutionVersionId));
+            Argument.AssertNotNull(targetId, nameof(targetId));
+
+            SolutionVersionId = solutionVersionId;
+            TargetId = targetId;
         }
 
         /// <summary> Solution version of instance. </summary>

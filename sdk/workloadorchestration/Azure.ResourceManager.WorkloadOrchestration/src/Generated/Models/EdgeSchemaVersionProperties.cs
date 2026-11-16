@@ -18,13 +18,8 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="EdgeSchemaVersionProperties"/>. </summary>
-        /// <param name="value"> Value of schema version. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="value"/> is null. </exception>
-        public EdgeSchemaVersionProperties(string value)
+        public EdgeSchemaVersionProperties()
         {
-            Argument.AssertNotNull(value, nameof(value));
-
-            Value = value;
         }
 
         /// <summary> Initializes a new instance of <see cref="EdgeSchemaVersionProperties"/>. </summary>
@@ -36,6 +31,16 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
             Value = value;
             ProvisioningState = provisioningState;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="EdgeSchemaVersionProperties"/>. </summary>
+        /// <param name="value"> Value of schema version. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="value"/> is null. </exception>
+        public EdgeSchemaVersionProperties(string value) : this()
+        {
+            Argument.AssertNotNull(value, nameof(value));
+
+            Value = value;
         }
 
         /// <summary> Value of schema version. </summary>

@@ -28,7 +28,7 @@ namespace Azure.ResourceManager.WebPubSub
             Argument.AssertNotNull(keyVaultBaseUri, nameof(keyVaultBaseUri));
             Argument.AssertNotNull(keyVaultSecretName, nameof(keyVaultSecretName));
 
-            Properties = new CustomCertificateProperties(keyVaultBaseUri, keyVaultSecretName);
+            Properties = new CustomCertificateProperties();
         }
 
         /// <summary> Initializes a new instance of <see cref="WebPubSubCustomCertificateData"/>. </summary>

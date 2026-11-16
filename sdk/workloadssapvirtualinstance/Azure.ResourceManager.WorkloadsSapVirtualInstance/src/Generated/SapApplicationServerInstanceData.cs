@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.WorkloadsSapVirtualInstance
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="SapApplicationServerInstanceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public SapApplicationServerInstanceData(AzureLocation location) : base(location)
+        public SapApplicationServerInstanceData()
         {
         }
 
@@ -39,6 +38,13 @@ namespace Azure.ResourceManager.WorkloadsSapVirtualInstance
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="SapApplicationServerInstanceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public SapApplicationServerInstanceData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

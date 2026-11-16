@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.AppService
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="WorkflowRunActionRepetitionDefinitionData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public WorkflowRunActionRepetitionDefinitionData(AzureLocation location) : base(location)
+        public WorkflowRunActionRepetitionDefinitionData()
         {
 
         }
@@ -39,6 +38,13 @@ namespace Azure.ResourceManager.AppService
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="WorkflowRunActionRepetitionDefinitionData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public WorkflowRunActionRepetitionDefinitionData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The workflow run action repetition properties definition. </summary>

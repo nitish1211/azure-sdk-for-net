@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.StorageMover;
 
 namespace Azure.ResourceManager.StorageMover.Models
 {
@@ -18,16 +17,8 @@ namespace Azure.ResourceManager.StorageMover.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AgentProperties"/>. </summary>
-        /// <param name="arcResourceId"> The fully qualified resource ID of the Hybrid Compute resource for the Agent. </param>
-        /// <param name="arcVmUuid"> The VM UUID of the Hybrid Compute resource for the Agent. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="arcResourceId"/> or <paramref name="arcVmUuid"/> is null. </exception>
-        public AgentProperties(string arcResourceId, string arcVmUuid)
+        public AgentProperties()
         {
-            Argument.AssertNotNull(arcResourceId, nameof(arcResourceId));
-            Argument.AssertNotNull(arcVmUuid, nameof(arcVmUuid));
-
-            ArcResourceId = arcResourceId;
-            ArcVmUuid = arcVmUuid;
         }
 
         /// <summary> Initializes a new instance of <see cref="AgentProperties"/>. </summary>

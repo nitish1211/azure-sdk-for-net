@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.StorageMover.Models
     /// <summary> The properties of NFS share endpoint. </summary>
     public partial class NfsMountEndpointProperties : EndpointBaseProperties, IJsonModel<NfsMountEndpointProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="NfsMountEndpointProperties"/> for deserialization. </summary>
-        internal NfsMountEndpointProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected override EndpointBaseProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.AppService
     /// <summary> App Service Environment ARM resource. </summary>
     public partial class AppServiceEnvironmentData : TrackedResourceData, IJsonModel<AppServiceEnvironmentData>
     {
-        /// <summary> Initializes a new instance of <see cref="AppServiceEnvironmentData"/> for deserialization. </summary>
-        internal AppServiceEnvironmentData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

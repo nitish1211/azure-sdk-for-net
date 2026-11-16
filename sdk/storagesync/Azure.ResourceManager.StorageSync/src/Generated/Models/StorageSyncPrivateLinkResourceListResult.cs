@@ -17,6 +17,7 @@ namespace Azure.ResourceManager.StorageSync.Models
     /// Note: This is only intended for use with versions before v6. Do not use this if you are already on CommonTypes.Version.v6 or beyond.
     /// If you are migrating to v6 or above, use `PrivateLinkResourceListResult` directly.
     /// </summary>
+    [Obsolete("Avoid using this model. Instead, use PrivateLinkResourceListResult available in CommonTypes.Version.v6 or beyond.")]
     internal partial class StorageSyncPrivateLinkResourceListResult
     {
         /// <summary> Keeps track of any properties unknown to the library. </summary>

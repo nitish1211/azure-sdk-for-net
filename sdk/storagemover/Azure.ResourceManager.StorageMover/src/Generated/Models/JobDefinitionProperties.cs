@@ -20,17 +20,9 @@ namespace Azure.ResourceManager.StorageMover.Models
 
         /// <summary> Initializes a new instance of <see cref="JobDefinitionProperties"/>. </summary>
         /// <param name="copyMode"> Strategy to use for copy. </param>
-        /// <param name="sourceName"> The name of the source Endpoint. </param>
-        /// <param name="targetName"> The name of the target Endpoint. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="sourceName"/> or <paramref name="targetName"/> is null. </exception>
-        public JobDefinitionProperties(StorageMoverCopyMode copyMode, string sourceName, string targetName)
+        public JobDefinitionProperties(StorageMoverCopyMode copyMode)
         {
-            Argument.AssertNotNull(sourceName, nameof(sourceName));
-            Argument.AssertNotNull(targetName, nameof(targetName));
-
             CopyMode = copyMode;
-            SourceName = sourceName;
-            TargetName = targetName;
             Connections = new ChangeTrackingList<ResourceIdentifier>();
         }
 

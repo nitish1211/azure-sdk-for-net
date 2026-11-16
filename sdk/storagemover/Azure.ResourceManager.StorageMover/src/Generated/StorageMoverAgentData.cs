@@ -28,7 +28,7 @@ namespace Azure.ResourceManager.StorageMover
             Argument.AssertNotNull(arcResourceId, nameof(arcResourceId));
             Argument.AssertNotNull(arcVmUuid, nameof(arcVmUuid));
 
-            Properties = new AgentProperties(arcResourceId, arcVmUuid);
+            Properties = new AgentProperties();
         }
 
         /// <summary> Initializes a new instance of <see cref="StorageMoverAgentData"/>. </summary>

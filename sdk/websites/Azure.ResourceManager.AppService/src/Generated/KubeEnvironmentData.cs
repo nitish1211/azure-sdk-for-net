@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.AppService
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="KubeEnvironmentData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public KubeEnvironmentData(AzureLocation location) : base(location)
+        public KubeEnvironmentData()
         {
         }
 
@@ -43,6 +42,13 @@ namespace Azure.ResourceManager.AppService
             ExtendedLocation = extendedLocation;
             Kind = kind;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="KubeEnvironmentData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public KubeEnvironmentData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> KubeEnvironment resource specific properties. </summary>

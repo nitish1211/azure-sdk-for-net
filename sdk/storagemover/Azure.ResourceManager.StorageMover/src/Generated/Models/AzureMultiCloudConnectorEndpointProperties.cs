@@ -16,15 +16,12 @@ namespace Azure.ResourceManager.StorageMover.Models
     public partial class AzureMultiCloudConnectorEndpointProperties : EndpointBaseProperties
     {
         /// <summary> Initializes a new instance of <see cref="AzureMultiCloudConnectorEndpointProperties"/>. </summary>
-        /// <param name="multiCloudConnectorId"> The Azure Resource ID of the MultiCloud Connector resource. </param>
         /// <param name="awsS3BucketId"> The AWS S3 bucket ARM resource Id. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="multiCloudConnectorId"/> or <paramref name="awsS3BucketId"/> is null. </exception>
-        public AzureMultiCloudConnectorEndpointProperties(ResourceIdentifier multiCloudConnectorId, ResourceIdentifier awsS3BucketId) : base(EndpointType.AzureMultiCloudConnector)
+        /// <exception cref="ArgumentNullException"> <paramref name="awsS3BucketId"/> is null. </exception>
+        public AzureMultiCloudConnectorEndpointProperties(ResourceIdentifier awsS3BucketId) : base(EndpointType.AzureMultiCloudConnector)
         {
-            Argument.AssertNotNull(multiCloudConnectorId, nameof(multiCloudConnectorId));
             Argument.AssertNotNull(awsS3BucketId, nameof(awsS3BucketId));
 
-            MultiCloudConnectorId = multiCloudConnectorId;
             AwsS3BucketId = awsS3BucketId;
         }
 
@@ -40,6 +37,17 @@ namespace Azure.ResourceManager.StorageMover.Models
         {
             MultiCloudConnectorId = multiCloudConnectorId;
             AwsS3BucketId = awsS3BucketId;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="AzureMultiCloudConnectorEndpointProperties"/>. </summary>
+        /// <param name="multiCloudConnectorId"> The Azure Resource ID of the MultiCloud Connector resource. </param>
+        /// <param name="awsS3BucketId"> The AWS S3 bucket ARM resource Id. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="multiCloudConnectorId"/> is null. </exception>
+        public AzureMultiCloudConnectorEndpointProperties(ResourceIdentifier multiCloudConnectorId, ResourceIdentifier awsS3BucketId) : this(awsS3BucketId)
+        {
+            Argument.AssertNotNull(multiCloudConnectorId, nameof(multiCloudConnectorId));
+
+            MultiCloudConnectorId = multiCloudConnectorId;
         }
 
         /// <summary> The Azure Resource ID of the MultiCloud Connector resource. </summary>

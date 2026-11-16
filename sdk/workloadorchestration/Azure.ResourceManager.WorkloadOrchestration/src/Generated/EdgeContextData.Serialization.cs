@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.WorkloadOrchestration
     /// <summary> Context Resource. </summary>
     public partial class EdgeContextData : TrackedResourceData, IJsonModel<EdgeContextData>
     {
-        /// <summary> Initializes a new instance of <see cref="EdgeContextData"/> for deserialization. </summary>
-        internal EdgeContextData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

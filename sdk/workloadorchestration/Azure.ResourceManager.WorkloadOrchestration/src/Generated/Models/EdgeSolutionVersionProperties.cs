@@ -20,13 +20,9 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="EdgeSolutionVersionProperties"/>. </summary>
-        /// <param name="specification"> App components spec. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="specification"/> is null. </exception>
-        public EdgeSolutionVersionProperties(IDictionary<string, BinaryData> specification)
+        public EdgeSolutionVersionProperties()
         {
-            Argument.AssertNotNull(specification, nameof(specification));
-
-            Specification = specification;
+            Specification = new ChangeTrackingDictionary<string, BinaryData>();
             SolutionDependencies = new ChangeTrackingList<EdgeSolutionDependency>();
         }
 
@@ -65,6 +61,16 @@ namespace Azure.ResourceManager.WorkloadOrchestration.Models
             ActionType = actionType;
             ProvisioningState = provisioningState;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="EdgeSolutionVersionProperties"/>. </summary>
+        /// <param name="specification"> App components spec. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="specification"/> is null. </exception>
+        public EdgeSolutionVersionProperties(IDictionary<string, BinaryData> specification) : this()
+        {
+            Argument.AssertNotNull(specification, nameof(specification));
+
+            Specification = specification;
         }
 
         /// <summary> Solution Template Version Id. </summary>

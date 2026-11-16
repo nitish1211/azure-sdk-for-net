@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.AppService
     /// <summary> The request history. </summary>
     public partial class WebAppRequestHistoryData : TrackedResourceData, IJsonModel<WebAppRequestHistoryData>
     {
-        /// <summary> Initializes a new instance of <see cref="WebAppRequestHistoryData"/> for deserialization. </summary>
-        internal WebAppRequestHistoryData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

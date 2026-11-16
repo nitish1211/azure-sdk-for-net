@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.AppService
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="WebSiteData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public WebSiteData(AzureLocation location) : base(location)
+        public WebSiteData()
         {
         }
 
@@ -45,6 +44,13 @@ namespace Azure.ResourceManager.AppService
             ExtendedLocation = extendedLocation;
             Kind = kind;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="WebSiteData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public WebSiteData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Site resource specific properties. </summary>
