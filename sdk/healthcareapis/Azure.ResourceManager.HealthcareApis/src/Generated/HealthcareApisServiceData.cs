@@ -21,9 +21,8 @@ namespace Azure.ResourceManager.HealthcareApis
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HealthcareApisServiceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="kind"> The kind of the service. </param>
-        public HealthcareApisServiceData(AzureLocation location, HealthcareApisKind kind) : base(location)
+        public HealthcareApisServiceData(HealthcareApisKind kind)
         {
             Kind = kind;
         }
@@ -47,6 +46,14 @@ namespace Azure.ResourceManager.HealthcareApis
             ETag = eTag;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="HealthcareApisServiceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="kind"> The kind of the service. </param>
+        public HealthcareApisServiceData(AzureLocation location, HealthcareApisKind kind) : this(kind)
+        {
+            Location = location;
         }
 
         /// <summary> The common properties of a service. </summary>

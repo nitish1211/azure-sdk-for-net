@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.IotOperations
     /// <summary> A Instance resource is a logical container for a set of child resources. </summary>
     public partial class IotOperationsInstanceData : TrackedResourceData, IJsonModel<IotOperationsInstanceData>
     {
-        /// <summary> Initializes a new instance of <see cref="IotOperationsInstanceData"/> for deserialization. </summary>
-        internal IotOperationsInstanceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.HybridContainerService
     /// <summary> The Virtual Network resource definition. </summary>
     public partial class HybridContainerServiceVirtualNetworkData : TrackedResourceData, IJsonModel<HybridContainerServiceVirtualNetworkData>
     {
-        /// <summary> Initializes a new instance of <see cref="HybridContainerServiceVirtualNetworkData"/> for deserialization. </summary>
-        internal HybridContainerServiceVirtualNetworkData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

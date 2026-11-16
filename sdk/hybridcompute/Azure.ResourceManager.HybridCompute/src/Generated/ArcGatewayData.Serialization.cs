@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.HybridCompute
     /// <summary> Describes an Arc Gateway. </summary>
     public partial class ArcGatewayData : TrackedResourceData, IJsonModel<ArcGatewayData>
     {
-        /// <summary> Initializes a new instance of <see cref="ArcGatewayData"/> for deserialization. </summary>
-        internal ArcGatewayData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.HybridNetwork
     /// <summary> Site resource. </summary>
     public partial class SiteData : TrackedResourceData, IJsonModel<SiteData>
     {
-        /// <summary> Initializes a new instance of <see cref="SiteData"/> for deserialization. </summary>
-        internal SiteData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

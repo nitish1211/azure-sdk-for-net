@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.HybridConnectivity.Models
     /// <summary> cloud profile for AWS. </summary>
     public partial class AwsCloudProfile : IJsonModel<AwsCloudProfile>
     {
-        /// <summary> Initializes a new instance of <see cref="AwsCloudProfile"/> for deserialization. </summary>
-        internal AwsCloudProfile()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual AwsCloudProfile PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

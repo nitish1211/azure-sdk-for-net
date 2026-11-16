@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.HybridContainerService
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HybridContainerServiceVirtualNetworkData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public HybridContainerServiceVirtualNetworkData(AzureLocation location) : base(location)
+        public HybridContainerServiceVirtualNetworkData()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.HybridContainerService
             Properties = properties;
             ExtendedLocation = extendedLocation;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="HybridContainerServiceVirtualNetworkData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public HybridContainerServiceVirtualNetworkData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

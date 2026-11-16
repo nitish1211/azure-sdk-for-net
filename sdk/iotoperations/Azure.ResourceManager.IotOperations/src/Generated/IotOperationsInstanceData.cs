@@ -20,14 +20,8 @@ namespace Azure.ResourceManager.IotOperations
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="IotOperationsInstanceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        /// <param name="extendedLocation"> Edge location of the resource. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
-        public IotOperationsInstanceData(AzureLocation location, IotOperationsExtendedLocation extendedLocation) : base(location)
+        public IotOperationsInstanceData()
         {
-            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
-
-            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> Initializes a new instance of <see cref="IotOperationsInstanceData"/>. </summary>
@@ -47,6 +41,18 @@ namespace Azure.ResourceManager.IotOperations
             ExtendedLocation = extendedLocation;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="IotOperationsInstanceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="extendedLocation"> Edge location of the resource. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="extendedLocation"/> is null. </exception>
+        public IotOperationsInstanceData(AzureLocation location, IotOperationsExtendedLocation extendedLocation) : this()
+        {
+            Argument.AssertNotNull(extendedLocation, nameof(extendedLocation));
+
+            Location = location;
+            ExtendedLocation = extendedLocation;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

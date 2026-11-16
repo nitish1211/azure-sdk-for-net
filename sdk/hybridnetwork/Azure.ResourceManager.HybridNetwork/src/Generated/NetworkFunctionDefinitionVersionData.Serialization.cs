@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.HybridNetwork
     /// <summary> Network function definition version. </summary>
     public partial class NetworkFunctionDefinitionVersionData : TrackedResourceData, IJsonModel<NetworkFunctionDefinitionVersionData>
     {
-        /// <summary> Initializes a new instance of <see cref="NetworkFunctionDefinitionVersionData"/> for deserialization. </summary>
-        internal NetworkFunctionDefinitionVersionData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

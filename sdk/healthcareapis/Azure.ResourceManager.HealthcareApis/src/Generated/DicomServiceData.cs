@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.HealthcareApis
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="DicomServiceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public DicomServiceData(AzureLocation location) : base(location)
+        public DicomServiceData()
         {
         }
 
@@ -43,6 +42,13 @@ namespace Azure.ResourceManager.HealthcareApis
             ETag = eTag;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="DicomServiceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public DicomServiceData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Dicom Service configuration. </summary>

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.HealthcareApis
     /// <summary> The description of Dicom Service. </summary>
     public partial class DicomServiceData : TrackedResourceData, IJsonModel<DicomServiceData>
     {
-        /// <summary> Initializes a new instance of <see cref="DicomServiceData"/> for deserialization. </summary>
-        internal DicomServiceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

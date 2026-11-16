@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.HybridCompute
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HybridComputeMachineRunCommandData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public HybridComputeMachineRunCommandData(AzureLocation location) : base(location)
+        public HybridComputeMachineRunCommandData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.HybridCompute
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="HybridComputeMachineRunCommandData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public HybridComputeMachineRunCommandData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Describes Run Command Properties. </summary>

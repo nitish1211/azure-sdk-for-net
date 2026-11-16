@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.HybridCompute
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HybridComputeLicenseProfileData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public HybridComputeLicenseProfileData(AzureLocation location) : base(location)
+        public HybridComputeLicenseProfileData()
         {
         }
 
@@ -39,6 +38,13 @@ namespace Azure.ResourceManager.HybridCompute
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="HybridComputeLicenseProfileData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public HybridComputeLicenseProfileData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Describe the properties of a license profile. </summary>

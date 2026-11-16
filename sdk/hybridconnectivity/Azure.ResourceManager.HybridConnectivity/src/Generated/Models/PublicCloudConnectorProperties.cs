@@ -7,6 +7,7 @@
 
 using System;
 using System.Collections.Generic;
+using Azure.ResourceManager.HybridConnectivity;
 
 namespace Azure.ResourceManager.HybridConnectivity.Models
 {
@@ -17,10 +18,8 @@ namespace Azure.ResourceManager.HybridConnectivity.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="PublicCloudConnectorProperties"/>. </summary>
-        /// <param name="hostType"> Host cloud the public cloud connector. </param>
-        public PublicCloudConnectorProperties(PublicCloudHostType hostType)
+        public PublicCloudConnectorProperties()
         {
-            HostType = hostType;
         }
 
         /// <summary> Initializes a new instance of <see cref="PublicCloudConnectorProperties"/>. </summary>
@@ -41,11 +40,22 @@ namespace Azure.ResourceManager.HybridConnectivity.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="PublicCloudConnectorProperties"/>. </summary>
+        /// <param name="hostType"> Host cloud the public cloud connector. </param>
+        public PublicCloudConnectorProperties(PublicCloudHostType hostType) : this()
+        {
+            HostType = hostType;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="PublicCloudConnectorProperties"/>. </summary>
         /// <param name="awsCloudProfile"> Cloud profile for AWS. </param>
         /// <param name="hostType"> Host cloud the public cloud connector. </param>
-        public PublicCloudConnectorProperties(AwsCloudProfile awsCloudProfile, PublicCloudHostType hostType) : this(hostType)
+        /// <exception cref="ArgumentNullException"> <paramref name="awsCloudProfile"/> is null. </exception>
+        public PublicCloudConnectorProperties(AwsCloudProfile awsCloudProfile, PublicCloudHostType hostType) : this()
         {
+            Argument.AssertNotNull(awsCloudProfile, nameof(awsCloudProfile));
+
             AwsCloudProfile = awsCloudProfile;
+            HostType = hostType;
         }
 
         /// <summary> Cloud profile for AWS. </summary>

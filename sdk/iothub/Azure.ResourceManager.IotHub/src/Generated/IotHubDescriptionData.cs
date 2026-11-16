@@ -21,10 +21,9 @@ namespace Azure.ResourceManager.IotHub
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="IotHubDescriptionData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="sku"> IotHub SKU info. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="sku"/> is null. </exception>
-        public IotHubDescriptionData(AzureLocation location, IotHubSkuInfo sku) : base(location)
+        public IotHubDescriptionData(IotHubSkuInfo sku)
         {
             Argument.AssertNotNull(sku, nameof(sku));
 
@@ -50,6 +49,14 @@ namespace Azure.ResourceManager.IotHub
             Sku = sku;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="IotHubDescriptionData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        /// <param name="sku"> IotHub SKU info. </param>
+        public IotHubDescriptionData(AzureLocation location, IotHubSkuInfo sku) : this(sku)
+        {
+            Location = location;
         }
 
         /// <summary> IotHub properties. </summary>

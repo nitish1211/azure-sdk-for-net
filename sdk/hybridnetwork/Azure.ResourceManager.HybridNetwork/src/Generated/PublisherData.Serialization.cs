@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.HybridNetwork
     /// <summary> publisher resource. </summary>
     public partial class PublisherData : TrackedResourceData, IJsonModel<PublisherData>
     {
-        /// <summary> Initializes a new instance of <see cref="PublisherData"/> for deserialization. </summary>
-        internal PublisherData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

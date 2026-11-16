@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.HealthcareApis
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="FhirServiceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public FhirServiceData(AzureLocation location) : base(location)
+        public FhirServiceData()
         {
         }
 
@@ -45,6 +44,13 @@ namespace Azure.ResourceManager.HealthcareApis
             Identity = identity;
             Kind = kind;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="FhirServiceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public FhirServiceData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Fhir Service configuration. </summary>

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.HealthcareApis
     /// <summary> IoT Connector definition. </summary>
     public partial class HealthcareApisIotConnectorData : TrackedResourceData, IJsonModel<HealthcareApisIotConnectorData>
     {
-        /// <summary> Initializes a new instance of <see cref="HealthcareApisIotConnectorData"/> for deserialization. </summary>
-        internal HealthcareApisIotConnectorData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.HealthcareApis
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HealthcareApisIotConnectorData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public HealthcareApisIotConnectorData(AzureLocation location) : base(location)
+        public HealthcareApisIotConnectorData()
         {
         }
 
@@ -43,6 +42,13 @@ namespace Azure.ResourceManager.HealthcareApis
             ETag = eTag;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="HealthcareApisIotConnectorData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public HealthcareApisIotConnectorData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> IoT Connector configuration. </summary>

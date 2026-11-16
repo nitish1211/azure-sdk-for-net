@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.HybridConnectivity
     /// <summary> Public Cloud Connector. </summary>
     public partial class PublicCloudConnectorData : TrackedResourceData, IJsonModel<PublicCloudConnectorData>
     {
-        /// <summary> Initializes a new instance of <see cref="PublicCloudConnectorData"/> for deserialization. </summary>
-        internal PublicCloudConnectorData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.HorizonDB;
 
 namespace Azure.ResourceManager.HorizonDB.Models
 {
@@ -19,13 +18,8 @@ namespace Azure.ResourceManager.HorizonDB.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HorizonDBClusterProperties"/>. </summary>
-        /// <param name="administratorLogin"> The administrator login name. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="administratorLogin"/> is null. </exception>
-        public HorizonDBClusterProperties(string administratorLogin)
+        public HorizonDBClusterProperties()
         {
-            Argument.AssertNotNull(administratorLogin, nameof(administratorLogin));
-
-            AdministratorLogin = administratorLogin;
         }
 
         /// <summary> Initializes a new instance of <see cref="HorizonDBClusterProperties"/>. </summary>

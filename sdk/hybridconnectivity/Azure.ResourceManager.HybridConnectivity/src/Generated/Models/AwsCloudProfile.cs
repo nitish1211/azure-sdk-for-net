@@ -18,13 +18,8 @@ namespace Azure.ResourceManager.HybridConnectivity.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="AwsCloudProfile"/>. </summary>
-        /// <param name="accountId"> Account id for the AWS account. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="accountId"/> is null. </exception>
-        public AwsCloudProfile(string accountId)
+        public AwsCloudProfile()
         {
-            Argument.AssertNotNull(accountId, nameof(accountId));
-
-            AccountId = accountId;
             ExcludedAccounts = new ChangeTrackingList<string>();
         }
 
@@ -39,6 +34,16 @@ namespace Azure.ResourceManager.HybridConnectivity.Models
             ExcludedAccounts = excludedAccounts;
             IsOrganizationalAccount = isOrganizationalAccount;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="AwsCloudProfile"/>. </summary>
+        /// <param name="accountId"> Account id for the AWS account. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="accountId"/> is null. </exception>
+        public AwsCloudProfile(string accountId) : this()
+        {
+            Argument.AssertNotNull(accountId, nameof(accountId));
+
+            AccountId = accountId;
         }
 
         /// <summary> Account id for the AWS account. </summary>

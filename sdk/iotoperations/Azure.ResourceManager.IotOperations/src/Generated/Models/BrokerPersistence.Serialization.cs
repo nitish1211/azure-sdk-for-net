@@ -22,11 +22,6 @@ namespace Azure.ResourceManager.IotOperations.Models
     /// </summary>
     public partial class BrokerPersistence : IJsonModel<BrokerPersistence>
     {
-        /// <summary> Initializes a new instance of <see cref="BrokerPersistence"/> for deserialization. </summary>
-        internal BrokerPersistence()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual BrokerPersistence PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

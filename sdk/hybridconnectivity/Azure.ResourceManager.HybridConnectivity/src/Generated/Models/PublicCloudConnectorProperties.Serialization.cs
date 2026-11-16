@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.HybridConnectivity.Models
     /// <summary> Properties of public cloud connectors. </summary>
     public partial class PublicCloudConnectorProperties : IJsonModel<PublicCloudConnectorProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="PublicCloudConnectorProperties"/> for deserialization. </summary>
-        internal PublicCloudConnectorProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual PublicCloudConnectorProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

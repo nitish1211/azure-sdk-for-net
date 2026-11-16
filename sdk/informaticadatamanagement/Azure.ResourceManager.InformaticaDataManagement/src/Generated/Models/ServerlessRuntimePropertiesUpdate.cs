@@ -100,7 +100,11 @@ namespace Azure.ResourceManager.InformaticaDataManagement.Models
             }
             set
             {
-                ServerlessRuntimeNetworkProfile = new ServerlessRuntimeNetworkProfileUpdate(value);
+                if (ServerlessRuntimeNetworkProfile is null)
+                {
+                    ServerlessRuntimeNetworkProfile = new ServerlessRuntimeNetworkProfileUpdate();
+                }
+                ServerlessRuntimeNetworkProfile.NetworkInterfaceConfiguration = value;
             }
         }
 

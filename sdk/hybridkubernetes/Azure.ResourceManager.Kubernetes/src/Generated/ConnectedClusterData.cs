@@ -20,11 +20,10 @@ namespace Azure.ResourceManager.Kubernetes
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ConnectedClusterData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="properties"> Describes the connected cluster resource properties. </param>
         /// <param name="identity"> The identity of the connected cluster. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="properties"/> or <paramref name="identity"/> is null. </exception>
-        public ConnectedClusterData(AzureLocation location, ConnectedClusterProperties properties, ManagedServiceIdentity identity) : base(location)
+        public ConnectedClusterData(ConnectedClusterProperties properties, ManagedServiceIdentity identity)
         {
             Argument.AssertNotNull(properties, nameof(properties));
             Argument.AssertNotNull(identity, nameof(identity));

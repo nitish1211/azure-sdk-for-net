@@ -20,10 +20,9 @@ namespace Azure.ResourceManager.ImageBuilder
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ImageTemplateData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
         /// <param name="identity"> The identity of the image template, if configured. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="identity"/> is null. </exception>
-        public ImageTemplateData(AzureLocation location, ImageTemplateIdentity identity) : base(location)
+        public ImageTemplateData(ImageTemplateIdentity identity)
         {
             Argument.AssertNotNull(identity, nameof(identity));
 

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.HybridCompute
     /// <summary> Describes a hybrid machine. </summary>
     public partial class HybridComputeMachineData : TrackedResourceData, IJsonModel<HybridComputeMachineData>
     {
-        /// <summary> Initializes a new instance of <see cref="HybridComputeMachineData"/> for deserialization. </summary>
-        internal HybridComputeMachineData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

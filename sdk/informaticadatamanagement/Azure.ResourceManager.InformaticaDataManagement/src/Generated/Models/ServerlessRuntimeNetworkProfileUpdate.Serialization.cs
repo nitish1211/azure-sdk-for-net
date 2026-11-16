@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.InformaticaDataManagement.Models
     /// <summary> Informatica Serverless Network profile properties update. </summary>
     internal partial class ServerlessRuntimeNetworkProfileUpdate : IJsonModel<ServerlessRuntimeNetworkProfileUpdate>
     {
-        /// <summary> Initializes a new instance of <see cref="ServerlessRuntimeNetworkProfileUpdate"/> for deserialization. </summary>
-        internal ServerlessRuntimeNetworkProfileUpdate()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ServerlessRuntimeNetworkProfileUpdate PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

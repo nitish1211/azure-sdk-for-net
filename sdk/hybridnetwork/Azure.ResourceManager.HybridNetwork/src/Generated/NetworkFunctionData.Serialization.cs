@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.HybridNetwork
     /// <summary> Network function resource response. </summary>
     public partial class NetworkFunctionData : TrackedResourceData, IJsonModel<NetworkFunctionData>
     {
-        /// <summary> Initializes a new instance of <see cref="NetworkFunctionData"/> for deserialization. </summary>
-        internal NetworkFunctionData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

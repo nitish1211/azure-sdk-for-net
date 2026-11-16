@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.HybridNetwork
     /// <summary> Hybrid configuration group value resource. </summary>
     public partial class ConfigurationGroupValueData : TrackedResourceData, IJsonModel<ConfigurationGroupValueData>
     {
-        /// <summary> Initializes a new instance of <see cref="ConfigurationGroupValueData"/> for deserialization. </summary>
-        internal ConfigurationGroupValueData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

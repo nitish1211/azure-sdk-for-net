@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.HybridNetwork
     /// <summary> network service design group resource. </summary>
     public partial class NetworkServiceDesignGroupData : TrackedResourceData, IJsonModel<NetworkServiceDesignGroupData>
     {
-        /// <summary> Initializes a new instance of <see cref="NetworkServiceDesignGroupData"/> for deserialization. </summary>
-        internal NetworkServiceDesignGroupData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

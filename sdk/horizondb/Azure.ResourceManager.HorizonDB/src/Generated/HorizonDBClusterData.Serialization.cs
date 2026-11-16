@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.HorizonDB
     /// <summary> Represents the HorizonDB cluster. </summary>
     public partial class HorizonDBClusterData : TrackedResourceData, IJsonModel<HorizonDBClusterData>
     {
-        /// <summary> Initializes a new instance of <see cref="HorizonDBClusterData"/> for deserialization. </summary>
-        internal HorizonDBClusterData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

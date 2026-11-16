@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.HealthcareApis
     /// <summary> The description of Fhir Service. </summary>
     public partial class FhirServiceData : TrackedResourceData, IJsonModel<FhirServiceData>
     {
-        /// <summary> Initializes a new instance of <see cref="FhirServiceData"/> for deserialization. </summary>
-        internal FhirServiceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

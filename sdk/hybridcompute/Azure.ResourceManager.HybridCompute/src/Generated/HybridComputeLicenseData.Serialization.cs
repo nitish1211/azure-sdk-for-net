@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.HybridCompute
     /// <summary> Describes a license in a hybrid machine. </summary>
     public partial class HybridComputeLicenseData : TrackedResourceData, IJsonModel<HybridComputeLicenseData>
     {
-        /// <summary> Initializes a new instance of <see cref="HybridComputeLicenseData"/> for deserialization. </summary>
-        internal HybridComputeLicenseData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

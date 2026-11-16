@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.HorizonDB.Models
     /// <summary> Properties of a HorizonDB cluster. </summary>
     public partial class HorizonDBClusterProperties : IJsonModel<HorizonDBClusterProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="HorizonDBClusterProperties"/> for deserialization. </summary>
-        internal HorizonDBClusterProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual HorizonDBClusterProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

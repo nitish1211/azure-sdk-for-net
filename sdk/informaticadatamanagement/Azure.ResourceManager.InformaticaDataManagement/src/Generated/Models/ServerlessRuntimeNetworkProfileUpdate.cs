@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using Azure.ResourceManager.InformaticaDataManagement;
 
 namespace Azure.ResourceManager.InformaticaDataManagement.Models
 {
@@ -18,13 +17,8 @@ namespace Azure.ResourceManager.InformaticaDataManagement.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ServerlessRuntimeNetworkProfileUpdate"/>. </summary>
-        /// <param name="networkInterfaceConfiguration"> Network Interface Configuration Profile Update. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="networkInterfaceConfiguration"/> is null. </exception>
-        public ServerlessRuntimeNetworkProfileUpdate(InformaticaNetworkInterfaceConfigurationUpdate networkInterfaceConfiguration)
+        public ServerlessRuntimeNetworkProfileUpdate()
         {
-            Argument.AssertNotNull(networkInterfaceConfiguration, nameof(networkInterfaceConfiguration));
-
-            NetworkInterfaceConfiguration = networkInterfaceConfiguration;
         }
 
         /// <summary> Initializes a new instance of <see cref="ServerlessRuntimeNetworkProfileUpdate"/>. </summary>

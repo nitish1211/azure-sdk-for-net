@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.HealthcareApis
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HealthcareApisWorkspaceData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public HealthcareApisWorkspaceData(AzureLocation location) : base(location)
+        public HealthcareApisWorkspaceData()
         {
         }
 
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.HealthcareApis
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="HealthcareApisWorkspaceData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public HealthcareApisWorkspaceData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Workspaces resource specific properties. </summary>

@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.HybridNetwork
     /// <summary> Artifact store properties. </summary>
     public partial class ArtifactStoreData : TrackedResourceData, IJsonModel<ArtifactStoreData>
     {
-        /// <summary> Initializes a new instance of <see cref="ArtifactStoreData"/> for deserialization. </summary>
-        internal ArtifactStoreData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

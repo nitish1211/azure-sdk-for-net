@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.InformaticaDataManagement
     /// <summary> An Organization Resource by Informatica. </summary>
     public partial class InformaticaOrganizationData : TrackedResourceData, IJsonModel<InformaticaOrganizationData>
     {
-        /// <summary> Initializes a new instance of <see cref="InformaticaOrganizationData"/> for deserialization. </summary>
-        internal InformaticaOrganizationData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

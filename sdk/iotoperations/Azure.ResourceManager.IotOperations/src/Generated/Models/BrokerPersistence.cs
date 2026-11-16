@@ -24,13 +24,8 @@ namespace Azure.ResourceManager.IotOperations.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="BrokerPersistence"/>. </summary>
-        /// <param name="maxSize"> The max size of the message buffer on disk. If a PVC template is specified using persistentVolumeClaimSpec Then this size is used as the request and limit sizes of that template. If a PVC template isn't specified Then local-path provisioner is requested with this size limit. Required. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="maxSize"/> is null. </exception>
-        public BrokerPersistence(string maxSize)
+        public BrokerPersistence()
         {
-            Argument.AssertNotNull(maxSize, nameof(maxSize));
-
-            MaxSize = maxSize;
         }
 
         /// <summary> Initializes a new instance of <see cref="BrokerPersistence"/>. </summary>
@@ -53,6 +48,16 @@ namespace Azure.ResourceManager.IotOperations.Models
             SubscriberQueue = subscriberQueue;
             Encryption = encryption;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="BrokerPersistence"/>. </summary>
+        /// <param name="maxSize"> The max size of the message buffer on disk. If a PVC template is specified using persistentVolumeClaimSpec Then this size is used as the request and limit sizes of that template. If a PVC template isn't specified Then local-path provisioner is requested with this size limit. Required. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="maxSize"/> is null. </exception>
+        public BrokerPersistence(string maxSize) : this()
+        {
+            Argument.AssertNotNull(maxSize, nameof(maxSize));
+
+            MaxSize = maxSize;
         }
 
         /// <summary> The max size of the message buffer on disk. If a PVC template is specified using persistentVolumeClaimSpec Then this size is used as the request and limit sizes of that template. If a PVC template isn't specified Then local-path provisioner is requested with this size limit. Required. </summary>

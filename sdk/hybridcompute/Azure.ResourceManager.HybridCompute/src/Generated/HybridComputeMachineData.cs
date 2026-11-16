@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.HybridCompute
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="HybridComputeMachineData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public HybridComputeMachineData(AzureLocation location) : base(location)
+        public HybridComputeMachineData()
         {
             Resources = new ChangeTrackingList<HybridComputeMachineExtensionData>();
         }
@@ -46,6 +45,13 @@ namespace Azure.ResourceManager.HybridCompute
             Identity = identity;
             Kind = kind;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="HybridComputeMachineData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public HybridComputeMachineData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> Hybrid Compute Machine properties. </summary>
