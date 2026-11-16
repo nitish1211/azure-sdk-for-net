@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ServiceFabric
     /// <summary> The service resource. </summary>
     public partial class ServiceFabricServiceData : TrackedResourceData, IJsonModel<ServiceFabricServiceData>
     {
-        /// <summary> Initializes a new instance of <see cref="ServiceFabricServiceData"/> for deserialization. </summary>
-        internal ServiceFabricServiceData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

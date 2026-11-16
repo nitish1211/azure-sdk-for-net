@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.ServiceNetworking.Models
     /// <summary> IpAccessRules Security Policy. </summary>
     internal partial class ServiceNetworkingIPAccessRulesSecurityPolicy : IJsonModel<ServiceNetworkingIPAccessRulesSecurityPolicy>
     {
-        /// <summary> Initializes a new instance of <see cref="ServiceNetworkingIPAccessRulesSecurityPolicy"/> for deserialization. </summary>
-        internal ServiceNetworkingIPAccessRulesSecurityPolicy()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ServiceNetworkingIPAccessRulesSecurityPolicy PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

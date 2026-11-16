@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.ServiceFabric
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ServiceFabricApplicationTypeData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ServiceFabricApplicationTypeData(AzureLocation location) : base(location)
+        public ServiceFabricApplicationTypeData()
         {
         }
 
@@ -41,6 +40,13 @@ namespace Azure.ResourceManager.ServiceFabric
             Properties = properties;
             ETag = eTag;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ServiceFabricApplicationTypeData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ServiceFabricApplicationTypeData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The application type name properties. </summary>

@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.ServiceNetworking
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ApplicationGatewayForContainersSecurityPolicyData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ApplicationGatewayForContainersSecurityPolicyData(AzureLocation location) : base(location)
+        public ApplicationGatewayForContainersSecurityPolicyData()
         {
         }
 
@@ -38,6 +37,13 @@ namespace Azure.ResourceManager.ServiceNetworking
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ApplicationGatewayForContainersSecurityPolicyData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ApplicationGatewayForContainersSecurityPolicyData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

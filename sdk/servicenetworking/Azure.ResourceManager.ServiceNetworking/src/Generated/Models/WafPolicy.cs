@@ -8,7 +8,6 @@
 using System;
 using System.Collections.Generic;
 using Azure.Core;
-using Azure.ResourceManager.ServiceNetworking;
 
 namespace Azure.ResourceManager.ServiceNetworking.Models
 {
@@ -19,13 +18,8 @@ namespace Azure.ResourceManager.ServiceNetworking.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="WafPolicy"/>. </summary>
-        /// <param name="id"> Resource ID of the WAF. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="id"/> is null. </exception>
-        public WafPolicy(ResourceIdentifier id)
+        public WafPolicy()
         {
-            Argument.AssertNotNull(id, nameof(id));
-
-            Id = id;
         }
 
         /// <summary> Initializes a new instance of <see cref="WafPolicy"/>. </summary>

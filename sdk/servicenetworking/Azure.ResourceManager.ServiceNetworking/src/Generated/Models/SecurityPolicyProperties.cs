@@ -58,7 +58,11 @@ namespace Azure.ResourceManager.ServiceNetworking.Models
             }
             set
             {
-                WafPolicy = new WafPolicy(value);
+                if (WafPolicy is null)
+                {
+                    WafPolicy = new WafPolicy();
+                }
+                WafPolicy.Id = value;
             }
         }
 

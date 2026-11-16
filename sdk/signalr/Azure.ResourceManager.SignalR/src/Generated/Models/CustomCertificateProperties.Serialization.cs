@@ -16,11 +16,6 @@ namespace Azure.ResourceManager.SignalR.Models
     /// <summary> Custom certificate properties. </summary>
     internal partial class CustomCertificateProperties : IJsonModel<CustomCertificateProperties>
     {
-        /// <summary> Initializes a new instance of <see cref="CustomCertificateProperties"/> for deserialization. </summary>
-        internal CustomCertificateProperties()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual CustomCertificateProperties PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

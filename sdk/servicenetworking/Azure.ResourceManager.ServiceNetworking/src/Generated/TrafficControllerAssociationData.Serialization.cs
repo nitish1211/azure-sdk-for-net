@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ServiceNetworking
     /// <summary> Association Subresource of Traffic Controller. </summary>
     public partial class TrafficControllerAssociationData : TrackedResourceData, IJsonModel<TrafficControllerAssociationData>
     {
-        /// <summary> Initializes a new instance of <see cref="TrafficControllerAssociationData"/> for deserialization. </summary>
-        internal TrafficControllerAssociationData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

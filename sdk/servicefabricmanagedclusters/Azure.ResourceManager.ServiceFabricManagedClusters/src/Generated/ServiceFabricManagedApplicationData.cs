@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.ServiceFabricManagedClusters
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ServiceFabricManagedApplicationData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ServiceFabricManagedApplicationData(AzureLocation location) : base(location)
+        public ServiceFabricManagedApplicationData()
         {
         }
 
@@ -40,6 +39,13 @@ namespace Azure.ResourceManager.ServiceFabricManagedClusters
             Properties = properties;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ServiceFabricManagedApplicationData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ServiceFabricManagedApplicationData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The application resource properties. </summary>

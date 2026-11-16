@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ServiceFabric
     /// <summary> An application type version resource for the specified application type name resource. </summary>
     public partial class ServiceFabricApplicationTypeVersionData : TrackedResourceData, IJsonModel<ServiceFabricApplicationTypeVersionData>
     {
-        /// <summary> Initializes a new instance of <see cref="ServiceFabricApplicationTypeVersionData"/> for deserialization. </summary>
-        internal ServiceFabricApplicationTypeVersionData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

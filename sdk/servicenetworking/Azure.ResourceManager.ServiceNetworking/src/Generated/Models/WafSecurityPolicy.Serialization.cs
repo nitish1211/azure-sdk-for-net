@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.ServiceNetworking.Models
     /// <summary> Web Application Firewall Security Policy. </summary>
     internal partial class WafSecurityPolicy : IJsonModel<WafSecurityPolicy>
     {
-        /// <summary> Initializes a new instance of <see cref="WafSecurityPolicy"/> for deserialization. </summary>
-        internal WafSecurityPolicy()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual WafSecurityPolicy PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

@@ -19,11 +19,6 @@ namespace Azure.ResourceManager.ServiceFabric.Models
     /// <summary> The application resource for patch operations. </summary>
     public partial class ServiceFabricApplicationPatch : TrackedResourceData, IJsonModel<ServiceFabricApplicationPatch>
     {
-        /// <summary> Initializes a new instance of <see cref="ServiceFabricApplicationPatch"/> for deserialization. </summary>
-        internal ServiceFabricApplicationPatch()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

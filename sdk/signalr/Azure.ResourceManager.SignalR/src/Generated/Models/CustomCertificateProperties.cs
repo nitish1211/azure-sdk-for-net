@@ -18,16 +18,8 @@ namespace Azure.ResourceManager.SignalR.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="CustomCertificateProperties"/>. </summary>
-        /// <param name="keyVaultBaseUri"> Base uri of the KeyVault that stores certificate. </param>
-        /// <param name="keyVaultSecretName"> Certificate secret name. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="keyVaultBaseUri"/> or <paramref name="keyVaultSecretName"/> is null. </exception>
-        public CustomCertificateProperties(Uri keyVaultBaseUri, string keyVaultSecretName)
+        public CustomCertificateProperties()
         {
-            Argument.AssertNotNull(keyVaultBaseUri, nameof(keyVaultBaseUri));
-            Argument.AssertNotNull(keyVaultSecretName, nameof(keyVaultSecretName));
-
-            KeyVaultBaseUri = keyVaultBaseUri;
-            KeyVaultSecretName = keyVaultSecretName;
         }
 
         /// <summary> Initializes a new instance of <see cref="CustomCertificateProperties"/>. </summary>

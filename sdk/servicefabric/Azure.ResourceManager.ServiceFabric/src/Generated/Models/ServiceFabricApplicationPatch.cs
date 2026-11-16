@@ -19,8 +19,7 @@ namespace Azure.ResourceManager.ServiceFabric.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ServiceFabricApplicationPatch"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ServiceFabricApplicationPatch(AzureLocation location) : base(location)
+        public ServiceFabricApplicationPatch()
         {
         }
 
@@ -37,6 +36,13 @@ namespace Azure.ResourceManager.ServiceFabric.Models
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ServiceFabricApplicationPatch"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ServiceFabricApplicationPatch(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The application resource properties for patch operations. </summary>

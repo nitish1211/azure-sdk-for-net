@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ServiceNetworking
     /// <summary> Frontend Sub Resource of Traffic Controller. </summary>
     public partial class TrafficControllerFrontendData : TrackedResourceData, IJsonModel<TrafficControllerFrontendData>
     {
-        /// <summary> Initializes a new instance of <see cref="TrafficControllerFrontendData"/> for deserialization. </summary>
-        internal TrafficControllerFrontendData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

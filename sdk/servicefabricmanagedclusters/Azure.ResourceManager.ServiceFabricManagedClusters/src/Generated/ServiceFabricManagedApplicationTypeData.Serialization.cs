@@ -20,11 +20,6 @@ namespace Azure.ResourceManager.ServiceFabricManagedClusters
     /// <summary> The application type name resource. </summary>
     public partial class ServiceFabricManagedApplicationTypeData : TrackedResourceData, IJsonModel<ServiceFabricManagedApplicationTypeData>
     {
-        /// <summary> Initializes a new instance of <see cref="ServiceFabricManagedApplicationTypeData"/> for deserialization. </summary>
-        internal ServiceFabricManagedApplicationTypeData()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual ResourceData PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

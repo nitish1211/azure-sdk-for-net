@@ -439,7 +439,7 @@ namespace Azure.ResourceManager.ServiceFabric
                 else
                 {
                     ServiceFabricServiceData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    ServiceFabricServicePatch patch = new ServiceFabricServicePatch(current.Location);
+                    ServiceFabricServicePatch patch = new ServiceFabricServicePatch();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -487,7 +487,7 @@ namespace Azure.ResourceManager.ServiceFabric
                 else
                 {
                     ServiceFabricServiceData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    ServiceFabricServicePatch patch = new ServiceFabricServicePatch(current.Location);
+                    ServiceFabricServicePatch patch = new ServiceFabricServicePatch();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -533,7 +533,7 @@ namespace Azure.ResourceManager.ServiceFabric
                 else
                 {
                     ServiceFabricServiceData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    ServiceFabricServicePatch patch = new ServiceFabricServicePatch(current.Location);
+                    ServiceFabricServicePatch patch = new ServiceFabricServicePatch();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<ServiceFabricServiceResource> result = await UpdateAsync(WaitUntil.Completed, patch, cancellationToken: cancellationToken).ConfigureAwait(false);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -575,7 +575,7 @@ namespace Azure.ResourceManager.ServiceFabric
                 else
                 {
                     ServiceFabricServiceData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    ServiceFabricServicePatch patch = new ServiceFabricServicePatch(current.Location);
+                    ServiceFabricServicePatch patch = new ServiceFabricServicePatch();
                     patch.Tags.ReplaceWith(tags);
                     ArmOperation<ServiceFabricServiceResource> result = Update(WaitUntil.Completed, patch, cancellationToken: cancellationToken);
                     return Response.FromValue(result.Value, result.GetRawResponse());
@@ -617,7 +617,7 @@ namespace Azure.ResourceManager.ServiceFabric
                 else
                 {
                     ServiceFabricServiceData current = (await GetAsync(cancellationToken: cancellationToken).ConfigureAwait(false)).Value.Data;
-                    ServiceFabricServicePatch patch = new ServiceFabricServicePatch(current.Location);
+                    ServiceFabricServicePatch patch = new ServiceFabricServicePatch();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);
@@ -663,7 +663,7 @@ namespace Azure.ResourceManager.ServiceFabric
                 else
                 {
                     ServiceFabricServiceData current = Get(cancellationToken: cancellationToken).Value.Data;
-                    ServiceFabricServicePatch patch = new ServiceFabricServicePatch(current.Location);
+                    ServiceFabricServicePatch patch = new ServiceFabricServicePatch();
                     foreach (KeyValuePair<string, string> tag in current.Tags)
                     {
                         patch.Tags.Add(tag);

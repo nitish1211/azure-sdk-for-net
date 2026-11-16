@@ -20,8 +20,7 @@ namespace Azure.ResourceManager.ServiceBus.Models
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="ServiceBusNamespacePatch"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public ServiceBusNamespacePatch(AzureLocation location) : base(location)
+        public ServiceBusNamespacePatch()
         {
         }
 
@@ -42,6 +41,13 @@ namespace Azure.ResourceManager.ServiceBus.Models
             Sku = sku;
             Identity = identity;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="ServiceBusNamespacePatch"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public ServiceBusNamespacePatch(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The namespace update properties. </summary>

@@ -21,8 +21,7 @@ namespace Azure.ResourceManager.ServiceNetworking
         private protected readonly IDictionary<string, BinaryData> _additionalBinaryDataProperties;
 
         /// <summary> Initializes a new instance of <see cref="TrafficControllerData"/>. </summary>
-        /// <param name="location"> The geo-location where the resource lives. </param>
-        public TrafficControllerData(AzureLocation location) : base(location)
+        public TrafficControllerData()
         {
         }
 
@@ -39,6 +38,13 @@ namespace Azure.ResourceManager.ServiceNetworking
         {
             Properties = properties;
             _additionalBinaryDataProperties = additionalBinaryDataProperties;
+        }
+
+        /// <summary> Initializes a new instance of <see cref="TrafficControllerData"/>. </summary>
+        /// <param name="location"> The geo-location where the resource lives. </param>
+        public TrafficControllerData(AzureLocation location) : this()
+        {
+            Location = location;
         }
 
         /// <summary> The resource-specific properties for this resource. </summary>

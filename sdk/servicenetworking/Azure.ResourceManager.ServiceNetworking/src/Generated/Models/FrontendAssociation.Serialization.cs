@@ -17,11 +17,6 @@ namespace Azure.ResourceManager.ServiceNetworking.Models
     /// <summary> Reference to an Association resource. </summary>
     internal partial class FrontendAssociation : IJsonModel<FrontendAssociation>
     {
-        /// <summary> Initializes a new instance of <see cref="FrontendAssociation"/> for deserialization. </summary>
-        internal FrontendAssociation()
-        {
-        }
-
         /// <param name="data"> The data to parse. </param>
         /// <param name="options"> The client options for reading and writing models. </param>
         protected virtual FrontendAssociation PersistableModelCreateCore(BinaryData data, ModelReaderWriterOptions options)

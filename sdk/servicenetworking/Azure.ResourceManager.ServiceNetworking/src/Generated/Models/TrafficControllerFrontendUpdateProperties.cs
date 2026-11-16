@@ -53,7 +53,11 @@ namespace Azure.ResourceManager.ServiceNetworking.Models
             }
             set
             {
-                Association = new FrontendAssociation(value);
+                if (Association is null)
+                {
+                    Association = new FrontendAssociation();
+                }
+                Association.Id = value;
             }
         }
     }
